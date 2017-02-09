@@ -8,7 +8,8 @@ require('./styles/style.css')
 require('./favicon.ico')
 
 const personArticle = require('./images/person.jpg')
-const footerPattern = require('./images/footer.png')
+const footerPattern = require('./images/test.png')
+
 
 
 const Navigation = () => (
@@ -25,8 +26,8 @@ const Navigation = () => (
 
     <div className="collapse navbar-collapse" id="myNavbar">
       <ul className="nav navbar-nav navbar-left">
-        <li><a href="#about">О нас </a></li>
-        <li><a href="#features">Фичи</a></li>
+        <li><a href="#about">О пректе </a></li>
+        <li><a href="#features">Help/FAQ</a></li>
         <li><a href="#blog">Блог</a></li>
       </ul> 
       <ul className="nav navbar-nav navbar-right">
@@ -39,25 +40,21 @@ const Navigation = () => (
   </nav>
 );
 
-
-
-
 const Title = () => (
-<div id="title" className="container-fluid bg-overlay">
-  <div className="row text-center">
-    <h1>ХРОНИСТ</h1>
-    <h3>историко-географический инструмент визуализации интегрированных научных данных</h3>
+  <div id="title" className="container-fluid bg-overlay">
+    <div className="row text-center">
+      <h1>ХРОНИСТ</h1>
+      <h3>историко-географический инструмент визуализации интегрированных научных данных</h3>
+      <button className="btn btn-success disabled"> Get Started </button> <button className="btn btn-success disabled"> Register </button>
+    </div>
   </div>
-</div>
 );
 
 const AppDescription = () => (
   <div className="container panel-body">
       <div className="media">
           <div className="media-left">
-              
-                  <img className="img-circle media-object" src={personArticle} alt="person" />
-              
+            <img className="img-circle media-object" src={personArticle} alt="person" />
           </div>
           <div className="media-body">
           <h4 className="media-heading">Что это?</h4>
@@ -68,27 +65,36 @@ const AppDescription = () => (
 );
 
 const Subscribe = () => (
-<div id="Subscribe" className="bg-2 text-center"> 
-  <p>Проект находится в разработке. Следите за новостями</p> 
+  <div id="Subscribe" className="bg-2 text-center"> 
+  <p>Проект находится в разработке. Подпишитесь на нашу рассылку</p> 
   <form className="form-inline">
     <div className="input-group">
-      <input type="email" className="form-control" size="50" placeholder="Ваш E-mail" required />
+      <input type="email" className="form-control" size="30" placeholder="Ваш E-mail" required />
       <div className="input-group-btn">
         <button type="button" className="btn btn-danger">Подписаться</button>
       </div>
     </div>
   </form>
-</div>
+
+    
+    <p>Или подпишитесь на нас в социальных сетях</p> 
+    <div className="sns">
+
+      <a href='https://www.facebook.com/'><span> Facebook </span> </a> <a href="https://vk.com"><span> Вконтакте </span></a> 
+    </div>
+
+  </div>
 );
 
 const Timeline =() => (
   <div id="features" className="container">
     <div className="page-header">
-        <h1 id="timeline"></h1>
+
+        <h1 id="timeline"> У нас есть 955.5 исторических и географических данных</h1>
     </div>
     <ul className="timeline">
         <li>
-          <div className="timeline-badge"><i className="glyphicon glyphicon-hourglass"></i></div>
+          <img src={footerPattern} className="test" alt="presentation" height="50" />
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4 className="timeline-title">Географические открытия и войны</h4>
@@ -107,6 +113,7 @@ const Timeline =() => (
             </div>
             <div className="timeline-body">
               <p>Хронология развития общества, отображение изобретений на карте мира</p>
+              <p className="text-muted">март 2017</p>
             </div>
           </div>
         </li>
@@ -118,6 +125,7 @@ const Timeline =() => (
             </div>
             <div className="timeline-body">
               <p>Демографические изменения для стран и населенных пунтков</p>
+              <p className="text-muted">март 2017</p>
             </div>
           </div>
         </li>
@@ -129,6 +137,7 @@ const Timeline =() => (
             </div>
             <div className="timeline-body">
               <p>Добавление данных и создание собственных наборов отображаемых событий.</p>
+              <p className="text-muted">сентябрь 2017</p>
             </div>
           </div>
         </li>
@@ -140,7 +149,7 @@ const Timeline =() => (
             </div>
             <div className="timeline-body">
               <p>Политические границы. Их изменения от античности до наших дней. Нации, происхождение и распределение расс по материкам, религии, катастрофы, болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
-              <hr />
+              <p className="text-muted">март 2017</p>
             </div>
           </div>
         </li>
@@ -152,16 +161,17 @@ const Timeline =() => (
             </div>
             <div className="timeline-body">
               <p>Наличие различных опций для сохранения исследований. Возможность экспортировать выбранную хронологию за период.</p>
+              <p className="text-muted">сентябрь 2017</p>
             </div>
           </div>
         </li>
     </ul>
-</div>
+  </div>
 );
 
 
 const Blog = () => (
-<div id="blog" className="article">
+  <div id="blog" className="article">
   <hr />
   <div className="container odd">
     <div className="span8">
@@ -205,12 +215,21 @@ const Blog = () => (
 );
 
 const Contact = () => (
-  <div id="contact" className="bg-4 text-center">
-    <p><span className="glyphicon glyphicon-envelope"></span> support@chronist.ru</p>
-    <img src={footerPattern} className="pattern" alt="presentation" height="70" />
-  </div>
+  <footer className="bg-4 text-center">
+    <div className="pull-left">
+      <p>&copy;  Chronist 2017</p>
+      <p>Language</p>
+      
+    </div>
+    <ul className="pull-right">
+      <li><a href="mailto://support@chronist.ru">Contact </a></li>
+      <li><a href="http://localhost:8080/#team"> Team </a></li>
+    </ul>
+    
+    
+    
+  </footer>
 );
-
 
 class Hello extends React.Component {
   render() {
@@ -221,7 +240,7 @@ class Hello extends React.Component {
         <AppDescription />
         <Subscribe />
         <Timeline />
-        <Blog />
+        
         <Contact />
     </div>
     );
