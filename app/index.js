@@ -9,11 +9,15 @@ require('./favicon.ico')
 
 const personArticle = require('./images/person.jpg')
 const footerPattern = require('./images/test.png')
-
-
+const ft1 = require("./images/ft-invetion.svg")
+const ft2 = require("./images/ft-invetion2.svg")
+const ft3 = require("./images/ft-catastrophe.svg")
+const ft4 = require("./images/ft-catastrophe2.svg")
+const ft5 = require("./images/ft-discovery.svg")
+const ft6 = require("./images/ft-discovery2.svg")
 
 const Navigation = () => (
-  <nav className="navbar navbar-inverse">
+  <nav className="navbar navbar-inverse navbar-absolute">
   <div className="container-fluid">
     <div className="navbar-header">
       <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -21,7 +25,7 @@ const Navigation = () => (
         <span className="icon-bar"></span>
         <span className="icon-bar"></span>  
       </button>
-      <a className="navbar-brand" href="#">Logo</a>
+      <a className="navbar-brand" href="#">Хронист</a>
     </div>
 
     <div className="collapse navbar-collapse" id="myNavbar">
@@ -32,8 +36,7 @@ const Navigation = () => (
       </ul> 
       <ul className="nav navbar-nav navbar-right">
         <li><a href="#"><i className="social fa fa-vk" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i className="social fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i className="social fa fa-medium" aria-hidden="true"></i></a></li>
+               
       </ul>
     </div>
   </div>
@@ -45,7 +48,7 @@ const Title = () => (
     <div className="row text-center">
       <h1>ХРОНИСТ</h1>
       <h3>историко-географический инструмент визуализации интегрированных научных данных</h3>
-      <button className="btn btn-success disabled"> Get Started </button> <button className="btn btn-success disabled"> Register </button>
+      <button className="btn btn-success disabled"> Войти </button> 
     </div>
   </div>
 );
@@ -61,6 +64,12 @@ const AppDescription = () => (
           <p>Портал содержит информацию по большому количеству событий разного плана (политических событий, изобретений и открытий, природных явлений и т.п.), привязанных к географическим картам и расположенных хронологически. Способ представления пользователю позволяет составлять собственные подборки разноплановых событий, находить и устанавливать взаимосвязи между ними, работать с текстовыми описаниями, снабжать избранные события ссылками на внешние источники (например, научные библиотеки, публикации, видеохостинги и т.п.), иллюстрировать наглядно. Это значительно облегчит научно-педагогическую работу при преподавании истории, изучении ее в курсах ОДОД, написании учащимися проектных работ, проведении студентами и работниками вузов собственных исследований.</p>                
          </div>
       </div>
+  </div>
+);
+
+const What = () => (
+  <div>
+    <p> Lorem Ipsum</p>
   </div>
 );
 
@@ -80,7 +89,7 @@ const Subscribe = () => (
     <p>Или подпишитесь на нас в социальных сетях</p> 
     <div className="sns">
 
-      <a href='https://www.facebook.com/'><span> Facebook </span> </a> <a href="https://vk.com"><span> Вконтакте </span></a> 
+    <a href="https://vk.com"><span> Вконтакте </span></a> 
     </div>
 
   </div>
@@ -94,7 +103,7 @@ const Timeline =() => (
     </div>
     <ul className="timeline">
         <li>
-          <img src={footerPattern} className="test" alt="presentation" height="50" />
+          <div className="timeline-badge"><img src={ft1} alt="presentation" height="50" /></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4 className="timeline-title">Географические открытия и войны</h4>
@@ -106,7 +115,7 @@ const Timeline =() => (
           </div>
         </li>
         <li className="timeline-inverted">
-          <div className="timeline-badge"><i className="glyphicon glyphicon-fire" aria-hidden="true"></i></div>
+          <div className="timeline-badge"><img src={ft2} alt="presentation" height="50" /></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4 className="timeline-title">Изобретения</h4>
@@ -118,7 +127,7 @@ const Timeline =() => (
           </div>
         </li>
         <li>
-          <div className="timeline-badge"><i className="glyphicon glyphicon-home"></i></div>
+          <div className="timeline-badge"><img src={ft3} alt="presentation" height="50" /></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4 className="timeline-title">Население</h4>
@@ -130,7 +139,7 @@ const Timeline =() => (
           </div>
         </li>
         <li className="timeline-inverted">
-          <div className="timeline-badge"><i className="glyphicon glyphicon-wrench" aria-hidden="true"></i></div>
+          <div className="timeline-badge"><img src={ft4} alt="presentation" height="50" /></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4 className="timeline-title">Пользовательские сценарии</h4>
@@ -142,7 +151,7 @@ const Timeline =() => (
           </div>
         </li>
         <li>
-          <div className="timeline-badge"><i className="glyphicon glyphicon-stats" aria-hidden="true"></i></div>
+          <div className="timeline-badge"><img src={ft5} alt="presentation" height="50" /></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4 className="timeline-title">Разнообразие данных</h4>
@@ -154,7 +163,7 @@ const Timeline =() => (
           </div>
         </li>
         <li className="timeline-inverted">
-          <div className="timeline-badge"><i className="glyphicon  glyphicon-floppy-disk"></i></div>
+          <div className="timeline-badge"><img src={ft6} alt="presentation" height="50" /></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
               <h4 className="timeline-title">Экспорт данных в различные форматы</h4>
@@ -237,8 +246,9 @@ class Hello extends React.Component {
       <div className="app">
         <Navigation />
         <Title />
-        <AppDescription />
+        <What />
         <Subscribe />
+        <AppDescription />
         <Timeline />
         
         <Contact />
