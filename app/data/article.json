@@ -1,0 +1,24 @@
+  {
+    id: 't3',
+    name: 'Screw-cutting lathe',
+    authors: [maudslay.id],
+    description: 'Standardized screw thread sizes for the first time which in \
+    turn allowed the application of interchangeable parts \
+    (a prerequisite for mass production), were an important \
+    foundation for the Industrial Revolution.',
+    year: '1800',
+    location: [london.id]
+  },
+  {
+    id: 't4',
+    name: 'Neptune discovered',
+    authors: [gottfried.id],
+    description: 'The first two thirds of Neptune is composed of a mixture of \
+    molten rock, water, liquid ammonia and methane. The outer third is a \
+    mixture of heated gases comprised of hydrogen, helium, water and methane. \
+    Methane gives Neptune its blue cloud color.',
+    year: '1846',
+    month: '09',
+    day: '23',
+    location: [berlin.id]
+  }
