@@ -82,86 +82,220 @@ const Subscribe = () => (
 );
 
 const Timeline =() => (
-  <div id="features" className="container">
-    <div className="page-header">
-
-        <h1 id="timeline"> У нас есть 955.5 исторических и географических данных</h1>
-    </div>
+<div className="container">
+  <div className="row">
     <ul className="timeline">
+      <li> <div className="timeline-label">Март 2017</div> </li>
+
+      <li> <div className="timeline-badge">
+          <a><i className="fa fa-circle" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Политические границы </h4>
+            </div>
+            <div className="timeline-body">
+                <p>Изменения политических границ от античности до наших дней</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+      </li>
+    
+    <li className="timeline-inverted">
+        <div className="timeline-badge">
+            <a><i className="fa fa-circle invert" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Географические открытия и войны</h4>
+            </div>
+            <div className="timeline-body">
+                <p>Интерактивное отображение военных действий и исследовательских походов</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+    
+    <li className="timeline-inverted">
+        <div className="timeline-badge">
+            <a><i className="fa fa-circle invert" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Исследование данных</h4>
+            </div>
+            <div className="timeline-body">
+                <p>Поиск корреляций и причинно-следственных связей между историческими событиями</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+
+    <li>
+      <div className="timeline-badge">
+      <a><i className="fa fa-circle" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Политические границы </h4>
+            </div>
+            <div className="timeline-body">
+                <p>Изменения политических границ от античности до наших дней</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+
+    <li> <br /><div className="timeline-label">Июнь 2017</div><br /></li>
+
+    <li>
+        <div className="timeline-badge">
+            <a><i className="fa fa-circle" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Население</h4>
+            </div>
+            <div className="timeline-body">
+                <p>Демографические изменения</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+    
+
+    {/*<ul className="timeline">*/}
+    <li> <div className="timeline-label">Март 2017</div></li>
+    <li>
+        <div className="timeline-badge">
+          <a><i className="fa fa-circle" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Пользовательские сценарии</h4>
+            </div>
+            <div className="timeline-body">
+                <p>Добавление данных и создание собственных наборов отображаемых событий</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+
+    <li  className="timeline-inverted">
+        <div className="timeline-badge">
+            <a><i className="fa fa-circle invert" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Языки</h4>
+            </div>
+            <div className="timeline-body">
+                <p>Распространение и эволюция языковых групп</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+
+
+
+    <li  className="timeline-inverted">
+        <div className="timeline-badge">
+            <a><i className="fa fa-circle invert" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Экспорт данных в различные форматы - </h4>
+            </div>
+            <div className="timeline-body">
+                <p>Возможность экспортировать выбранную хронологию за период</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+
+
+    
+    <li> <br /> <div className="timeline-label">Ноябрь 2017</div><br /></li>
+    
+
+    <li>
+        <div className="timeline-badge">
+          <a><i className="fa fa-circle" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Религии</h4>
+            </div>
+            <div className="timeline-body">
+                <p>распространение религиозных течений</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+
+    <li> <div className="timeline-label">Февраль 2018</div></li>
+    <li> <br /></li>
+
+    <li  className="timeline-inverted">
+        <div className="timeline-badge">
+            <a><i className="fa fa-circle invert" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Катастрофы</h4>
+            </div>
+            <div className="timeline-body">
+                <p>Болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
+            </div>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
+            </div>
+        </div>
+    </li>
+
+
         <li>
-          <div className="timeline-badge"><img src={ft1} alt="presentation" height="50" /></div>
-          <div className="timeline-panel">
+        <div className="timeline-badge">
+          <a><i className="fa fa-circle" id=""></i></a>
+        </div>
+        <div className="timeline-panel">
             <div className="timeline-heading">
-              <h4 className="timeline-title">Географические открытия и войны</h4>
+                <h4>Нации</h4>
             </div>
             <div className="timeline-body">
-              <p>Интерактивное отображение военных действий и исследовательских походов</p>
-              <p className="text-muted">март 2017</p>
+                <p>Происхождение и распределение расс по материкам</p>
             </div>
-          </div>
-        </li>
-        <li className="timeline-inverted">
-          <div className="timeline-badge"><img src={ft2} alt="presentation" height="50" /></div>
-          <div className="timeline-panel">
-            <div className="timeline-heading">
-              <h4 className="timeline-title">Изобретения</h4>
+            <div className="timeline-footer">
+                <p className="text-right">Учтено данных: 0 </p>
             </div>
-            <div className="timeline-body">
-              <p>Хронология развития общества, отображение изобретений на карте мира</p>
-              <p className="text-muted">март 2017</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="timeline-badge"><img src={ft3} alt="presentation" height="50" /></div>
-          <div className="timeline-panel">
-            <div className="timeline-heading">
-              <h4 className="timeline-title">Население</h4>
-            </div>
-            <div className="timeline-body">
-              <p>Демографические изменения для стран и населенных пунтков</p>
-              <p className="text-muted">март 2017</p>
-            </div>
-          </div>
-        </li>
-        <li className="timeline-inverted">
-          <div className="timeline-badge"><img src={ft4} alt="presentation" height="50" /></div>
-          <div className="timeline-panel">
-            <div className="timeline-heading">
-              <h4 className="timeline-title">Пользовательские сценарии</h4>
-            </div>
-            <div className="timeline-body">
-              <p>Добавление данных и создание собственных наборов отображаемых событий.</p>
-              <p className="text-muted">сентябрь 2017</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="timeline-badge"><img src={ft5} alt="presentation" height="50" /></div>
-          <div className="timeline-panel">
-            <div className="timeline-heading">
-              <h4 className="timeline-title">Разнообразие данных</h4>
-            </div>
-            <div className="timeline-body">
-              <p>Политические границы. Их изменения от античности до наших дней. Нации, происхождение и распределение расс по материкам, религии, катастрофы, болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
-              <p className="text-muted">март 2017</p>
-            </div>
-          </div>
-        </li>
-        <li className="timeline-inverted">
-          <div className="timeline-badge"><img src={ft6} alt="presentation" height="50" /></div>
-          <div className="timeline-panel">
-            <div className="timeline-heading">
-              <h4 className="timeline-title">Экспорт данных в различные форматы</h4>
-            </div>
-            <div className="timeline-body">
-              <p>Наличие различных опций для сохранения исследований. Возможность экспортировать выбранную хронологию за период.</p>
-              <p className="text-muted">сентябрь 2017</p>
-            </div>
-          </div>
-        </li>
-    </ul>
+        </div>
+    </li>
+
+
+    <li className="clearfix no-float"></li>
+  </ul>
+
   </div>
+</div>
+
 );
 
 
