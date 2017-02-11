@@ -55,9 +55,9 @@ const Title = () => (
 
 
 const What = () => (
-  <div className="container text-center span8">
+  <div className="what container text-center">
     <p> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.
-При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</p>
+    При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</p>
   </div>
 );
 
@@ -82,47 +82,51 @@ const Subscribe = () => (
 );
 
 const Timeline =() => (
-<div className="container">
-  <div className="row">
-    <ul className="timeline">
-      <li> <div className="timeline-label">Март 2017</div> </li>
-
-      <li> <div className="timeline-badge">
-          <a><i className="fa fa-circle" id=""></i></a>
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Политические границы </h4>
-            </div>
-            <div className="timeline-body">
-                <p>Изменения политических границ от античности до наших дней</p>
-            </div>
-            <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
-            </div>
-        </div>
-      </li>
-    
-    <li className="timeline-inverted">
+  <div className="bg-2">
+    <div className="container">
+      <ul className="timeline">
+    <li>
         <div className="timeline-badge">
-            <a><i className="fa fa-circle invert" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
                 <h4>Географические открытия и войны</h4>
             </div>
             <div className="timeline-body">
-                <p>Интерактивное отображение военных действий и исследовательских походов</p>
+                <p>Интерактивное отображение военных действий и исследовательских походов.</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-left"> Учтено данных: 0 </span>
+                <span className="text-right">Март 2017</span>
             </div>
         </div>
     </li>
     
     <li className="timeline-inverted">
         <div className="timeline-badge">
-            <a><i className="fa fa-circle invert" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
+        </div>
+        <div className="timeline-panel">
+            <div className="timeline-heading">
+                <h4>Политические границы</h4>
+            </div>
+            <div className="timeline-body">
+                <p>Изменения политических границ от античности до наших дней
+                </p>
+            </div>
+            <hr />
+            <div className="timeline-footer">
+                <span className="text-left"> Учтено данных: 0 </span>
+                <span className="text-right">Март 2017</span>
+            </div>
+        </div>
+    </li>
+    
+    <li>
+        <div className="timeline-badge">
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
@@ -131,34 +135,38 @@ const Timeline =() => (
             <div className="timeline-body">
                 <p>Поиск корреляций и причинно-следственных связей между историческими событиями</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-left"> Учтено данных: 0 </span>
+                <span className="text-right">Март 2017</span>
             </div>
         </div>
     </li>
-
-    <li>
-      <div className="timeline-badge">
-      <a><i className="fa fa-circle" id=""></i></a>
+    
+    <li className="timeline-inverted">
+        <div className="timeline-badge">
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
-                <h4>Политические границы </h4>
+                <h4>Политические границы
+
+  </h4>
             </div>
             <div className="timeline-body">
                 <p>Изменения политических границ от античности до наших дней</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-left"> Учтено данных: 0 </span>
+                <span className="text-right">Март 2017</span>
             </div>
         </div>
     </li>
-
-    <li> <br /><div className="timeline-label">Июнь 2017</div><br /></li>
-
+    
     <li>
         <div className="timeline-badge">
-            <a><i className="fa fa-circle" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
@@ -167,18 +175,16 @@ const Timeline =() => (
             <div className="timeline-body">
                 <p>Демографические изменения</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-right">Июнь 2017</span>
             </div>
         </div>
     </li>
     
-
-    {/*<ul className="timeline">*/}
-    <li> <div className="timeline-label">Март 2017</div></li>
-    <li>
+    <li  className="timeline-inverted">
         <div className="timeline-badge">
-          <a><i className="fa fa-circle" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
@@ -187,15 +193,16 @@ const Timeline =() => (
             <div className="timeline-body">
                 <p>Добавление данных и создание собственных наборов отображаемых событий</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-right">Сентябрь 2017</span>
             </div>
         </div>
     </li>
 
-    <li  className="timeline-inverted">
+    <li>
         <div className="timeline-badge">
-            <a><i className="fa fa-circle invert" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
@@ -204,39 +211,34 @@ const Timeline =() => (
             <div className="timeline-body">
                 <p>Распространение и эволюция языковых групп</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-right">Сентябрь 2017</span>
             </div>
         </div>
     </li>
 
-
-
     <li  className="timeline-inverted">
         <div className="timeline-badge">
-            <a><i className="fa fa-circle invert" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
-                <h4>Экспорт данных в различные форматы - </h4>
+                <h4>Экспорт данных в различные форматы</h4>
             </div>
             <div className="timeline-body">
                 <p>Возможность экспортировать выбранную хронологию за период</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="pull-right">Сентябрь 2017</span>
             </div>
         </div>
-    </li>
-
-
-    
-    <li> <br /> <div className="timeline-label">Ноябрь 2017</div><br /></li>
-    
+    </li>    
 
     <li>
         <div className="timeline-badge">
-          <a><i className="fa fa-circle" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
@@ -245,18 +247,16 @@ const Timeline =() => (
             <div className="timeline-body">
                 <p>распространение религиозных течений</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-right">Ноябрь 2017</span>
             </div>
         </div>
     </li>
 
-    <li> <div className="timeline-label">Февраль 2018</div></li>
-    <li> <br /></li>
-
     <li  className="timeline-inverted">
         <div className="timeline-badge">
-            <a><i className="fa fa-circle invert" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
@@ -265,16 +265,16 @@ const Timeline =() => (
             <div className="timeline-body">
                 <p>Болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="pull-right">Февраль 2018</span>
             </div>
         </div>
-    </li>
+    </li>     
 
-
-        <li>
+    <li>
         <div className="timeline-badge">
-          <a><i className="fa fa-circle" id=""></i></a>
+          <img src={ft1} alt="presentation" height="50" />
         </div>
         <div className="timeline-panel">
             <div className="timeline-heading">
@@ -283,19 +283,19 @@ const Timeline =() => (
             <div className="timeline-body">
                 <p>Происхождение и распределение расс по материкам</p>
             </div>
+            <hr />
             <div className="timeline-footer">
-                <p className="text-right">Учтено данных: 0 </p>
+                <span className="text-right">Февраль 2018</span>
             </div>
         </div>
     </li>
 
 
+
     <li className="clearfix no-float"></li>
-  </ul>
-
+      </ul>
+    </div>
   </div>
-</div>
-
 );
 
 
@@ -346,13 +346,12 @@ const Blog = () => (
 const Contact = () => (
   <footer className="bg-4 text-center">
     <div className="pull-left">
-      <p>&copy;  Chronist 2017</p>
-      <p>Language</p>
+      <p>Хронист 2017</p>
       
     </div>
     <ul className="pull-right">
-      <li><a href="mailto://support@chronist.ru">Contact </a></li>
-      <li><a href="http://localhost:8080/#team"> Team </a></li>
+      <li><a href="mailto://support@chronist.ru">Email </a></li>
+      {/*<li><a href="http://localhost:8080/#team"> Team </a></li> */}
     </ul>
     
     
