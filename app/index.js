@@ -89,9 +89,11 @@ class Subscribe extends React.Component {
     <form className="form-inline" action="email.php" onSubmit={(e) => {
       e.preventDefault();
       console.log(e);
+      console.log('Trying to send email');
       <Post url="/email.php" data={this.state} >
         {(error, response, isLoading) => {
           if (error) {
+            console.log(`error: ${error}`);
             this.setState({...this.state, error});
           } else if (response != null) {
             console.log(response);
