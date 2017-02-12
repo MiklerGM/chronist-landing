@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --progress --inline",
-    "build": "webpack --progress",
+    "build": "webpack --progress --bail",
     "release": "NODE_ENV=production webpack -p --bail",
     "clean": "rm -rf dist node_modules"
   },
