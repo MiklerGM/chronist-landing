@@ -66,7 +66,6 @@ const Title = () => (
   </div>
 );
 
-
 const What = () => (
   <div className="what container text-center">
   
@@ -159,7 +158,7 @@ const Timeline =() => (
 
   {/*<!-- Arrow stuff put here-->*/}
         
-        <div className="test"><p>shit</p></div>
+        <div className="test"></div>
         <hr />
 
         <ul className="thumbnails row-fluid">
@@ -218,51 +217,6 @@ const Timeline =() => (
   </div>
 );
 
-
-const Blog = () => (
-  <div id="blog" className="article">
-  <hr />
-  <div className="container odd">
-    <div className="span8">
-          <h1>Article name first</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum ex eget porttitor sollicitudin. Morbi cursus tempor placerat. Pellentesque   suscipit tortor in orci pretium, ac facilisis ex pretium. Fusce hendrerit orci diam, vitae tristique quam porttitor eu. Donec ligula orci, ultricies in   sagittis non, porta sed lorem. Aenean interdum posuere mattis. Curabitur dignissim dictum quam, vitae malesuada velit tristique a. </p>
-          <div>
-              <div className="more label"><a href="#">Read more</a></div> 
-          </div> 
-          <div className="clear"></div>
-      </div>
-  </div>
-  <div className="container even">
-    <div className="span8">
-          <h1>Article name second</h1>
-          <p>Sed interdum massa ac pretium faucibus. Integer semper euismod lorem faucibus molestie. Aenean luctus ut metus eget dignissim. Sed tincidunt augue non   elementum pharetra. Suspendisse non feugiat urna. Etiam egestas neque euismod neque sollicitudin consectetur. Fusce facilisis augue a velit porta   scelerisque. Sed mattis justo sapien. Sed ultrices lectus diam, id vestibulum ante finibus a. </p>
-          <div>
-              <div className="more label"><a href="#">Read more</a></div> 
-          </div>     
-    </div>
-  </div>
-  <div className="container odd">
-    <div className="span8">
-          <h1>Article name third</h1>
-          <p>Sed interdum massa ac pretium faucibus. Integer semper euismod lorem faucibus molestie. Aenean luctus ut metus eget dignissim. Sed tincidunt augue non   elementum pharetra. Suspendisse non feugiat urna. Etiam egestas neque euismod neque sollicitudin consectetur. Fusce facilisis augue a velit porta   scelerisque. Sed mattis justo sapien. Sed ultrices lectus diam, id vestibulum ante finibus a. </p>
-          <div>
-              <div className="more label"><a href="#">Read more</a></div> 
-          </div>     
-    </div>
-  </div>
-  <div className="container even">
-    <div className="span8">
-          <h1>Article name fourth</h1>
-          <p>Sed interdum massa ac pretium faucibus. Integer semper euismod lorem faucibus molestie. Aenean luctus ut metus eget dignissim. Sed tincidunt augue non   elementum pharetra. Suspendisse non feugiat urna. Etiam egestas neque euismod neque sollicitudin consectetur. Fusce facilisis augue a velit porta   scelerisque. Sed mattis justo sapien. Sed ultrices lectus diam, id vestibulum ante finibus a. </p>
-          <div>
-              <div className="more label"><a href="#">Read more</a></div> 
-          </div>     
-    </div>
-  </div>  
-  <hr />
-  </div>
-);
-
 const Contact = () => (
   <footer className="bg-footer">
     <div>
@@ -297,8 +251,8 @@ var AppDescription = React.createClass({
   
   render: function () {
     // Default to the default message.
-    const article_begin = <p>"Наука развивается, и по мере своего продвижения вперёд вбирает всё новые методы и способы. Сравнительно новое явление — геоинформационные системы — оказалось прекрасным средством освоения того, что сейчас называют «пространством». По мере накопления данных — в особенности гуманитарной сферы — учёному, студенту и даже школьнику, сталкивающимся с научным поиском, с работой над исследованиями, приходится иметь дело с ростом объёма информации, количества публикаций, интерпретаций одного и того же вопроса."</p>
-    var article_end = "Обычно эта проблема решается — например, в студенческих и школьных проектах — игнорированием большой части материала, что снижает качество работ и вообще педагогически нецелесообразно. Грамотное решение лежит в другом направлении. Массив гуманитарных фактов (например, исторических, социальных и т.п.) представляется исследователю, преподавателю не как россыпь единичных событий — а как некое единое пространство. «Пространство смыслов, фактов» гораздо легче представить аудитории, осмыслить, проанализировать. Однако, объём оперативной памяти человека существенно ограничен. Для простых счётных предметов объём нашей оперативной памяти составляет всего 7±2 шт. (правило Миллера). Для сложных абстрактных понятий объём нашей оперативной памяти ещё меньше — 4±2 шт (эффект Эльштейна). Даже простое пространство, простой массив фактов в память могут «не поместится». Цель науки — открывать объективные законы. Этой цели подчинены и теоретические и экспериментальные исследования. Что такое закон? Закон есть существенное повторяющееся в явлении, объективно существующие связи, отношения между теми или иными явлениями (по В.И. Ульянову). Однако, избыток информации — точнее, те многочисленные факты, что не могут быть обработаны исследователями — превращаются в своего рода «информационный шум», который мешает установить взаимосвязи и законы. На помощь всем, кто работает в исторической, географической и прочих смежных областях приходят на помощь геоинформационные системы. Геоинформационная система (географическая информационная система, ГИС) — система сбора, хранения, анализа и графической визуализации пространственных (географических) данных и связанной с ними информации о необходимых объектах. Портал содержит информацию по большому количеству событий разного плана (политических событий, изобретений и открытий, природных явлений и т.п.), привязанных к географическим картам и расположенных хронологически. Способ представления пользователю позволяет составлять собственные подборки разноплановых событий, находить и устанавливать взаимосвязи между ними, работать с текстовыми описаниями, снабжать избранные события ссылками на внешние источники (например, научные библиотеки, публикации, видеохостинги и т.п.), иллюстрировать наглядно. Это значительно облегчит научно-педагогическую работу при преподавании истории, изучении ее в курсах ОДОД, написании учащимися проектных работ, проведении студентами и работниками вузов собственных исследований."    
+    const article_begin = <p>Наука развивается, и по мере своего продвижения вперёд вбирает всё новые методы и способы. Сравнительно новое явление — геоинформационные системы — оказалось прекрасным средством освоения того, что сейчас называют «пространством». По мере накопления данных — в особенности гуманитарной сферы — учёному, студенту и даже школьнику, сталкивающимся с научным поиском, с работой над исследованиями, приходится иметь дело с ростом объёма информации, количества публикаций, интерпретаций одного и того же вопроса.</p>
+    var article_end = <div><p>Обычно эта проблема решается — например, в студенческих и школьных проектах — игнорированием большой части материала, что снижает качество работ и вообще педагогически нецелесообразно. Грамотное решение лежит в другом направлении. Массив гуманитарных фактов (например, исторических, социальных и т.п.) представляется исследователю, преподавателю не как россыпь единичных событий — а как некое единое пространство. «Пространство смыслов, фактов» гораздо легче представить аудитории, осмыслить, проанализировать. Однако, объём оперативной памяти человека существенно ограничен. Для простых счётных предметов объём нашей оперативной памяти составляет всего 7±2 шт. (правило Миллера). Для сложных абстрактных понятий объём нашей оперативной памяти ещё меньше — 4±2 шт (эффект Эльштейна). Даже простое пространство, простой массив фактов в память могут «не поместится». Цель науки — открывать объективные законы. Этой цели подчинены и теоретические и экспериментальные исследования. Что такое закон? Закон есть существенное повторяющееся в явлении, объективно существующие связи, отношения между теми или иными явлениями (по В.И. Ульянову). Однако, избыток информации — точнее, те многочисленные факты, что не могут быть обработаны исследователями — превращаются в своего рода «информационный шум», который мешает установить взаимосвязи и законы. На помощь всем, кто работает в исторической, географической и прочих смежных областях приходят на помощь геоинформационные системы. Геоинформационная система (географическая информационная система, ГИС) — система сбора, хранения, анализа и графической визуализации пространственных (географических) данных и связанной с ними информации о необходимых объектах. Портал содержит информацию по большому количеству событий разного плана (политических событий, изобретений и открытий, природных явлений и т.п.), привязанных к географическим картам и расположенных хронологически. Способ представления пользователю позволяет составлять собственные подборки разноплановых событий, находить и устанавливать взаимосвязи между ними, работать с текстовыми описаниями, снабжать избранные события ссылками на внешние источники (например, научные библиотеки, публикации, видеохостинги и т.п.), иллюстрировать наглядно. Это значительно облегчит научно-педагогическую работу при преподавании истории, изучении ее в курсах ОДОД, написании учащимися проектных работ, проведении студентами и работниками вузов собственных исследований.</p> <span className="pull-right"> Модестов С.Ю., кандидат педагогических наук </span></div>  
     var message = article_end
     var toggler = "Показать меньше"
     var article = "continue article";
@@ -312,28 +266,29 @@ var AppDescription = React.createClass({
     return (
       <div className="container panel-body">
         <div className="media">
+          
           <div className="media-left">
             <img className="img-circle media-object" src={personArticle} alt="person" />
           </div>
+
           <div className="media-body">
-            <h4 className="media-heading">Немного науки</h4>
+            <h3 className="media-heading">Немного науки</h3>
+            {article_begin} {article_end}
           </div>
-          <div>
-          <div>
-            <p> {article_begin} {article_end} </p>
-            <span class="pull-left"> Модестов Сергей </span>
-          </div>
-          </div>
-          <div className="more label"><a href="" onClick={this.toggle}> {toggler} </a>
-          </div>
+        </div>
+        <div className="more label"><a href="" onClick={this.toggle}> {toggler} </a></div>
       </div>
-      </div>
-     );
+    );
  }
 });
 
-
-
+const Test =({article_begin, article_end})=> (
+  <div>
+            article_begin={article_begin}
+            <p> </p>
+            <span className="pull-left"> Модестов Сергей </span>
+  </div>
+);
 
 class Hello extends React.Component {
   render() {
@@ -346,6 +301,7 @@ class Hello extends React.Component {
         <AppDescription />
         <Timeline />
         <Contact />
+        <Test />
     </div>
     );
   }
