@@ -11,7 +11,7 @@
 body {
   color: #212121;
   font-weight: 400;
-  font-family:  commonTextTest, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
+  font-family:  commonText, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
@@ -23,12 +23,12 @@ p {
 
 h1 {
   font-size: 40px; 
-  font-family:  titleText, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
+  font-family:  commonText, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
 }
 
 h2 {
   font-size: 34px;
-  font-family:  titleText, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
+  font-family:  commonText, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
 }
 h3 {
   font-size: 28px;
