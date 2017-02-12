@@ -37,6 +37,10 @@ h4 {
 }
 
 h5 {
+  font-size: 22px;
+}
+
+h6 {
   font-size: 20px;
 }
 /* Navbar BEGIN */
@@ -244,13 +248,18 @@ h5 {
   .more a{
     color: black;
   }
+
+  .media-body p{
+    text-align: justify;
+  }
 /* Article Desctipion END */
 
 
 
 /* Timeline BEGIN */
   .bg-4 { 
-      background-color: #efefef;
+    background: none;
+      
       width: 100%;
       padding-top: 40px;
       padding-bottom: 40px;
@@ -264,8 +273,8 @@ h5 {
      
   }
   .img-responsive {
-      height: 150px;
-      width: 150px;
+      height: 120px;
+      width: 120px;
       
   }
   .inactive{
@@ -274,10 +283,27 @@ h5 {
     -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
   }
 
+.caption {
+  float:none;
+      position: relative;
+  clear:right;
+}
+
+.caption h5{
+    text-decoration: none;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    right: 0px;
+     left:0;
+
+}
+
   .arrow {
     width: 95%;
     height: 20%;
   }
+
 /* Timeline END */
 
 
@@ -367,10 +393,25 @@ h5 {
 /* Footer END */
 
 .test {
-      background: linear-gradient(rgba(0,0,0,.0), rgba(0,0,0,.0)), url("../images/arrow1.svg");
-      margin-top: 0px;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 10px;
       position: absolute;
-      z-index: 0;
-      width: 100%;
+      margin-top: 0px;
+      width: 90%;
       color:red;
+      margin-top: -200px;
+      margin-left: 0px;
+      z-index: 100;
+}
+
+@media (max-width: 700px) {
+  .test {
+    display: none;
+  } 
+}
+
+.row-fluid {
+  margin-top: 100px;
 }
