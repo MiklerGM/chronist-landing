@@ -85,7 +85,7 @@ h6 {
       background-size: cover;
       background-position: center center;
       color: #fff;
-      height: 550px;
+      height: 800px;
       padding-top: 50px;
       padding-bottom: 100px;
       margin-top: 0px;
@@ -121,24 +121,25 @@ h6 {
 
 /* What BEGIN*/
   .what {
-    text-align: center;
-    font-size: 28px;
-    line-height: 1.45;
-    padding-top: 80px;
-    padding-bottom: 90px;
-    max-width: 900px;
+    
+    
+    padding-top: 120px;
+    padding-bottom: 130px;
+    
   }
   /* ^ delete*/
 
   .bg-what {
     width: 90%;
-    padding-bottom: 90px;
-    padding-top: 90px;
+    padding-bottom: 130px;
+    padding-top: 130px;
+
   }
 
-  .bg-what h4{
-    text-align: left;
-    line-height: 36px;
+  .bg-what h3{
+    text-align: center;
+    line-height: 33px;
+    
   }
 
   .globus {
@@ -255,11 +256,15 @@ h6 {
 
 /* Timeline BEGIN */
   .bg-4 { 
-    background: none;
+    background: #F9F9F9;
     
-      width: 80%;
+      width: 100%;
       padding-top: 40px;
       padding-bottom: 40px;
+  }
+
+  .timeline.row {
+    width: 80%;
   }
     img {
       padding: 10px 10px;

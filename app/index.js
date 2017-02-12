@@ -17,7 +17,7 @@ const ft4 = require("./images/ft-catastrophe2.svg")
 const ft5 = require("./images/ft-discovery.svg")
 const ft6 = require("./images/ft-discovery2.svg")
 const arrow = require("./images/long_arrow.svg")
-const globus = require("./images/globus.svg")
+const globus = require("./images/globus-full.svg")
 
 const Navigation = () => (
   <nav className="navbar navbar-inverse navbar-absolute">
@@ -60,19 +60,18 @@ const Title = () => (
 
 const What = () => (
   <div id="what" className="container bg-what">
-  <div className="row">
-    <div className="col-md-6 col-sm-6">
+  
+    {/* <div className="col-md-6 col-sm-6">
       <img src={globus} alt="Big Globus Picture" className="globus"/>
     </div>
     <div className="col-md-6 col-sm-6"> 
-
+*/}
       
-      <br />
-    <h4> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.
-    При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</h4>
+    
+    <h3> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.</h3>
+     <h3>При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</h3>
     </div>
-    </div>
-  </div>
+
 );
 
 class Subscribe extends React.Component {
