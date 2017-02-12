@@ -32,15 +32,11 @@ const Navigation = () => (
     </div>
 
     <div className="collapse navbar-collapse" id="myNavbar">
-      <ul className="nav navbar-nav navbar-left">
-        <li><a href="#about">О пректе </a></li>
-        <li><a href="#features">Help/FAQ</a></li>
-        <li><a href="#blog">Блог</a></li>
-      </ul>
       <ul className="nav navbar-nav navbar-right">
-        <li><a href="#"><i className="social fa fa-vk" aria-hidden="true"></i></a></li>
-
+        <li><a href="#what">О проекте </a></li>
+        <li><a href="#AppDescription">Блог</a></li>
       </ul>
+      
     </div>
   </div>
   </nav>
@@ -63,7 +59,7 @@ const Title = () => (
 );
 
 const What = () => (
-  <div className="container bg-what">
+  <div id="what" className="container bg-what">
   <div className="row">
     <div className="col-md-6 col-sm-6">
       <img src={globus} alt="Big Globus Picture" className="globus"/>
@@ -120,9 +116,9 @@ class Subscribe extends React.Component {
 }
 
 const Timeline =() => (
-  <div id="timeline" className="container bg-4 ">
+  <div id="timeline" className="container bg-4">
         <ul className="thumbnails row ">
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft1} alt="ALT NAME" className="img-responsive" />
                     <div className="caption-fix caption text-center ">
@@ -132,7 +128,7 @@ const Timeline =() => (
                     </div>
                 </div>
             </div>
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft3} alt="ALT NAME" className="img-responsive" />
                     <div className="caption text-center">
@@ -142,7 +138,7 @@ const Timeline =() => (
                     </div>
                 </div>
             </div>
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -152,7 +148,7 @@ const Timeline =() => (
                     </div>
                 </div>
             </div>
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -162,7 +158,10 @@ const Timeline =() => (
                     </div>
                 </div>
             </div>
-            <div className="col-md-2 col-sm-2">
+        </ul>
+
+        <ul className="thumbnails row">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -172,7 +171,7 @@ const Timeline =() => (
                     </div>
                 </div>
             </div>
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -182,14 +181,14 @@ const Timeline =() => (
                     </div>
                 </div>
             </div>
-        </ul>
+        
 
-  {/*<!-- Arrow stuff put here-->*/}
+  {/*<!-- Arrow stuff put here-->
 
-        <div className="magic-arrow"><img src={arrow} /></div>
+        <div className="magic-arrow"><img src={arrow} /></div>*/}
 
-        <ul className="thumbnails row-fluid">
-            <div className="col-md-2 col-sm-2 col-md-offset-1">
+        
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -200,7 +199,7 @@ const Timeline =() => (
                 </div>
             </div>
 
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -210,8 +209,10 @@ const Timeline =() => (
                     </div>
                 </div>
             </div>
+            </ul>
 
-            <div className="col-md-2 col-sm-2">
+            <ul className="thumbnails row">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -222,7 +223,7 @@ const Timeline =() => (
                 </div>
             </div>
 
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
@@ -233,13 +234,24 @@ const Timeline =() => (
                 </div>
             </div>
 
-            <div className="col-md-2 col-sm-2">
+            <div className="col-md-3 col-sm-3">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
                     <div className="caption text-center">
                          <h5>Катастрофы</h5>
-                         <h6 className="text-muted">Февраль  2017 </h6>
+                         <h6 className="text-muted">Февраль  2018 </h6>
                         <p>Болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="col-md-3 col-sm-3">
+                <div className="thumbnail timeline-tmb">
+                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption text-center">
+                         <h5></h5>
+                         <h6 className="text-muted"></h6>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -258,6 +270,7 @@ const Contact = () => (
     <ul>
       <li><a href="mailto:contact@chronist.ru">Email </a></li>
       {/*<li><a href="http://localhost:8080/#team"> Team </a></li> */}
+      <li><a href='https://vk.com/public139815700'><i className="social fa fa-vk" aria-hidden="true"></i></a></li>
     </ul>
 
 
