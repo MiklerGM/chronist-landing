@@ -1,7 +1,7 @@
 require('./index.html')
 var React = require('react')
 var ReactDOM = require('react-dom')
-import { Post } from 'react-axios'
+var axios = require('axios')
 
 require('bootstrap/dist/css/bootstrap.css')
 require('font-awesome/css/font-awesome.css')
@@ -90,16 +90,13 @@ class Subscribe extends React.Component {
       e.preventDefault();
       console.log(e);
       console.log('Trying to send email');
-      <Post url="/email.php" data={this.state} >
-        {(error, response, isLoading) => {
-          if (error) {
-            console.log(`error: ${error}`);
-            this.setState({...this.state, error});
-          } else if (response != null) {
-            console.log(response);
-          }
-        }}
-      </Post>
+      axios.post('/email.php', this.state)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     }}>
       <div className="form-group">
         <div className="input-group">
