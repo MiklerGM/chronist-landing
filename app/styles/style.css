@@ -11,7 +11,7 @@
 body {
   color: #212121;
   font-weight: 400;
-  font-family: "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
+  font-family:  "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
@@ -77,7 +77,7 @@ h6 {
 
 /* TITLE BEGIN*/
   .bg-overlay {
-      background: linear-gradient(rgba(0,0,0,.0), rgba(0,0,0,.0)), url("../images/title.jpg");
+      background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("../images/title.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
@@ -225,32 +225,33 @@ h6 {
   .panel-body h4 {
       text-align: center;
       line-height: 1.6em;
-      font-family: 'commonText', sans-serif;
       font-weight: 700;
       color: #333;
       text-align: justify;
       max-width: 800px;
       letter-spacing: .5px;
       color: #1f1f1f;
+      text-align: justify;
       
   }  
   .panel-body p {
       text-align: left;
       line-height: 1.6em;
-      font-family: 'commonText', sans-serif;
       font-weight: 400;
       color: #333;
       max-width: 800px;
       letter-spacing: .5px;
       color: #1f1f1f;
+      text-align: justify;
   }
 
   .more a{
     color: black;
+
   }
 
   .media-body p{
-    text-align: justify;
+    
   }
 /* Article Desctipion END */
 
@@ -283,25 +284,47 @@ h6 {
     -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
   }
 
-.caption {
-  float:none;
-      position: relative;
-  clear:right;
-}
+  .caption {
+    float:none;
+    position: relative;
+    clear:right;
+  }
 
-.caption h5{
+  .caption h5{
     text-decoration: none;
     margin: 0 auto;
     width: 100%;
     text-align: center;
     right: 0px;
      left:0;
-
-}
+  }
 
   .arrow {
     width: 95%;
     height: 20%;
+  }
+
+  .magic-arrow {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 10px;
+      position: absolute;
+      margin-top: 0px;
+      width: 90%;
+      color:red;
+      margin-top: -200px;
+      margin-left: 0px;
+      z-index: 100;
+  }
+
+  @media (max-width: 700px) {
+    .magic-arrow {
+      display: none;
+    } 
+  }
+
+  .row-fluid {
+    margin-top: 100px;
   }
 
 /* Timeline END */
@@ -392,26 +415,3 @@ h6 {
   }
 /* Footer END */
 
-.test {
-
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 10px;
-      position: absolute;
-      margin-top: 0px;
-      width: 90%;
-      color:red;
-      margin-top: -200px;
-      margin-left: 0px;
-      z-index: 100;
-}
-
-@media (max-width: 700px) {
-  .test {
-    display: none;
-  } 
-}
-
-.row-fluid {
-  margin-top: 100px;
-}

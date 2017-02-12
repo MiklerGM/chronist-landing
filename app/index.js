@@ -78,7 +78,7 @@ const What = () => (
 const Subscribe = () => (
   <div id="Subscribe" className="bg-2 text-center"> 
   <p>Получайте информацию о ходе проекта и датах запуска.</p> 
-  <form className="form-inline">
+  <form className="form-inline" action="email.php">
     <div className="form-group">
       <div className="input-group">
         <input type="email" className="form-control" size="20" placeholder="Ваш E-mail" required />
@@ -162,7 +162,7 @@ const Timeline =() => (
 
   {/*<!-- Arrow stuff put here-->*/}
         
-        <div className="test"><img src={arrow} /></div>
+        <div className="magic-arrow"><img src={arrow} /></div>
    
         <ul className="thumbnails row-fluid">
             <div className="col-md-2 col-sm-2 col-md-offset-1">
