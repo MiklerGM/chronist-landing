@@ -88,7 +88,7 @@ class Subscribe extends React.Component {
     <p>Получайте информацию о ходе проекта и датах запуска.</p>
     <form className="form-inline" action="email.php" onSubmit={(e) => {
       e.preventDefault();
-      axios.post('/email.php', this.state)
+      axios.post('/email.php', `email=${this.state.email}`)
       .then(function (response) {
         console.log(response);
       })
