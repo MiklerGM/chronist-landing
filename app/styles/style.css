@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: commonTextTest;
-  src: url(../assets/RobotoSlab-Regular.ttf);
+  font-family: titleText;
+  src: url(../assets/Merriweather-Regular.ttf);
 }
 
 body {
@@ -22,11 +22,13 @@ p {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 40px; 
+  font-family:  titleText, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
 }
 
 h2 {
   font-size: 34px;
+  font-family:  titleText, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
 }
 h3 {
   font-size: 28px;
