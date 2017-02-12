@@ -88,8 +88,6 @@ class Subscribe extends React.Component {
     <p>Получайте информацию о ходе проекта и датах запуска.</p>
     <form className="form-inline" action="email.php" onSubmit={(e) => {
       e.preventDefault();
-      console.log(e);
-      console.log('Trying to send email');
       axios.post('/email.php', this.state)
       .then(function (response) {
         console.log(response);
@@ -100,8 +98,8 @@ class Subscribe extends React.Component {
     }}>
       <div className="form-group">
         <div className="input-group">
-          <input type="email" className="form-control" size="20" placeholder="Ваш E-mail" required onChange={(e) => {
-            this.setState({...this.state, email: e.target.email });
+          <input type="email" value={this.state.email} className="form-control" size="20" placeholder="Ваш E-mail" required onChange={(e) => {
+            this.setState({...this.state, email: e.target.value });
           }} />
           <div className="input-group-btn">
             <button type="submit" className="btn btn-danger">Подписаться</button>
