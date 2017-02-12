@@ -10,8 +10,8 @@
 
 body {
   /* color: #212121; */
-  color: red;
-  font-weight: 400;
+  color: black;
+  font-weight: 300;
   font-family: commonText, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -85,7 +85,7 @@ h6 {
       background-size: cover;
       background-position: center center;
       color: #fff;
-      height: 500px;
+      height: 550px;
       padding-top: 50px;
       padding-bottom: 100px;
       margin-top: 0px;
@@ -118,55 +118,6 @@ h6 {
   }
 /* Title END */  
   
-/*BLOG BEGIN */
-  .clear {
-      clear:both;    
-  }
-  .btn-info {
-      margin-right:15px;
-      text-transform:uppercase;
-      padding:10px;
-      display:block;
-      float:left;
-  }
-  .btn-info a {
-      display:block;
-      text-decoration:none;
-      width:100%;
-      height:100%;
-      color:#fff;
-  }
-  .more.label {
-      float:right;    
-  }
-  
-  .article {
-    background-color: #F5F4F0;
-  }
-  
-  .odd { 
-    background-color: #fff;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-  }
-  
-  .even {
-    background-color: #e1e1e1;
-    margin-top: 20px; 
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-  }
-  
-  
-  hr {
-    text-align:center;
-    width: 96%;
-    margin: 5px 5px;
-    padding: 2px 2px; 
-  }
-/*BLOG END */
-
 
 /* What BEGIN*/
   .what {
@@ -176,6 +127,22 @@ h6 {
     padding-top: 80px;
     padding-bottom: 90px;
     max-width: 900px;
+  }
+  /* ^ delete*/
+
+  .bg-what {
+    width: 90%;
+    padding-bottom: 90px;
+    padding-top: 90px;
+  }
+
+  .bg-what h4{
+    text-align: right;
+    line-height: 34px;
+  }
+
+  .globus {
+    size: 100%;
   }
 /* What END */
 
@@ -210,7 +177,8 @@ h6 {
 
   #Subscribe {
     margin-top: 40px;
-    margin-bottom: 40px;
+    padding-bottom: 80px;
+    z-index: 40;
   }
 
   .btn-primary {
@@ -258,9 +226,24 @@ h6 {
       text-align: justify;
   }
 
-  .more a{
+  .more{
     color: black;
+    margin-top: 10px; 
+    height: 30px;
+    width: 150px;
+    text-align: right;
+  }
 
+
+  .more:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .more:active {
+    color:black;
+    text-decoration: underline;
   }
 
   .media-body p{
@@ -273,7 +256,7 @@ h6 {
 /* Timeline BEGIN */
   .bg-4 { 
     background: none;
-      
+    
       width: 100%;
       padding-top: 40px;
       padding-bottom: 40px;
@@ -304,13 +287,14 @@ h6 {
     color:black;
   }
 
-  .caption h5,h6{
+  .caption h5, .caption p{
     text-decoration: none;
     margin: 0 auto;
     width: 100%;
     text-align: center;
     right: 0px;
     left:0;
+    color: black;
   }
 
   .arrow {

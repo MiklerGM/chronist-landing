@@ -17,6 +17,7 @@ const ft4 = require("./images/ft-catastrophe2.svg")
 const ft5 = require("./images/ft-discovery.svg")
 const ft6 = require("./images/ft-discovery2.svg")
 const arrow = require("./images/long_arrow.svg")
+const globus = require("./images/globus.svg")
 
 const Navigation = () => (
   <nav className="navbar navbar-inverse navbar-absolute">
@@ -48,25 +49,33 @@ const Navigation = () => (
 const Title = () => (
   <div id="title" className="container-fluid bg-overlay">
     <div className="row text-center">
-      <div className="test">
-        <div className="thumbnail">
+      <div className="thumbnail">
+        
           <h1> ХРОНИСТ </h1>
           <h2> Наглядная география </h2>
+          <h4>историко-географический инструмент визуализации интегрированных научных данных</h4>
         </div>
         <Subscribe />
 
-      </div>      
-    </div>
+     </div>    
+  
   </div>
 );
 
 const What = () => (
-  <div className="what container text-center">
+  <div className="container bg-what">
+  <div className="row">
+    <div className="col-md-6 col-sm-6">
+      <img src={globus} alt="Big Globus Picture" className="globus"/>
+    </div>
+    <div className="col-md-6 col-sm-6"> 
 
-      <h2>историко-географический инструмент визуализации интегрированных научных данных</h2>
+      
       <br />
     <h4> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.
     При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</h4>
+    </div>
+    </div>
   </div>
 );
 
@@ -299,7 +308,7 @@ var AppDescription = React.createClass({
             {article_begin} {article_end}
           </div>
         </div>
-        <div className="more label"><a href="" onClick={this.toggle}> {toggler} </a></div>
+         <a onClick={this.toggle} className="more pull-right"> {toggler} </a>
       </div>
     );
  }
