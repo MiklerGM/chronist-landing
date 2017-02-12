@@ -78,12 +78,12 @@ const What = () => (
 const Subscribe = () => (
   <div id="Subscribe" className="bg-2 text-center"> 
   <p>Получайте информацию о ходе проекта и датах запуска.</p> 
-  <form className="form-inline" action="email.php">
+  <form className="form-inline" action="email.php" method="post">
     <div className="form-group">
       <div className="input-group">
         <input type="email" className="form-control" size="20" placeholder="Ваш E-mail" required />
         <div className="input-group-btn">
-          <button type="button" className="btn btn-danger">Подписаться</button>
+          <button type="submit" className="btn btn-danger">Подписаться</button>
         </div>
       </div>
     </div>
