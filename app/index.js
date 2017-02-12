@@ -320,7 +320,7 @@ class Hello extends React.Component {
         <Navigation />
         <Title />
         <What />
-        <Subscribe />
+        
         <AppDescription />
         <Timeline />
         <Contact />

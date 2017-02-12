@@ -11,7 +11,7 @@
 body {
   color: #212121;
   font-weight: 400;
-  font-family:  "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
+  font-family:  commonTextTest, "Segoe UI Light", "Helvetica", "Open Sans", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
