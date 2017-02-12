@@ -94,8 +94,11 @@ h6 {
   
   }
   .thumbnail {
-     background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8));
-      text-align: justify;
+     background: linear-gradient(rgba(255,255,255,.0), rgba(255,255,255,.0));
+      text-align: center;
+      border: none;
+      color: #fff;
+
   }
   #title {
     color: black;
@@ -108,7 +111,7 @@ h6 {
   }
 
   #title .btn {
-    margin-top: 10px;
+    margin-top: 0px;
   }
 /* Title END */  
   
@@ -191,7 +194,9 @@ h6 {
     color: #000;
   }
 
-  .bg-2 { 
+  .bg-2 {
+    color: white;
+  /* 
     color: rgb(238, 238, 238);
     padding-top: 40px;
     padding-bottom: 40px;
