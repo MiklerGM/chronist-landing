@@ -83,219 +83,122 @@ const Subscribe = () => (
 );
 
 const Timeline =() => (
-  <div className="bg-4">
-    <div className="container">
-      <ul className="timeline">
-    <li>
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Географические открытия и войны</h4>
+  <div id="timeline" className="container bg-4">
+        <ul className="thumbnails row">
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft1} alt="ALT NAME" className="img-responsive" />
+                    <div className="caption">
+                         <h4>Политические границы</h4>
+                         <h5>Март 2017 </h5>
+                        <p>Изменения политических границ от античности до наших дней</p>
+                    </div>
+                </div>
             </div>
-            <div className="timeline-body">
-                <p>Интерактивное отображение военных действий и исследовательских походов.</p>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft3} alt="ALT NAME" className="img-responsive" />
+                    <div className="caption">
+                         <h4>Географические открытия и войны</h4>
+                         <h5>Март 2017 </h5>
+                        <p>Хронология развития современного общества благодаря отображению изобретений на карте мира</p>
+                    </div>
+                </div>
             </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-left"> Учтено данных: 0 </span>
-                <span className="text-right">Март 2017</span>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Изобретения</h4>
+                        <p>Хронология развития современного общества</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </li>
-    
-    <li className="timeline-inverted">
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Политические границы</h4>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Исследование данных</h4>
+                        <p>Поиск корреляций и причинно-следственных связей между историческими событиями</p>
+                    </div>
+                </div>
             </div>
-            <div className="timeline-body">
-                <p>Изменения политических границ от античности до наших дней
-                </p>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Население</h4>
+                        <p>Демографические изменения</p>
+                    </div>
+                </div>
             </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-left"> Учтено данных: 0 </span>
-                <span className="text-right">Март 2017</span>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Языки</h4>
+                        <p>Распространение и эволюция языковых групп</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </li>
-    
-    <li>
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Исследование данных</h4>
-            </div>
-            <div className="timeline-body">
-                <p>Поиск корреляций и причинно-следственных связей между историческими событиями</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-left"> Учтено данных: 0 </span>
-                <span className="text-right">Март 2017</span>
-            </div>
-        </div>
-    </li>
-    
-    <li className="timeline-inverted">
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Политические границы
+        </ul> 
 
-  </h4>
-            </div>
-            <div className="timeline-body">
-                <p>Изменения политических границ от античности до наших дней</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-left"> Учтено данных: 0 </span>
-                <span className="text-right">Март 2017</span>
-            </div>
-        </div>
-    </li>
-    
-    <li>
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Население</h4>
-            </div>
-            <div className="timeline-body">
-                <p>Демографические изменения</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-right">Июнь 2017</span>
-            </div>
-        </div>
-    </li>
-    
-    <li  className="timeline-inverted">
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Пользовательские сценарии</h4>
-            </div>
-            <div className="timeline-body">
-                <p>Добавление данных и создание собственных наборов отображаемых событий</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-right">Сентябрь 2017</span>
-            </div>
-        </div>
-    </li>
+  {/*<!-- Arrow stuff put here-->*/}
+        <hr />
 
-    <li>
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Языки</h4>
+        <ul className="thumbnails row-fluid">
+            <div className="col-md-2 col-sm-2 col-md-offset-1">
+                <div className="thumbnail">
+                    <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Пользовательские сценарии</h4>
+                        <p>Добавление данных и создание собственных наборов отображаемых событий</p>
+                    </div>
+                </div>
             </div>
-            <div className="timeline-body">
-                <p>Распространение и эволюция языковых групп</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-right">Сентябрь 2017</span>
-            </div>
-        </div>
-    </li>
 
-    <li  className="timeline-inverted">
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Экспорт данных в различные форматы</h4>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Экспорт данных в различные форматы</h4>
+                        <p>Возможность экспортировать выбранную хронологию за период</p>
+                    </div>
+                </div>
             </div>
-            <div className="timeline-body">
-                <p>Возможность экспортировать выбранную хронологию за период</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="pull-right">Сентябрь 2017</span>
-            </div>
-        </div>
-    </li>    
 
-    <li>
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Религии</h4>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Религии</h4>
+                        <p>Распространение религиозных течений</p>
+                    </div>
+                </div>
             </div>
-            <div className="timeline-body">
-                <p>распространение религиозных течений</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-right">Ноябрь 2017</span>
-            </div>
-        </div>
-    </li>
 
-    <li  className="timeline-inverted">
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Катастрофы</h4>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Нации</h4>
+                        <p>Происхождение и распределение расс по материкам</p>
+                    </div>
+                </div>
             </div>
-            <div className="timeline-body">
-                <p>Болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="pull-right">Февраль 2018</span>
-            </div>
-        </div>
-    </li>     
 
-    <li>
-        <div className="timeline-badge">
-          <img src={ft1} alt="presentation" height="50" />
-        </div>
-        <div className="timeline-panel">
-            <div className="timeline-heading">
-                <h4>Нации</h4>
+            <div className="col-md-2 col-sm-2">
+                <div className="thumbnail">
+                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
+                    <div className="caption">
+                         <h4>Катастрофы</h4>
+                        <p>Болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
+                    </div>
+                </div>
             </div>
-            <div className="timeline-body">
-                <p>Происхождение и распределение расс по материкам</p>
-            </div>
-            <hr />
-            <div className="timeline-footer">
-                <span className="text-right">Февраль 2018</span>
-            </div>
-        </div>
-    </li>
 
 
-
-    <li className="clearfix no-float"></li>
-      </ul>
-    </div>
+        </ul>
   </div>
 );
 
@@ -346,12 +249,12 @@ const Blog = () => (
 
 const Contact = () => (
   <footer className="bg-footer">
-    <div className="pull-left">
+    <div>
       <p>Хронист 2017</p>
       
     </div>
-    <ul className="pull-right">
-      <li><a href="mailto://support@chronist.ru">Email </a></li>
+    <ul>
+      <li><a href="mailto:contact@chronist.ru">Email </a></li>
       {/*<li><a href="http://localhost:8080/#team"> Team </a></li> */}
     </ul>
     
