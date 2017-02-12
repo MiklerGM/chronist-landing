@@ -16,7 +16,7 @@ const ft3 = require("./images/ft-catastrophe.svg")
 const ft4 = require("./images/ft-catastrophe2.svg")
 const ft5 = require("./images/ft-discovery.svg")
 const ft6 = require("./images/ft-discovery2.svg")
-const arrow = require("./images/arrow3.svg")
+const arrow = require("./images/long_arrow.svg")
 
 const Navigation = () => (
   <nav className="navbar navbar-inverse navbar-absolute">
@@ -116,9 +116,9 @@ const Timeline =() => (
             <div className="col-md-2 col-sm-2">
                 <div className="thumbnail timeline-tmb">
                     <img src={ft1} alt="ALT NAME" className="img-responsive" />
-                    <div className="caption text-center">
+                    <div className="caption-fix caption text-center ">
                          <h5>Политические границы</h5>
-                         <h6 className="text-muted">Март 2017 </h6>
+                         <h6 className="text-muted"> Март 2017 </h6>
                         <p>Изменения политических границ от античности до наших дней</p>
                     </div>
                 </div>
@@ -287,7 +287,7 @@ var AppDescription = React.createClass({
     }
 
     return (
-      <div className="container panel-body">
+      <div id="AppDescription" className="container panel-body">
         <div className="media">
 
           <div className="media-left">
@@ -321,8 +321,9 @@ class Hello extends React.Component {
         <Title />
         <What />
         
-        <AppDescription />
+        
         <Timeline />
+        <AppDescription />
         <Contact />
 
     </div>

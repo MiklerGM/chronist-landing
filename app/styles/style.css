@@ -1,15 +1,16 @@
 @font-face {
     font-family: commonText;
-    src: url(../assets/Lora-Regular.ttf);
+    src: url(../assets/Roboto-Light.ttf);
 }
 
 @font-face {
   font-family: titleText;
-  src: url(../assets/Merriweather-Regular.ttf);
+  src: url(../assets/Lora-Regular.ttf);
 }
 
 body {
-  color: #212121;
+  /* color: #212121; */
+  color: red;
   font-weight: 400;
   font-family: commonText, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,11 +23,13 @@ p {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 48px;
+  font-family: titleText, sans-serif;
 }
 
 h2 {
   font-size: 34px;
+  font-family: titleText, sans-serif;
 }
 h3 {
   font-size: 28px;
@@ -205,6 +208,10 @@ h6 {
   }
 
 
+  #Subscribe {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 
   .btn-primary {
     margin-left: 20px;
@@ -212,7 +219,10 @@ h6 {
 /* Subscribe END */
 
 /* Article Description BEGIN */
-  
+  #AppDescription {
+    margin-bottom: 80px;
+  }
+
   .media-left img{
       
       margin-bottom: 25px;
@@ -231,11 +241,10 @@ h6 {
       text-align: center;
       line-height: 1.6em;
       font-weight: 700;
-      color: #333;
+      color: black;
       text-align: justify;
       max-width: 800px;
       letter-spacing: .5px;
-      color: #1f1f1f;
       text-align: justify;
       
   }  
@@ -243,10 +252,9 @@ h6 {
       text-align: left;
       line-height: 1.6em;
       font-weight: 400;
-      color: #333;
+      color: black;
       max-width: 800px;
       letter-spacing: .5px;
-      color: #1f1f1f;
       text-align: justify;
   }
 
@@ -256,7 +264,7 @@ h6 {
   }
 
   .media-body p{
-    
+    text-align: justify;
   }
 /* Article Desctipion END */
 
@@ -289,19 +297,20 @@ h6 {
     -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
   }
 
-  .caption {
+  .caption-fix {
     float:none;
     position: relative;
     clear:right;
+    color:black;
   }
 
-  .caption h5{
+  .caption h5,h6{
     text-decoration: none;
     margin: 0 auto;
     width: 100%;
     text-align: center;
     right: 0px;
-     left:0;
+    left:0;
   }
 
   .arrow {
@@ -315,10 +324,11 @@ h6 {
       height: 10px;
       position: absolute;
       margin-top: 0px;
-      width: 90%;
+      width: 150%;
       color:red;
-      margin-top: -200px;
-      margin-left: 0px;
+      size: 150%;
+      margin-top: -350px;
+      margin-left: 20%;
       z-index: 100;
   }
 
@@ -329,9 +339,8 @@ h6 {
   }
 
   .row-fluid {
-    margin-top: 100px;
+    margin-top: 50px;
   }
-
 /* Timeline END */
 
 
