@@ -1,6 +1,12 @@
 {
-  "name": "",
+  "name": "chronist",
   "description": "",
+  "spdx": false,
+  "repository": {
+      "type" : "git",
+      "url" : "https://gitlab.morlov.tk/chronist/landing"
+  },
+  "license": "copyright",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
