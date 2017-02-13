@@ -135,13 +135,13 @@ const Feature = ({ feature, key }) => (
 );
 
 const FeatureRow = ({row, key}) => (
-  <ul key={key} className="thumbnails row ">
+  <ul key={key} className="row row-centered">
     {row.map(feature => <Feature feature={feature} key={getId('feature')} />)}
   </ul>
 );
 
 const Timeline = () => (
-  <div id="timeline" className="container bg-4 ">
+  <div id="timeline" className="container bg-4 timeline">
     {featureRows.map(row => <FeatureRow row={row} key={getId('row')} />)}
   </div>
 );

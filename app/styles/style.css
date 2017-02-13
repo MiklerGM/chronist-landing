@@ -8,6 +8,13 @@
   src: url(../assets/Lora-Regular.ttf);
 }
 
+
+@media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) { 
+  /* Retina-specific stuff here */
+}
+
 body {
   /* color: #212121; */
   color: black;
@@ -184,26 +191,26 @@ h6 {
 /* Timeline BEGIN */
   .bg-4 { 
     background: #F9F9F9;
-    
-      width: 100%;
-      padding-top: 40px;
-      padding-bottom: 40px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
   }
-
-  .timeline.row {
-    width: 80%;
+  .row-centered {
+    text-align: center;
+    margin: auto; 
+    max-width: 80%;
   }
-    img {
-      padding: 10px 10px;
-    }
+  .timeline img {
+    padding: 10px 10px;
+  }
   .timeline-tmb {
-      background: none;
-      border: none;
-     
+    background: none;
+    border: none;
   }
   .img-feature {
-      height: 120px;
-      width: 120px;
+    height: 120px;
+    width: 120px;
   }
   .inactive{
     filter: gray; /* IE6-9 */
@@ -262,9 +269,6 @@ h6 {
     } 
   }
 
-  .row-fluid {
-    margin-top: 50px;
-  }
 /* Timeline END */
 
 

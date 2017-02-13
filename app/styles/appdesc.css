@@ -1,6 +1,6 @@
 
 .appdesc {
-  margin: 100px ;
+  padding: 100px ;
 }
 .person {
     max-height: 250px;
@@ -15,9 +15,7 @@
     text-align: justify;
     letter-spacing: .5px;
 } 
-.appdesc row {
-  max-width: 90%;
-}
+
 .more{
   color: black;
   margin-top: 10px; 
