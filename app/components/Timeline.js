@@ -135,9 +135,9 @@ const Feature = ({ feature, key }) => (
 );
 
 const FeatureRow = ({row, key}) => (
-  <ul key={key} className="row row-centered">
+  <div key={key} className="row row-centered">
     {row.map(feature => <Feature feature={feature} key={getId('feature')} />)}
-  </ul>
+  </div>
 );
 
 const Timeline = () => (
