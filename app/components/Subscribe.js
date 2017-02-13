@@ -1,22 +1,28 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class Subscribe extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { email: '', error: '' };
+    this.state = { email: '', visibile: false, success: false };
   }
-
+  getGlyph() {
+    return this.state.success ? "fa fa-check " : "fa fa-times";
+  }
   render() {
     return (
     <div id="Subscribe" className="bg-2 text-center">
     <p>Получайте информацию о ходе проекта и датах запуска.</p>
     <form className="form-inline" action="email.php" onSubmit={(e) => {
       e.preventDefault();
+      var _this = this;
       axios.post('/email.php', `email=${this.state.email}`)
       .then(function (response) {
+        _this.setState({..._this.state, email: '', visibile: true, success: true});
         console.log(response);
       })
       .catch(function (error) {
+        _this.setState({..._this.state, visibile: true, success: false});
         console.log(error);
       });
     }}>
@@ -34,6 +40,7 @@ export default class Subscribe extends React.Component {
         <a href="https://vk.com/public139815700" alt="Вконтакте"><button type="button" className="btn btn-primary"> <i className="fa fa-vk" aria-hidden="true"></i> Вконтакте </button></a>
       </div>
     </form>
+    <span key='result' style={this.state.visibile ? {} : {display:'none'}} className={this.getGlyph()}>{' '}{this.state.success ? "Вы успешно подписались" : "Произошла ошибка"}</span>
 
     </div>
   );
