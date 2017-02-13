@@ -124,7 +124,7 @@ const Arrow = () => (
 const Feature = ({ feature, key }) => (
   <div key={key} className={`col-md-3 col-sm-3 ${feature.offset ? 'col-md-offset-1' : ''}`}>
     <div key={`${key}_thumb`} className="thumbnail timeline-tmb">
-        <img key={`${key}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive ${feature.inactive ? 'inactive' : ''}`} />
+        <img key={`${key}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
         <div key={`${key}_capt`} className="caption-fix caption text-center ">
              <h5 key={`${key}_name`}>{feature.name}</h5>
              <h6 key={`${key}_date`} className="text-muted"> {feature.date} </h6>

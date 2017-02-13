@@ -85,7 +85,7 @@ h6 {
       background-size: cover;
       background-position: center center;
       color: #fff;
-      height: 800px;
+      height: 600px;
       padding-top: 50px;
       padding-bottom: 100px;
       margin-top: 0px;
@@ -98,19 +98,15 @@ h6 {
   }
   .thumbnail {
      background: linear-gradient(rgba(255,255,255,.0), rgba(255,255,255,.0));
-      text-align: center;
       border: none;
       color: #fff;
-
   }
   #title {
     color: black;
-    
     font-size: 40px;
-    padding-top: 180px;
+    padding-top: 140px;
     padding-bottom: 120px;
-    padding-right: 200px;
-    padding-left: 200px;
+    
   }
 
   #title .btn {
@@ -199,6 +195,14 @@ h6 {
       padding-right: 20px;
   
   }
+
+  /*  @media (max-width: 700px) { */
+    .person {
+      max-height: 200px;
+      max-width: 200px;
+      padding-right: 20px;
+  }
+
   
   .panel-body {
     max-width: 900px;
@@ -272,15 +276,23 @@ h6 {
       border: none;
      
   }
-  .img-responsive {
+  .img-feature {
       height: 120px;
       width: 120px;
-      
   }
   .inactive{
     filter: gray; /* IE6-9 */
     filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
     -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  }
+
+  .inactive:hover {
+    -webkit-filter: grayscale(0%);
+    -webkit-transition: .3s ease-in-out;
+    -moz-filter: grayscale(0%);
+    -moz-transition: .3s ease-in-out;
+    -o-filter: grayscale(0%);
+    -o-transition: .3s ease-in-out;
   }
 
   .caption-fix {

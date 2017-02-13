@@ -1,6 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 
+const SocialButton = () => (
+  <div className="form-group">
+        <a href="https://vk.com/chronist" alt="Вконтакте"><button type="button" className="btn btn-primary"> <i className="fa fa-vk" aria-hidden="true"></i> Вконтакте </button></a>
+      </div>
+  );
+
 export default class Subscribe extends React.Component {
   constructor(props) {
     super(props);
@@ -36,9 +42,7 @@ export default class Subscribe extends React.Component {
           </div>
         </div>
       </div>
-      <div className="form-group">
-        <a href="https://vk.com/public139815700" alt="Вконтакте"><button type="button" className="btn btn-primary"> <i className="fa fa-vk" aria-hidden="true"></i> Вконтакте </button></a>
-      </div>
+      <SocialButton />
     </form>
     <span key='result' style={this.state.visibile ? {} : {display:'none'}} className={this.getGlyph()}>{' '}{this.state.success ? "Вы успешно подписались" : "Произошла ошибка"}</span>
 
@@ -46,3 +50,5 @@ export default class Subscribe extends React.Component {
   );
   }
 }
+
+
