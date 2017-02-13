@@ -1,0 +1,36 @@
+
+.appdesc {
+  margin: 100px ;
+}
+.person {
+    max-height: 250px;
+    max-width: 250px;
+    padding-right: 20px;
+    opacity: 0.95;
+}
+.appdesc h3, .appdesc p {
+    line-height: 1.6em;
+    font-weight: 400;
+    color: black;
+    text-align: justify;
+    letter-spacing: .5px;
+} 
+.appdesc row {
+  max-width: 90%;
+}
+.more{
+  color: black;
+  margin-top: 10px; 
+  height: 30px;
+  width: 150px;
+  text-align: right;
+}
+.more:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.more:active {
+  color:black;
+  text-decoration: underline;
+}

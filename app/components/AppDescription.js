@@ -2,6 +2,8 @@ import React from 'react';
 
 
 const personArticle = require('../images/person.jpg')
+require('../styles/appdesc.css')
+
 
 var AppDescription = React.createClass({
   getInitialState: function () {
@@ -34,15 +36,15 @@ var AppDescription = React.createClass({
     }
 
     return (
-      <div id="AppDescription" className="container panel-body">
+      <div id="AppDescription" className="container appdesc">
         <div className="row">
 
-          <div className="col-md-3 col-sm-3">
+          <div className="col-md-3 col-sm-3 col-xs-12">
             <img className="img-responsive img-circle person" src={personArticle} alt="person" />
           </div>
 
-          <div className="col-md-9 col-sm-9">
-            <h3 className="media-heading">Немного науки</h3>
+          <div className="col-md-9 col-sm-9 col-xs-12">
+            <h3>Немного науки</h3>
             {article_begin} {article_end}
           </div>
         </div>

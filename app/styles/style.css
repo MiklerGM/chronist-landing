@@ -168,8 +168,6 @@ h6 {
     background-color: #333333; /* Dark Blue */
    
   }
-
-
   #Subscribe {
     margin-top: 40px;
     padding-bottom: 80px;
@@ -180,79 +178,6 @@ h6 {
     margin-left: 20px;
   }
 /* Subscribe END */
-
-/* Article Description BEGIN */
-  #AppDescription {
-    margin-bottom: 80px;
-  }
-
-  .media-left img{
-      
-      margin-bottom: 25px;
-      margin-top: 25px;
-      width: 200px;
-      opacity: 0.9;
-      padding-right: 20px;
-  
-  }
-
-  /*  @media (max-width: 700px) { */
-    .person {
-      max-height: 200px;
-      max-width: 200px;
-      padding-right: 20px;
-  }
-
-  
-  .panel-body {
-    max-width: 900px;
-  }
-
-  .panel-body h4 {
-      text-align: center;
-      line-height: 1.6em;
-      font-weight: 700;
-      color: black;
-      text-align: justify;
-      max-width: 800px;
-      letter-spacing: .5px;
-      text-align: justify;
-      
-  }  
-  .panel-body p {
-      text-align: left;
-      line-height: 1.6em;
-      font-weight: 400;
-      color: black;
-      max-width: 800px;
-      letter-spacing: .5px;
-      text-align: justify;
-  }
-
-  .more{
-    color: black;
-    margin-top: 10px; 
-    height: 30px;
-    width: 150px;
-    text-align: right;
-  }
-
-
-  .more:hover {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .more:active {
-    color:black;
-    text-decoration: underline;
-  }
-
-  .media-body p{
-    text-align: justify;
-  }
-/* Article Desctipion END */
 
 
 
