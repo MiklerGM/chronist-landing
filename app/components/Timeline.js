@@ -63,7 +63,7 @@ const featureList = [
     desc: 'Добавление данных и создание собственных наборов отображаемых событий',
     img: ft1,
     inactive: 1,
-    offset: 1
+    offset: 0
   },
   {
     name: 'Экспорт данных',
@@ -97,54 +97,53 @@ const featureList = [
     inactive: 1,
     offset: 0
   },
-/*
   {
-    name: '?',
-    date: 'Май 2018',
-    desc: 'Future tech',
+    name: '',
+    date: '',
+    desc: '',
     img: ft6,
     inactive: 1,
     offset: 0
   },
-  */
 ]
-const featureRows = [[...featureList.slice(0,6)],[...featureList.slice(6,11)]];
+const featureRows = [[...featureList.slice(0,4)],[...featureList.slice(4,8)],[...featureList.slice(8,12)]];
 // console.log(featureRows)
 
+let ids = {row: 0, feature:0};
+const getId = (type) => {
+  const id = ids[type];
+  ids[type] = ids[type] + 1;
+  return `${type}_${id}`;
+}
 
 // {/*<!-- Arrow stuff put here-->*/}
 const Arrow = () => (
  <div className="magic-arrow"><img src={arrow} /></div>
 );
 
-const Feature = ({ feature }) => (
-  <div className={`col-md-2 col-sm-2 ${feature.offset ? 'col-md-offset-1' : ''}`}>
-    <div className="thumbnail timeline-tmb">
-        <img src={feature.img} alt="ALT NAME" className={`img-responsive ${feature.inactive ? 'inactive' : ''}`} />
-        <div className="caption-fix caption text-center ">
-             <h5>{feature.name}</h5>
-             <h6 className="text-muted"> {feature.date} </h6>
-            <p>{feature.desc}</p>
+const Feature = ({ feature, key }) => (
+  <div key={key} className={`col-md-3 col-sm-3 ${feature.offset ? 'col-md-offset-1' : ''}`}>
+    <div key={`${key}_thumb`} className="thumbnail timeline-tmb">
+        <img key={`${key}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive ${feature.inactive ? 'inactive' : ''}`} />
+        <div key={`${key}_capt`} className="caption-fix caption text-center ">
+             <h5 key={`${key}_name`}>{feature.name}</h5>
+             <h6 key={`${key}_date`} className="text-muted"> {feature.date} </h6>
+            <p key={`${key}_desc`}>{feature.desc}</p>
         </div>
     </div>
   </div>
 );
 
-const FeatureRow = ({row}) => (
-  <ul className="thumbnails row ">
-    {row.map(feature => <Feature feature={feature} />)}
+const FeatureRow = ({row, key}) => (
+  <ul key={key} className="thumbnails row ">
+    {row.map(feature => <Feature feature={feature} key={getId('feature')} />)}
   </ul>
 );
 
-class Timeline extends React.Component {
-  render () {
-    return (
-      <div id="timeline" className="container bg-4 ">
-        <FeatureRow row={featureRows[0]} />
-        <Arrow />
-        <FeatureRow row={featureRows[1]} />
-      </div>
-    );
-  }
-}
+const Timeline = () => (
+  <div id="timeline" className="container bg-4 ">
+    {featureRows.map(row => <FeatureRow row={row} key={getId('row')} />)}
+  </div>
+);
+
 export default Timeline;

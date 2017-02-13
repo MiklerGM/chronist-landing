@@ -3,6 +3,9 @@ var React = require('react')
 var ReactDOM = require('react-dom')
 var axios = require('axios')
 
+import Timeline from './components/Timeline'
+import Subscribe from './components/Subscribe'
+
 require('bootstrap/dist/css/bootstrap.css')
 require('font-awesome/css/font-awesome.css')
 require('./styles/style.css')
@@ -10,13 +13,6 @@ require('./favicon.ico')
 
 const personArticle = require('./images/person.jpg')
 const footerPattern = require('./images/test.png')
-const ft1 = require("./images/ft-invetion.svg")
-const ft2 = require("./images/ft-invetion2.svg")
-const ft3 = require("./images/ft-catastrophe.svg")
-const ft4 = require("./images/ft-catastrophe2.svg")
-const ft5 = require("./images/ft-discovery.svg")
-const ft6 = require("./images/ft-discovery2.svg")
-const arrow = require("./images/long_arrow.svg")
 const globus = require("./images/globus-full.svg")
 
 const Navigation = () => (
@@ -36,7 +32,7 @@ const Navigation = () => (
         <li><a href="#what">О проекте </a></li>
         <li><a href="#AppDescription">Блог</a></li>
       </ul>
-      
+
     </div>
   </div>
   </nav>
@@ -46,218 +42,32 @@ const Title = () => (
   <div id="title" className="container-fluid bg-overlay">
     <div className="row text-center">
       <div className="thumbnail">
-        
+
           <h1> ХРОНИСТ </h1>
           <h2> Наглядная география </h2>
           <h4>историко-географический инструмент визуализации</h4><h4> интегрированных научных данных</h4>
         </div>
         <Subscribe />
 
-     </div>    
-  
+     </div>
+
   </div>
 );
 
 const What = () => (
   <div id="what" className="container bg-what">
-  
+
     {/* <div className="col-md-6 col-sm-6">
       <img src={globus} alt="Big Globus Picture" className="globus"/>
     </div>
-    <div className="col-md-6 col-sm-6"> 
+    <div className="col-md-6 col-sm-6">
 */}
-      
-    
+
+
     <h3> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.</h3>
      <h3>При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</h3>
     </div>
 
-);
-
-class Subscribe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { email: '', error: '' };
-  }
-
-  render() {
-    return (
-    <div id="Subscribe" className="bg-2 text-center">
-    <p>Получайте информацию о ходе проекта и датах запуска.</p>
-    <form className="form-inline" action="email.php" onSubmit={(e) => {
-      e.preventDefault();
-      axios.post('/email.php', `email=${this.state.email}`)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }}>
-      <div className="form-group">
-        <div className="input-group">
-          <input type="email" value={this.state.email} className="form-control" size="20" placeholder="Ваш E-mail" required onChange={(e) => {
-            this.setState({...this.state, email: e.target.value });
-          }} />
-          <div className="input-group-btn">
-            <button type="submit" className="btn btn-danger">Подписаться</button>
-          </div>
-        </div>
-      </div>
-      <div className="form-group">
-        <a href="https://vk.com/public139815700" alt="Вконтакте"><button type="button" className="btn btn-primary"> <i className="fa fa-vk" aria-hidden="true"></i> Вконтакте </button></a>
-      </div>
-    </form>
-
-    </div>
-  );
-  }
-}
-
-const Timeline =() => (
-  <div id="timeline" className="container bg-4">
-        <ul className="thumbnails row ">
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft1} alt="ALT NAME" className="img-responsive" />
-                    <div className="caption-fix caption text-center ">
-                         <h5>Политические границы</h5>
-                         <h6 className="text-muted"> Март 2017 </h6>
-                        <p>Изменения политических границ от античности до наших дней</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft3} alt="ALT NAME" className="img-responsive" />
-                    <div className="caption text-center">
-                         <h5>Географические открытия и войны</h5>
-                         <h6 className="text-muted">Март 2017 </h6>
-                        <p>Интерактивное отображение военных действий и исследовательских походов</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Изобретения</h5>
-                         <h6 className="text-muted">Март 2017 </h6>
-                        <p>Хронология развития современного общества</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Исследование данных</h5>
-                         <h6 className="text-muted">Март 2017 </h6>
-                        <p>Поиск корреляций и причинно-следственных связей между историческими событиями</p>
-                    </div>
-                </div>
-            </div>
-        </ul>
-
-        <ul className="thumbnails row">
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Население</h5>
-                         <h6 className="text-muted">Июнь 2017 </h6>
-                        <p>Демографические изменения</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Языки</h5>
-                         <h6 className="text-muted">Сентябрь  2017 </h6>
-                        <p>Распространение и эволюция языковых групп</p>
-                    </div>
-                </div>
-            </div>
-        
-
-  {/*<!-- Arrow stuff put here-->
-
-        <div className="magic-arrow"><img src={arrow} /></div>*/}
-
-        
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Личные сценарии</h5>
-                         <h6 className="text-muted">Сентябрь  2017 </h6>
-                        <p>Добавление данных и создание собственных наборов отображаемых событий</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Экспорт данных в различные форматы</h5>
-                         <h6 className="text-muted">Сентябрь  2017 </h6>
-                        <p>Возможность экспортировать выбранную хронологию за период</p>
-                    </div>
-                </div>
-            </div>
-            </ul>
-
-            <ul className="thumbnails row">
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft6} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Религии</h5>
-                         <h6 className="text-muted">Ноябрь  2017 </h6>
-                        <p>Распространение религиозных течений</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft1} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Нации</h5>
-                         <h6 className="text-muted">Ноябрь  2017 </h6>
-                        <p>Происхождение и распределение расс по материкам</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5>Катастрофы</h5>
-                         <h6 className="text-muted">Февраль  2018 </h6>
-                        <p>Болезни, природные и техногенные катаклизмы на протяжении истории человечества</p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-md-3 col-sm-3">
-                <div className="thumbnail timeline-tmb">
-                    <img src={ft3} alt="ALT NAME" className="img-responsive inactive" />
-                    <div className="caption text-center">
-                         <h5></h5>
-                         <h6 className="text-muted"></h6>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-
-
-        </ul>
-  </div>
 );
 
 const Contact = () => (
@@ -341,8 +151,6 @@ class Hello extends React.Component {
         <Navigation />
         <Title />
         <What />
-        
-        
         <Timeline />
         <AppDescription />
         <Contact />
