@@ -37,7 +37,7 @@ var AppDescription = React.createClass({
 
     return (
       <div id="AppDescription" className="container appdesc">
-        <div className="row">
+        <div className="row row-centered">
 
           <div className="col-md-3 col-sm-3 col-xs-12">
             <img className="img-responsive img-circle person" src={personArticle} alt="person" />
@@ -47,8 +47,8 @@ var AppDescription = React.createClass({
             <h3>Немного науки</h3>
             {article_begin} {article_end}
           </div>
-        </div>
          <a onClick={this.toggle} className="more pull-right"> {toggler} </a>
+        </div>
       </div>
     );
  }

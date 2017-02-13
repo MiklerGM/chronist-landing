@@ -1,5 +1,7 @@
 import React from 'react';
 
+require('../styles/timeline.css')
+
 const ft1 = require("../images/ft-invetion.svg")
 const ft2 = require("../images/ft-invetion2.svg")
 const ft3 = require("../images/ft-catastrophe.svg")
@@ -7,6 +9,8 @@ const ft4 = require("../images/ft-catastrophe2.svg")
 const ft5 = require("../images/ft-discovery.svg")
 const ft6 = require("../images/ft-discovery2.svg")
 const arrow = require("../images/long_arrow.svg")
+
+
 
 const featureList = [
   {
@@ -141,8 +145,10 @@ const FeatureRow = ({row, key}) => (
 );
 
 const Timeline = () => (
-  <div id="timeline" className="container bg-4 timeline">
-    {featureRows.map(row => <FeatureRow row={row} key={getId('row')} />)}
+  <div id="timeline" className="bg-4  container">
+    <div className="timeline">
+      {featureRows.map(row => <FeatureRow row={row} key={getId('row')} />)}
+    </div>
   </div>
 );
 
