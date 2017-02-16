@@ -19,7 +19,7 @@ ym.init([42857239], {
   webvisor:true
 });
 
-ym('hit', '/cart');
+ym('hit', '/');
 
 
 const footerPattern = require('./images/test.png')
