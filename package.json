@@ -3,8 +3,8 @@
   "description": "",
   "spdx": false,
   "repository": {
-      "type" : "git",
-      "url" : "https://gitlab.morlov.tk/chronist/landing"
+    "type": "git",
+    "url": "https://gitlab.morlov.tk/chronist/landing"
   },
   "license": "copyright",
   "devDependencies": {
@@ -32,6 +32,7 @@
     "axios": "^0.15.3",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "react-axios": "0.0.9"
+    "react-axios": "0.0.9",
+    "react-yandex-metrika": "^1.0.2"
   }
 }

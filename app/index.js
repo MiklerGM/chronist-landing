@@ -1,16 +1,25 @@
 require('./index.html')
 var React = require('react')
-var ReactDOM = require('react-dom')
-var axios = require('axios')
+var ReactDOM = require('react-dom') 
 
 import Timeline from './components/Timeline'
 import Subscribe from './components/Subscribe'
 import AppDescription from './components/AppDescription'
+import ym from 'react-yandex-metrika';
 
 require('bootstrap/dist/css/bootstrap.css')
 require('font-awesome/css/font-awesome.css')
 require('./styles/style.css')
 require('./favicon.ico')
+
+ym.init([42857239], {
+  clickmap:true,
+  trackLinks:true,
+  accurateTrackBounce:true,
+  webvisor:true
+});
+
+ym('hit', '/cart');
 
 
 const footerPattern = require('./images/test.png')
