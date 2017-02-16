@@ -2,12 +2,18 @@ import React from 'react';
 
 require('../styles/timeline.css')
 
-const ft1 = require("../images/ft-invetion.svg")
-const ft2 = require("../images/ft-invetion2.svg")
-const ft3 = require("../images/ft-catastrophe.svg")
-const ft4 = require("../images/ft-catastrophe2.svg")
-const ft5 = require("../images/ft-discovery.svg")
-const ft6 = require("../images/ft-discovery2.svg")
+const ft1 = require("../images/Границы.svg")
+const ft2 = require("../images/Войны.svg")
+const ft3 = require("../images/Изобретения.svg")
+const ft4 = require("../images/Исследования.svg")
+const ft5 = require("../images/Нации.svg")
+const ft6 = require("../images/Языки.svg")
+const ft7 = require("../images/Настройки.svg")
+const ft8 = require("../images/Экспорт.svg")
+const ft9 = require("../images/Религии.svg")
+const ft10 = require("../images/Нации.svg")
+const ft11 = require("../images/Катастрофы.svg")
+const ft12 = require("../images/Пустая.svg")
 const arrow = require("../images/long_arrow.svg")
 
 
@@ -25,7 +31,7 @@ const featureList = [
     name: 'Географические открытия и войны',
     date: 'Март 2017',
     desc: 'Интерактивное отображение военных действий и исследовательских походов',
-    img: ft3,
+    img: ft2,
     inactive: 0,
     offset: 0
   },
@@ -33,7 +39,7 @@ const featureList = [
     name: 'Изобретения',
     date: 'Март 2017',
     desc: 'Хронология развития современного общества',
-    img: ft6,
+    img: ft3,
     inactive: 0,
     offset: 0
   },
@@ -41,7 +47,7 @@ const featureList = [
     name: 'Исследование данных',
     date: 'Март 2017',
     desc: 'Поиск корреляций и причинно-следственных связей между историческими событиями',
-    img: ft1,
+    img: ft4,
     inactive: 1,
     offset: 0
   },
@@ -49,7 +55,7 @@ const featureList = [
     name: 'Население',
     date: 'Июнь 2017',
     desc: 'Демографические изменения',
-    img: ft3,
+    img: ft5,
     inactive: 1,
     offset: 0
   },
@@ -65,7 +71,7 @@ const featureList = [
     name: 'Личные сценарии',
     date: 'Сентябрь 2017',
     desc: 'Добавление данных и создание собственных наборов отображаемых событий',
-    img: ft1,
+    img: ft7,
     inactive: 1,
     offset: 0
   },
@@ -73,7 +79,7 @@ const featureList = [
     name: 'Экспорт данных',
     date: 'Сентябрь 2017',
     desc: 'Возможность экспортировать выбранную хронологию за период',
-    img: ft3,
+    img: ft8,
     inactive: 1,
     offset: 0
   },
@@ -81,7 +87,7 @@ const featureList = [
     name: 'Религии',
     date: 'Ноябрь 2017',
     desc: 'Распространение религиозных течений',
-    img: ft6,
+    img: ft9,
     inactive: 1,
     offset: 0
   },
@@ -89,7 +95,7 @@ const featureList = [
     name: 'Нации',
     date: 'Ноябрь 2017',
     desc: 'Происхождение и распределение расс по материкам',
-    img: ft3,
+    img: ft10,
     inactive: 1,
     offset: 0
   },
@@ -97,7 +103,7 @@ const featureList = [
     name: 'Катастрофы',
     date: 'Февраль 2018',
     desc: 'Болезни, природные и техногенные катаклизмы на протяжении истории человечества',
-    img: ft6,
+    img: ft11,
     inactive: 1,
     offset: 0
   },
@@ -105,7 +111,7 @@ const featureList = [
     name: '',
     date: '',
     desc: '',
-    img: ft6,
+    img: ft12,
     inactive: 1,
     offset: 0
   },
