@@ -1,25 +1,19 @@
-require('./index.html')
-var React = require('react')
-var ReactDOM = require('react-dom') 
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 import Timeline from './components/Timeline'
 import Subscribe from './components/Subscribe'
 import AppDescription from './components/AppDescription'
+
+import {Initializer as YM} from 'react-yandex-metrika';
 import ym from 'react-yandex-metrika';
+
 
 require('bootstrap/dist/css/bootstrap.css')
 require('font-awesome/css/font-awesome.css')
 require('./styles/style.css')
 require('./favicon.ico')
 
-ym.init([42857239], {
-  clickmap:true,
-  trackLinks:true,
-  accurateTrackBounce:true,
-  webvisor:true
-});
-
-ym('hit', '/');
 
 
 const footerPattern = require('./images/test.png')
@@ -66,13 +60,6 @@ const Title = () => (
 const What = () => (
   <div id="what" className="container bg-what">
 
-    {/* <div className="col-md-6 col-sm-6">
-      <img src={globus} alt="Big Globus Picture" className="globus"/>
-    </div>
-    <div className="col-md-6 col-sm-6">
-  */}
-
-
     <h3> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.</h3>
      <h3>При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</h3>
     </div>
@@ -90,21 +77,24 @@ const Contact = () => (
       {/*<li><a href="http://localhost:8080/#team"> Team </a></li> */}
       <li><a href='https://vk.com/chronist'><i className="social fa fa-vk" aria-hidden="true"></i></a></li>
     </ul>
-
-
-
   </footer>
 );
 
+class Test extends React.Component {
+  constructor() {
+    super();
 
+    // Add your tracking ID created from YM
+    ym.init([42866674]);
+    // This just needs to be called once since we have no routes in this case.
+    ym('hit', '/');
+  }
 
-const Test =({})=> (
-  <div>
-            article_begin={article_begin}
-            <p> </p>
-            <span className="pull-left"> Модестов Сергей </span>
-  </div>
-);
+  render() {
+    return <hr />;
+  }
+}
+
 
 class Hello extends React.Component {
   render() {
@@ -115,8 +105,9 @@ class Hello extends React.Component {
         <What />
         <Timeline />
         <AppDescription />
+        <Test />
         <Contact />
-
+        <YM />
     </div>
     );
   }
