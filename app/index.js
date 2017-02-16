@@ -1,5 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+require('./index.html')
+
+var React = require('react')
+var ReactDOM = require('react-dom')
 
 import Timeline from './components/Timeline'
 import Subscribe from './components/Subscribe'
@@ -13,7 +15,6 @@ require('bootstrap/dist/css/bootstrap.css')
 require('font-awesome/css/font-awesome.css')
 require('./styles/style.css')
 require('./favicon.ico')
-
 
 
 const footerPattern = require('./images/test.png')
@@ -66,32 +67,31 @@ const What = () => (
 
 );
 
-const Contact = () => (
-  <footer className="bg-footer">
+
+
+ 
+
+class Footer extends React.Component {
+  constructor() {
+    super();
+
+    // Initializing tracking ID created from YM
+    ym.init([42857239]);
+    // This just needs to be called once to grab stats
+    ym('hit', '/');
+  }
+
+  render() {
+    return   <footer className="bg-footer">
     <div>
       <p>Хронист 2017</p>
-
     </div>
     <ul>
       <li><a href="mailto:contact@chronist.ru">Email </a></li>
       {/*<li><a href="http://localhost:8080/#team"> Team </a></li> */}
       <li><a href='https://vk.com/chronist'><i className="social fa fa-vk" aria-hidden="true"></i></a></li>
     </ul>
-  </footer>
-);
-
-class Test extends React.Component {
-  constructor() {
-    super();
-
-    // Add your tracking ID created from YM
-    ym.init([42866674]);
-    // This just needs to be called once since we have no routes in this case.
-    ym('hit', '/');
-  }
-
-  render() {
-    return <hr />;
+  </footer>;
   }
 }
 
@@ -105,9 +105,8 @@ class Hello extends React.Component {
         <What />
         <Timeline />
         <AppDescription />
-        <Test />
-        <Contact />
         <YM />
+        <Footer />        
     </div>
     );
   }
