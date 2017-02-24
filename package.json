@@ -18,9 +18,7 @@
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.1"
+    "url-loader": "^0.5.7"
   },
   "scripts": {
     "dev": "webpack-dev-server --progress --inline",
@@ -33,6 +31,8 @@
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "react-axios": "0.0.9",
-    "react-yandex-metrika": "^1.0.2"
+    "react-yandex-metrika": "^1.0.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
   }
 }

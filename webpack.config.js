@@ -1,6 +1,5 @@
-var path = require('path')
-var webpack = require('webpack')
-
+const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
     entry: {
@@ -11,60 +10,50 @@ module.exports = {
         filename: '[name].js'
     },
     resolve: {
-        root: [
-            path.resolve('./node_modules')
-        ],
-    },
-    resolveLoader: {
-        modulesDirectories: [
-            path.resolve('./node_modules')
+      modules: [
+        path.join(__dirname, "app"),
+        "node_modules"
         ]
     },
-    babel: {
-        compact: false,
-        cacheDirectory: true,
-        presets: [
-            require.resolve('babel-preset-es2015'),
-            require.resolve('babel-preset-react'),
-        ],
-        plugins: [
-            require.resolve('babel-plugin-transform-object-rest-spread'),
-        ],
-    },
+    
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
-                loaders: ['babel']
+                enforce: "pre",
+                exclude: ['/node_modules/'],
+                use: [{
+                  loader: 'babel-loader',
+                  options: { presets: ['es2015', 'react'], plugins: 'transform-object-rest-spread'}
+                }]
             },
             {
                 test: /\.css$/,
-                loaders: ['style', 'css']
+                use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                loaders: ['url?limit=4096&name=[name].[ext]']
+                use: ['url-loader?limit=4096&name=[name].[ext]']
             },
             {
                 test: /\.(html|ico)$/,
-                loaders: ['file?name=[name].[ext]']
+                use: ['file-loader?name=[name].[ext]']
             },
             {
                 test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=application/font-woff"
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
             }, {
                 test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=application/font-woff"
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
             }, {
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=application/octet-stream"
+                loader: "url-loader?limit=10000&mimetype=application/octet-stream"
             }, {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "file"
+                loader: "file-loader"
             }, {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: "url?limit=10000&mimetype=image/svg+xml"
+                loader: "url-loader?limit=10000&mimetype=image/svg+xml"
             }
         ]
     },
@@ -79,11 +68,6 @@ module.exports = {
         },
     },
     plugins: (process.env.NODE_ENV == 'production') ? [
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-            },
-        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
@@ -91,4 +75,5 @@ module.exports = {
         }),
         new webpack.optimize.DedupePlugin(),
     ] : [],
-}
+        
+};
