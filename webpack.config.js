@@ -6,8 +6,8 @@ module.exports = {
         app: path.resolve(__dirname, 'app'),
     },
     output: {
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
     },
     resolve: {
       modules: [
@@ -70,12 +70,15 @@ module.exports = {
         },
     },
     plugins: (process.env.NODE_ENV == 'production') ? [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            },
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             }
         }),
-        new webpack.optimize.DedupePlugin(),
     ] : [],
-        
 };

@@ -89,6 +89,7 @@ class Footer extends React.Component {
 }
 
 
+
 class Hello extends React.Component {
   render() {
     return (
@@ -105,7 +106,9 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Hello />,
-  document.getElementById('app')
-);
+
+ReactDOM.render((
+  <Hello />
+), document.getElementById('app'));
+
+
