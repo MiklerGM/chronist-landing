@@ -11,14 +11,11 @@ import {Initializer as YM} from 'react-yandex-metrika';
 import ym from 'react-yandex-metrika';
 
 
-require('bootstrap/dist/css/bootstrap.css')
-require('font-awesome/css/font-awesome.css')
-require('./styles/style.css')
-require('./favicon.ico')
+import 'bootstrap/less/bootstrap.less'
+import styles from './styles/style.less'
+import './favicon.ico'
+import './styles/fontello.less'
 
-
-const footerPattern = require('./images/test.png')
-const globus = require("./images/globus-full.svg")
 
 const Navigation = () => (
   <nav className="navbar navbar-inverse navbar-absolute">
@@ -64,11 +61,7 @@ const What = () => (
     <h3> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.</h3>
      <h3>При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</h3>
     </div>
-
 );
-
-
-
  
 
 class Footer extends React.Component {
@@ -89,7 +82,7 @@ class Footer extends React.Component {
     <ul>
       <li><a href="mailto:contact@chronist.ru">Email </a></li>
       {/*<li><a href="http://localhost:8080/#team"> Team </a></li> */}
-      <li><a href='https://vk.com/chronist'><i className="social fa fa-vk" aria-hidden="true"></i></a></li>
+      <li><a href='https://vk.com/chronist'><span className="social fa icon-vkontakte" aria-hidden="true"></span></a></li>
     </ul>
   </footer>;
   }

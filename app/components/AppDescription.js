@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const personArticle = require('../images/person.jpg')
-require('../styles/appdesc.css')
+require('../styles/appdesc.less')
 
 
 var AppDescription = React.createClass({

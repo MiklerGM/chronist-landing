@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const SocialButton = () => (
   <div className="form-group">
-        <a href="https://vk.com/chronist" alt="Вконтакте"><button type="button" className="btn btn-primary"> <i className="fa fa-vk" aria-hidden="true"></i> Вконтакте </button></a>
+        <a href="https://vk.com/chronist" alt="Вконтакте"><button type="button" className="btn btn-primary"> <i className="icon-vkontakte" aria-hidden="true"></i> Вконтакте </button></a>
       </div>
   );
 

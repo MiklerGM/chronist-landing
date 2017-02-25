@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('../styles/timeline.css')
+import '../styles/timeline.less'
 
 const ft1 = require("../images/feature-borders.svg")
 const ft2 = require("../images/feature-war.svg")
