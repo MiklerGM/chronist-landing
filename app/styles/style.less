@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: commonText;
     src: url(../assets/Roboto-Light.ttf);
@@ -10,6 +11,14 @@
 
 body {
   /* color: #212121; */
+  background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("../images/back.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  /* parallax thing */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: black;
   font-weight: 300;
   font-family: commonText, sans-serif;
@@ -47,6 +56,9 @@ h6 {
   font-size: 20px;
 }
 
+.red {color:red;
+      background-color: blue;}
+
 .container {
   width: 100%;
   padding: 100px 40px;
@@ -58,41 +70,75 @@ h6 {
   max-width: 100%;
 }
 
+.col-centered{
+    margin: 0 auto;
+    float: none;
+}
+
 /* Navbar BEGIN */
-  .navbar {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+
+   
+  ul.topnav {
+    list-style-type: none;
+    overflow: hidden;
     background: none;
-    position: absolute;
-    z-index: 1000;
-    width: 100%;
-    height: 60px;
-    max-height: 60px;
-    border: none;
+    padding: 20px 20px;
   }
-
-  .nav {
-    color: red;
-    z-index: 100;
+  
+  ul.topnav li {float: left;}
+  
+  ul.topnav li a {
+    display: inline-block;
+    color: #9d9d9d;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
   }
-
-
-
+  
+  ul.topnav li a:hover {background-color: none;}
+  
+  ul.topnav li.icon {display: none;}
+  
+  @media screen and (max-width:400px) {
+    ul.topnav li:not(:first-child) {display: none;}
+    ul.topnav li.icon {
+      float: right;
+      display: inline-block;
+    }
+  }
+  
+  @media screen and (max-width:400px) {
+    ul.topnav.responsive {position: relative;}
+    ul.topnav.responsive li.icon {
+      background: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  
+    ul.topnav.responsive li {
+      float: none;
+      display: inline;
+    }
+    ul.topnav.responsive li a {
+      display: block;
+      text-align: left;
+    }
+  }
 /* Navbar END */
 
 
 /* TITLE BEGIN*/
   .bg-overlay {
-      background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("../images/back.png");
+      /*background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("../images/back.png"); */
+      background-color: transparent;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center;
-      color: #fff;
-      height: 600px;
-      padding-top: 50px;
-      padding-bottom: 100px;
+
+      padding-top: 10px;
+      padding-bottom: 10px;
       margin-top: 0px;
       /* parallax thing */
       background-attachment: fixed;
@@ -109,8 +155,8 @@ h6 {
   #title {
     color: black;
     font-size: 40px;
-    padding-top: 140px;
-    padding-bottom: 120px;
+    padding-top: 80px;
+    padding-bottom: 20px;
     
   }
 
@@ -133,7 +179,8 @@ h6 {
   /* ^ delete*/
 
   .bg-what {
-    width: 90%;
+    background-color: white;
+    width: 100%;
     padding-bottom: 130px;
     padding-top: 130px;
 
@@ -185,6 +232,14 @@ h6 {
 
   .btn-primary {
     margin-left: 20px;
+  }
+
+  .input-group {
+    float:none;
+    max-width: 300px;
+    text-align: center;
+     margin: 0 auto;
+    float: none;
   }
 /* Subscribe END */
 
@@ -273,3 +328,4 @@ h6 {
     text-decoration: underline;
   }
 /* Footer END */
+
