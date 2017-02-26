@@ -32,8 +32,8 @@ export default class Subscribe extends React.Component {
         console.log(error);
       });
     }}>
-      <div className="form-group">
-        <div className="input-group">
+      <div className="form-group ">
+        <div className="input-group col-centered">
           <input type="email" value={this.state.email} className="form-control" size="20" placeholder="Ваш E-mail" required onChange={(e) => {
             this.setState({...this.state, email: e.target.value });
           }} />
