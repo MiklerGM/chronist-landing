@@ -25,6 +25,7 @@ class Navigation extends React.Component {
     {
       isOpen: false,
       themeName: "nav topnav",
+      style:{float:'right'},
     }
   };
 
@@ -34,21 +35,23 @@ class Navigation extends React.Component {
   };
 
   render() {
-  
+
   if (!this.state.isOpen) {
     this.state.themeName = "topnav nav " ;
+    this.state.style = {float:'right'};
   } else {
     this.state.themeName = "topnav nav responsive";
+    this.state.style = {float:'none'};
   }
 
-  let style = {float:'right'};
+  
 
   return (
  <div className="container-fluid">
     <ul className={this.state.themeName}>
     <li><a href="#home">Хронист</a></li>
-    <li style={style}><a href="#AppDescription">Блог</a></li>
-    <li style={style}><a href="#what">О проекте </a></li>    
+    <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
+    <li style={this.state.style}><a href="#what">О проекте </a></li>    
     <li className="icon">
       <a onClick={this.toggle}>☰</a>
     </li>

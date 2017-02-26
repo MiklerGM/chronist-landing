@@ -91,30 +91,37 @@ h6 {
     display: inline-block;
     color: #9d9d9d;
     text-align: center;
-    padding: 14px 16px;
+    padding: 20px 20px;
     text-decoration: none;
     transition: 0.3s;
   }
   
   ul.topnav li a:hover {background-color: none;}
   
-  ul.topnav li.icon {display: none;}
+  ul.topnav li.icon {display: none; }
   
-  @media screen and (max-width:400px) {
+  @media screen and (max-width:600px) {
     ul.topnav li:not(:first-child) {display: none;}
     ul.topnav li.icon {
       float: right;
       display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-top: 20px;
+      padding-right: 20px;
     }
   }
   
-  @media screen and (max-width:400px) {
+  @media screen and (max-width:600px) {
     ul.topnav.responsive {position: relative;}
     ul.topnav.responsive li.icon {
       background: none;
       position: absolute;
-      right: 0;
       top: 0;
+      right: 0;
+      padding-top: 20px;
+      padding-right: 20px;
     }
   
     ul.topnav.responsive li {
