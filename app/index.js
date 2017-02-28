@@ -47,7 +47,7 @@ class Navigation extends React.Component {
   
 
   return (
- <div className="container-fluid">
+ <div id="home" className="container-fluid">
     <ul className={this.state.themeName}>
     <li><a href="#home">Хронист</a></li>
     <li style={this.state.style}><a href="#AppDescription">Блог</a></li>

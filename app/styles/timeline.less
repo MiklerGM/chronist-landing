@@ -21,18 +21,18 @@
   width: 120px;
 }
 .inactive{
-  filter: gray; /* IE6-9 */
-  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
-  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  -webkit-filter: grayscale(1);
+  -webkit-transition: .4s ease-out 0.4s;
+  -moz-filter: grayscale(1) 0.4s;
+  -moz-transition: .4s ease-out 0.4s;
+  -o-filter: grayscale(1) 0.4s;
+  -o-transition: .4s ease-in-out 0.4s;
 }
+
 .inactive:hover {
-  -webkit-filter: grayscale(0%);
-  -webkit-transition: .3s ease-in-out;
-  -moz-filter: grayscale(0%);
-  -moz-transition: .3s ease-in-out;
-  -o-filter: grayscale(0%);
-  -o-transition: .3s ease-in-out;
+  filter: grayscale(0);
 }
+
 .caption-fix {
   float:none;
   position: relative;
