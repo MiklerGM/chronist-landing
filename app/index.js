@@ -64,14 +64,14 @@ class Navigation extends React.Component {
 const Title = () => (
   <div id="title" className="container-fluid bg-overlay">
     <div className="row text-center">
-      <div className="thumbnail">
+      
 
           <h1> ХРОНИСТ </h1>
           <h2> Наглядная география </h2>
           <h4>историко-географический инструмент визуализации</h4><h4> интегрированных научных данных</h4>
         </div>
         <Subscribe />
-     </div>
+     
 
   </div>
 );
