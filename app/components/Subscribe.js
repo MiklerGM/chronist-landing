@@ -13,7 +13,7 @@ export default class Subscribe extends React.Component {
     this.state = { email: '', visibile: false, success: false };
   }
   getGlyph() {
-    return this.state.success ? "fa fa-check " : "fa fa-times";
+    return this.state.success ? "fa icon-check " : "fa icon-cancel";
   }
   render() {
     return (

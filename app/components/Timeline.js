@@ -1,19 +1,18 @@
 import React from 'react';
+import '../styles/timeline.less';
 
-import '../styles/timeline.less'
-
-const ft1 = require('../images/feature-borders.svg')
-const ft2 = require('../images/feature-war.svg')
-const ft3 = require('../images/feature-invention.svg')
-const ft4 = require('../images/feature-research.svg')
-const ft5 = require('../images/feature-demography.svg')
-const ft6 = require('../images/feature-language.svg')
-const ft7 = require('../images/feature-settings.svg')
-const ft8 = require('../images/feature-export.svg')
-const ft9 = require('../images/feature-religion.svg')
-const ft10 = require('../images/feature-nations.svg')
-const ft11 = require('../images/feature-disaster.svg')
-const ft12 = require('../images/feature-empty.svg')
+const ft1 = require('../images/feature-borders.svg');
+const ft2 = require('../images/feature-war.svg');
+const ft3 = require('../images/feature-invention.svg');
+const ft4 = require('../images/feature-research.svg');
+const ft5 = require('../images/feature-demography.svg');
+const ft6 = require('../images/feature-language.svg');
+const ft7 = require('../images/feature-settings.svg');
+const ft8 = require('../images/feature-export.svg');
+const ft9 = require('../images/feature-religion.svg');
+const ft10 = require('../images/feature-nations.svg');
+const ft11 = require('../images/feature-disaster.svg');
+const ft12 = require('../images/feature-empty.svg');
 
 const featureList = [
   {
@@ -112,38 +111,39 @@ const featureList = [
     inactive: 1,
     offset: 0
   },
-]
+];
+
 const featureRows = [[...featureList.slice(0,4)],[...featureList.slice(4,8)],[...featureList.slice(8,12)]];
 
-let ids = {row: 0, feature:0};
+let ids = { row: 0, feature:0 };
 const getId = (type) => {
   const id = ids[type];
   ids[type] = ids[type] + 1;
   return `${type}_${id}`;
-}
+};
 
 const Feature = ({ feature, gkey }) => (
   <div key={gkey} className={`col-md-3 col-sm-3 ${feature.offset ? 'col-md-offset-1' : ''}`}>
     <div key={`${gkey}_thumb`} className="thumbnail timeline-tmb">
-        <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
-        <div key={`${gkey}_capt`} className="caption-fix caption text-center ">
-             <h5 key={`${gkey}_name`}>{feature.name}</h5>
-             <h6 key={`${gkey}_date`} className="text-muted"> {feature.date} </h6>
-            <p key={`${gkey}_desc`}>{feature.desc}</p>
-        </div>
+      <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
+      <div key={`${gkey}_capt`} className="caption-fix caption text-center ">
+        <h5 key={`${gkey}_name`}>{feature.name}</h5>
+        <h6 key={`${gkey}_date`} className="text-muted"> {feature.date} </h6>
+        <p key={`${gkey}_desc`}>{feature.desc}</p>
+      </div>
     </div>
   </div>
 );
 
-const FeatureRow = ({row, gkey}) => (
+const FeatureRow = ({ row, gkey }) => (
   <div key={gkey} className="row row-centered">
     {row.map(feature => <Feature feature={feature} key={`f_${ids.feature}`} gkey={getId('feature')} />)}
   </div>
 );
 
 const processRow = (row) => {
-  return <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />
-}
+  return <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />;
+};
 
 const Timeline = () => (
   <div id="timeline" className="bg-4  container">
