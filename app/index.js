@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bootstrap/less/bootstrap.less';
+import ym from 'react-yandex-metrika';
 
-import Timeline from './components/Timeline';
-import Subscribe from './components/Subscribe';
-import AppDescription from './components/AppDescription';
-import Footer from './components/Footer';
 
 import './styles/style.less';
 import './favicon.ico';
 import './styles/fontello.less';
 import './index.html';
 
-class Navigation extends React.Component {
+import Home from './components/Home';
+import Blog from './components/Blog';
+
+if (process.env.NODE_ENV === 'production') {
+  ym.init([42866674]);
+}
+
+
+class Hello extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -23,10 +29,17 @@ class Navigation extends React.Component {
     };
   }
 
+  componentDidMount() {
+    ym('hit', '/');
+    // console.log('ym fired');
+  }
+
   toggle(e) {
     e.preventDefault();
     this.setState({ isOpen: !this.state.isOpen });
   }
+
+
 
   render() {
     if (!this.state.isOpen) {
@@ -38,52 +51,23 @@ class Navigation extends React.Component {
     }
 
     return (
-      <div id="home" className="container-fluid">
-        <ul className={this.state.themeName}>
-          <li><a href="#home">Хронист</a></li>
-          <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
-          <li style={this.state.style}><a href="#what">О проекте </a></li>
-          <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
-        </ul>
-      </div>
+      <Router onUpdate={pageView} >
+        <div id="home" className="container-fluid">
+          <ul className={this.state.themeName}>
+            <li><Link to="/">Хронист</Link></li>
+            <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
+            <li style={this.state.style}><a href="#what">О проекте </a></li>
+            {/* <li style={this.state.style}><Link to="/blog">Blog</Link></li> */}
+            <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
+          </ul>
+
+          <Route exact path="/" component={Home} />
+          <Route path="/blog" component={Blog} />
+        </div>
+      </Router>
     );
   }
 }
-
-const Title = () => (
-  <div id="title" className="container-fluid bg-overlay">
-    <div className="row text-center">
-      <h1> ХРОНИСТ </h1>
-      <h2> Наглядная география </h2>
-      <h4>историко-географический инструмент визуализации</h4>
-      <h4> интегрированных научных данных</h4>
-    </div>
-    <Subscribe />
-  </div>
-);
-
-const What = () => (
-  <div id="what" className="container-fluid bg-what">
-    <h3> Существующие инструменты не позволяют наглядно проследить взаимосвязи между историческими событиями в разных регионах.</h3>
-    <h3>При помощи Хрониста можно не только решить эту проблему, но и самостоятельно отделить важные события от неважных, добавить новые, парой кликов собрать доклад или интерактивную презентацию, проверить свои догадки при помощи научно подтверждённых данных, расширить кругозор и в простой и занимательной форме вывести собственные причинно-следственные связи в мировой истории.</h3>
-  </div>
-);
-
-class Hello extends React.Component {
-  render() {
-    return (
-      <div className="app">
-        <Navigation />
-        <Title />
-        <What />
-        <Timeline />
-        <AppDescription />
-        <Footer />
-      </div>
-    );
-  }
-}
-
 
 ReactDOM.render((
   <Hello />

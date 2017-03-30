@@ -36,6 +36,10 @@ module.exports = {
         use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'less-loader']
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.(png|jpg|gif)$/,
         use: ['url-loader?limit=4096&name=[name].[ext]']
       },
