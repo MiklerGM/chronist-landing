@@ -51,7 +51,7 @@ class Hello extends React.Component {
     }
 
     return (
-      <Router onUpdate={pageView} >
+      <Router >
         <div id="home" className="container-fluid">
           <ul className={this.state.themeName}>
             <li><Link to="/">Хронист</Link></li>
