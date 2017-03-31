@@ -8,7 +8,7 @@
 }
 body {
   /* color: #212121; */
-  background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("../images/back.png");
+  background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("../images/back.jpg");
   background-color: transparent;
   background-repeat: no-repeat;
   /* parallax thing */
@@ -16,6 +16,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   color: black;
   font-weight: 300;
   font-family: commonText, sans-serif;
@@ -23,33 +24,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
 }
+@media screen and (max-width: 768px) {
+  body {
+    background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), url("../images/back.jpg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 25% 0%;
+  }
+}
 h1 {
-  font-size: 48px;
+  font-size: 44px;
   font-family: titleText, sans-serif;
 }
 h2 {
-  font-size: 34px;
+  font-size: 30px;
   font-family: titleText, sans-serif;
 }
 h3 {
-  font-size: 28px;
+  font-size: 24px;
+  line-height: 30px;
 }
 h4 {
-  font-size: 24px;
-}
-h5 {
-  font-size: 22px;
-}
-h6 {
   font-size: 20px;
 }
-p {
+h5 {
+  font-size: 18px;
+}
+h6 {
   font-size: 16px;
+}
+p {
+  font-size: 14px;
 }
 
 .container {
-  width: 100%;
-  padding: 100px 40px;
+  padding: 10px 20px;
+  max-width: 1040px;
 }
 
 // .container-fluid {
@@ -83,7 +93,7 @@ p {
   color: #fff;
   background-color: transparent;
   font-size: 40px;
-  padding-top: 80px;
+  padding-top: 10px;
   padding-bottom: 20px;
   & .btn {
     margin-top: 0px;
@@ -95,7 +105,7 @@ p {
   background-color: white;
   width: 100%;
   padding-bottom: 130px;
-  padding-top: 130px;
+  padding-top: 50px;
   line-height: 33px;
   text-align: center;
 }

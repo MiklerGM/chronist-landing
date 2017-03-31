@@ -13,8 +13,8 @@ class YMetrika extends React.Component {
 
     componentDidMount() {
       // Initializing tracking ID created from YM
-      // ym.init([42857239]);
-
+      // ym.init([42857239]); <- Alice id
+      // ym.init([42866674]); <- Padavan id
       // This just needs to be called once to grab stats
       ym('hit', '/');
     }

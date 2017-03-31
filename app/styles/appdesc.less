@@ -1,5 +1,7 @@
-.appdesc {
+#appdesc {
   background-color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
   & h3,& p {
     line-height: 1.6em;
     font-weight: 400;
@@ -9,6 +11,23 @@
   }
   // &.row{width: 100%;}
 }
+
+.bg-appdesc {
+  background-color: white;
+  width: 100%;
+  padding-bottom: 130px;
+  padding-top: 130px;
+  line-height: 33px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .col-sm-4 .person {
+    text-align: center;
+    margin: auto;
+  }
+}
+
 
 .more{
   color: black;
@@ -32,9 +51,14 @@
 }
 
 .person {
-    max-height: 250px;
-    max-width: 250px;
-    padding-right: 20px;
-    opacity: 0.95;
+  //  max-height: 250px;
+  //  max-width: 250px;
+  //  padding-right: 20px;
+  //  opacity: 0.95;
+  border: 10px solid transparent;
+  margin-bottom: 25px;
+  width: 70%;
+  height: 70%;
+  opacity: 0.75;
 }
 
