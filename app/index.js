@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bootstrap/less/bootstrap.less';
+import { Initializer as YM } from 'react-yandex-metrika';
 import ym from 'react-yandex-metrika';
 
-
-import './styles/style.less';
+import './styles/nav-router.less';
 import './favicon.ico';
 import './styles/fontello.less';
 import './index.html';
@@ -31,10 +31,10 @@ class Hello extends React.Component {
 
   componentDidMount() {
     ym('hit', '/');
-    // console.log('ym fired');
+    console.log('ym fired');
   }
 
-  toggle(e) {
+  toggle(e) {5
     e.preventDefault();
     this.setState({ isOpen: !this.state.isOpen });
   }
@@ -61,6 +61,7 @@ class Hello extends React.Component {
             <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
           </ul>
 
+          <YM />
           <Route exact path="/" component={Home} />
           <Route path="/blog" component={Blog} />
         </div>

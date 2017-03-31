@@ -30,8 +30,8 @@ class AppDescription extends React.Component {
     }
 
     return (
-      <div id="AppDescription" className="container appdesc">
-        <div className="row row-centered">
+      <div id="AppDescription" className="row">
+        <div className="row row-centered container appdesc">
 
           <div className="col-md-3 col-sm-3 col-xs-12">
             <img className="img-responsive img-circle person" src={personArticle} alt="person" />

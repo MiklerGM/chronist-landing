@@ -146,8 +146,8 @@ const processRow = (row) => {
 };
 
 const Timeline = () => (
-  <div id="timeline" className="bg-4  container">
-    <div className="timeline">
+  <div id="timeline" className="row">
+    <div className="timeline bg-4  container">
       {featureRows.map(processRow)}
     </div>
   </div>

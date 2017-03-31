@@ -3,8 +3,8 @@ import React from 'react';
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="bg-footer">
-        <div>
+      <footer id='footer' className='row'>
+        <div className='bg-footer'>
           <p>Хронист 2017</p>
         </div>
         <ul>
