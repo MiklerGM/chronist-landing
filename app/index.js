@@ -13,10 +13,6 @@ import './index.html';
 import Home from './components/Home';
 import Blog from './components/Blog';
 
-if (process.env.NODE_ENV === 'production') {
-  ym.init([42866674]);
-}
-
 
 class Hello extends React.Component {
   constructor(props) {
@@ -27,12 +23,13 @@ class Hello extends React.Component {
       themeName: 'nav topnav',
       style: { float: 'right' },
     };
+        // Initializing tracking ID created from YM
+        ym.init([42866674]);
+        // This just needs to be called once to grab stats
+        ym('hit', '/');
+
   }
 
-  componentDidMount() {
-    ym('hit', '/');
-    console.log('ym fired');
-  }
 
   toggle(e) {5
     e.preventDefault();
