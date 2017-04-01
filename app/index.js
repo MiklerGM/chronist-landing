@@ -24,7 +24,7 @@ class Hello extends React.Component {
       style: { float: 'right' },
     };
         // Initializing tracking ID created from YM
-        ym.init([42866674]);
+        ym.init([42857239]);
         // This just needs to be called once to grab stats
         ym('hit', '/');
 
