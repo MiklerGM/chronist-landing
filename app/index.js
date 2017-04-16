@@ -52,6 +52,8 @@ class Hello extends React.Component {
         <div id="home" className="container-fluid">
           <ul className={this.state.themeName}>
             <li><Link to="/">Хронист</Link></li>
+            <li><a href='https://demo.chronist.ru/'>Демо</a></li>
+
             <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
             <li style={this.state.style}><a href="#what">О проекте </a></li>
             {/* <li style={this.state.style}><Link to="/blog">Blog</Link></li> */}

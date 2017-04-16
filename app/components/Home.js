@@ -15,7 +15,9 @@ const Title = () => (
       <h2> Наглядная география </h2>
       <h4>историко-географический инструмент визуализации</h4>
       <h4> интегрированных научных данных</h4>
+      <a className='btn btn-primary' href='https://demo.chronist.ru/'> Перейти к Демо</a>
     </div>
+
     <Subscribe />
   </div>
 );
