@@ -4,6 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'app'),
+    vendor: ['react', 'react-dom'],
   },
   output: {
     filename: '[name].js',
@@ -20,7 +21,6 @@ module.exports = {
       {
         test: /\.js$/,
         enforce: 'pre',
-        // exclude: ['/node_modules/'],
         use: {
           loader: 'babel-loader',
           options: {
@@ -34,10 +34,6 @@ module.exports = {
       {
         test: /\.less$/,
         use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'less-loader']
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -84,9 +80,13 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
-      }
+      },
+      output: {
+        comments: false,
+      },
     }),
   ] : [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' })
   ],
 };

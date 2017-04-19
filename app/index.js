@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bootstrap/less/bootstrap.less';
-import { Initializer as YM } from 'react-yandex-metrika';
+import { YMInitializer } from 'react-yandex-metrika';
 import ym from 'react-yandex-metrika';
 
 import './styles/nav-router.less';
@@ -14,6 +14,10 @@ import Home from './components/Home';
 import Blog from './components/Blog';
 
 
+const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
+// ym.init([42857239]); <- Alice id
+// ym.init([42866674]); <- Padavan id
+
 class Hello extends React.Component {
   constructor(props) {
     super(props);
@@ -23,20 +27,23 @@ class Hello extends React.Component {
       themeName: 'nav topnav',
       style: { float: 'right' },
     };
-        // Initializing tracking ID created from YM
-        ym.init([42857239]);
-        // This just needs to be called once to grab stats
-        ym('hit', '/');
+  }
 
+  logPageView() {
+    console.log('=====YM=====>', location.pathname);
+    console.log(`YM ids is ${YmId}`);
+    ym('hit', location.pathname);
+  }
+
+  componentDidMount() {
+    this.logPageView();
   }
 
 
-  toggle(e) {5
+  toggle(e) {
     e.preventDefault();
     this.setState({ isOpen: !this.state.isOpen });
   }
-
-
 
   render() {
     if (!this.state.isOpen) {
@@ -48,8 +55,10 @@ class Hello extends React.Component {
     }
 
     return (
-      <Router >
+      <Router onUpdate={() => this.logPageView()} >
         <div id="home" className="container-fluid">
+          <YMInitializer accounts={YmId} options={{ defer: true }} />
+
           <ul className={this.state.themeName}>
             <li><Link to="/">Хронист</Link></li>
             <li><a href='https://demo.chronist.ru/'>Демо</a></li>
@@ -60,7 +69,6 @@ class Hello extends React.Component {
             <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
           </ul>
 
-          <YM />
           <Route exact path="/" component={Home} />
           <Route path="/blog" component={Blog} />
         </div>
