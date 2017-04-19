@@ -14,9 +14,9 @@ import Home from './components/Home';
 import Blog from './components/Blog';
 
 
-const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
+const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 
 class Hello extends React.Component {
   constructor(props) {
@@ -30,8 +30,8 @@ class Hello extends React.Component {
   }
 
   logPageView() {
-    console.log('=====YM=====>', location.pathname);
-    console.log(`YM ids is ${YmId}`);
+    // console.log('=====YM=====>', location.pathname);
+    // console.log(`YM ids is ${YmId}`);
     ym('hit', location.pathname);
   }
 
