@@ -44,7 +44,7 @@ const featureList = [
     date: 'Март 2017',
     desc: 'Поиск корреляций и причинно-следственных связей между историческими событиями',
     img: ft4,
-    inactive: 1,
+    inactive: 0,
     offset: 0
   },
   {
@@ -123,7 +123,7 @@ const getId = (type) => {
 };
 
 const Feature = ({ feature, gkey }) => (
-  <div key={gkey} className={`col-md-3 col-sm-3 ${feature.offset ? 'col-md-offset-1' : ''}`}>
+  <div key={gkey} className={`col-md-3 col-sm-3 ${gkey} ${feature.offset ? 'col-md-offset-1' : ''}`}>
     <div key={`${gkey}_thumb`} className="thumbnail timeline-tmb">
       <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
       <div key={`${gkey}_capt`} className="caption-fix caption text-center ">
