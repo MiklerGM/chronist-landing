@@ -31,6 +31,7 @@
   "scripts": {
     "dev": "webpack-dev-server --hot --progress --inline --host 0.0.0.0",
     "build": "webpack --progress --bail",
+    "test": "jest",
     "release": "NODE_ENV=production webpack -p --bail",
     "clean": "rm -rf dist node_modules"
   },
@@ -45,7 +46,9 @@
     "react-dom": "^15.3.1",
     "react-hot-loader": "^1.3.1",
     "react-router-dom": "^4.0.0",
+    "react-slick": "^0.14.11",
     "react-yandex-metrika": "^2.0.0",
+    "slick": "^1.12.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   }

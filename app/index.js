@@ -57,7 +57,17 @@ class Hello extends React.Component {
     return (
       <Router onUpdate={() => this.logPageView()} >
         <div id="home" className="container-fluid">
-          <YMInitializer accounts={YmId} options={{ defer: true }} />
+          <YMInitializer
+            accounts={YmId}
+            options={{
+              params: {stuff:123},
+              defer: true,
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true,
+              webvisor: true,
+              trackHash: true
+            }} />
 
           <ul className={this.state.themeName}>
             <li><Link to="/">Хронист</Link></li>

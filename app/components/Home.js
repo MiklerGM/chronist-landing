@@ -1,4 +1,7 @@
 import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.less';
+import 'slick-carousel/slick/slick-theme.less';
 
 import Timeline from './Timeline';
 import Subscribe from './Subscribe';
@@ -59,20 +62,18 @@ class WhatNew extends React.Component {
         <div className='bg-what'>
           <div className='container'>
             <div className="col-md-6 col-sm-6 text-center gallery container">
-
-                <video src={content[this.state.currentPic]} autoPlay />
-
-                <div className='row'>
-                  <button className='col-xs-4' onClick={() => this.swap(1)} >
-                    <video width='100' src={content[(this.state.currentPic + 1) % content.length]} />
-                  </button>
-                  <button className='col-xs-4' onClick={() => this.swap(2)} >
-                    <video width='100' src={content[(this.state.currentPic + 2) % content.length]} />
-                  </button>
-                  <button className='col-xs-4' onClick={() => this.swap(3)} >
-                    <video width='100' src={content[(this.state.currentPic + 3) % content.length]} />
-                  </button>
-                </div>
+              <video src={content[this.state.currentPic]} autoPlay />
+              <div className='row'>
+                <button className='col-xs-4' onClick={() => this.swap(1)} >
+                  <video width='100' src={content[(this.state.currentPic + 1) % content.length]} />
+                </button>
+                <button className='col-xs-4' onClick={() => this.swap(2)} >
+                  <video width='100' src={content[(this.state.currentPic + 2) % content.length]} />
+                </button>
+                <button className='col-xs-4' onClick={() => this.swap(3)} >
+                  <video width='100' src={content[(this.state.currentPic + 3) % content.length]} />
+                </button>
+              </div>
 
             </div>
 
@@ -92,6 +93,34 @@ class WhatNew extends React.Component {
           </div>
         </div>
       </div>
+    );
+  }
+}
+
+class ArticleSlider extends React.Component {
+  render() {
+    const settings = {
+      arrows: true,
+      infinite: true,
+      // dots: true,
+      autoplay: false,
+      slidesToShow: 3,
+      slidesToScroll: 3
+    };
+
+    return (
+      <div id='ArticleSlider' className='row'><div className='bg-what'>
+        <div className='container'>
+          <Slider {...settings}>
+            <div> 1 </div>
+            <div> 2 </div>
+            <div> 3 </div>
+            <div> 4 </div>
+            <div> 5 </div>
+            <div> 6 </div>
+          </Slider>
+        </div>
+      </div></div>
     );
   }
 }
