@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bootstrap/less/bootstrap.less';
 import { YMInitializer } from 'react-yandex-metrika';
 import ym from 'react-yandex-metrika';
+import {Helmet} from "react-helmet";
 
 import './styles/nav-router.less';
 import './favicon.ico';
 import './styles/fontello.less';
 import './index.html';
+const preview = require('./preview.png');
 
 import Home from './components/Home';
 import Blog from './components/Blog';
@@ -75,7 +77,7 @@ class Hello extends React.Component {
 
             <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
             <li style={this.state.style}><a href="#what">О проекте </a></li>
-            {/* <li style={this.state.style}><Link to="/blog">Blog</Link></li> */}
+            <li style={this.state.style}><Link to="/blog">Blog</Link></li>
             <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
           </ul>
 
@@ -87,6 +89,22 @@ class Hello extends React.Component {
   }
 }
 
+const Application = () => (
+  <div className="application">
+    <Helmet
+      title="Хронист"
+      meta={[
+        { 'name': 'description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' },
+        { 'property': 'og:type', 'content': 'site' },
+        { 'property': 'og:title', 'content': 'Хронист - Наглядная география' },
+        { 'property': 'og:image', 'content': {preview}},
+        { 'property': 'og:description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' }
+      ]}
+    />
+    <Hello />
+  </div>
+);
+
 ReactDOM.render((
-  <Hello />
+  <Application />
 ), document.getElementById('app'));
