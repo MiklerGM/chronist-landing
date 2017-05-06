@@ -15,7 +15,7 @@ const preview = require('./preview.png');
 import Home from './components/Home';
 import Blog from './components/Blog';
 
-
+4
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
@@ -91,16 +91,18 @@ class Hello extends React.Component {
 
 const Application = () => (
   <div className="application">
-    <Helmet
-      title="Хронист"
-      meta={[
-        { 'name': 'description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' },
-        { 'property': 'og:type', 'content': 'site' },
-        { 'property': 'og:title', 'content': 'Хронист - Наглядная география' },
-        { 'property': 'og:image', 'content': {preview}},
-        { 'property': 'og:description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' }
-      ]}
-    />
+    { /*
+    // <Helmet
+      // title="Хронист"
+      // meta={[
+      //   { 'name': 'description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' },
+      //   { 'property': 'og:type', 'content': 'site' },
+      //   { 'property': 'og:title', 'content': 'Хронист - Наглядная география' },
+      //   { 'property': 'og:image', 'content': {preview}},
+      //   { 'property': 'og:description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' }
+      // ]}
+    // />
+  */}
     <Hello />
   </div>
 );
