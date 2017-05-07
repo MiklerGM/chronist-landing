@@ -1,5 +1,9 @@
 ---
-title: 'Hello World'
+title: 'Hello World',
+---
+date: 'today',
+---
+autor: 'CEO'
 ---
 
 #Hello World

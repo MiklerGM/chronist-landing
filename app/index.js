@@ -4,18 +4,16 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import 'bootstrap/less/bootstrap.less';
 import { YMInitializer } from 'react-yandex-metrika';
 import ym from 'react-yandex-metrika';
-import {Helmet} from "react-helmet";
+// import {Helmet} from "react-helmet";
 
 import './styles/nav-router.less';
 import './favicon.ico';
 import './styles/fontello.less';
 import './index.html';
-const preview = require('./preview.png');
 
 import Home from './components/Home';
 import Blog from './components/Blog';
 
-4
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
@@ -35,6 +33,7 @@ class Hello extends React.Component {
     // console.log('=====YM=====>', location.pathname);
     // console.log(`YM ids is ${YmId}`);
     ym('hit', location.pathname);
+    ym('userParams', { vip_status: false });
   }
 
   componentDidMount() {
@@ -62,7 +61,6 @@ class Hello extends React.Component {
           <YMInitializer
             accounts={YmId}
             options={{
-              params: {stuff:123},
               defer: true,
               clickmap: true,
               trackLinks: true,
@@ -77,7 +75,7 @@ class Hello extends React.Component {
 
             <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
             <li style={this.state.style}><a href="#what">О проекте </a></li>
-            <li style={this.state.style}><Link to="/blog">Blog</Link></li>
+            {(process.env.NODE_ENV === 'production') ? null : <li style={this.state.style}><Link to="/blog">Blog</Link></li> }
             <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
           </ul>
 
@@ -91,18 +89,6 @@ class Hello extends React.Component {
 
 const Application = () => (
   <div className="application">
-    { /*
-    // <Helmet
-      // title="Хронист"
-      // meta={[
-      //   { 'name': 'description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' },
-      //   { 'property': 'og:type', 'content': 'site' },
-      //   { 'property': 'og:title', 'content': 'Хронист - Наглядная география' },
-      //   { 'property': 'og:image', 'content': {preview}},
-      //   { 'property': 'og:description', 'content': 'Историко-географический инструмент визуализации открытых научных данных' }
-      // ]}
-    // />
-  */}
     <Hello />
   </div>
 );
