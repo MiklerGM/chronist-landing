@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.less';
 import Timeline from './Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription';
+import ArticleGallery from './ArticleGallery';
 import Footer from './Footer';
 
 import '../styles/style.less';
@@ -135,6 +136,7 @@ class Home extends React.Component {
         <Title />
         <What />
         <Timeline />
+        <ArticleGallery />
         <AppDescription />
         <Footer />
       </div>

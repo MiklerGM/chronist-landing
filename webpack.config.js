@@ -65,18 +65,8 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: [
-          {
-            loader: 'html-loader'
-          },
-          {
-            loader: 'markdown-loader',
-            options: {
-              /* your options here */
-            }
-          }
-        ]
-      }
+        loader: 'markdown-with-front-matter-loader'
+      },
     ]
   },
   devServer: {
@@ -85,6 +75,7 @@ module.exports = {
         target: process.env.SERVER || 'http://127.0.0.1:9993/',
         secure: false,
         changeOrigin: true,
+        contentBase: './',
         historyApiFallback: true,
       },
     },

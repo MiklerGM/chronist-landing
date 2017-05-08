@@ -2,16 +2,10 @@ import React from 'react';
 import { Link, IndexRoute, Router, Route, browserHistory } from 'react-router';
 // import 'github-markdown-css';
 
-// import '../styles/blog.less';
+import '../styles/blog.less';
 
-// eslint-disable-next-line import/no-webpack-loader-syntax
-// const webpackRequireContext = require.context('!markdown-with-front-matter!../_posts', false, /\.md$/);
-// const blogs = webpackRequireContext.keys().reduce((memo, fileName) => memo.set(fileName.match(/\.\/([^\.]+)\.*/)[1], webpackRequireContext(fileName)), new Map());
-//
-// const blogIndex = (blogs) => () => <ul>{[...blogs.keys()].map(path => <li key={path}><Link to={'/'+path}>{blogs.get(path).title || path}</Link></li>)}</ul>;
-// const blogWrapper = ({ __content }) => () => <div><Link to='/'>« Back to blog</Link><hr /><div className='markdown-body' dangerouslySetInnerHTML={{__html: __content}}></div></div>;
-//
-// const reactRoutes = [<IndexRoute key='index' component={blogIndex(blogs)} />].concat([...blogs.keys()].map(path => <Route key={path} path={path} component={blogWrapper(blogs.get(path))} />));
+const article = require('../md/Hello.md');
+
 
 class Blog extends React.Component {
   render() {
@@ -22,7 +16,7 @@ class Blog extends React.Component {
         </div>
 
         <div className='bg-what'>
-          Text
+          <Article />
         </div>
 
       </div>
@@ -30,4 +24,27 @@ class Blog extends React.Component {
   }
 }
 
+
+class Article extends React.Component {
+  state = {}
+
+  componentDidMount() {
+    console.log(article);
+    console.log('test');
+  }
+
+  createMarkup() {
+    {}
+  }
+
+  render() {
+    return (
+      <div>
+        <h2> {article.title} </h2>
+        <div dangerouslySetInnerHTML={{ __html: article.__content.substring(0, article.__content.indexOf(" ", 260)) }} />;
+      </div>
+    );
+  }
+
+}
 export default Blog;
