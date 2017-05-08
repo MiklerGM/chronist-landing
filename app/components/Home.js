@@ -1,14 +1,10 @@
 import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.less';
-import 'slick-carousel/slick/slick-theme.less';
 
 import Timeline from './Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription';
 import ArticleGallery from './ArticleGallery';
 import Footer from './Footer';
-
 import '../styles/style.less';
 
 const Content = [
@@ -31,23 +27,6 @@ const Title = () => (
     </div>
 
     <Subscribe />
-  </div>
-);
-
-const WhatOld = () => (
-  <div id="what" className='row'>
-    <div className="bg-what">
-      <div className='container'>
-        <h4> Существующие инструменты не позволяют наглядно проследить
-         взаимосвязи между историческими событиями в разных регионах.</h4>
-        <h4>При помощи Хрониста можно не только решить эту проблему,
-         но и самостоятельно отделить важные события от неважных,
-          добавить новые, парой кликов собрать доклад или интерактивную презентацию,
-           проверить свои догадки при помощи научно подтверждённых данных,
-            расширить кругозор и в простой и занимательной форме вывести
-             собственные причинно-следственные связи в мировой истории.</h4>
-      </div>
-    </div>
   </div>
 );
 
@@ -97,34 +76,6 @@ class What extends React.Component {
           </div>
         </div>
       </div>
-    );
-  }
-}
-
-class ArticleSlider extends React.Component {
-  render() {
-    const settings = {
-      arrows: true,
-      infinite: true,
-      // dots: true,
-      autoplay: false,
-      slidesToShow: 3,
-      slidesToScroll: 3
-    };
-
-    return (
-      <div id='ArticleSlider' className='row'><div className='bg-what'>
-        <div className='container'>
-          <Slider {...settings}>
-            <div> 1 </div>
-            <div> 2 </div>
-            <div> 3 </div>
-            <div> 4 </div>
-            <div> 5 </div>
-            <div> 6 </div>
-          </Slider>
-        </div>
-      </div></div>
     );
   }
 }

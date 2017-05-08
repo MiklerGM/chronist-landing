@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route, browserHistory,
+  NavLink,
+  Switch
+} from 'react-router-dom';
+
+
 import 'bootstrap/less/bootstrap.less';
 import { YMInitializer } from 'react-yandex-metrika';
 import ym from 'react-yandex-metrika';
@@ -13,12 +20,13 @@ import './index.html';
 
 import Home from './components/Home';
 import Blog from './components/Blog';
+import NotFound from './components/NotFound';
 
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 
-class Hello extends React.Component {
+class Navigation extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -55,44 +63,50 @@ class Hello extends React.Component {
       this.state.style = { float: 'none' };
     }
 
+    //
     return (
-      <Router onUpdate={() => this.logPageView()} >
-        <div id="home" className="container-fluid">
-          <YMInitializer
-            accounts={YmId}
-            options={{
-              defer: true,
-              clickmap: true,
-              trackLinks: true,
-              accurateTrackBounce: true,
-              webvisor: true,
-              trackHash: true
-            }} />
+      <div id="home" className="container-fluid">
+        <YMInitializer
+          accounts={YmId}
+          options={{
+            defer: true,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            trackHash: true
+          }}
+        />
 
-          <ul className={this.state.themeName}>
-            <li><Link to="/">Хронист</Link></li>
-            <li><a href='https://demo.chronist.ru/'>Демо</a></li>
-
-            <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
-            <li style={this.state.style}><a href="#what">О проекте </a></li>
-            {(process.env.NODE_ENV === 'production') ? null : <li style={this.state.style}><Link to="/blog">Blog</Link></li> }
-            <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
-          </ul>
-
-          <Route exact path="/" component={Home} />
-          <Route path="/blog" component={Blog} />
-        </div>
-      </Router>
+        <ul className={this.state.themeName}>
+          <li><NavLink exact activeClassName='active' to="/">Хронист</NavLink></li>
+          <li><a href='https://demo.chronist.ru/'>Демо</a></li>
+          <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
+          <li style={this.state.style}><a href="#what">О проекте </a></li>
+          {(process.env.NODE_ENV === 'production') ? null : <li style={this.state.style}>
+            <NavLink activeClassName='active' to="/blog">Блог</NavLink>
+          </li> }
+          <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
+        </ul>
+      </div>
     );
   }
 }
 
-const Application = () => (
-  <div className="application">
-    <Hello />
-  </div>
+const App = () => (
+  <Router history={browserHistory}>
+    <div>
+      <Navigation />
+      <Switch>
+        <Route exact path='/' render={() => <Home />} />
+        <Route path='/blog' render={() => <Blog />} />
+        <Route path="*" render={NotFound} />
+      </Switch>
+    </div>
+  </Router>
 );
 
-ReactDOM.render((
-  <Application />
-), document.getElementById('app'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);

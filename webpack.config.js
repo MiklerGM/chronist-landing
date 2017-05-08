@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  context: path.join(__dirname, 'app'),
   entry: {
     app: path.resolve(__dirname, 'app'),
     vendor: ['react', 'react-dom'],
@@ -70,15 +71,7 @@ module.exports = {
     ]
   },
   devServer: {
-    proxy: {
-      '/': {
-        target: process.env.SERVER || 'http://127.0.0.1:9993/',
-        secure: false,
-        changeOrigin: true,
-        contentBase: './',
-        historyApiFallback: true,
-      },
-    },
+    historyApiFallback: true
   },
   plugins: (process.env.NODE_ENV === 'production') ? [
     new webpack.DefinePlugin({

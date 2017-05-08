@@ -2,17 +2,43 @@ import React from 'react';
 import Moment from 'moment';
 import 'moment/locale/ru';
 
-// const one = require('../md/Hello.md');
-// const two = require('../md/Second.md');
-// const three = require('../md/Third.md');
-
-// const files = require('../md/');
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.less';
+// import 'slick-carousel/slick/slick-theme.less';
 
 const files = [
   require('../md/Hello.md'),
   require('../md/Second.md'),
   require('../md/Third.md')
 ];
+
+// class ArticleSlider extends React.Component {
+//   render() {
+//     const settings = {
+//       arrows: true,
+//       infinite: true,
+//       // dots: true,
+//       autoplay: false,
+//       slidesToShow: 3,
+//       slidesToScroll: 3
+//     };
+
+//     return (
+//       <div id='ArticleSlider' className='row'><div className='bg-what'>
+//         <div className='container'>
+//           <Slider {...settings}>
+//             <div> 1 </div>
+//             <div> 2 </div>
+//             <div> 3 </div>
+//             <div> 4 </div>
+//             <div> 5 </div>
+//             <div> 6 </div>
+//           </Slider>
+//         </div>
+//       </div></div>
+//     );
+//   }
+// }
 
 export default class ArticleGalleryDev extends React.Component {
   state = {}
