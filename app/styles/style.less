@@ -200,7 +200,7 @@ footer {
   }
 }
 
-.gallery {
+.VideoGallery {
   // padding-top: 80px;
   // top: 40%;
   // transform: translate(0%, +50%);
@@ -216,7 +216,9 @@ footer {
   & button {
     border: none;
     background: none;
-
+    &:focus {outline: none !important;}
+    &:hover {outline: 0 !important;}
+    &:active {outline: 0 !important;}
   }
 }
 
@@ -224,9 +226,36 @@ footer {
   & button {
     color: blue;
     background: grey;
+    outline:none;
+    &:focus {outline: none !important;}
+    &:hover {outline: 0 !important;}
+    &:active {outline: 0 !important;}
   }
+  & video {
+    color: blue;
+    background: grey;
+    outline:none;
+    &:focus {outline: 0 !important;}
+    &:hover {outline: 0 !important;}
+    &:active {outline: 0 !important;}
+  }
+  &:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  &:active {
+    color:black;
+    text-decoration: underline;
+    color: gray;
+  }
+  &:focus {border:none !important; outline: 0; }
+
 }
 
 #NotFound {
   color:white;
 }
+
+
+*:focus {outline: none !important;}

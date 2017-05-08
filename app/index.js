@@ -26,6 +26,14 @@ import NotFound from './components/NotFound';
 // ym.init([42866674]); <- Padavan id
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 
+const logPageView = () => {
+    console.log('=====YM=====>', location.pathname);
+    // console.log(`YM ids is ${YmId}`);
+    console.log('logPageView triggered');
+    ym('hit', location.pathname);
+    ym('userParams', { vip_status: false });
+};
+
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
@@ -37,15 +45,8 @@ class Navigation extends React.Component {
     };
   }
 
-  logPageView() {
-    // console.log('=====YM=====>', location.pathname);
-    // console.log(`YM ids is ${YmId}`);
-    ym('hit', location.pathname);
-    ym('userParams', { vip_status: false });
-  }
-
   componentDidMount() {
-    this.logPageView();
+    logPageView();
   }
 
 
@@ -94,7 +95,7 @@ class Navigation extends React.Component {
 }
 
 const App = () => (
-  <Router history={browserHistory}>
+  <Router onUpdate={logPageView} history={browserHistory}>
     <div>
       <Navigation />
       <Switch>

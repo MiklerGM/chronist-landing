@@ -42,17 +42,17 @@ class What extends React.Component {
       <div id="what" className='row'>
         <div className='bg-what'>
           <div className='container'>
-            <div className="col-md-6 col-sm-6 text-center gallery container">
-              <video src={Content[this.state.currentPic]} autoPlay />
+            <div className="col-md-6 col-sm-6 text-center VideoGallery container">
+              <video src={Content[this.state.currentPic]} autoPlay loop />
               <p> {ContentDescription[this.state.currentPic]} </p>
               <div className='row'>
-                <button className='col-xs-4' onClick={() => this.swap(1)} >
+                <button className='col-xs-4' onClick={() => this.swap(1)} title={ContentDescription[this.state.currentPic + 1]}>
                   <video width='100' src={Content[(this.state.currentPic + 1) % Content.length]} />
                 </button>
-                <button className='col-xs-4' onClick={() => this.swap(2)} >
+                <button className='col-xs-4' onClick={() => this.swap(2)} title={ContentDescription[this.state.currentPic + 2]}>
                   <video width='100' src={Content[(this.state.currentPic + 2) % Content.length]} />
                 </button>
-                <button className='col-xs-4' onClick={() => this.swap(3)} >
+                <button className='col-xs-4' onClick={() => this.swap(3)} title={ContentDescription[this.state.currentPic + 3]}>
                   <video width='100' src={Content[(this.state.currentPic + 3) % Content.length]} />
                 </button>
               </div>
