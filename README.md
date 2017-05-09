@@ -20,7 +20,9 @@
   - [] серверсайд рендеринг дл {C} {?}
   - [] перенести задачи из гитлаба и наоборот {B}
   - [] допил после релиза сайта (кредиткc) {B}
-  - []  подсказки на ссылочках, alt аттрибут
+  - [] подсказки на ссылочках, alt аттрибут
+  - [] Remove horizontal scrollbar
+  - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
 
     ###VideoGallery
     ---------------
@@ -32,6 +34,11 @@
     ### Blog
     --------
       - [] изменить порядок статей
+      - [] craft ArticlePage
+
+    ### CSS reducing
+      readmore mutual class
+
 
   - [x] допил после релиза сайта (гифки)
   - [x] запилить чтоб контент по сайту индексировался, а не был голая htmlка. вебпакчик {A}
@@ -104,6 +111,28 @@ If an action button is temporarily inactive, use the disabled status.
 If you need to show the number of items that will be affected by the action of the button, you can add the number in brackets. For example, Edit (3).
 
 https://www.youtube.com/watch?v=ogAZ6JC0pJI&feature=youtu.be&list=PLTdS5E3zupkEiDgztHOUw4kOSM8Qdzo7H
+
+#Examples
+==================
+
+    http://www.dollaropath.com/tomatoes/ios/
+    http://marked2app.com/
+    https://www.alfredapp.com/
+    https://www.obdev.at/products/launchbar/index.html
+    https://www.omnigroup.com/omnifocus
+    http://reederapp.com/mac/
+    https://www.gnome.org/
+    https://pwmt.org/projects/zathura/
+
+    https://elementary.io/
+    https://feedly.com/
+    https://basecamp.com/
+    https://www.alfredapp.com
+    http://twittercounter.com/
+
+    https://typora.io/
+    https://datamaps.co/
+    https://www.gnu.org/software/emacs/index.html
 
 
 ###Make a Blog

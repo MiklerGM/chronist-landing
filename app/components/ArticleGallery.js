@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Moment from 'moment';
 import 'moment/locale/ru';
 
@@ -43,7 +44,7 @@ const files = [
 export default class ArticleGalleryDev extends React.Component {
   state = {}
 
-  getFormattedDate(date) {
+  getFormattedDate = date => {
     Moment.locale('ru');
 
     // const formattedDT = Moment(date).calendar();
@@ -52,10 +53,11 @@ export default class ArticleGalleryDev extends React.Component {
   }
 
   processArticle = (article, id) => (
-    <div key={`article_${id}`} className='col-md-4 col-sm-4'>
-      <h2> {article.title} </h2>
-      <p> {this.getFormattedDate(article.date)} </p>
+    <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
+      <h4> <strong> {article.title} </strong> </h4>
+      {/* <p> {this.getFormattedDate(article.date)} </p> */}
       <div dangerouslySetInnerHTML={{ __html: article.__content.substring(0, article.__content.indexOf(' ', 260)) }} />;
+      <button> <Link to="/blog"> Читать дальше → </Link></button>
     </div>
   );
 

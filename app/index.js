@@ -27,11 +27,11 @@ import NotFound from './components/NotFound';
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 
 const logPageView = () => {
-    console.log('=====YM=====>', location.pathname);
-    // console.log(`YM ids is ${YmId}`);
-    console.log('logPageView triggered');
-    ym('hit', location.pathname);
-    ym('userParams', { vip_status: false });
+  console.log('=====YM=====>', location.pathname);
+  // console.log(`YM ids is ${YmId}`);
+  console.log('logPageView triggered');
+  ym('hit', location.pathname);
+  ym('userParams', { vip_status: false });
 };
 
 class Navigation extends React.Component {
