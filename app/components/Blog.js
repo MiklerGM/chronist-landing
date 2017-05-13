@@ -41,7 +41,7 @@ const processArticle = (url, id) => (
       <span className='dim'> {getFormattedDate(req(`./${url}.md`).date)} </span>
     </div>
     <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
-    <button className='pull-right'><Link to={`/blog/${url}`}> Читать дальше → </Link> </button>
+    <Link to={`/blog/${url}`}><button className='pull-right'> Читать дальше → </button> </Link>
     <hr />
   </div>
 );
@@ -62,13 +62,13 @@ const processArticleGallery = (url, id) => (
     <h4> {req(`./${url}.md`).title} </h4>
     <p className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </p>
     <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
-    <button><Link to={`/blog/${url}`}> Читать дальше → </Link> </button>
+    <Link to={`/blog/${url}`}><button> Читать дальше → </button></Link>
   </div>
 );
 
 export const ArticleGallery = () => (
   <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container'>
-    {urls.map(processArticleGallery)}
+    {urls.reverse().map(processArticleGallery)}
     {
       (process.env.NODE_ENV === 'production') ? null :
       <Link to={'/blog'}><button className='btn-black text-center'> VIEW MORE</button></Link>

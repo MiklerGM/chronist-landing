@@ -20,7 +20,7 @@
   - [] допил после релиза сайта (кредиткc) {B}
   - [] подсказки на ссылочках, alt аттрибут
   - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
-  - [] progressive jpeg
+  - [x] progressive jpeg
   - [] helmet wild metadata
 
     ###ArticleGallery
@@ -32,6 +32,8 @@
 
     ### Blog
     --------
+      - [] из текста блога назад
+      - [] timeline pseudoelements-bug
 
     ### CSS reducing
     ----------------
