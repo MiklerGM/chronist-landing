@@ -3,9 +3,10 @@ import React from 'react';
 import Timeline from './Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription';
-import ArticleGallery from './ArticleGallery';
 import Footer from './Footer';
 import '../styles/style.less';
+import { ArticleGallery } from './Blog';
+
 
 const Content = [
   require('../videos/borderchanges.m4v'),
@@ -17,13 +18,12 @@ const Content = [
 const ContentDescription = ['Изменение границ', 'Экспортирование материала', 'Дополнительная информация по клику', 'Воспроизведение'];
 
 const Title = () => (
-  <div id="title" className="row">
+  <div id="title">
     <div className="text-center">
       <h1> ХРОНИСТ </h1>
       <h2> Наглядная география </h2>
       <h4>историко-географический инструмент визуализации</h4>
       <h4>открытых научных данных</h4>
-
     </div>
 
     <Subscribe />
@@ -75,6 +75,7 @@ class What extends React.Component {
 
           </div>
         </div>
+        <hr />
       </div>
     );
   }

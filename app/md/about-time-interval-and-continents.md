@@ -1,7 +1,7 @@
 ---
 title: О выбранном временном отрезке и континенте
 date: 2017-04-01
-autor: Алиса
+author: Алиса
 contact: idea@chronist.ru
 ---
 

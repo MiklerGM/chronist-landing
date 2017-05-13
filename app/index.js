@@ -4,9 +4,11 @@ import {
   BrowserRouter as Router,
   Route, browserHistory,
   NavLink,
+  Link,
+  hashHistory,
+  History,
   Switch
 } from 'react-router-dom';
-
 
 import 'bootstrap/less/bootstrap.less';
 import { YMInitializer } from 'react-yandex-metrika';
@@ -22,14 +24,17 @@ import Home from './components/Home';
 import Blog from './components/Blog';
 import NotFound from './components/NotFound';
 
+
+import ArticleGallery from './components/ArticleGallery';
+
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 
 const logPageView = () => {
-  console.log('=====YM=====>', location.pathname);
+  // console.log('=====YM=====>', location.pathname);
   // console.log(`YM ids is ${YmId}`);
-  console.log('logPageView triggered');
+  // console.log('logPageView triggered');
   ym('hit', location.pathname);
   ym('userParams', { vip_status: false });
 };
@@ -48,7 +53,6 @@ class Navigation extends React.Component {
   componentDidMount() {
     logPageView();
   }
-
 
   toggle(e) {
     e.preventDefault();
@@ -94,18 +98,43 @@ class Navigation extends React.Component {
   }
 }
 
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <div>
+        Header. <br />
+        Data is: {this.props.data}
+      </div>
+    );
+  }
+}
+
+const About = () => (
+  <div>About Page</div>
+);
+
 const App = () => (
   <Router onUpdate={logPageView} history={browserHistory}>
     <div>
       <Navigation />
-      <Switch>
-        <Route exact path='/' render={() => <Home />} />
-        <Route path='/blog' render={() => <Blog />} />
-        <Route path="*" render={NotFound} />
-      </Switch>
+      <div>
+        <Switch>
+          <Route exact path='/' render={() => <Home />} />
+          <Route path='/blog' component={Blog} />
+          <Route path='/about' render={() => <About />} />
+          <Route render={NotFound} />
+        </Switch>
+      </div>
     </div>
   </Router>
 );
+
+// const App = () => (< />);
+
 
 ReactDOM.render(
   <App />,

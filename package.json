@@ -1,5 +1,6 @@
 {
   "name": "chronist-landing-page",
+  "private": true,
   "version": "1.8.1",
   "description": "",
   "spdx": false,
@@ -23,20 +24,15 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.28.0",
     "jest": "^19.0.2",
     "less": "^2.7.2",
     "less-loader": "^2.2.3",
+    "react-devtools": "^2.1.9",
     "style-loader": "^0.13.1",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "url-loader": "^0.5.7"
-  },
-  "scripts": {
-    "dev": "webpack-dev-server --hot --progress --inline --host 0.0.0.0",
-    "build": "webpack --progress --bail",
-    "test": "jest",
-    "release": "NODE_ENV=production webpack -p --bail",
-    "clean": "rm -rf dist node_modules"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -56,5 +52,12 @@
     "slick": "^1.12.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --hot --progress --inline",
+    "build": "webpack --progress --bail",
+    "test": "jest",
+    "release": "NODE_ENV=production webpack -p --bail",
+    "clean": "rm -rf dist node_modules"
   }
 }

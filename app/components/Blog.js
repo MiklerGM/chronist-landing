@@ -1,55 +1,139 @@
 import React from 'react';
-import { Link, IndexRoute, Router, Route, browserHistory } from 'react-router';
+import { Link, Route, Switch } from 'react-router-dom';
 import Moment from 'moment';
 import 'moment/locale/ru';
 import '../styles/blog.less';
+import NotFound from './NotFound';
+import Footer from './Footer';
 
-const files = [
-  require('../md/Hello.md'),
-  require('../md/Second.md'),
-  require('../md/Third.md')
-];
+const urls = [];
+const req = require.context('../md', false, /\.md$/);
 
-export default class Blog extends React.Component {
-  state = {}
+req.keys().forEach((fileName, id) => {
+  // console.log(fileName);
+  urls[id] = fileName.replace('./', '').replace('.md', '');
+  // req(fileName);
+});
 
-  getFormattedDate(date) {
-    Moment.locale('ru');
+const getHumanDate = (date) => {
+  Moment.locale('ru');
+  // const formattedDT = Moment(date).calendar();
+  const humanDT = Moment(date).endOf('day').fromNow();
+  return humanDT;
+};
 
-    // const formattedDT = Moment(date).calendar();
-    const formattedDT = Moment(date).endOf('day').fromNow();
-    return formattedDT;
-  }
 
-  processArticle = (article, id) => (
-    <div key={`article_${id}`}>
-      <h2> {article.title} </h2>
-      <p> {this.getFormattedDate(article.date)} </p>
-      <div dangerouslySetInnerHTML={{ __html: article.__content.substring(0, article.__content.indexOf(' ', 260)) }} />;
+const getFormattedDate = (date) => {
+  Moment.locale('ru');
+  // const formattedDT = Moment(date).calendar();
+  const formattedDT = Moment(date).format('LL');
+  return formattedDT;
+};
 
+const processArticle = (url, id) => (
+  <div key={`article_${id}`} className='container ArticlePreview'>
+    <h2> {req(`./${url}.md`).title} </h2>
+    <div className='dim'>
+      <span className='dim'> {req(`./${url}.md`).author} </span>
+      <span className='separator'> - </span>
+      <span className='dim'> {getFormattedDate(req(`./${url}.md`).date)} </span>
     </div>
-  );
+    <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
+    <button className='pull-right'><Link to={`/blog/${url}`}> Читать дальше → </Link> </button>
+    <hr />
+  </div>
+);
 
-  render() {
-    if (process.env.NODE_ENV === 'production') {
-      return null;
+const BlogWrapper = () => (
+  <div>
+    <h1 id='pageTitle'> Блог </h1>
+    <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
+      {urls.map(processArticle)}
+    </div></div></div>
+    <Footer />
+  </div>
+);
+
+
+const processArticleGallery = (url, id) => (
+  <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
+    <h4> {req(`./${url}.md`).title} </h4>
+    <p className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </p>
+    <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
+    <button><Link to={`/blog/${url}`}> Читать дальше → </Link> </button>
+  </div>
+);
+
+export const ArticleGallery = () => (
+  <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container'>
+    {urls.map(processArticleGallery)}
+    {
+      (process.env.NODE_ENV === 'production') ? null :
+      <Link to={'/blog'}><button className='btn-black text-center'> VIEW MORE</button></Link>
     }
-    return (
-      <div>
-        <h1 id='pageTitle'> Блог </h1>
-        <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
-          {files.map(this.processArticle)}
-        </div></div></div>
-      </div>
-    );
-  }
-}
+  </div></div><hr /></div>
+);
 
-class ArticlePage extends React.Component {
-  state = {}
-  render() {
-    return(
-      <div> ArticlePage render </div>
-    );
-  }
-}
+
+const Blog = () => (
+  <Switch>
+    <Route exact path='/blog' component={BlogWrapper} />
+    {urls.map(url =>
+      <Route
+        key={`/blog/${url}`}
+        path={`/blog/${url}`}
+        render={() => <ArticlePage data={url} />}
+      />
+    )}
+    <Route render={NotFound} />
+  </Switch>
+);
+
+const ArticlePage = () => (
+  <div>
+    <div className='bg-what'><div className='container'>
+      <h2> {req(`./${this.props.data}.md`).title }</h2>
+      <div className='dim'>
+        <span className='dim'> {req(`./${this.props.data}.md`).author} </span>
+        <span className='separator'> - </span>
+        <span className='dim'> {getFormattedDate(req(`./${this.props.data}.md`).date)} </span>
+      </div>
+      <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />;
+    </div>
+    </div>
+    <Footer />
+  </div>
+);
+
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.less';
+// import 'slick-carousel/slick/slick-theme.less';
+// class ArticleSlider extends React.Component {
+//   render() {
+//     const settings = {
+//       arrows: true,
+//       infinite: true,
+//       // dots: true,
+//       autoplay: false,
+//       slidesToShow: 3,
+//       slidesToScroll: 3
+//     };
+
+//     return (
+//       <div id='ArticleSlider' className='row'><div className='bg-what'>
+//         <div className='container'>
+//           <Slider {...settings}>
+//             <div> 1 </div>
+//             <div> 2 </div>
+//             <div> 3 </div>
+//             <div> 4 </div>
+//             <div> 5 </div>
+//             <div> 6 </div>
+//           </Slider>
+//         </div>
+//       </div></div>
+//     );
+//   }
+// }
+
+export default Blog;

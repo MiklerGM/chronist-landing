@@ -1,7 +1,7 @@
 ---
 title: О Хронисте и демо
 date: 2017-03-07
-autor: Алиса
+author: Алиса
 contact: idea@chronist.ru
 ---
 

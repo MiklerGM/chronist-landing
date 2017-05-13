@@ -30,8 +30,10 @@ class AppDescription extends React.Component {
     }
 
     return (
-      <div id='appdesc' className='row'>
-        <div className="container bg-appdesc">
+      <div id="ScienceArticle" className='row'>
+        <div className='bg-science'>
+          <div className='container'>
+
           <div className="col-sm-4">
             <span className='person'>
               <img className="img-responsive img-circle person text-center" src={personArticle} alt="person" />
@@ -45,6 +47,8 @@ class AppDescription extends React.Component {
           </div>
           <button onClick={e => this.toggle(e)} className="more pull-right"> {toggler} </button>
         </div>
+      </div>
+      <hr />
       </div>
     );
   }

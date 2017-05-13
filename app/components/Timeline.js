@@ -152,6 +152,7 @@ const Timeline = () => (
         {featureRows.map(processRow)}
       </div>
     </div>
+    <hr />
   </div>
 );
 

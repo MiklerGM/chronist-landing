@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname, 'app'),
+  devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, 'app'),
     vendor: ['react', 'react-dom'],
@@ -10,6 +11,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   resolve: {
     modules: [
@@ -34,7 +36,18 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'less-loader']
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {importLoaders: 1, minimize: true}
+          },
+          {
+            loader: 'less-loader'
+          }
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -71,7 +84,11 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true
+    // historyApiFallback: true,
+    // contentBase: './src',
+    historyApiFallback: true,
+    // hot: true,
+    // inline: true
   },
   plugins: (process.env.NODE_ENV === 'production') ? [
     new webpack.DefinePlugin({
@@ -87,8 +104,15 @@ module.exports = {
         comments: false,
       },
     }),
+    // new webpack.ContextReplacementPlugin(
+    //   // The path to directory which should be handled by this plugin
+    //   /moment[\/\\]locale/,
+    //   // A regular expression matching files that should be included
+    //   /(en-gb|ru)\.js/
+    // ),
+
   ] : [
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' })
   ],
 };

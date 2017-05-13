@@ -1,7 +1,7 @@
 ---
 title: Об источниках информации и тестировании
 date: 2017-03-09
-autor: Алиса
+author: Алиса
 contact: idea@chronist.ru
 ---
 
