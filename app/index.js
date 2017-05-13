@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 import 'bootstrap/less/bootstrap.less';
-import ym, { YMInitializer } from 'react-yandex-metrika';
+import { YMInitializer } from 'react-yandex-metrika';
 // import {Helmet} from "react-helmet";
 
 import './styles/nav-router.less';
@@ -23,8 +23,6 @@ import NotFound from './components/NotFound';
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
-
-console.log(window);
 
 const logPageView = () => {
   // console.log('logPageView triggered');
@@ -66,25 +64,22 @@ class Navigation extends React.Component {
     //
     return (
       <div id="home" className="container-fluid">
-      <YMInitializer
-        accounts={YmId}
-        version="2"
-        options={{
-          clickmap: true,
-          trackLinks: true,
-          accurateTrackBounce: true,
-          webvisor: true,
-          trackHash: true,
-        }}
-      />
+        <YMInitializer
+          accounts={YmId}
+          version="2"
+          options={{
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            trackHash: true,
+          }}
+        />
         <ul className={this.state.themeName}>
           <li><NavLink exact activeClassName='active' to="/">Хронист</NavLink></li>
           <li><a href='https://demo.chronist.ru/'>Демо</a></li>
-          <li style={this.state.style}><a href="#AppDescription">Блог</a></li>
           <li style={this.state.style}><a href="#what">О проекте </a></li>
-          {(process.env.NODE_ENV === 'production') ? null : <li style={this.state.style}>
-            <NavLink activeClassName='active' to="/blog">Блог</NavLink>
-          </li> }
+          <li style={this.state.style}><NavLink activeClassName='active' to="/blog">Блог</NavLink></li>
           <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
         </ul>
       </div>

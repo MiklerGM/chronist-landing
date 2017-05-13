@@ -14,13 +14,11 @@
 ##Landing
 =========
 
-  - [] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
   - [] After MPA done, adjust YM for tricky statistic {C}
+  - [] migrate to htmlwebpackplugin and hashes for chunks
   - [] серверсайд рендеринг дл {C} {?}
-  - [x] перенести задачи из гитлаба и наоборот {B}
   - [] допил после релиза сайта (кредиткc) {B}
   - [] подсказки на ссылочках, alt аттрибут
-  - [x] Remove horizontal scrollbar
   - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
   - [] progressive jpeg
   - [] helmet wild metadata
@@ -31,23 +29,30 @@
 
     ###VideoGallery
     ---------------
-      - [x] reduce lapsha {C}
-      - [x] WebpackContextRequire
-      - [x] можно при наведении на тамбнейл делать ховер поверх гифки с надписью следующей
-      - [x] loop
-      - [x] выделение кнопок остаточное убрать
 
     ### Blog
     --------
-      - [x] изменить порядок статей
-      - [x] craft ArticlePage
 
     ### CSS reducing
     ----------------
-      readmore mutual class
+    - [] .readmore mutual class
+
+    ### Footer
+    ----------
+    - [] sad and ugly. do something
 
 ##Done
 =========
+  - [x] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
+  - [x] изменить порядок статей
+  - [x] craft ArticlePage
+  - [x] reduce lapsha {C}
+  - [x] WebpackContextRequire
+  - [x] можно при наведении на тамбнейл делать ховер поверх гифки с надписью следующей
+  - [x] loop
+  - [x] выделение кнопок остаточное убрать
+  - [x] перенести задачи из гитлаба и наоборот {B}
+  - [x] Remove horizontal scrollbar
   - [x] допил после релиза сайта (гифки)
   - [x] запилить чтоб контент по сайту индексировался, а не был голая htmlка. вебпакчик {A}
   - [x] запилить кнопки перехода
