@@ -50,7 +50,7 @@ const BlogWrapper = () => (
   <div>
     <h1 id='pageTitle'> Блог </h1>
     <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
-      {urls.map(processArticle)}
+      {urls.reverse().map(processArticle)}
     </div></div></div>
     <Footer />
   </div>
