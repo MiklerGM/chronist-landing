@@ -3,7 +3,6 @@ const webpack = require('webpack');
 
 module.exports = {
   context: path.join(__dirname, 'app'),
-  devtool: 'source-map',
   entry: {
     app: path.resolve(__dirname, 'app'),
     vendor: ['react', 'react-dom'],
@@ -110,9 +109,8 @@ module.exports = {
     //   // A regular expression matching files that should be included
     //   /(en-gb|ru)\.js/
     // ),
-
-  ] : [
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
+  ] : [
     new webpack.HotModuleReplacementPlugin(),
   ],
 };

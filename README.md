@@ -22,6 +22,8 @@
   - [] подсказки на ссылочках, alt аттрибут
   - [x] Remove horizontal scrollbar
   - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
+  - [] progressive jpeg
+  - [] helmet wild metadata
 
     ###ArticleGallery
     -----------------
@@ -29,15 +31,15 @@
 
     ###VideoGallery
     ---------------
-      - [] reduce lapsha {C}
-      - [] WebpackContextRequire
+      - [x] reduce lapsha {C}
+      - [x] WebpackContextRequire
       - [x] можно при наведении на тамбнейл делать ховер поверх гифки с надписью следующей
       - [x] loop
       - [x] выделение кнопок остаточное убрать
 
     ### Blog
     --------
-      - [] изменить порядок статей
+      - [x] изменить порядок статей
       - [x] craft ArticlePage
 
     ### CSS reducing
@@ -167,3 +169,6 @@ https://github.com/xtophs/docker-bash-on-windows
 [Counting Web Session with JS. Swizek blog](https://swizec.com/blog/counting-web-sessions-javascript/swizec/7598?__s=dugx4qg21suydr72vgrv)
 
 
+##Localization
+-----------------
+ <Nav currentLanguage={language} switchLanguage={this.switchLanguage} />

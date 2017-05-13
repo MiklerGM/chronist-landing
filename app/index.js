@@ -8,8 +8,7 @@ import {
 } from 'react-router-dom';
 
 import 'bootstrap/less/bootstrap.less';
-import { YMInitializer } from 'react-yandex-metrika';
-import ym from 'react-yandex-metrika';
+import ym, { YMInitializer } from 'react-yandex-metrika';
 // import {Helmet} from "react-helmet";
 
 import './styles/nav-router.less';
@@ -25,12 +24,14 @@ import NotFound from './components/NotFound';
 // ym.init([42866674]); <- Padavan id
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 
+console.log(window);
+
 const logPageView = () => {
-  // console.log('=====YM=====>', location.pathname);
-  // console.log(`YM ids is ${YmId}`);
   // console.log('logPageView triggered');
-  ym('hit', location.pathname);
-  ym('userParams', { vip_status: false });
+  // console.log('=====YM=====>', location.pathname);
+  // ym('hit', 'test');
+  // ym('userParams', { vip_status: false });
+  return null;
 };
 
 class Navigation extends React.Component {
@@ -65,18 +66,17 @@ class Navigation extends React.Component {
     //
     return (
       <div id="home" className="container-fluid">
-        <YMInitializer
-          accounts={YmId}
-          options={{
-            defer: true,
-            clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true,
-            webvisor: true,
-            trackHash: true
-          }}
-        />
-
+      <YMInitializer
+        accounts={YmId}
+        version="2"
+        options={{
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true,
+          trackHash: true,
+        }}
+      />
         <ul className={this.state.themeName}>
           <li><NavLink exact activeClassName='active' to="/">Хронист</NavLink></li>
           <li><a href='https://demo.chronist.ru/'>Демо</a></li>
@@ -92,29 +92,16 @@ class Navigation extends React.Component {
   }
 }
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <div>
-        Header. <br />
-        Data is: {this.props.data}
-      </div>
-    );
-  }
-}
-
 const About = () => (
   <div>About Page</div>
 );
 
 const App = () => (
-  <Router onUpdate={logPageView} history={browserHistory}>
+  <Router history={browserHistory}>
     <div>
+
       <Navigation />
+      <Route path="/" component={logPageView} />
       <div>
         <Switch>
           <Route exact path='/' render={() => <Home />} />
@@ -128,7 +115,6 @@ const App = () => (
 );
 
 // const App = () => (< />);
-
 
 ReactDOM.render(
   <App />,
