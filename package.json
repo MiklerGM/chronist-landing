@@ -1,7 +1,7 @@
 {
   "name": "chronist-landing-page",
   "private": true,
-  "version": "1.8.1",
+  "version": "1.9.3",
   "description": "",
   "spdx": false,
   "repository": {
@@ -41,6 +41,7 @@
     "html-loader": "^0.4.5",
     "markdown-with-front-matter-loader": "^0.1.0",
     "moment": "^2.18.1",
+    "prop-types": "^15.5.10",
     "react": "^15.3.1",
     "react-axios": "0.0.9",
     "react-dom": "^15.3.1",

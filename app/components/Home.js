@@ -7,13 +7,12 @@ import Footer from './Footer';
 import '../styles/style.less';
 import { ArticleGallery } from './Blog';
 
+const videoContent = require.context('../videos', false, /\.m4v$/);
 
-const Content = [
-  require('../videos/borderchanges.m4v'),
-  require('../videos/export.m4v'),
-  require('../videos/pins.m4v'),
-  require('../videos/play.m4v'),
-];
+const videoIndex = [];
+videoContent.keys().forEach((fileName, id) => {
+  videoIndex[id] = fileName;
+});
 
 const ContentDescription = ['Изменение границ', 'Экспортирование материала', 'Дополнительная информация по клику', 'Воспроизведение'];
 
@@ -34,7 +33,7 @@ class What extends React.Component {
   state = { currentPic: 0, }
 
   swap = (id) => {
-    this.setState({ currentPic: (this.state.currentPic + id) % Content.length });
+    this.setState({ currentPic: id });
   }
 
   render() {
@@ -43,18 +42,25 @@ class What extends React.Component {
         <div className='bg-what'>
           <div className='container'>
             <div className="col-md-6 col-sm-6 text-center VideoGallery container">
-              <video src={Content[this.state.currentPic]} autoPlay loop />
+              <video src={videoContent(videoIndex[this.state.currentPic])} autoPlay loop />
               <p> {ContentDescription[this.state.currentPic]} </p>
+
+
               <div className='row'>
-                <button className='col-xs-4' onClick={() => this.swap(1)} title={ContentDescription[this.state.currentPic + 1]}>
-                  <video width='100' src={Content[(this.state.currentPic + 1) % Content.length]} />
+                { videoContent.keys().map((fileName, id) =>
+                <button
+                  className='col-xs-3'
+                  key={`vc_${fileName}`}
+                  onClick={() => this.swap(id)}
+                  title={ContentDescription[id]}
+                >
+                  <video
+                    width='100'
+                    src={videoContent(fileName)}
+                  />
                 </button>
-                <button className='col-xs-4' onClick={() => this.swap(2)} title={ContentDescription[this.state.currentPic + 2]}>
-                  <video width='100' src={Content[(this.state.currentPic + 2) % Content.length]} />
-                </button>
-                <button className='col-xs-4' onClick={() => this.swap(3)} title={ContentDescription[this.state.currentPic + 3]}>
-                  <video width='100' src={Content[(this.state.currentPic + 3) % Content.length]} />
-                </button>
+              )}
+
               </div>
 
             </div>

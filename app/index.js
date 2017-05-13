@@ -4,9 +4,6 @@ import {
   BrowserRouter as Router,
   Route, browserHistory,
   NavLink,
-  Link,
-  hashHistory,
-  History,
   Switch
 } from 'react-router-dom';
 
@@ -23,9 +20,6 @@ import './index.html';
 import Home from './components/Home';
 import Blog from './components/Blog';
 import NotFound from './components/NotFound';
-
-
-import ArticleGallery from './components/ArticleGallery';
 
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id

@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, Route, Switch } from 'react-router-dom';
 import Moment from 'moment';
 import 'moment/locale/ru';
 import '../styles/blog.less';
 import NotFound from './NotFound';
 import Footer from './Footer';
+
 
 const urls = [];
 const req = require.context('../md', false, /\.md$/);
@@ -89,21 +91,30 @@ const Blog = () => (
   </Switch>
 );
 
-const ArticlePage = () => (
-  <div>
-    <div className='bg-what'><div className='container'>
-      <h2> {req(`./${this.props.data}.md`).title }</h2>
-      <div className='dim'>
-        <span className='dim'> {req(`./${this.props.data}.md`).author} </span>
-        <span className='separator'> - </span>
-        <span className='dim'> {getFormattedDate(req(`./${this.props.data}.md`).date)} </span>
+class ArticlePage extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <div className='bg-what'><div className='container'>
+          <h2> {req(`./${this.props.data}.md`).title }</h2>
+          <div className='dim'>
+            <span className='dim'> {req(`./${this.props.data}.md`).author} </span>
+            <span className='separator'> - </span>
+            <span className='dim'> {getFormattedDate(req(`./${this.props.data}.md`).date)} </span>
+          </div>
+          <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />;
+        </div>
+        </div>
+        <Footer />
       </div>
-      <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />;
-    </div>
-    </div>
-    <Footer />
-  </div>
-);
+    );
+  }
+}
+
+ArticlePage.PropTypes = {
+  data: PropTypes.string.isRequired,
+};
 
 // import Slider from 'react-slick';
 // import 'slick-carousel/slick/slick.less';

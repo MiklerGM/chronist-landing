@@ -16,12 +16,11 @@
 
   - [] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
   - [] After MPA done, adjust YM for tricky statistic {C}
-  - [] содрать лэйяут бложиков с дха {B}
   - [] серверсайд рендеринг дл {C} {?}
-  - [] перенести задачи из гитлаба и наоборот {B}
+  - [x] перенести задачи из гитлаба и наоборот {B}
   - [] допил после релиза сайта (кредиткc) {B}
   - [] подсказки на ссылочках, alt аттрибут
-  - [] Remove horizontal scrollbar
+  - [x] Remove horizontal scrollbar
   - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
 
     ###ArticleGallery
@@ -39,7 +38,7 @@
     ### Blog
     --------
       - [] изменить порядок статей
-      - [] craft ArticlePage
+      - [x] craft ArticlePage
 
     ### CSS reducing
     ----------------
@@ -104,25 +103,40 @@ If an action button is temporarily inactive, use the disabled status.
 If you need to show the number of items that will be affected by the action of the button, you can add the number in brackets. For example, Edit (3).
 
 [Some conference video about design tricks](https://www.youtube.com/watch?v=ogAZ6JC0pJI&feature=youtu.be&list=PLTdS5E3zupkEiDgztHOUw4kOSM8Qdzo7H)
+
 [Accessability colors video](https://www.youtube.com/watch?v=LBmLspdAtxM&feature=youtu.be)
 
 ##Landing Examples
 ------------------
 
 [Tomaotoes Pomodor Timer](http://www.dollaropath.com/tomatoes/ios/)
+
 [Marked Markdown Editor](http://marked2app.com/)
+
 [Alfred launcher app](https://www.alfredapp.com/)
+
 [Launcharbar launcher app](https://www.obdev.at/products/launchbar/index.html)
+
 [Omnifocus productivity app](https://www.omnigroup.com/omnifocus)
+
 [Reeder rss ](http://reederapp.com/mac/)
+
 [Gnome project](https://www.gnome.org/)
+
 [Zathura pdf](https://pwmt.org/projects/zathura/)
+
 [Elemetary OS](https://elementary.io/)
+
 [Feedly cloud rss](https://feedly.com/)
+
 [Basecamp](https://basecamp.com/)
+
 [Twitter Statistic](http://twittercounter.com/)
+
 [Typora Markdown App](https://typora.io/)
+
 [DataMaps](https://datamaps.co/)
+
 [GNU Emacs](https://www.gnu.org/software/emacs/index.html)
 
 
