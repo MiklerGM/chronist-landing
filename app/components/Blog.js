@@ -5,8 +5,6 @@ import Moment from 'moment';
 import 'moment/locale/ru';
 import '../styles/blog.less';
 import NotFound from './NotFound';
-import Footer from './Footer';
-
 
 const urls = [];
 const req = require.context('../md', false, /\.md$/);
@@ -52,7 +50,6 @@ const BlogWrapper = () => (
     <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
       {urls.reverse().map(processArticle)}
     </div></div></div>
-    <Footer />
   </div>
 );
 
@@ -95,7 +92,6 @@ class ArticlePage extends React.Component {
 
   render() {
     return (
-      <div>
         <div className='bg-what'><div className='container'>
           <h2> {req(`./${this.props.data}.md`).title }</h2>
           <div className='dim'>
@@ -106,8 +102,6 @@ class ArticlePage extends React.Component {
           <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />;
         </div>
         </div>
-        <Footer />
-      </div>
     );
   }
 }

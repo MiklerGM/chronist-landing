@@ -3,7 +3,6 @@ import React from 'react';
 import Timeline from './Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription';
-import Footer from './Footer';
 import '../styles/style.less';
 import { ArticleGallery } from './Blog';
 
@@ -96,7 +95,6 @@ class Home extends React.Component {
         <Timeline />
         <ArticleGallery />
         <AppDescription />
-        <Footer />
       </div>
     );
   }

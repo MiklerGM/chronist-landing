@@ -19,6 +19,7 @@ import './index.html';
 import Home from './components/Home';
 import Blog from './components/Blog';
 import NotFound from './components/NotFound';
+import Footer from './components/Footer_DEPRICATED';
 
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
@@ -105,6 +106,7 @@ const App = () => (
           <Route render={NotFound} />
         </Switch>
       </div>
+      <Footer />
     </div>
   </Router>
 );

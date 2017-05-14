@@ -38,6 +38,7 @@
     ### CSS reducing
     ----------------
     - [] .readmore mutual class
+    - [] эффект поднятия для гифок например
 
     ### Footer
     ----------
@@ -176,6 +177,10 @@ https://github.com/xtophs/docker-bash-on-windows
 [Counting Web Session with JS. Swizek blog](https://swizec.com/blog/counting-web-sessions-javascript/swizec/7598?__s=dugx4qg21suydr72vgrv)
 
 
+https://datamaps.co/contact - contact pages with input form
+
 ##Localization
 -----------------
  <Nav currentLanguage={language} switchLanguage={this.switchLanguage} />
+
+
