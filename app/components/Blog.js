@@ -65,6 +65,7 @@ const processArticleGallery = (url, id) => (
 
 export const ArticleGallery = () => (
   <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container'>
+    <h2> Последние записи </h2>
     {urls.reverse().map(processArticleGallery)}
     {
       (process.env.NODE_ENV === 'production') ? null :

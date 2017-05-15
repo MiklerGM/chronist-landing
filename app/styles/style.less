@@ -41,7 +41,7 @@ h1 {
 
 h2 {
   font-size: 30px;
-  font-family: titleText, sans-serif;
+  font-family: commonText, sans-serif;
 }
 
 h3 {
@@ -172,42 +172,6 @@ hr {
   }
 }
 
-#ArticleSlider {
-  & button {
-    color: blue;
-    background: grey;
-    outline: none;
-    &:focus { outline: none !important; }
-    &:hover { outline: 0 !important; }
-    &:active { outline: 0 !important; }
-  }
-
-  & video {
-    color: blue;
-    background: grey;
-    outline: none;
-    &:focus { outline: 0 !important; }
-    &:hover { outline: 0 !important; }
-    &:active { outline: 0 !important; }
-  }
-
-  &:hover {
-    color: #222;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  &:active {
-    color: #222;
-    text-decoration: underline;
-  }
-
-  &:focus {
-    border: none !important;
-    outline: 0;
-  }
-}
-
 #NotFound {
   color: #fff;
 }
@@ -227,5 +191,9 @@ hr {
 }
 
 .what-desc {
-  text-align: justify;
+  text-align: center;
+
+  & h4 {
+    text-align: justify;
+  }
 }

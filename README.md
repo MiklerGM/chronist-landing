@@ -184,3 +184,12 @@ https://datamaps.co/contact - contact pages with input form
  <Nav currentLanguage={language} switchLanguage={this.switchLanguage} />
 
 
+##Footer
+-----------
+
+About Us Link
+Contact Us Link
+ToS
+Privacy Policy - what we do with your email
+Address and Phone Number  - don't. we don't provide physical business
+

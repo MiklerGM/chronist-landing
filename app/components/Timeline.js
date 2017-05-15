@@ -113,7 +113,7 @@ const featureList = [
   },
 ];
 
-const featureRows = [[...featureList.slice(0,4)],[...featureList.slice(4,8)],[...featureList.slice(8,12)]];
+const featureRows = [[...featureList.slice(0, 4)],[...featureList.slice(4, 8)],[...featureList.slice(8, 12)]];
 
 let ids = { row: 0, feature:0 };
 const getId = (type) => {
@@ -122,7 +122,7 @@ const getId = (type) => {
   return `${type}_${id}`;
 };
 
-const Feature = ({ feature, gkey }) => (
+const Feature = ({ feature, gkey, id }) => (
   <div key={gkey} className={`col-md-3 col-sm-3 ${gkey} ${feature.offset ? 'col-md-offset-1' : ''}`}>
     <div key={`${gkey}_thumb`} className="thumbnail timeline-tmb">
       <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
@@ -145,15 +145,34 @@ const processRow = (row) => {
   return <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />;
 };
 
-const Timeline = () => (
-  <div id="timeline" className="row">
-    <div className="timeline bg-4">
-      <div className='container'>
-        {featureRows.map(processRow)}
+// const Timeline = () => (
+//   <div id="timeline" className="row">
+//     <div className="timeline bg-4">
+//       <div className='container'>
+//         {featureRows.map(processRow)}
+//       </div>
+//     </div>
+//     <hr />
+//   </div>
+// );
+
+
+class Timeline extends React.Component {
+  componentDidMount() {
+    ids = { row: 0, feature: 0 };
+  }
+  render() {
+    return (
+      <div id="timeline" className="row">
+        <div className="timeline bg-4">
+          <div className='container'>
+            {featureRows.map(processRow)}
+          </div>
+        </div>
+        <hr />
       </div>
-    </div>
-    <hr />
-  </div>
-);
+    );
+  }
+}
 
 export default Timeline;
