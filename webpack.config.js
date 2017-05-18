@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, 'app'),
@@ -22,6 +23,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         enforce: 'pre',
         use: {
           loader: 'babel-loader',
@@ -31,22 +33,15 @@ module.exports = {
             cacheDirectory: true
           },
         },
-        include: path.resolve(__dirname, 'app')
+        // include: path.resolve(__dirname, 'app')
       },
       {
         test: /\.less$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: { importLoaders: 1, minimize: true }
-          },
-          {
-            loader: 'less-loader'
-          }
-        ]
+        use: ExtractTextPlugin.extract([
+          { loader: 'css-loader' },
+          { loader: 'postcss-loader' },
+          { loader: 'less-loader' }
+        ])
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -87,13 +82,18 @@ module.exports = {
     // contentBase: './src',
     historyApiFallback: true,
     // hot: true,
-    // inline: true
+    inline: true,
   },
   plugins: (process.env.NODE_ENV === 'production') ? [
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       },
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        WEBPACK: true
+      }
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -110,7 +110,15 @@ module.exports = {
     //   /(en-gb|ru)\.js/
     // ),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
+    new ExtractTextPlugin('styles.css')
+
   ] : [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        WEBPACK: true
+      }
+    }),
+    new ExtractTextPlugin('styles.css')
   ],
 };

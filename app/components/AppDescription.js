@@ -1,5 +1,7 @@
 import React from 'react';
-import '../styles/appdesc.less';
+// import '../styles/appdesc.less';
+
+if (process.env.WEBPACK) require('../styles/appdesc.less'); // eslint-disable-line global-require
 
 const personArticle = require('../images/person.jpg');
 

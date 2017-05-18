@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { Link, Route, Switch } from 'react-router-dom';
 import Moment from 'moment';
 import 'moment/locale/ru';
-import '../styles/blog.less';
 import NotFound from './NotFound';
+
+// import '../styles/blog.less';
+if (process.env.WEBPACK) require('../styles/blog.less'); // eslint-disable-line global-require
 
 const urls = [];
 const req = require.context('../md', false, /\.md$/);
@@ -67,10 +69,6 @@ export const ArticleGallery = () => (
   <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container'>
     <h2> Последние записи </h2>
     {urls.reverse().map(processArticleGallery)}
-    {
-      (process.env.NODE_ENV === 'production') ? null :
-      <Link to={'/blog'}><button className='btn-black text-center'> VIEW MORE</button></Link>
-    }
   </div></div><hr /></div>
 );
 

@@ -1,5 +1,7 @@
 import React from 'react';
-import '../styles/timeline.less';
+
+// import '../styles/timeline.less';
+if (process.env.WEBPACK) require('../styles/timeline.less'); // eslint-disable-line global-require
 
 const ft1 = require('../images/feature-borders.svg');
 const ft2 = require('../images/feature-war.svg');

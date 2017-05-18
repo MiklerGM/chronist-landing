@@ -8,30 +8,16 @@
   src: url(../assets/Lora-Regular.ttf);
 }
 
-body {
-  // color: #212121;
-  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/back-progressive.jpg");
-  background-color: transparent;
-  background-repeat: no-repeat;
-  // parallax thing
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  color: black;
-  font-weight: 300;
-  font-family: commonText, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.02em;
+#app {
+  min-height: 100%;
+  position: relative;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/back-progressive.jpg");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: 25% 0%;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 h1 {
@@ -99,10 +85,23 @@ hr {
 
 // TITLE BEGIN
 #title {
-  color: #fff;
+  height: 100%;
+  // color: #212121;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../images/back-progressive.jpg");
   background-color: transparent;
+  background-repeat: no-repeat;
+  // parallax thing
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  font-weight: 300;
+  font-family: commonText, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
+  color: #fff;
   font-size: 40px;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 20px;
 
   & .btn {

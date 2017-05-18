@@ -14,6 +14,8 @@
 ##Landing
 =========
 
+
+
   - [] After MPA done, adjust YM for tricky statistic {C}
   - [] migrate to htmlwebpackplugin and hashes for chunks
   - [] серверсайд рендеринг дл {C} {?}
@@ -22,6 +24,7 @@
   - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
   - [x] progressive jpeg
   - [] helmet wild metadata
+
 
     ###ArticleGallery
     -----------------
@@ -35,10 +38,18 @@
       - [] из текста блога назад
       - [] timeline pseudoelements-bug
 
-    ### CSS reducing
+    ### Style
     ----------------
     - [] .readmore mutual class
     - [] эффект поднятия для гифок например
+    - [] BEM convention
+    - [] Base-16 Theme? Use in less variables
+    - [] Add PostCSS and Autoprefix for starters
+
+    base color - 073242
+    base16-harmonic16-dark
+    base16-solarized
+    base16-materia
 
     ### Footer
     ----------
@@ -149,6 +160,11 @@ If you need to show the number of items that will be affected by the action of t
 
 [GNU Emacs](https://www.gnu.org/software/emacs/index.html)
 
+## Good Articles
+-----------------
+
+[What to use to react styling?](http://andrewhfarmer.com/how-to-style-react/)
+
 
 ##Make a Blog
 --------------
@@ -192,4 +208,35 @@ Contact Us Link
 ToS
 Privacy Policy - what we do with your email
 Address and Phone Number  - don't. we don't provide physical business
+
+Microsoft says that more materials are planned, but for now is starting with just one: "Acrylic." This is a translucent, generated material that uses Gaussian blur combined with noise to create a sort of plastic-like effect. Microsoft intends for Acrylic to be used under, for example, navigational elements, in order to de-emphasize them. Acrylic would also be used under ephemeral content.
+
+
+## Materials css
+----------------
+
+[Creating a Blurred Background Using Only CSS](https://paper-leaf.com/blog/2016/01/creating-blurred-background-using-only-css/)
+
+##
+------------
+
+[Checklist](https://simplesecurity.sensedeep.com/web-developer-security-checklist-f2e4f43c9c56)
+
+## Server-side rendering
+---------------------------
+https://github.com/dimaip/server-side-rendering/commits/master
+https://github.com/dimaip/server-side-rendering/commit/7d1d0677bca0ea94e820dc7e156c89e83ef823bb
+https://github.com/dimaip/server-side-rendering
+https://medium.com/@apostolos/server-side-rendering-code-splitting-and-hot-reloading-with-react-router-v4-87239cfc172c
+
+[Good Router SRR ](http://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/)
+
+https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89
+
+## Utilize
+----------
+https://en.bem.info/methodology/
+https://en.bem.info/methodology/quick-start/
+
+https://github.com/quietshu/react-less-boilerplate/tree/master/app
 

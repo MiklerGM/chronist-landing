@@ -1,5 +1,8 @@
 import React from 'react';
-import '../styles/footer.less';
+
+// import '../styles/footer.less';
+if (process.env.WEBPACK) require('../styles/footer.less'); // eslint-disable-line global-require
+
 
 class Footer extends React.Component {
   render() {

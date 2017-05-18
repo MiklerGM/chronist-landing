@@ -3,8 +3,9 @@ import React from 'react';
 import Timeline from './Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription';
-import '../styles/style.less';
 import { ArticleGallery } from './Blog';
+
+if (process.env.WEBPACK) require('../styles/style.less'); // eslint-disable-line global-require
 
 const videoContent = require.context('../videos', false, /\.m4v$/);
 

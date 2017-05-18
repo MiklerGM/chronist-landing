@@ -6,20 +6,24 @@ import {
   NavLink,
   Switch
 } from 'react-router-dom';
+// import {Helmet} from "react-helmet";
 
 import 'bootstrap/less/bootstrap.less';
 import { YMInitializer } from 'react-yandex-metrika';
-// import {Helmet} from "react-helmet";
-
-import './styles/nav-router.less';
-import './favicon.ico';
-import './styles/fontello.less';
-import './index.html';
 
 import Home from './components/Home';
 import Blog from './components/Blog';
 import NotFound from './components/NotFound';
 import Footer from './components/Footer_DEPRICATED';
+import './favicon.ico';
+import './index.html';
+
+// import './styles/nav-router.less';
+if (process.env.WEBPACK) require('./styles/nav-router.less'); // eslint-disable-line global-require
+
+// import './styles/fontello.less';
+if (process.env.WEBPACK) require('./styles/fontello.less'); // eslint-disable-line global-require
+
 
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id
@@ -64,7 +68,7 @@ class Navigation extends React.Component {
 
     //
     return (
-      <div id="home" className="container-fluid">
+      <div id="Navigation" className='row' ><div className="container-fluid">
         <YMInitializer
           accounts={YmId}
           version="2"
@@ -83,7 +87,7 @@ class Navigation extends React.Component {
           <li style={this.state.style}><NavLink activeClassName='active' to="/blog">Блог</NavLink></li>
           <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
         </ul>
-      </div>
+      </div></div>
     );
   }
 }
