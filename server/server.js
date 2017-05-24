@@ -9,7 +9,7 @@ import fs from 'fs';
 import AppRoutes from '../client/routes';
 
 const index = fs.readFileSync('dist/client.html', 'utf8');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3030;
 
 // Create HTTP server
 const app = new express();
