@@ -22,14 +22,12 @@
 
   - [] internalization (c)
   - [] After MPA done, adjust YM for tricky statistic {C}
-  - [f] migrate to htmlwebpackplugin and hashes for chunks
   - [] допил после релиза сайта (кредиткc) {B}
   - [] подсказки на ссылочках, alt аттрибут
   - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
   - [] helmet wild metadata
-  - [] SSR
   - [] props validation in components
-
+  - [] fix timeline pseudostuff for non-js browsers
 
     ###ArticleGallery
     -----------------
@@ -60,6 +58,8 @@
 
 ##Done
 =========
+  - [x] SSR
+  - [x] migrate to htmlwebpackplugin and hashes for chunks
   - [x] progressive jpeg
   - [x] Add PostCSS and Autoprefix for starters
   - [x] название раздела

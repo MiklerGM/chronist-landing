@@ -41,6 +41,7 @@ app.use((req, res) => {
       .replace(/<div id="app"><\/div>/, `<div id="app">${html}</div>`)
       .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${Helmet.rewind().meta}`)
     );
+    res.header('Content-Type', 'text/html');
     res.end();
   }
 });
