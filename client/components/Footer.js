@@ -14,7 +14,7 @@ class Footer extends React.Component {
           <p>Иллюстрация предоставлены <a href='https://chronist.ru/about' className='social'>Лерой </a></p>
         </div>
         <div className='right-part col-md-6 col-sm-6'>
-          <a href='mailto:contact@chronist.ru'><span className='social fa icon-envelope-open' aria-hidden='true' /></a>
+          <a href='mailto:idea@chronist.ru'><span className='social fa icon-envelope-open' aria-hidden='true' /></a>
           <a href='https://vk.com/chronist'><span className='social fa icon-vkontakte' aria-hidden='true' /></a>
         </div>
       </div></div><hr /></footer>

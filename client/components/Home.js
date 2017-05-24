@@ -6,7 +6,7 @@ import AppDescription from './AppDescription';
 import { ArticleGallery } from './Blog';
 
 // import '../styles/style.less';
-if (process.env.WEBPACK) require('../styles/style.less'); // eslint-disable-line global-require
+// if (process.env.WEBPACK) require('../styles/style.less'); // eslint-disable-line global-require
 
 const Title = () => (
   <div id="title">

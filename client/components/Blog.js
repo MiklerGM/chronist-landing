@@ -4,6 +4,8 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Moment from 'moment';
 import 'moment/locale/ru';
 import NotFound from './NotFound';
+import { Helmet } from 'react-helmet';
+
 
 // import '../styles/blog.less';
 if (process.env.WEBPACK) require('../styles/blog.less'); // eslint-disable-line global-require
@@ -44,6 +46,15 @@ const processArticle = (url, id) => (
 
 const BlogWrapper = () => (
   <div>
+    <Helmet
+      title='Блог'
+      meta={[
+        { name: 'description', content: 'Хронист Блог' },
+        { property: 'og:type', content: 'article_' },
+        { property: 'og:title', content: 'Блог' }
+      ]}
+    />
+
     <h1 id='pageTitle'> Блог </h1>
     <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
       {urls.reverse().map(processArticle)}
@@ -92,6 +103,14 @@ class ArticlePage extends React.Component {
   render() {
     return (
         <div className='bg-what'><div className='container'>
+          <Helmet
+              meta={[
+                { property: 'og:type', content: 'article' },
+                { property: 'og:title', content: `${req(`./${this.props.data}.md`).title}` },
+                { property: 'og:description', content: `${req(`./${this.props.data}.md`).tldr}` }
+              ]}
+            />
+
           <h2> {req(`./${this.props.data}.md`).title }</h2>
           <div className='dim'>
             <span className='dim'> {req(`./${this.props.data}.md`).author} </span>

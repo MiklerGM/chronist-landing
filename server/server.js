@@ -1,6 +1,7 @@
 import { createServer } from 'http';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import Helmet from 'react-helmet';
 import { StaticRouter } from 'react-router';
 import http from 'http';
 import express from 'express';
@@ -32,8 +33,10 @@ app.use((req, res) => {
     res.writeHead(301, { Location: context.url });
     res.end();
   } else {
-    res.write(index.replace(/<div id="app"><\/div>/, `<div id="app">${html}</div>`
-    ));
+    res.write(index
+      .replace(/<div id="app"><\/div>/, `<div id="app">${html}</div>`)
+      .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${Helmet.rewind().meta}`)
+    );
     res.end();
   }
 });
