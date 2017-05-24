@@ -1,22 +1,24 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
 module.exports = {
-  context: path.join(__dirname, 'app'),
+  context: path.join(__dirname, 'client'),
   entry: {
-    app: path.resolve(__dirname, 'app'),
-    // vendor: ['react', 'react-dom'],
+    client: path.resolve(__dirname, 'client'),
+    vendor: ['react', 'react-dom'],
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].bundle-[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
   resolve: {
     modules: [
-      path.join(__dirname, 'app'),
+      path.join(__dirname, 'client'),
       'node_modules'
     ]
   },
@@ -32,13 +34,26 @@ module.exports = {
         WEBPACK: true
       }
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compressor: {
-    //     warnings: false
-    //   }
-    // }),
-    // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
-    new ExtractTextPlugin('bundle.css'),
+    new FaviconsWebpackPlugin({
+      logo: './images/favicon.png',
+      prefix: 'icons-[hash]/',
+      emitStats: true,
+      persisentCache: true,
+      background: '#000',
+      inject: true
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: { warnings: false }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity,
+      filename: 'vendor.bundle-[hash].js'
+    }),
+    new ExtractTextPlugin({
+      filename: 'style.bundle-[hash].css',
+      allChunks: true
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
       inject: 'body',
@@ -65,7 +80,6 @@ module.exports = {
             cacheDirectory: true
           },
         },
-        // include: path.resolve(__dirname, 'app')
       },
       {
         test: /\.less$/,

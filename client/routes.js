@@ -4,6 +4,8 @@ import {
   Switch
 } from 'react-router-dom';
 
+if (process.env.WEBPACK) require('bootstrap/less/bootstrap.less'); // eslint-disable-line global-require
+
 import Home from './components/Home';
 import Blog from './components/Blog';
 import NotFound from './components/NotFound';

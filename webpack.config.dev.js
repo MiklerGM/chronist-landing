@@ -1,13 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const webpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools');
 
 module.exports = {
-  context: path.join(__dirname, 'app'),
+  context: path.join(__dirname, 'client'),
   entry: {
-    app: path.resolve(__dirname, 'app'),
+    client: path.resolve(__dirname, 'client'),
     vendor: ['react', 'react-dom'],
   },
   output: {
@@ -17,7 +15,7 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.join(__dirname, 'app'),
+      path.join(__dirname, 'client'),
       'node_modules'
     ]
   },
@@ -35,7 +33,7 @@ module.exports = {
             cacheDirectory: true
           },
         },
-        // include: path.resolve(__dirname, 'app')
+        // include: path.resolve(__dirname, 'client')
       },
       {
         test: /\.less$/,

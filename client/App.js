@@ -4,17 +4,13 @@ import {
   browserHistory
 } from 'react-router-dom';
 // import {Helmet} from "react-helmet";
+
 import AppRouter from './routes';
 
-require('bootstrap/less/bootstrap.less');
-
-// import 'bootstrap/less/bootstrap.less';
-// import './styles/nav-router.less';
-// import './styles/fontello.less';
 if (process.env.WEBPACK) {
+  require('./styles/style.less'); // eslint-disable-line global-require
   require('./styles/nav-router.less'); // eslint-disable-line global-require
   require('./styles/fontello.less'); // eslint-disable-line global-require
-  require('bootstrap/less/bootstrap.less'); // eslint-disable-line global-require
 }
 
 const App = () => (

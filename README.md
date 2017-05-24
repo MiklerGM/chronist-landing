@@ -3,13 +3,19 @@
 
 ##How to use
 
-`npm run dev` -  запускает вебпак-сервер на локалхост:8080
+`npm run dev` -  Developer environment. Launch webpack-dev-server with hotreloader and other sweets things on localhost:8080
 
-`npm run build` - собирает в папку dist.
+`npm run release` - Build old DEPRICATED production server. Doesn't contain server side features.
 
-`npm run build` - сборка для продакшена с вебпак плугинам в папку dist.
+`npm run build` - Build new production. Contain two subcommands:
 
-`npm run test` - тестыz
+  'npm run build:client' - Build client part of production.
+
+  'npm run build:server' - Build server side of production
+
+'npm run serve' - Launch express web server. Only work after execute build command.
+
+`npm run test` - Run test, only one, one that doesn't work. Jest.
 
 ##Landing
 =========

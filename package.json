@@ -46,6 +46,7 @@
     "babel-loader": "^7.0.0-beta.1",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
+    "favicons-webpack-plugin": "0.0.7",
     "html-loader": "^0.4.5",
     "markdown-with-front-matter-loader": "^0.1.0",
     "moment": "^2.18.1",
@@ -73,7 +74,7 @@
     "build:server": "NODE_ENV=production  webpack --config ./webpack.config.server.js",
     "serve": "babel-node dist/server.js",
     "test": "jest",
-    "release": "rimraf dist && NODE_ENV=production webpack -p --bail",
+    "release": "rimraf dist && NODE_ENV=production webpack -p --bail --config ./webpack.config.prod.js",
     "clean": "rimraf dist node_modules"
   }
 }

@@ -1,23 +1,23 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
-const config = {
-  context: path.join(__dirname, 'app'),
+module.exports = {
+  context: path.join(__dirname, 'client'),
   entry: {
-    app: path.resolve(__dirname, 'app'),
+    client: path.resolve(__dirname, 'client'),
     vendor: ['react', 'react-dom'],
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
   resolve: {
     modules: [
-      path.join(__dirname, 'app'),
+      path.join(__dirname, 'client'),
       'node_modules'
     ]
   },
@@ -33,12 +33,17 @@ const config = {
         warnings: false
       }
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
-    new ExtractTextPlugin('bundle.css'),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
+    new ExtractTextPlugin('style.bundle.css'),
     new webpack.DefinePlugin({
       'process.env': {
         WEBPACK: true
       }
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      inject: 'body',
+      filename: 'index.html'
     }),
   ],
   module: {
@@ -55,7 +60,7 @@ const config = {
             cacheDirectory: true
           },
         },
-        // include: path.resolve(__dirname, 'app')
+        // include: path.resolve(__dirname, 'client')
       },
       {
         test: /\.less$/,
@@ -105,57 +110,3 @@ const config = {
   },
 };
 
-const serverConfig = {
-  name: 'server',
-  target: 'node',
-  externals: [nodeExternals()],
-  entry: ['./server/index.js'],
-  output: {
-    path: path.join(__dirname, 'dist/'),
-    filename: 'server.js',
-    publicPath: 'dist/',
-    libraryTarget: 'commonjs2'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.less$/,
-        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'less-loader']
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: ['url-loader?limit=4096&name=[name].[ext]']
-      },
-      {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-      }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      }, {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-      },
-    ]
-  },
-  resolve: {
-    modules: [
-      path.join(__dirname, 'server'),
-      'node_modules'
-    ]
-  },
-};
-
-module.exports = [serverConfig];
-// module.exports = serverConfig;

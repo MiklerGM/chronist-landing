@@ -5,7 +5,7 @@ import { StaticRouter } from 'react-router';
 import http from 'http';
 import express from 'express';
 import fs from 'fs';
-import AppRoutes from '../app/routes';
+import AppRoutes from '../client/routes';
 
 const index = fs.readFileSync('dist/client.html', 'utf8');
 const PORT = process.env.PORT || 3000;
