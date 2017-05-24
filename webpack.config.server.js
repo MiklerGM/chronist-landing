@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist/'),
     filename: 'server.js',
-    publicPath: 'http://localhost:3000/',
+    publicPath: '/',
     libraryTarget: 'commonjs2'
   },
   module: {

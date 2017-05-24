@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { StaticRouter } from 'react-router';
 import http from 'http';
 import express from 'express';
+import compression from 'compression';
 import fs from 'fs';
 import AppRoutes from '../client/routes';
 
@@ -15,6 +16,9 @@ const PORT = process.env.PORT || 3030;
 const app = new express();
 const server = new http.Server(app);
 
+
+// Use gzip compression;
+app.use(compression());
 // Serve static files
 app.use(express.static('dist'));
 
