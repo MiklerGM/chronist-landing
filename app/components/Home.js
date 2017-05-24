@@ -5,16 +5,8 @@ import Subscribe from './Subscribe';
 import AppDescription from './AppDescription';
 import { ArticleGallery } from './Blog';
 
+// import '../styles/style.less';
 if (process.env.WEBPACK) require('../styles/style.less'); // eslint-disable-line global-require
-
-const videoContent = require.context('../videos', false, /\.m4v$/);
-
-const videoIndex = [];
-videoContent.keys().forEach((fileName, id) => {
-  videoIndex[id] = fileName;
-});
-
-const ContentDescription = ['Изменение границ', 'Экспортирование материала', 'Дополнительная информация по клику', 'Воспроизведение'];
 
 const Title = () => (
   <div id="title">
@@ -29,6 +21,13 @@ const Title = () => (
   </div>
 );
 
+const videoContent = require.context('../videos', false, /\.m4v$/);
+const videoIndex = [];
+videoContent.keys().forEach((fileName, id) => {
+  videoIndex[id] = fileName;
+});
+const ContentDescription = ['Изменение границ', 'Экспортирование материала', 'Дополнительная информация по клику', 'Воспроизведение'];
+
 class What extends React.Component {
   state = { currentPic: 0, }
 
@@ -37,6 +36,7 @@ class What extends React.Component {
   }
 
   render() {
+
     return (
       <div id="what" className='row'>
         <div className='bg-what'>
@@ -90,11 +90,13 @@ class What extends React.Component {
 class Home extends React.Component {
   render() {
     return (
-      <div className="app">
+      <div className="app" >
         <Title />
         <What />
-        <Timeline />
+        {/*
+        */}
         <ArticleGallery />
+        <Timeline />
         <AppDescription />
       </div>
     );

@@ -1,7 +1,9 @@
 import React from 'react';
 
 // import '../styles/timeline.less';
-if (process.env.WEBPACK) require('../styles/timeline.less'); // eslint-disable-line global-require
+if (process.env.WEBPACK) {
+  require('../styles/timeline.less'); // eslint-disable-line global-require
+}
 
 const ft1 = require('../images/feature-borders.svg');
 const ft2 = require('../images/feature-war.svg');
@@ -115,16 +117,20 @@ const featureList = [
   },
 ];
 
-const featureRows = [[...featureList.slice(0, 4)],[...featureList.slice(4, 8)],[...featureList.slice(8, 12)]];
+const featureRows = [
+  [...featureList.slice(0, 4)],
+  [...featureList.slice(4, 8)],
+  [...featureList.slice(8, 12)]
+];
 
-let ids = { row: 0, feature:0 };
+let ids = { row: 0, feature: 0 };
 const getId = (type) => {
   const id = ids[type];
   ids[type] = ids[type] + 1;
   return `${type}_${id}`;
 };
 
-const Feature = ({ feature, gkey, id }) => (
+const Feature = ({ feature, gkey }) => (
   <div key={gkey} className={`col-md-3 col-sm-3 ${gkey} ${feature.offset ? 'col-md-offset-1' : ''}`}>
     <div key={`${gkey}_thumb`} className="thumbnail timeline-tmb">
       <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
@@ -146,18 +152,6 @@ const FeatureRow = ({ row, gkey }) => (
 const processRow = (row) => {
   return <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />;
 };
-
-// const Timeline = () => (
-//   <div id="timeline" className="row">
-//     <div className="timeline bg-4">
-//       <div className='container'>
-//         {featureRows.map(processRow)}
-//       </div>
-//     </div>
-//     <hr />
-//   </div>
-// );
-
 
 class Timeline extends React.Component {
   componentDidMount() {

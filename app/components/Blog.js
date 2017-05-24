@@ -8,13 +8,9 @@ import NotFound from './NotFound';
 // import '../styles/blog.less';
 if (process.env.WEBPACK) require('../styles/blog.less'); // eslint-disable-line global-require
 
-const urls = [];
-const req = require.context('../md', false, /\.md$/);
-
+const urls = [];const req = require.context('../md', false, /\.md$/);
 req.keys().forEach((fileName, id) => {
-  // console.log(fileName);
   urls[id] = fileName.replace('./', '').replace('.md', '');
-  // req(fileName);
 });
 
 const getHumanDate = (date) => {
@@ -86,6 +82,10 @@ const Blog = () => (
     <Route render={NotFound} />
   </Switch>
 );
+
+// const Blog = () => (
+//   <div> Dummy </div>
+// );
 
 class ArticlePage extends React.Component {
 

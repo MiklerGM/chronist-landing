@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const webpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools');
 
 module.exports = {
   context: path.join(__dirname, 'app'),
@@ -37,19 +39,19 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract([
-          { loader: 'css-loader' },
-          { loader: 'postcss-loader' },
-          { loader: 'less-loader' }
-        ])
+        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'less-loader']
       },
       {
         test: /\.(png|jpg|gif)$/,
         use: ['url-loader?limit=4096&name=[name].[ext]']
       },
       {
-        test: /\.(html|ico)$/,
+        test: /\.ico$/,
         use: ['file-loader?name=[name].[ext]']
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader'
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
@@ -78,47 +80,18 @@ module.exports = {
     ]
   },
   devServer: {
-    // historyApiFallback: true,
-    // contentBase: './src',
     historyApiFallback: true,
-    // hot: true,
     inline: true,
   },
-  plugins: (process.env.NODE_ENV === 'production') ? [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      },
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        WEBPACK: true
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false,
-      },
-    }),
-    // new webpack.ContextReplacementPlugin(
-    //   // The path to directory which should be handled by this plugin
-    //   /moment[\/\\]locale/,
-    //   // A regular expression matching files that should be included
-    //   /(en-gb|ru)\.js/
-    // ),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
-    new ExtractTextPlugin('styles.css')
-
-  ] : [
+  plugins:
+  [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         WEBPACK: true
       }
     }),
-    new ExtractTextPlugin('styles.css')
-  ],
+    new HtmlWebpackPlugin({ template: './index.html' }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
+  ]
 };

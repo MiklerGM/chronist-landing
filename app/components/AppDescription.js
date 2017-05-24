@@ -3,6 +3,7 @@ import React from 'react';
 
 if (process.env.WEBPACK) require('../styles/appdesc.less'); // eslint-disable-line global-require
 
+
 const personArticle = require('../images/person.jpg');
 
 
@@ -13,9 +14,7 @@ class AppDescription extends React.Component {
   }
 
   toggle(e) {
-    // Prevent following the link.
     e.preventDefault();
-    // This will trigger an intelligent re-render of the component.
     this.setState({ showDefault: !this.state.showDefault });
   }
 

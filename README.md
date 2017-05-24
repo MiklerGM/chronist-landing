@@ -14,21 +14,20 @@
 ##Landing
 =========
 
-
-
+  - [] internalization (c)
   - [] After MPA done, adjust YM for tricky statistic {C}
-  - [] migrate to htmlwebpackplugin and hashes for chunks
-  - [] серверсайд рендеринг дл {C} {?}
+  - [f] migrate to htmlwebpackplugin and hashes for chunks
   - [] допил после релиза сайта (кредиткc) {B}
   - [] подсказки на ссылочках, alt аттрибут
   - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
-  - [x] progressive jpeg
   - [] helmet wild metadata
+  - [] SSR
+  - [] props validation in components
 
 
     ###ArticleGallery
     -----------------
-      -[] название раздела и переход на блог?
+      - [] кнопку переход на блог (когда будет больше статей)?
 
     ###VideoGallery
     ---------------
@@ -36,15 +35,13 @@
     ### Blog
     --------
       - [] из текста блога назад
-      - [] timeline pseudoelements-bug
 
     ### Style
     ----------------
     - [] .readmore mutual class
-    - [] эффект поднятия для гифок например
+    - [] +shadows эффект поднятия для гифок например
     - [] BEM convention
     - [] Base-16 Theme? Use in less variables
-    - [] Add PostCSS and Autoprefix for starters
 
     base color - 073242
     base16-harmonic16-dark
@@ -57,6 +54,10 @@
 
 ##Done
 =========
+  - [x] progressive jpeg
+  - [x] Add PostCSS and Autoprefix for starters
+  - [x] название раздела
+  - [x] timeline pseudoelements-bug
   - [x] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
   - [x] изменить порядок статей
   - [x] craft ArticlePage
@@ -186,6 +187,7 @@ https://medium.freecodecamp.com/where-do-i-belong-a-guide-to-saving-react-compon
 
 https://github.com/xtophs/docker-bash-on-windows
 
+https://github.com/pk1m/Stackoverflow-helpme
 
 ##Additional Features
 -----------------------
@@ -224,8 +226,7 @@ Microsoft says that more materials are planned, but for now is starting with jus
 
 ## Server-side rendering
 ---------------------------
-https://github.com/dimaip/server-side-rendering/commits/master
-https://github.com/dimaip/server-side-rendering/commit/7d1d0677bca0ea94e820dc7e156c89e83ef823bb
+
 https://github.com/dimaip/server-side-rendering
 https://medium.com/@apostolos/server-side-rendering-code-splitting-and-hot-reloading-with-react-router-v4-87239cfc172c
 
@@ -233,10 +234,17 @@ https://medium.com/@apostolos/server-side-rendering-code-splitting-and-hot-reloa
 
 https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89
 
+[universal-react-demo](https://github.com/5tefan/universal-react-demo)
+
+
 ## Utilize
 ----------
 https://en.bem.info/methodology/
 https://en.bem.info/methodology/quick-start/
 
 https://github.com/quietshu/react-less-boilerplate/tree/master/app
+
+
+[examples with css, markdown ssr](https://github.com/webpack/react-starter/blob/307594cc8df815ad7d2adcd6a3b5c78a32388084/app/containers/ReadmePage.jsx)
+
 
