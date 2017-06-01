@@ -250,6 +250,7 @@ https://en.bem.info/methodology/quick-start/
 
 https://github.com/quietshu/react-less-boilerplate/tree/master/app
 
+[styled-components v2: A smaller, faster drop-in upgrade with even more features](https://medium.com/styled-components/announcing-v2-f01ef3766ac2)
 
 [examples with css, markdown ssr](https://github.com/webpack/react-starter/blob/307594cc8df815ad7d2adcd6a3b5c78a32388084/app/containers/ReadmePage.jsx)
 

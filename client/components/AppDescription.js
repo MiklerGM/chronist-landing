@@ -42,7 +42,7 @@ class AppDescription extends React.Component {
               <p> кандидат педагогических наук </p>
             </span>
           </div>
-          <div className="article col-sm-8">
+          <div className="ArticlePreview col-sm-8">
             <h3>Немного науки</h3>
             { ArticleBegin } { ArticleEnd }
           </div>
