@@ -32,21 +32,21 @@ class AppDescription extends React.Component {
 
     return (
       <div id="ScienceArticle" className='row'>
-        <div className='bg-science'>
+        <div className='bg-what'>
           <div className='container'>
 
-          <div className="col-sm-4">
+          <div className="col-sm-4 container">
             <span className='person'>
               <img className="img-responsive img-circle person text-center" src={personArticle} alt="person" />
               <h4 className="text-center"> Модестов Сергей </h4>
               <p> кандидат педагогических наук </p>
             </span>
           </div>
-          <div className="ArticlePreview col-sm-8">
+          <div className="ArticlePreview col-sm-8 container">
             <h3>Немного науки</h3>
             { ArticleBegin } { ArticleEnd }
-          </div>
           <button onClick={e => this.toggle(e)} className="more pull-right"> {toggler} </button>
+          </div>
         </div>
       </div>
       <hr />
