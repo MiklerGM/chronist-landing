@@ -39,7 +39,7 @@ const processArticle = (url, id) => (
       <span className='dim'> {getFormattedDate(req(`./${url}.md`).date)} </span>
     </div>
     <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
-    <Link to={`/blog/${url}`}><button className='pull-right'> Читать дальше → </button> </Link>
+    <Link to={`/blog/${url}`}><button className='pull-right'> Читать дальше</button> </Link>
     <hr />
   </div>
 );
@@ -68,7 +68,7 @@ const processArticleGallery = (url, id) => (
     <h4> {req(`./${url}.md`).title} </h4>
     <p className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </p>
     <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
-    <Link to={`/blog/${url}`}><button> Читать дальше → </button></Link>
+    <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
   </div>
 );
 

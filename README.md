@@ -21,11 +21,12 @@
 =========
 
   - [] internalization (c)
+  - [] Breadcrumb ?
   - [] After MPA done, adjust YM for tricky statistic {C}
   - [] допил после релиза сайта (кредиткc) {B}
   - [] подсказки на ссылочках, alt аттрибут
-  - [] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
-  - [] helmet wild metadata
+  - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
+  - [x] helmet wild metadata
   - [] props validation in components
   - [] fix timeline pseudostuff for non-js browsers
 
@@ -45,7 +46,7 @@
     - [] .readmore mutual class
     - [] +shadows эффект поднятия для гифок например
     - [] BEM convention
-    - [] Base-16 Theme? Use in less variables
+    - [x] Base-16 Theme? Use in less variables
 
     base color - 073242
     base16-harmonic16-dark
@@ -54,7 +55,7 @@
 
     ### Footer
     ----------
-    - [] sad and ugly. do something
+    - [x] sad and ugly. do something
 
 ##Done
 =========

@@ -24,7 +24,7 @@ class FooterDiv extends React.Component {
           </div>
           <p className='social'><Link to="/contact">Свяжитесь с нами</Link></p>
         </div>
-      </div></div><hr /></footer>
+      </div></div></footer>
     );
   }
 }
