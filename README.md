@@ -22,43 +22,34 @@
 
   - [] internalization (c)
   - [] Breadcrumb ?
-  - [] After MPA done, adjust YM for tricky statistic {C}
-  - [] допил после релиза сайта (кредиткc) {B}
+  - [] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
+  - [] Accessibility improvments. #10
   - [] подсказки на ссылочках, alt аттрибут
-  - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
-  - [x] helmet wild metadata
   - [] props validation in components
   - [] fix timeline pseudostuff for non-js browsers
+  - [] кнопку переход на блог (когда будет больше статей)?
+  - [] из текста блога назад
+  - [] .readmore mutual class
+  - [] +shadows эффект поднятия для гифок например
+  - [] BEM convention
+  - [] Why maps
+  - [] Silicon Valley Term of Service stuff
 
-    ###ArticleGallery
-    -----------------
-      - [] кнопку переход на блог (когда будет больше статей)?
 
-    ###VideoGallery
-    ---------------
-
-    ### Blog
-    --------
-      - [] из текста блога назад
-
-    ### Style
-    ----------------
-    - [] .readmore mutual class
-    - [] +shadows эффект поднятия для гифок например
-    - [] BEM convention
-    - [x] Base-16 Theme? Use in less variables
-
+## Colors
+===========
     base color - 073242
     base16-harmonic16-dark
     base16-solarized
     base16-materia
 
-    ### Footer
-    ----------
-    - [x] sad and ugly. do something
-
 ##Done
 =========
+  - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
+  - [x] helmet wild metadata
+  - [x] допил после релиза сайта (кредиткc) {B}
+  - [x] Base-16 Theme? Use in less variables
+  - [x] sad and ugly. do something
   - [x] SSR
   - [x] migrate to htmlwebpackplugin and hashes for chunks
   - [x] progressive jpeg
@@ -167,6 +158,8 @@ If you need to show the number of items that will be affected by the action of t
 [DataMaps](https://datamaps.co/)
 
 [GNU Emacs](https://www.gnu.org/software/emacs/index.html)
+
+[Discover Creative Work](https://www.behance.net/)
 
 ## Good Articles
 -----------------
