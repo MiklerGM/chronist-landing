@@ -21,6 +21,8 @@
 =========
 
   - [] internalization (c)
+  - [] Custom Validation and onInvalid listeners
+  - [] Newsletter Unsubscribing
   - [] Breadcrumb ?
   - [] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
   - [] Accessibility improvments. #10
@@ -242,6 +244,8 @@ https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-f
 https://en.bem.info/methodology/
 https://en.bem.info/methodology/quick-start/
 
+[Logos](http://foundedinholland.com/)
+
 https://github.com/quietshu/react-less-boilerplate/tree/master/app
 
 [styled-components v2: A smaller, faster drop-in upgrade with even more features](https://medium.com/styled-components/announcing-v2-f01ef3766ac2)
@@ -249,3 +253,24 @@ https://github.com/quietshu/react-less-boilerplate/tree/master/app
 [examples with css, markdown ssr](https://github.com/webpack/react-starter/blob/307594cc8df815ad7d2adcd6a3b5c78a32388084/app/containers/ReadmePage.jsx)
 
 
+              <div>
+                <div className="block base00-background base07">00</div>
+                <div className="block base01-background base07">01</div>
+                <div className="block base02-background base07">02</div>
+                <div className="block base03-background base07">03</div>
+                <div className="block base04-background base00">04</div>
+                <div className="block base05-background base00">05</div>
+                <div className="block base06-background base00">06</div>
+                <div className="block base07-background base00">07</div>
+                <br />
+                <div className="block base08-background base07">08</div>
+                <div className="block base09-background base07">09</div>
+                <div className="block base0A-background base07">0A</div>
+                <div className="block base0B-background base07">0B</div>
+                <div className="block base0C-background base07">0C</div>
+                <div className="block base0D-background base07">0D</div>
+                <div className="block base0E-background base07">0E</div>
+                <div className="block base0F-background base07">0F</div>
+          </div>
+
+Unsubscribe from all Goodreads emails

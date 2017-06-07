@@ -14,6 +14,9 @@ import Footer from './components/Footer';
 import Navigation from './components/Navigation';
 import ContactUs from './components/ContactUs';
 import About from './components/About';
+import Faq from './components/Faq/Faq';
+import Modal from './components/Survey/Modal';
+import Newsletter from './components/Newsletter';
 
 import preview from './images/richpreview.png';
 
@@ -40,6 +43,9 @@ const AppRouter = () => (
       <Route path='/blog' component={Blog} />
       <Route path='/contact' component={ContactUs} />
       <Route path='/about' component={About} />
+      <Route path='/faq' component={Faq} />
+      <Route path='/survey' component={Modal} />
+      <Route path='/newsletter' component={Newsletter} />
       <Route render={NotFound} />
     </Switch>
     <Footer />
