@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 
-import './Modal.less';
+if (process.env.WEBPACK) require('./Modal.less'); // eslint-disable-line global-require
 
 // import { askBackend } from '../reducers/actions';
 
@@ -197,4 +197,5 @@ class Modal extends React.Component {
 // export default connect(mapStateToProps, mapDispatchToProps)(Modal);
 
 // const Modal = () => (<div>Modal Render </div>);
+
 export default Modal;

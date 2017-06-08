@@ -44,8 +44,8 @@ const AppRouter = () => (
       <Route path='/contact' component={ContactUs} />
       <Route path='/about' component={About} />
       <Route path='/faq' component={Faq} />
-      <Route path='/survey' component={Modal} />
       <Route path='/newsletter' component={Newsletter} />
+      <Route path='/survey' component={Modal} />
       <Route render={NotFound} />
     </Switch>
     <Footer />

@@ -1,7 +1,8 @@
 import React from 'react';
 
 import mdText from './Faq.md';
-import './Faq.less';
+if (process.env.WEBPACK) require('./Faq.less'); // eslint-disable-line global-require
+// import './Faq.less';
 
 const Faq = () => (
   <div id='faq' className='container'><div className='bg-what'>
@@ -12,5 +13,9 @@ const Faq = () => (
     />;
   </div></div>
 );
+
+// const Faq = () => (
+//   <div> Faq </div>
+// );
 
 export default Faq;
