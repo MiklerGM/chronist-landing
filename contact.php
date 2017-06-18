@@ -14,6 +14,10 @@ if(isset($_POST['name'])){
 }
 if(isset($_POST['text'])){
   $text = $_POST['text'];
+} else {
+  echo "{'message':'Message is empty'}";
+  http_response_code(400);
+  exit();
 }
 
 
