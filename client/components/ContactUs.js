@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 // const ContactUs = () => (
 //   <div className='container'>
@@ -14,12 +15,16 @@ class ContactUs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      visibile: false,
+      success: false,
       name: '',
       email: '',
       text: ''
     };
   }
-
+  getGlyph() {
+    return this.state.success ? 'fa icon-check ' : 'fa icon-cancel';
+  }
   // componentDidMount() {
   //   console.log('didmount');
   // }
@@ -35,20 +40,20 @@ class ContactUs extends React.Component {
         </h4>
         <div className='container'><form
           className='form-inline'
-          action='email.php'
+          action='contact.php'
           onSubmit={(e) => {
             e.preventDefault();
             console.log(`submit: name:${this.state.name}, email: ${this.state.email}, text: ${this.state.text}`);
-            // const _this = this;
-            // axios.post('/contact.php', `email=${this.state.email}`)
-            //   .then(function (response) {
-            //     _this.setState({ ..._this.state, email: '', visibile: true, success: true });
-            //     console.log(response);
-            //   })
-            //   .catch(function (error) {
-            //     _this.setState({ ..._this.state, visibile: true, success: false });
-            //     console.log(error);
-            //   });
+            const _this = this;
+            axios.post('/contact.php', `email=${this.state.email}&name=${this.state.name}&text=${this.state.text}`)
+              .then(function (response) {
+                _this.setState({ ..._this.state, email: '', name: '', text: '', visibile: true, success: true });
+                console.log(response);
+              })
+              .catch(function (error) {
+                _this.setState({ ..._this.state, visibile: true, success: false });
+                console.log(error);
+              });
           }}
         >
           <row>
@@ -105,6 +110,7 @@ class ContactUs extends React.Component {
         </form></div>
 
         <row><h4>
+          <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Ваше сообщение успешно отправлено' : 'Произошла ошибка'}<br /></span>
         Так же можно написать нам на электронную почту <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a>.
         </h4></row>
 
