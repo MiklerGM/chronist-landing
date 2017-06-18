@@ -30,10 +30,8 @@ class ContactUs extends React.Component {
         <h1 id='pageTitle' className='text-center'> Связь с нами </h1>
         <h4 className='text-center article'>
         Нам приятно видеть, что вы всё ещё не покинули нас и проявляете интерес к нашему продукту.
-        Вы можете написать нам если у вас возникли вопросы или предложения или просто так.
-        Если у вас возникли проблемы с сервисом, есть вопросы по работе
-        сайта - не стесняйтесь воспользуйтесь формой.
-        Мы всегда рады сообщениям.
+        Вы можете написать нам если у вас возникли вопросы по работе сайта,
+        проблемы с сервисом или просто так. Мы всегда рады сообщениям.
         </h4>
         <div className='container'><form
           className='form-inline'
@@ -42,7 +40,7 @@ class ContactUs extends React.Component {
             e.preventDefault();
             console.log(`submit: name:${this.state.name}, email: ${this.state.email}, text: ${this.state.text}`);
             // const _this = this;
-            // axios.post('/email.php', `email=${this.state.email}`)
+            // axios.post('/contact.php', `email=${this.state.email}`)
             //   .then(function (response) {
             //     _this.setState({ ..._this.state, email: '', visibile: true, success: true });
             //     console.log(response);
@@ -97,8 +95,8 @@ class ContactUs extends React.Component {
                   this.setState({ ...this.state, text: e.target.value });
                 }}
               />
-            </div
->          </row>
+            </div>
+          </row>
           <row>
             <div className='col-md-2 col-sm-2 text-left'>
               <button type='submit' className='btn btn-empty'>Отправить</button>
