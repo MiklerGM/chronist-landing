@@ -42,7 +42,7 @@ $mail->addReplyTo($email_clean, $name);
 $mail->isHTML(true); // Set email format to HTML
 
 $mail->Subject = 'Обращение с сайта';
-$mail->Body = "Дата поступления обращения: <b>$date</b><br />От: $email<br /><br />$text<br />";
+$mail->Body = "Дата поступления обращения: <b>$date</b><br />От: $name $email<br /><br />$text<br />";
 
 if(!$mail->send()) {
 #    echo 'Message could not be sent.';
