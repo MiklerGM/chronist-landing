@@ -25,7 +25,7 @@ $mail->CharSet = 'UTF-8';
 //$mail->SMTPDebug = 3; // Enable verbose debug output
 $user = 'contact@chronist.ru';
 $secret = '321C0#track';
-$to = 'miklergm@gmail.com';
+$to = 'idea@chronist.ru';
 
 $mail->isSMTP(); // Set mailer to use SMTP
 $mail->Host = 'smtp.yandex.com'; // Specify main and backup SMTP servers
