@@ -4,7 +4,11 @@ $email = '';
 $email_clean = 'noreply@chronist.ru'; // for reply
 $name = '';
 $text = '';
+$title = 'Обращение с сайта';
 
+if(isset($_POST['demo'])){
+  $title = 'Форма информирования об ошибке';
+}
 if(isset($_POST['email'])){
   $email = $_POST['email'];
   $email_clean = filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -45,7 +49,7 @@ $mail->addReplyTo($email_clean, $name);
 
 $mail->isHTML(true); // Set email format to HTML
 
-$mail->Subject = 'Обращение с сайта';
+$mail->Subject = $title;
 $mail->Body = "Дата поступления обращения: <b>$date</b><br />От: $name $email<br /><br />$text<br />";
 
 if(!$mail->send()) {
