@@ -19,7 +19,7 @@ function validationError($msg) {
 }
 
 if(isset($_POST['p'])) {
-  $p = $_POST['p'] / $pi;
+  $p = intval($_POST['p']) / $pi;
   $time_diff = $time_ts - $p;
   if ( $time_diff > $max_diff || $time_diff < $max_diff * -1 ){
     // clock on the sender is not in sync
@@ -38,15 +38,15 @@ if(isset($_POST['email'])){
   $email_clean = filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 if(isset($_POST['name'])){
-  $name = $_POST['name'];
+  $name = urldecode($_POST['name']);
 }
 if(isset($_POST['text'])){
-  $text = $_POST['text'];
+  $text = urldecode($_POST['text']);
 } else {
   validationError('undefined text');
 }
 if(isset($_POST['m'])) {
-  $m = $_POST['m'] / strlen($text);
+  $m = intval($_POST['m']) / mb_strlen($text, 'UTF-8');
   $m_pass = 1;
   $digs = str_split($p);
   foreach($digs as $dig) {

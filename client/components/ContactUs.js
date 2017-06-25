@@ -50,7 +50,7 @@ class ContactUs extends React.Component {
             e.preventDefault();
             console.log(`submit: name:${this.state.name}, email: ${this.state.email}, text: ${this.state.text}`);
             const _this = this;
-            axios.post('/contact.php', `${this.getSecret()}&email=${this.state.email}&name=${this.state.name}&text=${this.state.text}`)
+            axios.post('/contact.php', `${this.getSecret()}&email=${this.state.email}&name=${encode(this.state.name)}&text=${this.state.text}`)
               .then((response) => {
                 const success = response.status === 200;
                 const wipe = success ? { email: '', name: '', text: '' } : {};
