@@ -12,22 +12,22 @@ $name = '';
 $text = '';
 $title = 'Обращение с сайта';
 
-function validationError(msg) {
-  echo "{'error': '" + msg + " validation error'}";
+function validationError($msg) {
+  echo "{'error': '" . $msg . " validation error'}";
   http_response_code(400);
   exit();
 }
 
 if(isset($_POST['p'])) {
-  $p = $_POST['p'] / pi;
+  $p = $_POST['p'] / $pi;
   $time_diff = $time_ts - $p;
   if ( $time_diff > $max_diff || $time_diff < $max_diff * -1 ){
     // clock on the sender is not in sync
     // or this is an old request
-    validationError('p');
+    validationError('invalid p');
   }
 } else {
-  validationError('p');
+  validationError('undefined p');
 }
 
 if(isset($_POST['demo'])){
@@ -43,7 +43,7 @@ if(isset($_POST['name'])){
 if(isset($_POST['text'])){
   $text = $_POST['text'];
 } else {
-  validationError('text');
+  validationError('undefined text');
 }
 if(isset($_POST['m'])) {
   $m = $_POST['m'] / strlen($text);
@@ -55,7 +55,7 @@ if(isset($_POST['m'])) {
     }
   }
   if ($m != $m_pass) {
-    validationError('m');
+    validationError('invalid m');
   }
 }
 
