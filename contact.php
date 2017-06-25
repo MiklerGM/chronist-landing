@@ -12,16 +12,24 @@ $name = '';
 $text = '';
 $title = 'Обращение с сайта';
 
+function validationError(msg) {
+  echo "{'error': '" + msg + " validation error'}";
+  http_response_code(400);
+  exit();
+}
+
 if(isset($_POST['p'])) {
   $p = $_POST['p'] / pi;
   $time_diff = $time_ts - $p;
-  if ( $time_diff > max_diff || $time_diff < $max_diff * -1 ){
+  if ( $time_diff > $max_diff || $time_diff < $max_diff * -1 ){
     // clock on the sender is not in sync
     // or this is an old request
-    echo "{'error':'p validation error'}";
-    http_response_code(400);
+    validationError('p');
   }
+} else {
+  validationError('p');
 }
+
 if(isset($_POST['demo'])){
   $title = 'Форма информирования об ошибке';
 }
@@ -35,12 +43,10 @@ if(isset($_POST['name'])){
 if(isset($_POST['text'])){
   $text = $_POST['text'];
 } else {
-  echo "{'message':'Message is empty'}";
-  http_response_code(400);
-  exit();
+  validationError('text');
 }
 if(isset($_POST['m'])) {
-  $m = $_POST['m'] / strlen(text);
+  $m = $_POST['m'] / strlen($text);
   $m_pass = 1;
   $digs = str_split($p);
   foreach($digs as $dig) {
@@ -49,8 +55,7 @@ if(isset($_POST['m'])) {
     }
   }
   if ($m != $m_pass) {
-    echo "{'error':'m validation error'}";
-    http_response_code(400);
+    validationError('m');
   }
 }
 
