@@ -12,7 +12,7 @@ $name = '';
 $text = '';
 $title = 'Обращение с сайта';
 
-if(isset($_POST['p']) {
+if(isset($_POST['p'])) {
   $p = $_POST['p'] / pi;
   $time_diff = $time_ts - $p;
   if ( $time_diff > max_diff || $time_diff < $max_diff * -1 ){

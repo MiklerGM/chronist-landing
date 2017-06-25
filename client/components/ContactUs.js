@@ -52,7 +52,9 @@ class ContactUs extends React.Component {
             const _this = this;
             axios.post('/contact.php', `${this.getSecret()}&email=${this.state.email}&name=${this.state.name}&text=${this.state.text}`)
               .then((response) => {
-                _this.setState({ ..._this.state, email: '', name: '', text: '', visibile: true, success: response.status === 200 });
+                const success = response.status === 200;
+                const wipe = success ? { email: '', name: '', text: '' } : {};
+                _this.setState({ ..._this.state, ...wipe, visibile: true, success });
                 console.log(response);
               })
               .catch((error) => {
