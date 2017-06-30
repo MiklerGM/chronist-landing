@@ -1,10 +1,10 @@
 # Dockerfile (tag: v3)
 FROM mhart/alpine-node:6
-RUN apk add --no-cache git
-ADD . /chronist
-WORKDIR /chronist
+ADD . /landing
+WORKDIR /landing
 RUN npm install
-ENV NODE_ENV=development
-ENV PORT=3000
-CMD [ "npm", "start" ]
-EXPOSE 3000
+RUN npm run build
+ENV NODE_ENV=production
+ENV PORT=3030
+CMD [ "npm", "run", "serve" ]
+EXPOSE 3030
