@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // import '../styles/footer.less';
-if (process.env.WEBPACK) require('../styles/footer.less'); // eslint-disable-line global-require
+if (process.env.WEBPACK) require('./footer.less'); // eslint-disable-line global-require
 
 const Clear = () => (
   <div className='clear' />
@@ -16,6 +16,7 @@ class FooterDiv extends React.Component {
         <div className='left-part col-md-6 col-sm-6'>
           <p><span className='icon-copyright' /> 2017. Команда <a href='https://chronist.ru/about' className='social'> Хронист </a></p>
           <p>Художник - <a href='https://www.facebook.com/kotokhira' className='social'>Валерия Журавлёва</a></p>
+          <p><Link to='/privacy'> Политика конфедициальности  </Link></p>
         </div>
         <div className='right-part col-md-6 col-sm-6'>
           <div className='sns'>

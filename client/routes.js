@@ -10,11 +10,12 @@ if (process.env.WEBPACK) require('bootstrap/less/bootstrap.less'); // eslint-dis
 import Home from './components/Home';
 import Blog from './components/Blog';
 import NotFound from './components/NotFound';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation';
 import ContactUs from './components/ContactUs';
 import About from './components/About';
 import Faq from './components/Faq/Faq';
+import Privacy from './components/Privacy/Privacy';
 import Modal from './components/Survey/Modal';
 import Newsletter from './components/Newsletter';
 
@@ -44,6 +45,7 @@ const AppRouter = () => (
       <Route path='/contact' component={ContactUs} />
       <Route path='/about' component={About} />
       <Route path='/faq' component={Faq} />
+      <Route path='/privacy' component={Privacy} />
       <Route path='/newsletter' component={Newsletter} />
       <Route path='/survey' component={Modal} />
       <Route render={NotFound} />

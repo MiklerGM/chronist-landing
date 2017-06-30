@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // const ContactUs = () => (
 //   <div className='container'>
@@ -33,10 +34,13 @@ class ContactUs extends React.Component {
     return (
       <div id='contact' className='container'><div className='bg-what'>
         <h1 id='pageTitle' className='text-center'> Связь с нами </h1>
-        <h4 className='text-center article'>
+        <h4 className='text-left article'>
         Нам приятно видеть, что вы всё ещё не покинули нас и проявляете интерес к нашему продукту.
         Вы можете написать нам если у вас возникли вопросы по работе сайта,
         проблемы с сервисом или просто так. Мы всегда рады сообщениям.
+        Так же можно написать нам на электронную
+        почту <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a>.
+
         </h4>
         <div className='container'><form
           className='form-inline'
@@ -109,9 +113,17 @@ class ContactUs extends React.Component {
           </row>
         </form></div>
 
+        <row>
+          <div className='center'>
+            <p>Нажимая на кнопку, вы даете согласие на обработку своих персональных данных <br />
+
+            <Link activeClassName='active' to="/privacy">Политика конфедициальности</Link>
+            </p>
+          </div>
+        </row>
+
         <row><h4>
           <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Ваше сообщение успешно отправлено' : 'Произошла ошибка'}<br /></span>
-        Так же можно написать нам на электронную почту <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a>.
         </h4></row>
 
       </div></div>

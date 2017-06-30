@@ -6,6 +6,7 @@ import 'moment/locale/ru';
 import NotFound from './NotFound';
 import { Helmet } from 'react-helmet';
 
+// import '../md/test.jpg';
 
 // import '../styles/blog.less';
 if (process.env.WEBPACK) require('../styles/blog.less'); // eslint-disable-line global-require
@@ -63,14 +64,17 @@ const BlogWrapper = () => (
 );
 
 
-const processArticleGallery = (url, id) => (
-  <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
-    <h4> {req(`./${url}.md`).title} </h4>
-    <p className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </p>
-    <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
-    <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
-  </div>
-);
+const processArticleGallery = (url, id) => {
+  console.log(req(`./${url}.md`).imgpath);
+  return (
+    <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
+      <h4> {req(`./${url}.md`).title} </h4>
+      <p className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </p>
+      <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
+      <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
+    </div>
+  )
+};
 
 export const ArticleGallery = () => (
   <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container'>

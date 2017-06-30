@@ -1,118 +1,112 @@
-#LANDING
---------
+LANDING PAGE
+========
 
 ##How to use
+-----------
 
-`npm run dev` -  Developer environment. Launch webpack-dev-server with hotreloader and other sweets things on localhost:8080
+- `npm run dev` -  Developer environment. Launch webpack-dev-server with hotreloader and other sweets things on localhost:8080
 
-`npm run release` - Build old DEPRICATED production server. Doesn't contain server side features.
+- `npm run release` - Build old DEPRICATED production server. Doesn't contain server side features.
 
-`npm run build` - Build new production. Contain two subcommands:
+- `npm run build` - Build new production. Contain two subcommands:
 
-  'npm run build:client' - Build client part of production.
+    * `npm run build:client` - Build client part of production.
 
-  'npm run build:server' - Build server side of production
+    * `npm run build:server` - Build server side of production
 
-'npm run serve' - Launch express web server. Only work after execute build command.
+- `npm run serve` - Launch express web server. Only work after execute build command.
 
-`npm run test` - Run test, only one, one that doesn't work. Jest.
+- `npm run test` - Run test, only one, one that doesn't work. Jest.
 
 ##Landing
-=========
+-----------
 
-  - [] internalization (c)
-  - [] Custom Validation and onInvalid listeners
-  - [] Newsletter Unsubscribing
-  - [] Breadcrumb ?
-  - [] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
-  - [] Accessibility improvments. #10
-  - [] подсказки на ссылочках, alt аттрибут
-  - [] props validation in components
-  - [] fix timeline pseudostuff for non-js browsers
-  - [] кнопку переход на блог (когда будет больше статей)?
-  - [] из текста блога назад
-  - [] .readmore mutual class
-  - [] +shadows эффект поднятия для гифок например
-  - [] BEM convention
-  - [] Why maps
-  - [] Silicon Valley Term of Service stuff
-
-
-## Colors
-===========
-    base color - 073242
-    base16-harmonic16-dark
-    base16-solarized
-    base16-materia
+  - [ ] Migrate form front-matter-markdown to react-markdown + react-markdown-loader {transformImageUri}
+  - [ ] internalization (c)
+  - [ ] Custom Validation and onInvalid listeners
+  - [ ] Newsletter Unsubscribing
+  - [ ] Breadcrumb ?
+  - [ ] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
+  - [ ] Accessibility improvments. #10
+  - [ ] подсказки на ссылочках, alt аттрибут
+  - [ ] props validation in components
+  - [ ] fix timeline pseudostuff for non-js browsers
+  - [ ] кнопку переход на блог (когда будет больше статей)?
+  - [ ] из текста блога назад
+  - [ ] .readmore mutual class
+  - [ ] +shadows эффект поднятия для гифок например
+  - [ ] BEM convention
+  - [ ] Why maps
+  - [ ] Silicon Valley Term of Service stuff
 
 ##Done
-=========
-  - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
-  - [x] helmet wild metadata
-  - [x] допил после релиза сайта (кредиткc) {B}
-  - [x] Base-16 Theme? Use in less variables
-  - [x] sad and ugly. do something
-  - [x] SSR
-  - [x] migrate to htmlwebpackplugin and hashes for chunks
-  - [x] progressive jpeg
-  - [x] Add PostCSS and Autoprefix for starters
-  - [x] название раздела
-  - [x] timeline pseudoelements-bug
-  - [x] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
-  - [x] изменить порядок статей
-  - [x] craft ArticlePage
-  - [x] reduce lapsha {C}
-  - [x] WebpackContextRequire
-  - [x] можно при наведении на тамбнейл делать ховер поверх гифки с надписью следующей
-  - [x] loop
-  - [x] выделение кнопок остаточное убрать
-  - [x] перенести задачи из гитлаба и наоборот {B}
-  - [x] Remove horizontal scrollbar
-  - [x] допил после релиза сайта (гифки)
-  - [x] запилить чтоб контент по сайту индексировался, а не был голая htmlка. вебпакчик {A}
-  - [x] запилить кнопки перехода
-  - [x] убрать яндекс метрику для дева
-  - [x] Исправить вьюпорт
-  - [x] Сделать евенты он ховер и прочее чтоб смотрелось ок  в ведре
-  - [x] исправить корячующуюся картинку сергея
-  - [x] сделать роутер
-  - [x] сделать нормальные контайнеры в которые влезают всё. Т.е. сделать ужее.
-  - [x] уменьшить шрифты вместе с сужением.
-  - [x] Make all pics in svg.co
-  - [x] fix ym
-  - [x] fix console.log(ym)
-  - [x] ?_ym_debug=0
-  - [x] fonts
-  - [x] use font-awesome or glyphicon. Not "some here, some there" shit
-	- [x] articles
-	- [x] dark overlay over title
-	- [x] text
-	- [x] other shadows
-	- [x] cleaning
-	- [x]	Верхняя панель со ссылками (статьи, блог, таймлайн фич, скрины/видео, "войти" со ссылкой на демку, группы в соцсетях) и лого.
-	- [x]	Header картинкой
-	- [x]	Вступительный текст
-	- [x]	Форма обратной связи
-	- [x]	Таймлайн фич (картинка-описание-дата внедрения). Внедрённые фичи цветные, не внедрённые - серые. Counter количества данных
-	- [x]	Footer (position: fixed, полупрозрачный, с кнопкой "войти")
-	- [x]	PS правый вариант картинки, скорее всего
-	- [x] оверлеем прозрачную навигацию
-	- [x] кадрирование сделай не по руки а по плечи
-	- [x] кнопка на картинке в хедере одна, "войти"
-	- [x] под картинкой текст про "Существующие инструменты не позволяют..."
-	- [x] поле для ввода мыла Уже, оставить кнопку только вконтача и перенести её рядом с мылом
-	- [x] статью Сережи сделать первые пять-шесть строк с возможностью развернуть по клику
-	- [x] Добавь все блоки и поправь там даты
-	- [x] количество данных перенести внутрь, типа "политические границы - описание - дата вывода на бой - Учтено данных 955,5"
-	- [x] хедер замени на то, что у тебя в почте лежит. сам выбери какой
-	- [x] даты релиза верни в боксы, у тебя из-за дат весь таймлайн порван, выглядит плохо
-	- [x] каунтер количества данных из нерелизнутых фич убери, можно на его месте поставить дату
-	- [x] удалить все английские надписи
-	- [x] по вертикально выравнить заглавия в таймлайне
-	- [x] чистка и оптимизации css штук
+-----------
+
+- [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
+- [x] helmet wild metadata
+- [x] допил после релиза сайта (кредиткc) {B}
+- [x] Base-16 Theme? Use in less variables
+- [x] sad and ugly. do something
+- [x] SSR
+- [x] migrate to htmlwebpackplugin and hashes for chunks
+- [x] progressive jpeg
+- [x] Add PostCSS and Autoprefix for starters
+- [x] название раздела
+- [x] timeline pseudoelements-bug
+- [x] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
+- [x] изменить порядок статей
+- [x] craft ArticlePage
+- [x] reduce lapsha {C}
+- [x] WebpackContextRequire
+- [x] можно при наведении на тамбнейл делать ховер поверх гифки с надписью следующей
+- [x] loop
+- [x] выделение кнопок остаточное убрать
+- [x] перенести задачи из гитлаба и наоборот {B}
+- [x] Remove horizontal scrollbar
+- [x] допил после релиза сайта (гифки)
+- [x] запилить чтоб контент по сайту индексировался, а не был голая htmlка. вебпакчик {A}
+- [x] запилить кнопки перехода
+- [x] убрать яндекс метрику для дева
+- [x] Исправить вьюпорт
+- [x] Сделать евенты он ховер и прочее чтоб смотрелось ок  в ведре
+- [x] исправить корячующуюся картинку сергея
+- [x] сделать роутер
+- [x] сделать нормальные контайнеры в которые влезают всё. Т.е. сделать ужее.
+- [x] уменьшить шрифты вместе с сужением.
+- [x] Make all pics in svg.co
+- [x] fix ym
+- [x] fix console.log(ym)
+- [x] ?_ym_debug=0
+- [x] use font-awesome or glyphicon.not some here, some there.
+- [x] fonts
+- [x] dark overlay over title
+- [x] text
+- [x] other shadows
+- [x] cleaning
+- [x]	Верхняя панель со ссылками (статьи, блог, таймлайн фич, скрины/видео, "войти" со ссылкой на демку, группы в соцсетях) и лого.
+- [x]	Header картинкой
+- [x]	Вступительный текст
+- [x]	Форма обратной связи
+- [x]	Таймлайн фич (картинка-описание-дата внедрения). Внедрённые фичи цветные, не внедрённые - серые. Counter количества данных
+- [x]	Footer (position: fixed, полупрозрачный, с кнопкой "войти")
+- [x]	PS правый вариант картинки, скорее всего
+- [x] оверлеем прозрачную навигацию
+- [x] кадрирование сделай не по руки а по плечи
+- [x] кнопка на картинке в хедере одна, "войти"
+- [x] под картинкой текст про "Существующие инструменты не позволяют..."
+- [x] поле для ввода мыла Уже, оставить кнопку только вконтача и перенести её рядом с мылом
+- [x] статью Сережи сделать первые пять-шесть строк с возможностью развернуть по клику
+- [x] Добавь все блоки и поправь там даты
+- [x] количество данных перенести внутрь, типа "политические границы - описание - дата вывода на бой - Учтено данных 955,5"
+- [x] хедер замени на то, что у тебя в почте лежит. сам выбери какой
+- [x] даты релиза верни в боксы, у тебя из-за дат весь таймлайн порван, выглядит плохо
+- [x] каунтер количества данных из нерелизнутых фич убери, можно на его месте поставить дату
+- [x] удалить все английские надписи
+- [x] по вертикально выравнить заглавия в таймлайне
+- [x] чистка и оптимизации css штук
 
 ##GUI Guidlines
---------------
+---------------
 If you have some experience designing an iOS App, you’ll be familiar with the minimum sizes for typography (24px+, optimal for reading: 32px), buttons (44px to 88px) and navigation bar (72px to 98px). It’s also in line with Android devices.
 
 Don’t combine an icon and text within one button.
@@ -196,8 +190,10 @@ https://github.com/pk1m/Stackoverflow-helpme
 
 [Counting Web Session with JS. Swizek blog](https://swizec.com/blog/counting-web-sessions-javascript/swizec/7598?__s=dugx4qg21suydr72vgrv)
 
+##Contact Form
+----------------
 
-https://datamaps.co/contact - contact pages with input form
+[DataMaps contact](https://datamaps.co/contact) - contact pages with input form
 
 ##Localization
 -----------------
@@ -213,18 +209,48 @@ ToS
 Privacy Policy - what we do with your email
 Address and Phone Number  - don't. we don't provide physical business
 
-Microsoft says that more materials are planned, but for now is starting with just one: "Acrylic." This is a translucent, generated material that uses Gaussian blur combined with noise to create a sort of plastic-like effect. Microsoft intends for Acrylic to be used under, for example, navigational elements, in order to de-emphasize them. Acrylic would also be used under ephemeral content.
 
-
-## Materials css
+## Design
 ----------------
 
 [Creating a Blurred Background Using Only CSS](https://paper-leaf.com/blog/2016/01/creating-blurred-background-using-only-css/)
 
-##
+Microsoft says that more materials are planned, but for now is starting with just one: "Acrylic." This is a translucent, generated material that uses Gaussian blur combined with noise to create a sort of plastic-like effect. Microsoft intends for Acrylic to be used under, for example, navigational elements, in order to de-emphasize them. Acrylic would also be used under ephemeral content.
+
+### Colors
+===========
+    base color - 073242
+    base16-harmonic16-dark
+    base16-solarized
+    base16-materia
+
+ColorTesting
+<div>
+  <div className="block base00-background base07">00</div>
+  <div className="block base01-background base07">01</div>
+  <div className="block base02-background base07">02</div>
+  <div className="block base03-background base07">03</div>
+  <div className="block base04-background base00">04</div>
+  <div className="block base05-background base00">05</div>
+  <div className="block base06-background base00">06</div>
+  <div className="block base07-background base00">07</div>
+  <br />
+  <div className="block base08-background base07">08</div>
+  <div className="block base09-background base07">09</div>
+  <div className="block base0A-background base07">0A</div>
+  <div className="block base0B-background base07">0B</div>
+  <div className="block base0C-background base07">0C</div>
+  <div className="block base0D-background base07">0D</div>
+  <div className="block base0E-background base07">0E</div>
+  <div className="block base0F-background base07">0F</div>
+</div>
+
+## Security
 ------------
 
-[Checklist](https://simplesecurity.sensedeep.com/web-developer-security-checklist-f2e4f43c9c56)
+[dangerouslysetinnerhtml](https://stackoverflow.com/questions/44593485/example-of-bad-react-dangerouslysetinnerhtml)
+
+[Security Checklist](https://simplesecurity.sensedeep.com/web-developer-security-checklist-f2e4f43c9c56)
 
 ## Server-side rendering
 ---------------------------
@@ -253,24 +279,42 @@ https://github.com/quietshu/react-less-boilerplate/tree/master/app
 [examples with css, markdown ssr](https://github.com/webpack/react-starter/blob/307594cc8df815ad7d2adcd6a3b5c78a32388084/app/containers/ReadmePage.jsx)
 
 
-              <div>
-                <div className="block base00-background base07">00</div>
-                <div className="block base01-background base07">01</div>
-                <div className="block base02-background base07">02</div>
-                <div className="block base03-background base07">03</div>
-                <div className="block base04-background base00">04</div>
-                <div className="block base05-background base00">05</div>
-                <div className="block base06-background base00">06</div>
-                <div className="block base07-background base00">07</div>
-                <br />
-                <div className="block base08-background base07">08</div>
-                <div className="block base09-background base07">09</div>
-                <div className="block base0A-background base07">0A</div>
-                <div className="block base0B-background base07">0B</div>
-                <div className="block base0C-background base07">0C</div>
-                <div className="block base0D-background base07">0D</div>
-                <div className="block base0E-background base07">0E</div>
-                <div className="block base0F-background base07">0F</div>
-          </div>
+##Tricks
+----------
+// GOOD
+var icon = this.props.active ? require('./my-icon-active.png') : require('./my-icon-inactive.png');
+<Image source={icon} />
 
-Unsubscribe from all Goodreads emails
+#Dev Dependecies
+
+  babel-eslint
+  eslint-config-airbnb
+  eslint-plugin-jsx-a11y
+  markdown-with-front-matter-loader
+  github-markdown-css --save
+
+#GUI Guidlines
+  If you have some experience designing an iOS App, you’ll be familiar with the minimum sizes for typography (24px+, optimal for reading: 32px), buttons (44px to 88px) and navigation bar (72px to 98px). It’s also in line with Android devices.
+
+
+  Guidelines
+Don’t combine an icon and text within one button.
+Choose a button text that is short and meaningful.
+Use imperative verbs for all actions; for example: Save, Cancel, Edit.
+Keep in mind that the text can be up to 300% longer in other languages.
+We don’t recommend using tooltips since they are only visible on desktop devices. However, you can use tooltips for icon buttons.
+For icon buttons, make sure the default accessibility text for the icon is correct for your use case. If not, define app-specific accessibility text.
+If an action button is temporarily inactive, use the disabled status.
+If you need to show the number of items that will be affected by the action of the button, you can add the number in brackets. For example, Edit (3).
+
+https://www.youtube.com/watch?v=ogAZ6JC0pJI&feature=youtu.be&list=PLTdS5E3zupkEiDgztHOUw4kOSM8Qdzo7H
+
+
+
+
+#Win
+
+[Datasketch](http://www.datasketch.es/march/?utm_source=ActiveCampaign&utm_medium=email&utm_content=BDN+%2371%3A+the+myth+of+superhuman+AI%2C+dataviz+by+Google%2C+a+startup+simulator%2C+and+some+new+Wait+but+Why&utm_campaign=Banana+Data+%2371)
+
+#Code
+```
