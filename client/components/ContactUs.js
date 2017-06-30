@@ -26,9 +26,14 @@ class ContactUs extends React.Component {
   getGlyph() {
     return this.state.success ? 'fa icon-check ' : 'fa icon-cancel';
   }
-  // componentDidMount() {
-  //   console.log('didmount');
-  // }
+  getSecret() {
+    const pi = 314159;
+    const ts = Math.floor(Date.now() / 1000);
+    const arr = ts.toString().split('');
+    const magic = arr.reduce((m, cur) => (Number(cur) === 0 ? m : m * cur), 1);
+    const params = `p=${ts * pi}&m=${magic * this.state.text.length}`;
+    return params;
+  }
 
   render() {
     return (
@@ -49,12 +54,14 @@ class ContactUs extends React.Component {
             e.preventDefault();
             console.log(`submit: name:${this.state.name}, email: ${this.state.email}, text: ${this.state.text}`);
             const _this = this;
-            axios.post('/contact.php', `email=${this.state.email}&name=${this.state.name}&text=${this.state.text}`)
-              .then(function (response) {
-                _this.setState({ ..._this.state, email: '', name: '', text: '', visibile: true, success: true });
+            axios.post('/contact.php', `${this.getSecret()}&email=${this.state.email}&name=${encodeURI(this.state.name)}&text=${encodeURI(this.state.text)}`)
+              .then((response) => {
+                const success = response.status === 200;
+                const wipe = success ? { email: '', name: '', text: '' } : {};
+                _this.setState({ ..._this.state, ...wipe, visibile: true, success });
                 console.log(response);
               })
-              .catch(function (error) {
+              .catch((error) => {
                 _this.setState({ ..._this.state, visibile: true, success: false });
                 console.log(error);
               });

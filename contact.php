@@ -1,19 +1,62 @@
 <?php
 $date = date('Y-m-d H:i:s');
+$time_ts = time();
+$max_diff = 120;
+
+$pi = 314159;
+$p = 0;
+
 $email = '';
 $email_clean = 'noreply@chronist.ru'; // for reply
 $name = '';
 $text = '';
+$title = 'Обращение с сайта';
 
+function validationError($msg) {
+  echo "{'error': '" . $msg . " validation error'}";
+  http_response_code(400);
+  exit();
+}
+
+if(isset($_POST['p'])) {
+  $p = intval($_POST['p']) / $pi;
+  $time_diff = $time_ts - $p;
+  if ( $time_diff > $max_diff || $time_diff < $max_diff * -1 ){
+    // clock on the sender is not in sync
+    // or this is an old request
+    validationError('invalid p');
+  }
+} else {
+  validationError('undefined p');
+}
+
+if(isset($_POST['demo'])){
+  $title = 'Форма информирования об ошибке';
+}
 if(isset($_POST['email'])){
   $email = $_POST['email'];
   $email_clean = filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 if(isset($_POST['name'])){
-  $name = $_POST['name'];
+  $name = urldecode($_POST['name']);
 }
 if(isset($_POST['text'])){
-  $text = $_POST['text'];
+  $text = urldecode($_POST['text']);
+} else {
+  validationError('undefined text');
+}
+if(isset($_POST['m'])) {
+  $m = intval($_POST['m']) / mb_strlen($text, 'UTF-8');
+  $m_pass = 1;
+  $digs = str_split($p);
+  foreach($digs as $dig) {
+    if ($dig != 0) {
+      $m_pass *= $dig;
+    }
+  }
+  if ($m != $m_pass) {
+    validationError('invalid m');
+  }
 }
 
 
@@ -41,8 +84,8 @@ $mail->addReplyTo($email_clean, $name);
 
 $mail->isHTML(true); // Set email format to HTML
 
-$mail->Subject = 'Обращение с сайта';
-$mail->Body = "Дата поступления обращения: <b>$date</b><br />От: $email<br /><br />$text<br />";
+$mail->Subject = $title;
+$mail->Body = "Дата поступления обращения: <b>$date</b><br />От: $name $email<br /><br />$text<br />";
 
 if(!$mail->send()) {
 #    echo 'Message could not be sent.';
