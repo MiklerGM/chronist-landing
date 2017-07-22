@@ -34,7 +34,7 @@ const AppRouter = () => (
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'Хронист' },
         { property: 'og:description', content: 'Интерактивная история на карте мира' },
-        { property: 'og:image', content: 'chronist.ru/richpreview.png' }
+        { property: 'og:image', content: '/richpreview.png' }
       ]}
     />
     <Navigation />
