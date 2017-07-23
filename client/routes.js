@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 if (process.env.WEBPACK) require('bootstrap/less/bootstrap.less'); // eslint-disable-line global-require
 
 import Home from './components/Home';
-import Blog from './components/Blog';
+import Blog from './components/Blog/Blog';
 import NotFound from './components/NotFound';
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation';

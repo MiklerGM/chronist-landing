@@ -3,7 +3,7 @@ import React from 'react';
 import Timeline from './Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription';
-import { ArticleGallery } from './Blog';
+import { ArticleGallery } from './Blog/Blog';
 
 // import '../styles/style.less';
 // if (process.env.WEBPACK) require('../styles/style.less'); // eslint-disable-line global-require
@@ -13,8 +13,7 @@ const Title = () => (
     <div className="text-center">
       <h1> ХРОНИСТ </h1>
       <h2> Наглядная география </h2>
-      <h4>историко-географический инструмент визуализации</h4>
-      <h4>открытых научных данных</h4>
+      <h4> историко-географический инструмент визуализации открытых научных данных </h4>
     </div>
 
     <Subscribe />

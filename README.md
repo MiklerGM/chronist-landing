@@ -37,11 +37,13 @@ LANDING PAGE
   - [ ] +shadows эффект поднятия для гифок например
   - [ ] BEM convention
   - [ ] Why maps
-  - [ ] Silicon Valley Term of Service stuff
+  - [ ] сделать ограничение по форме инпута {B}
+  - [ ] сделать вопросы обязательные {B}
 
 ##Done
 -----------
 
+- [x] Silicon Valley Term of Service stuff
 - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
 - [x] helmet wild metadata
 - [x] допил после релиза сайта (кредиткc) {B}

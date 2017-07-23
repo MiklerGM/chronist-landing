@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { Link, Route, Switch } from 'react-router-dom';
 import Moment from 'moment';
 import 'moment/locale/ru';
-import NotFound from './NotFound';
+import NotFound from '../NotFound';
 import { Helmet } from 'react-helmet';
 
 // import '../md/test.jpg';
 
 // import '../styles/blog.less';
-if (process.env.WEBPACK) require('../styles/blog.less'); // eslint-disable-line global-require
+if (process.env.WEBPACK) require('./blog.less'); // eslint-disable-line global-require
 
-const urls = [];const req = require.context('../md', false, /\.md$/);
+const urls = [];const req = require.context('../../md', false, /\.md$/);
 req.keys().forEach((fileName, id) => {
   urls[id] = fileName.replace('./', '').replace('.md', '');
 });
@@ -69,7 +69,7 @@ const processArticleGallery = (url, id) => {
   return (
     <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
       <h4> {req(`./${url}.md`).title} </h4>
-      <p className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </p>
+      <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </span>
       <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
       <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
     </div>
@@ -77,7 +77,7 @@ const processArticleGallery = (url, id) => {
 };
 
 export const ArticleGallery = () => (
-  <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container'>
+  <div id="ArticleGallery" className='row'><div className='ArticleGallery-back'><div className='container'>
     <h2> Последние записи </h2>
     {urls.reverse().map(processArticleGallery)}
   </div></div><hr /></div>
