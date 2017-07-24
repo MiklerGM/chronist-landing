@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Timeline from './Timeline';
+import Timeline from './Timeline/Timeline';
 import Subscribe from './Subscribe';
-import AppDescription from './AppDescription';
+import AppDescription from './AppDescription/AppDescription';
 import { ArticleGallery } from './Blog/Blog';
 
 // import '../styles/style.less';

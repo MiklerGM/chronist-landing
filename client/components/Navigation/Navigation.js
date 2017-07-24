@@ -4,6 +4,8 @@ import {
 } from 'react-router-dom';
 import { YMInitializer } from 'react-yandex-metrika';
 
+if (process.env.WEBPACK) require('./nav-router.less');
+
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 // ym.init([42857239]); <- Alice id
 // ym.init([42866674]); <- Padavan id

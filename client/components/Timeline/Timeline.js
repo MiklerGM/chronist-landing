@@ -2,21 +2,21 @@ import React from 'react';
 
 // import '../styles/timeline.less';
 if (process.env.WEBPACK) {
-  require('../styles/timeline.less'); // eslint-disable-line global-require
+  require('./timeline.less'); // eslint-disable-line global-require
 }
 
-const ft1 = require('../images/feature-borders.svg');
-const ft2 = require('../images/feature-war.svg');
-const ft3 = require('../images/feature-invention.svg');
-const ft4 = require('../images/feature-research.svg');
-const ft5 = require('../images/feature-demography.svg');
-const ft6 = require('../images/feature-language.svg');
-const ft7 = require('../images/feature-settings.svg');
-const ft8 = require('../images/feature-export.svg');
-const ft9 = require('../images/feature-religion.svg');
-const ft10 = require('../images/feature-nations.svg');
-const ft11 = require('../images/feature-disaster.svg');
-const ft12 = require('../images/feature-empty.svg');
+const ft1 = require('../../images/feature-borders.svg');
+const ft2 = require('../../images/feature-war.svg');
+const ft3 = require('../../images/feature-invention.svg');
+const ft4 = require('../../images/feature-research.svg');
+const ft5 = require('../../images/feature-demography.svg');
+const ft6 = require('../../images/feature-language.svg');
+const ft7 = require('../../images/feature-settings.svg');
+const ft8 = require('../../images/feature-export.svg');
+const ft9 = require('../../images/feature-religion.svg');
+const ft10 = require('../../images/feature-nations.svg');
+const ft11 = require('../../images/feature-disaster.svg');
+const ft12 = require('../../images/feature-empty.svg');
 
 const featureList = [
   {

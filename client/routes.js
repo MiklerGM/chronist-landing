@@ -11,7 +11,7 @@ import Home from './components/Home';
 import Blog from './components/Blog/Blog';
 import NotFound from './components/NotFound';
 import Footer from './components/Footer/Footer';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 import ContactUs from './components/ContactUs';
 import About from './components/About';
 import Faq from './components/Faq/Faq';
