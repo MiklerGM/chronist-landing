@@ -7,8 +7,8 @@ import AppRouter from './routes';
 
 if (process.env.WEBPACK) {
   // require('./styles/nav-router.less'); // eslint-disable-line global-require
-  require('./styles/fontello.less'); // eslint-disable-line global-require
-  require('./styles/App.less'); // eslint-disable-line global-require
+  require('./fontello.less'); // eslint-disable-line global-require
+  require('./App.less'); // eslint-disable-line global-require
 }
 
 const App = () => (
