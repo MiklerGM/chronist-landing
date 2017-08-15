@@ -3,6 +3,7 @@ import {
   NavLink,
 } from 'react-router-dom';
 import { YMInitializer } from 'react-yandex-metrika';
+// import { YMInitializer } from './ym';
 
 if (process.env.WEBPACK) require('./nav-router.less');
 
@@ -50,6 +51,7 @@ class Navigation extends React.Component {
     //
     return (
       <div id="Navigation" className='row' ><div className="container-fluid">
+
         <YMInitializer
           accounts={YmId}
           version="2"
