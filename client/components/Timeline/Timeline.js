@@ -20,6 +20,7 @@ const ft12 = require('../../images/feature-empty.svg');
 
 const featureList = [
   {
+    id: 0,
     name: 'Политические границы',
     date: 'Март 2017',
     desc: 'Изменения политических границ от античности до наших дней',
@@ -28,6 +29,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 1,
     name: 'Географические открытия и войны',
     date: 'Март 2017',
     desc: 'Интерактивное отображение военных действий и исследовательских походов',
@@ -36,6 +38,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 2,
     name: 'Изобретения',
     date: 'Март 2017',
     desc: 'Хронология развития современного общества',
@@ -44,6 +47,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 3,
     name: 'Исследование данных',
     date: 'Март 2017',
     desc: 'Поиск корреляций и причинно-следственных связей между историческими событиями',
@@ -52,6 +56,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 4,
     name: 'Население',
     date: 'Июнь 2017',
     desc: 'Демографические изменения',
@@ -60,6 +65,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 5,
     name: 'Языки',
     date: 'Сентябрь 2017',
     desc: 'Распространение и эволюция языковых групп',
@@ -68,6 +74,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 6,
     name: 'Личные сценарии',
     date: 'Сентябрь 2017',
     desc: 'Добавление данных и создание собственных наборов отображаемых событий',
@@ -76,6 +83,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 7,
     name: 'Экспорт данных',
     date: 'Сентябрь 2017',
     desc: 'Возможность экспортировать выбранную хронологию за период',
@@ -84,6 +92,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 8,
     name: 'Религии',
     date: 'Ноябрь 2017',
     desc: 'Распространение религиозных течений',
@@ -92,6 +101,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 9,
     name: 'Нации',
     date: 'Ноябрь 2017',
     desc: 'Происхождение и распределение расс по материкам',
@@ -100,6 +110,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 10,
     name: 'Катастрофы',
     date: 'Февраль 2018',
     desc: 'Болезни, природные и техногенные катаклизмы на протяжении истории человечества',
@@ -108,6 +119,7 @@ const featureList = [
     offset: 0
   },
   {
+    id: 11,
     name: '',
     date: '',
     desc: '',
@@ -131,7 +143,7 @@ const getId = (type) => {
 };
 
 const Feature = ({ feature, gkey }) => (
-  <div key={gkey} className={`col-md-3 col-sm-3 ${gkey} ${feature.offset ? 'col-md-offset-1' : ''}`}>
+  <div key={feature.id} className={`col-md-3 col-sm-3 ${`feature_${feature.id}`} ${feature.offset ? 'col-md-offset-1' : ''}`}>
     <div key={`${gkey}_thumb`} className="thumbnail timeline-tmb">
       <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
       <div key={`${gkey}_capt`} className="caption-fix caption text-center ">

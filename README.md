@@ -23,28 +23,26 @@ LANDING PAGE
 
   - [ ] Migrate form front-matter-markdown to react-markdown + react-markdown-loader {transformImageUri}
   - [ ] internalization (c)
-  - [ ] Custom Validation and onInvalid listeners
   - [ ] Newsletter Unsubscribing
-  - [ ] Breadcrumb ?
   - [ ] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
-  - [ ] Accessibility improvments. #10
-  - [ ] подсказки на ссылочках, alt аттрибут
-  - [ ] props validation in components
-  - [ ] fix timeline pseudostuff for non-js browsers
-  - [ ] кнопку переход на блог (когда будет больше статей)?
-  - [ ] из текста блога назад
-  - [ ] .readmore mutual class
+  - [ ] Accessibility improvments. #10, подсказки на ссылочках, alt аттрибут
+  - [ ] кнопку переход на блог (когда будет больше статей)?, из текста блога назад,Breadcrumb ?
   - [ ] +shadows эффект поднятия для гифок например
   - [ ] BEM convention
   - [ ] Why maps
-  - [ ] сделать ограничение по форме инпута {B}
-  - [ ] сделать вопросы обязательные {B}
+  - [ ] Forms
+    - [ ] props validation in components, Custom Validation and onInvalid listeners
+    - [ ] сделать ограничение по форме инпута {B}
+    - [ ] сделать вопросы обязательные {B}
+  - [ ] Посмотреть, что с айдишника произходит в таймлайне по возможности выпилить getId{Z}
 
 ##Done
 -----------
 
+- [x] fix timeline pseudostuff for non-js browsers
 - [x] Silicon Valley Term of Service stuff
 - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
+- [x] .readmore mutual class
 - [x] helmet wild metadata
 - [x] допил после релиза сайта (кредиткc) {B}
 - [x] Base-16 Theme? Use in less variables

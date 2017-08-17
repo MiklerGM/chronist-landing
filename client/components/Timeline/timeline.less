@@ -31,7 +31,7 @@
   float:none;
   position: relative;
   clear:right;
-  color:black;
+  // color:black;
 }
 .caption h5, .caption p{
   text-decoration: none;
@@ -40,7 +40,7 @@
   text-align: center;
   right: 0px;
   left:0;
-  color: black;
+  // color: black;
 }
 .arrow {
   width: 95%;
@@ -153,7 +153,8 @@
     border-color: #2f2f2f;
     position:absolute;
     top: 100%;
-    right: 50%;
+    right: calc(~'50% - 5px');
+
   }
   .feature_3:before, .feature_4:before, .feature_5:before, .feature_6:before,
   .feature_7:before, .feature_8:before, .feature_9:before, .feature_10:before
@@ -166,6 +167,7 @@
     border-color: #2f2f2f;
     position:absolute;
     top: 100%;
-    right: 50%;
+    // right: 50%;
+    right: calc(~'50% - 5px');
   }
 }
