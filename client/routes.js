@@ -9,7 +9,7 @@ if (process.env.WEBPACK) require('bootstrap/less/bootstrap.less'); // eslint-dis
 
 import Home from './components/Home';
 import Blog from './components/Blog/Blog';
-import NotFound from './components/NotFound';
+import NotFound from './components/ErrorPages/404';
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
 import ContactUs from './components/ContactUs';
