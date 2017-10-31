@@ -72,14 +72,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         enforce: 'pre',
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'stage-0', 'react'],
-            plugins: ['transform-object-rest-spread'],
-            cacheDirectory: true
-          },
-        },
+        use: 'babel-loader',
       },
       {
         test: /\.less$/,

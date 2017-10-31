@@ -1,5 +1,5 @@
 import React from 'react';
-import './ErrorPages.less';
+if (process.env.WEBPACK) require('./ErrorPages.less'); // eslint-disable-line global-require
 import image from './majortom.png';
 
 const NotFound = () => (

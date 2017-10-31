@@ -74,8 +74,8 @@
   "scripts": {
     "dev": "webpack-dev-server --hot --progress --host 0.0.0.0 --config ./webpack.config.dev.js",
     "build": "rimraf dist && npm-run-all build:*",
-    "build:client": "NODE_ENV=production  webpack --config ./webpack.config.client.js",
-    "build:server": "NODE_ENV=production  webpack --config ./webpack.config.server.js",
+    "build:client": "webpack --config ./webpack.config.client.js",
+    "build:server": "webpack --config ./webpack.config.server.js",
     "serve": "babel-node dist/server.js",
     "test": "jest",
     "release": "rimraf dist && NODE_ENV=production webpack -p --bail --config ./webpack.config.prod.js",
