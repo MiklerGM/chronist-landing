@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
   context: path.join(__dirname, 'client'),
   entry: {
@@ -52,15 +51,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         enforce: 'pre',
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['es2015', 'stage-0', 'react'],
-            plugins: ['transform-object-rest-spread'],
-            cacheDirectory: true
-          },
-        },
-        // include: path.resolve(__dirname, 'client')
+        use: 'babel-loader',
       },
       {
         test: /\.less$/,

@@ -4,6 +4,9 @@ import {
   browserHistory
 } from 'react-router-dom';
 import AppRouter from './routes';
+import { YMInitializer } from 'react-yandex-metrika';
+
+const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 
 if (process.env.WEBPACK) {
   // require('./styles/nav-router.less'); // eslint-disable-line global-require
@@ -13,9 +16,10 @@ if (process.env.WEBPACK) {
 
 const App = () => (
   <Router history={browserHistory}>
-    <AppRouter />
+    <YMInitializer accounts={YmId} options={{ defer: true }} >
+      <AppRouter />
+    </YMInitializer>
   </Router>
-
 );
 
 // export default const App = () => (< />);

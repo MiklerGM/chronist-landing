@@ -5,6 +5,7 @@ import Moment from 'moment';
 import 'moment/locale/ru';
 import NotFound from '../NotFound';
 import { Helmet } from 'react-helmet';
+import Tracking from '../Tracking';
 
 // import '../md/test.jpg';
 
@@ -65,7 +66,6 @@ const BlogWrapper = () => (
 
 
 const processArticleGallery = (url, id) => {
-  console.log(req(`./${url}.md`).imgpath);
   return (
     <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
       <h4> {req(`./${url}.md`).title} </h4>
@@ -95,6 +95,7 @@ const Blog = () => (
       />
     )}
     <Route render={NotFound} />
+    <Tracking />
   </Switch>
 );
 

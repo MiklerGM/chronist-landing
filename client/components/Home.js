@@ -4,6 +4,7 @@ import Timeline from './Timeline/Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
 import { ArticleGallery } from './Blog/Blog';
+import Tracking from './Tracking';
 
 // import '../styles/style.less';
 // if (process.env.WEBPACK) require('../styles/style.less'); // eslint-disable-line global-require
@@ -94,6 +95,7 @@ class Home extends React.Component {
         <Title />
         <What />
         {/*
+        <Tracking />
         */}
         <ArticleGallery />
         <Timeline />

@@ -2,22 +2,8 @@ import React from 'react';
 import {
   NavLink,
 } from 'react-router-dom';
-import { YMInitializer } from 'react-yandex-metrika';
-// import { YMInitializer } from './ym';
 
 if (process.env.WEBPACK) require('./nav-router.less');
-
-const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
-// ym.init([42857239]); <- Alice id
-// ym.init([42866674]); <- Padavan id
-
-// const logPageView = () => {
-//   console.log('logPageView triggered');
-//   console.log('=====YM=====>', location.pathname);
-//   ym('hit', 'test');
-//   ym('userParams', { vip_status: false });
-//   return null;
-// };
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -29,10 +15,6 @@ class Navigation extends React.Component {
       style: { float: 'right' },
     };
   }
-
-  // componentDidMount() {
-  //   logPageView();
-  // }
 
   toggle(e) {
     e.preventDefault();
@@ -48,21 +30,8 @@ class Navigation extends React.Component {
       this.state.style = { float: 'none' };
     }
 
-    //
     return (
       <div id="Navigation" className='row' ><div className="container-fluid">
-
-        <YMInitializer
-          accounts={YmId}
-          version="2"
-          options={{
-            clickmap: true,
-            // trackLinks: true,
-            // accurateTrackBounce: true,
-            // webvisor: true,
-            // trackHash: true,
-          }}
-        />
         <ul className={this.state.themeName}>
           <li><NavLink exact activeClassName='active' to="/">Хронист</NavLink></li>
           <li><a href='https://demo.chronist.ru/'>Демо</a></li>

@@ -52,14 +52,12 @@ class ContactUs extends React.Component {
           action='contact.php'
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(`submit: name:${this.state.name}, email: ${this.state.email}, text: ${this.state.text}`);
             const _this = this;
             axios.post('/contact.php', `${this.getSecret()}&email=${this.state.email}&name=${encodeURI(this.state.name)}&text=${encodeURI(this.state.text)}`)
               .then((response) => {
                 const success = response.status === 200;
                 const wipe = success ? { email: '', name: '', text: '' } : {};
                 _this.setState({ ..._this.state, ...wipe, visibile: true, success });
-                console.log(response);
               })
               .catch((error) => {
                 _this.setState({ ..._this.state, visibile: true, success: false });
@@ -67,7 +65,7 @@ class ContactUs extends React.Component {
               });
           }}
         >
-          <row>
+          <div>
             <div className='col-md-6 col-sm-6'>
               <input
                 className='short-input'
@@ -94,8 +92,8 @@ class ContactUs extends React.Component {
                 }}
               />
             </div>
-          </row>
-          <row>
+          </div>
+          <div>
             <div className='col-md-12 col-sm-12'>
               <textarea
                 className='long-input'
@@ -112,26 +110,26 @@ class ContactUs extends React.Component {
                 }}
               />
             </div>
-          </row>
-          <row>
+          </div>
+          <div>
             <div className='col-md-2 col-sm-2 text-left'>
               <button type='submit' className='btn btn-empty'>Отправить</button>
             </div>
-          </row>
+          </div>
         </form></div>
 
-        <row>
+        <div>
           <div className='center'>
             <p>Нажимая на кнопку, вы даете согласие на обработку своих персональных данных <br />
 
-            <Link activeClassName='active' to="/privacy">Политика конфедициальности</Link>
+            <Link activeclassname='active' to="/privacy">Политика конфедициальности</Link>
             </p>
           </div>
-        </row>
+        </div>
 
-        <row><h4>
+        <div><h4>
           <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Ваше сообщение успешно отправлено' : 'Произошла ошибка'}<br /></span>
-        </h4></row>
+        </h4></div>
 
       </div></div>
     );
