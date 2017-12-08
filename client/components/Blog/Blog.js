@@ -40,7 +40,7 @@ const processArticle = (url, id) => (
       <span className='separator'> - </span>
       <span className='dim'> {getFormattedDate(req(`./${url}.md`).date)} </span>
     </div>
-    <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
+    <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
     <Link to={`/blog/${url}`}><button className='pull-right'> Читать дальше</button> </Link>
     <hr />
   </div>
@@ -70,7 +70,7 @@ const processArticleGallery = (url, id) => {
     <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
       <h4> {req(`./${url}.md`).title} </h4>
       <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </span>
-      <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 180)) }} />
+      <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
       <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
     </div>
   )
