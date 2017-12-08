@@ -70,7 +70,7 @@ const processArticleGallery = (url, id) => {
     <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
       <h4> {req(`./${url}.md`).title} </h4>
       <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </span>
-      <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
+      <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.substring(0, req(`./${url}.md`).__content.indexOf(' ', 180)) }} />
       <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
     </div>
   )
@@ -79,7 +79,7 @@ const processArticleGallery = (url, id) => {
 export const ArticleGallery = () => (
   <div id="ArticleGallery" className='row'><div className='ArticleGallery-back'><div className='container'>
     <h2> Последние записи </h2>
-    {urls.reverse().map(processArticleGallery)}
+    {urls.slice(-3).reverse().map(processArticleGallery)}
   </div></div><hr /></div>
 );
 
