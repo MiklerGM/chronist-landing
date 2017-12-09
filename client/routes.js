@@ -18,6 +18,7 @@ import Faq from './components/Faq/Faq';
 import Privacy from './components/Privacy/Privacy';
 import Modal from './components/Survey/Modal';
 import Newsletter from './components/Newsletter';
+import Company from './components/Company/Team';
 
 import preview from './images/richpreview.png';
 
@@ -42,17 +43,20 @@ const AppRouter = () => (
     />
     <Navigation />
     <Route path="/" />
-    <Switch>
-      <Route exact path='/' render={() => <Home />} />
-      <Route path='/blog' component={Blog} />
-      <Route path='/contact' component={ContactUs} />
-      <Route path='/about' component={About} />
-      <Route path='/faq' component={Faq} />
-      <Route path='/privacy' component={Privacy} />
-      <Route path='/newsletter' component={Newsletter} />
-      <Route path='/survey' component={Modal} />
-      <Route render={NotFound} />
-    </Switch>
+    <div className='wrapper'>
+      <Switch>
+        <Route exact path='/' render={() => <Home />} />
+        <Route path='/blog' component={Blog} />
+        <Route path='/contact' component={ContactUs} />
+        <Route path='/about' component={About} />
+        <Route path='/faq' component={Faq} />
+        <Route path='/privacy' component={Privacy} />
+        <Route path='/newsletter' component={Newsletter} />
+        <Route path='/survey' component={Modal} />
+        <Route path='/company' component={Company} />
+        <Route render={NotFound} />
+      </Switch>
+    </div>
     <Footer />
   </div>
 );

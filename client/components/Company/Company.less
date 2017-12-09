@@ -1,0 +1,23 @@
+.person--data {
+  width: 33%;
+  display: inline-block;
+  text-align: center;
+  // width: 250px;
+  & img {
+    filter: grayscale(100%);
+    -webkit-transition: .8s ease-in-out !important;
+    transition: .8s ease-in-out !important;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+
+  & p {
+    font-size: 16px;
+    line-height: 1.6em;
+    letter-spacing: .5px;
+  }
+}
