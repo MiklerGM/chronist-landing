@@ -1,11 +1,13 @@
 import React from 'react';
 
-import Timeline from './Timeline/Timeline';
+// import Timeline from './Timeline/Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
 import { ArticleGallery } from './Blog/Blog';
-import Tracking from './Tracking';
-import What from './VideoCarousel/VideoGallery';
+// import Tracking from './Tracking';
+// import What from './VideoCarousel/VideoGallery';
+import Team from './Company/Team';
+// import Features from './Timeline/Features';
 
 import TitleImage from '../images/title-white.png';
 // import '../styles/style.less';
@@ -49,18 +51,44 @@ const JumpToMap = () => (
 );
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lazy: null,
+    };
+  }
+
+  async LoadFeatures() {
+    const { default : Features } = await import(/* webpackChunkName: "features" */ './Timeline/Features');
+    this.setState({ lazy: Features });
+  }
+
+  componentDidMount = async () => {
+    await this.LoadFeatures();
+  }
+
   render() {
+    const Features = this.state.lazy;
+
     return (
       <div className="app" >
         <Title />
         <JumpToMap />
-        <What />
         {/*
+        <What />
         <Tracking />
+        <Timeline />
+        <Features />
         */}
         <ArticleGallery />
-        <Timeline />
+        {Features ? (
+          <Features />
+          ) : (
+            <div />
+        )}
+        <Subscribe />
         <AppDescription />
+        <Team />
       </div>
     );
   }

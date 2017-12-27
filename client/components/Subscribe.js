@@ -24,7 +24,10 @@ export default class Subscribe extends React.Component {
   render() {
     return (
       <div id='Subscribe' className='bg-2 text-center'>
-        <p>Получайте информацию о ходе проекта и датах запуска.</p>
+        {/* <p>Получайте информацию о ходе проекта и датах запуска.</p> */}
+        <p>
+          Чтобы быть в курсе наших обновлений - подпишитесь на рассылку или участвуйте в наших сообществах в соцсетях.
+        </p>
         <form
           className='form-inline'
           action='email.php'

@@ -1,3 +1,5 @@
+@import "../../colors.less";
+
 .person--data {
   width: 33%;
   display: inline-block;
@@ -17,7 +19,20 @@
 
   & p {
     font-size: 16px;
+    color: @base05;
     line-height: 1.6em;
     letter-spacing: .5px;
   }
+
+  @media screen and (max-width: 600px) {
+    width: 50%;
+    // float: left;
+    display: inline;
+    height: auto;
+    overflow: auto;
+  }
+}
+
+#team {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/back-progressive.jpg");
 }

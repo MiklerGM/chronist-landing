@@ -16,6 +16,7 @@
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.1.1",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
@@ -45,6 +46,8 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-loader": "^7.0.0-beta.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-runtime": "^6.26.0",
     "bootstrap": "^3.3.7",
     "css-loader": "^0.25.0",
     "express": "^4.15.2",
@@ -57,6 +60,7 @@
     "prerender-node": "^2.7.1",
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-axios": "0.0.9",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.0.3",
@@ -67,6 +71,7 @@
     "react-yandex-metrika": "^2.3.0",
     "slick": "^1.12.2",
     "style-loader": "^0.13.2",
+    "transform-runtime": "0.0.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
     "webpack-node-externals": "^1.6.0"

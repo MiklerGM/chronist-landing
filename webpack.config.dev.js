@@ -1,24 +1,25 @@
+const { resolve } = require('path');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: path.join(__dirname, 'client'),
-  entry: {
-    client: path.resolve(__dirname, 'client'),
-    vendor: ['react', 'react-dom'],
-  },
+  entry: [
+    path.resolve(__dirname, 'client'),
+  ],
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
-  resolve: {
-    modules: [
-      path.join(__dirname, 'client'),
-      'node_modules'
-    ]
-  },
+  // resolve: {
+  //   modules: [
+  //     path.join(__dirname, 'client'),
+  //     'node_modules'
+  //   ]
+  // },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -83,6 +84,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({ template: './index.html' }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
+    // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
+    // new webpack.optimize.ModuleConcatenationPlugin()
   ]
 };
