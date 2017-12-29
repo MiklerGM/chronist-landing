@@ -19,7 +19,8 @@ import Privacy from './components/Privacy/Privacy';
 import Modal from './components/Survey/Modal';
 import Newsletter from './components/Newsletter';
 import Company from './components/Company/Company';
-// import Features from './components/Timeline/Features';
+import Features from './components/Timeline/Features';
+import Legal from './components/Legal/Legal';
 
 import preview from './images/richpreview.png';
 
@@ -52,8 +53,10 @@ const AppRouter = () => (
         <Route path='/about' component={About} />
         <Route path='/faq' component={Faq} />
         <Route path='/privacy' component={Privacy} />
+        <Route path='/legal' component={Legal} />
         <Route path='/newsletter' component={Newsletter} />
         <Route path='/survey' component={Modal} />
+        <Route path='/features' component={Features} />
         <Route render={NotFound} />
       </Switch>
     </div>

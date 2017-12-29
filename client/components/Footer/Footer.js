@@ -34,7 +34,7 @@ const FooterDiv = () => (
   <footer id="footer"><div className='page--content'>
     <p><a href='https://chronist.ru/about' className='social'><span className='icon-copyright' /> Команда Хронист </a></p>
     <p><Link to='/privacy'> Политика конфиденциальности</Link></p>
-    <p><Link to='/'> Правила пользования сервисом </Link></p>
+    <p><Link to='/legal'> Правила пользования сервисом </Link></p>
     <p className='social'><Link to="/contact">Свяжитесь с нами</Link></p>
   </div></footer>
 );
