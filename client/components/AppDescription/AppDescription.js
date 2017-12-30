@@ -1,11 +1,9 @@
 import React from 'react';
-// import '../styles/appdesc.less';
 
 if (process.env.WEBPACK) require('./appdesc.less'); // eslint-disable-line global-require
 
 
-const personArticle = require('../../images/person.jpg');
-
+// const personArticle = require('../../images/person.jpg');
 
 // class AppDescription extends React.Component {
 //   constructor(props) {

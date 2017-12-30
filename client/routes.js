@@ -20,7 +20,7 @@ import Modal from './components/Survey/Modal';
 import Newsletter from './components/Newsletter';
 import Legal from './components/Legal/Legal';
 
-import preview from './images/richpreview.png';
+// import preview from './images/richpreview.png';
 
 const AppRouter = () => (
   <div>
@@ -58,28 +58,6 @@ const AppRouter = () => (
       </Switch>
     </div>
     <Footer />
-  </div>
-);
-
-
-
-const AppRouterTest = () => (
-  <div>
-{/*
-    <Home />
-    <Blog />
-    <NotFound />
-    <Footer />
-    <Navigation />
-    <ContactUs />
-    <About />
-    <Faq />
-    <Privacy />
-    <Modal />
-    <Newsletter />
-    <Company />
-*/}
-  Test
   </div>
 );
 

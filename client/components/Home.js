@@ -1,43 +1,43 @@
 import React from 'react';
 
-// import Timeline from './Timeline/Timeline';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
 import { ArticleGallery } from './Blog/Blog';
-// import Tracking from './Tracking';
-// import What from './VideoCarousel/VideoGallery';
 import Team from './Company/Team';
-// import Features from './Timeline/Features';
+import Features from './Timeline/Features';
 
-import TitleImage from '../images/title-white.png';
+const TitleImage = require('../images/title-white.png');
 // import '../styles/style.less';
 // if (process.env.WEBPACK) require('../styles/style.less'); // eslint-disable-line global-require
 
-const OldTitle = () => (
-  <div id="title">
-    <div className="text-center">
-      <h1> ХРОНИСТ </h1>
-      <h2> Наглядная география </h2>
-      <h4> историко-географический инструмент визуализации открытых научных данных </h4>
-    </div>
-    <Subscribe />
-  </div>
-);
-
-const Title = () => (
-  <div id="title">
-    <div className='text-center'>
-      <img src={TitleImage} />
-      <h4>
-         Мы хотим понимать как устроен мир. Находить причинно-следственные связи
-         между событиями. Иметь возможность заглянуть в историю на своих условия,
-         без толстых пыльных учебников и хрупких карт за стёклами музеев. Мы
-         объединили исторические карты с последовательностью событий и добавили
-         немного интерактивности.
-      </h4>
-    </div>
-  </div>
-);
+// const OldTitle = () => (
+//   <div id="title">
+//     <div className="text-center">
+//       <h1> ХРОНИСТ </h1>
+//       <h2> Наглядная география </h2>
+//       <h4> историко-географический инструмент визуализации открытых научных данных </h4>
+//     </div>
+//     <Subscribe />
+//   </div>
+// );
+class Title extends React.Component {
+  render() {
+    return (
+      <div id="title">
+        <div className='text-center'>
+          <img src={TitleImage} />
+          <h4>
+             Мы хотим понимать как устроен мир. Находить причинно-следственные связи
+             между событиями. Иметь возможность заглянуть в историю на своих условия,
+             без толстых пыльных учебников и хрупких карт за стёклами музеев. Мы
+             объединили исторические карты с последовательностью событий и добавили
+             немного интерактивности.
+          </h4>
+        </div>
+      </div>
+    );
+  }
+}
 
 const JumpToMap = () => (
   <div className='page--content'>
@@ -95,5 +95,17 @@ class Home extends React.Component {
     );
   }
 }
+
+// const Home = () => (
+//   <div className="app" >
+//     <Title />
+//     <AppDescription />
+//     <JumpToMap />
+//     <ArticleGallery />
+//     <Subscribe />
+//     <Team />
+//     <Features />
+//   </div>
+// );
 
 export default Home;

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Company.less';
+if (process.env.WEBPACK) require('./Company.less');
 import data from './data/TeamData';
 
 const Person = ({ person }) => (
@@ -18,10 +18,14 @@ const Person = ({ person }) => (
   </div>
 );
 
-const Team = () => (
-  <div id='team' className='page--content'>
-    {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}
-  </div>
-);
+class Team extends React.Component {
+  render() {
+    return (
+      <div id='team' className='page--content'>
+        {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}
+      </div>
+    );
+  }
+}
 
 export default Team;
