@@ -7,12 +7,14 @@ const Person = ({ person }) => (
     <a href={person.link}>
       <img src={person.img} />
     </a>
-    <br />
     <p>
       <strong> {person.name} </strong>
     <br />
     {person.position}
+    <br />
+      <a href={`mailto://${person.link}`}>{person.link}</a>
     </p>
+    <br />
   </div>
 );
 

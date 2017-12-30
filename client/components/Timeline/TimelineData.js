@@ -9,17 +9,18 @@ const ft8 = require('../../images/feature-export.svg');
 const ft9 = require('../../images/feature-religion.svg');
 const ft10 = require('../../images/feature-nations.svg');
 const ft11 = require('../../images/feature-disaster.svg');
-const ft12 = require('../../images/feature-empty.svg');
+const ft12 = require('./data/feature-expedition.svg');
 
 const pic0 = require('./data/greymapsimple.png');
 const pic1 = require('./data/worldmapsimple.png');
 const pic2 = require('./data/inventionmapsimple.png');
-const pic5 = require('./data/warmapsimple.png');
-const pic6 = require('./data/populationmapsimple.png');
-const pic7 = require('./data/religionmapsimple.png');
-const pic8 = require('./data/languagemapsimple.png');
-const pic9 = require('./data/racemapsimple.png');
-
+const pic6 = require('./data/warmapsimple.png');
+const pic7 = require('./data/populationmapsimple.png');
+const pic8 = require('./data/religionmapsimple.png');
+const pic9 = require('./data/languagemapsimple.png');
+const pic10 = require('./data/racemapsimple.png');
+const pic11 = require('./data/accidentmapsimple.png');
+const pic12 = require('./data/expeditionmapsimple.png');
 
 const featureList = [
   {
@@ -78,7 +79,7 @@ const featureList = [
     date: 'Май 2018',
     desc: 'Интерактивное отображение военных действий и исследовательских походов',
     img: ft2,
-    pic: pic5,
+    pic: pic6,
     inactive: 1,
     offset: 0
   },
@@ -88,7 +89,7 @@ const featureList = [
     date: 'Май 2018',
     desc: 'Демографические изменения',
     img: ft5,
-    pic: pic6,
+    pic: pic7,
     inactive: 1,
     offset: 0
   },
@@ -98,7 +99,7 @@ const featureList = [
     date: 'Май 2018',
     desc: 'Распространение религиозных течений',
     img: ft9,
-    pic: pic7,
+    pic: pic8,
     inactive: 1,
     offset: 0
   },
@@ -108,7 +109,7 @@ const featureList = [
     date: 'Ноябрь 2018',
     desc: 'Распространение и эволюция языковых групп',
     img: ft6,
-    pic: pic8,
+    pic: pic9,
     inactive: 1,
     offset: 0
   },
@@ -118,7 +119,7 @@ const featureList = [
     date: 'Ноябрь 2018',
     desc: 'Происхождение и распределение расс по материкам',
     img: ft10,
-    pic: pic9,
+    pic: pic10,
     inactive: 1,
     offset: 0
   },
@@ -128,17 +129,17 @@ const featureList = [
     date: 'Ноябрь 2018',
     desc: 'Болезни, природные и техногенные катаклизмы на протяжении истории человечества',
     img: ft11,
-    pic: pic0,
+    pic: pic11,
     inactive: 1,
     offset: 0
   },
   {
     id: 11,
-    name: '',
-    date: '',
+    name: 'Экспедиции',
+    date: 'Ноябрь 2018',
     desc: '',
     img: ft12,
-    pic: pic0,
+    pic: pic12,
     inactive: 1,
     offset: 0
   },

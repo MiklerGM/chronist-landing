@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import axios from 'axios';
 
 const SocialButton = () => (
@@ -23,7 +23,7 @@ export default class Subscribe extends React.Component {
 
   render() {
     return (
-      <div id='Subscribe' className='bg-2 text-center'>
+      <div className='bg-gray page--content text-center'>
         {/* <p>Получайте информацию о ходе проекта и датах запуска.</p> */}
         <p>
           Чтобы быть в курсе наших обновлений - подпишитесь на рассылку или участвуйте в наших сообществах в соцсетях.

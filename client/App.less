@@ -177,6 +177,8 @@ hr {
   h4 {
     margin: 0 auto;
     max-width: 65%;
+    line-height: 1.5em;
+    font-weight: 600;
     text-align: justify;
     color: @base07;
     @media screen and (max-width: 600px) {max-width: 85%;}
@@ -483,4 +485,12 @@ a.active {
   display: block;
   clear: both;
   text-align: center;
+  &--narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.bg-gray {
+  background-color: #FAFAFA;
 }

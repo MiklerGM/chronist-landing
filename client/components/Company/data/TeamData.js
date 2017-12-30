@@ -11,35 +11,35 @@ const data = [
     name: 'Даниил',
     position: 'Анализ Данных',
     img: ph1,
-    link: 'https://example.com/'
+    link: 'data@chronist.ru'
   },
   {
     id: 1,
     name: 'Алиса',
     position: 'Стратегическое управление',
     img: ph2,
-    link: 'https://example.com/'
+    link: 'idea@chronist.ru'
   },
   {
     id: 2,
     name: 'Михаил',
     position: 'Разработка',
     img: ph3,
-    link: 'https://example.com/'
+    link: 'code@chronist.ru'
   },
   {
     id: 3,
     name: 'Валерия',
     position: 'Дизайн и иллюстрации',
     img: ph4,
-    link: 'https://example.com/'
+    link: ''
   },
   {
     id: 4,
     name: 'Дмитрий',
     position: 'Разработка',
     img: ph5,
-    link: 'https://github.com/aPdavan'
+    link: ''
   },
 ];
 

@@ -28,7 +28,7 @@ class Feature extends React.Component {
 const Preview = ({ id, openOverlay }) => (
   <div
     className='feature--preview'
-    onClick={() => openOverlay()}
+    // onClick={() => openOverlay()}
   >
     <ReactCSSTransitionGroup
       component="div"
@@ -82,29 +82,31 @@ class Features extends React.Component {
 
   render() {
     return (
-      <div className='container'>
-        <ModalOverlay
-          overlay={this.state.overlay}
-          closeOverlay={() => this.setState({overlay: false})}
-          id={this.state.id}
-          next={this.next}
-          prev={this.prev}
-          direction={this.state.direction}
-        />
-        <h2> Функционал </h2>
-        <div className='col-md-6'>
-          <Preview
+      <div className='page--content'>
+        <div className='container'>
+          <ModalOverlay
+            overlay={this.state.overlay}
+            closeOverlay={() => this.setState({overlay: false})}
             id={this.state.id}
-            openOverlay={() => this.setState({ overlay: true })}
+            next={this.next}
+            prev={this.prev}
+            direction={this.state.direction}
           />
-        </div>
-        <div className='col-md-6'>
-          {featureList.map((feature, id)  => <Feature
-            data={feature}
-            key={id}
-            id={id}
-            change={this.changeId}
-          /> )}
+          <h2> Функционал </h2>
+          <div className='col-md-6'>
+            <Preview
+              id={this.state.id}
+              openOverlay={() => this.setState({ overlay: true })}
+            />
+          </div>
+          <div className='col-md-6'>
+            {featureList.map((feature, id)  => <Feature
+              data={feature}
+              key={id}
+              id={id}
+              change={this.changeId}
+            /> )}
+          </div>
         </div>
       </div>
     );
