@@ -26,11 +26,9 @@ class Feature extends React.Component {
 }
 
 const Preview = ({ id, openOverlay }) => (
-  <div
-    className='feature--preview'
-    // onClick={() => openOverlay()}
-  >
+  <div className='feature__preview'>
     <ReactCSSTransitionGroup
+      className="feature__map"
       component="div"
       transitionName={{
         enter: 'enter',
@@ -42,12 +40,9 @@ const Preview = ({ id, openOverlay }) => (
     >
       <img className='feature__over' key={featureList[id].id} src={featureList[id].pic} />
     </ReactCSSTransitionGroup>
-      {/*
-      <img classNa`me='feature__under' src={pic0} />
-    */}
-    <div className='feature--description'>
-      <p><strong>{featureList[id].name}</strong></p>
-      <p>{featureList[id].desc}</p>
+      <div className='feature--description'>
+        <p><strong>{featureList[id].name}</strong></p>
+        <p>{featureList[id].desc}</p>
     </div>
   </div>
 );
@@ -83,7 +78,8 @@ class Features extends React.Component {
   render() {
     return (
       <div className='page--content'>
-        <div className='container'>
+        <h2> Функционал </h2>
+        <div className='feature__container'>
           <ModalOverlay
             overlay={this.state.overlay}
             closeOverlay={() => this.setState({overlay: false})}
@@ -92,14 +88,12 @@ class Features extends React.Component {
             prev={this.prev}
             direction={this.state.direction}
           />
-          <h2> Функционал </h2>
-          <div className='col-md-6'>
+
             <Preview
               id={this.state.id}
               openOverlay={() => this.setState({ overlay: true })}
             />
-          </div>
-          <div className='col-md-6'>
+          <div className='feature__wrapper'>
             {featureList.map((feature, id)  => <Feature
               data={feature}
               key={id}

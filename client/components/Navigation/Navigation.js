@@ -31,16 +31,18 @@ class Navigation extends React.Component {
     }
 
     return (
-      <div id="Navigation" className='row' ><div className="container-fluid">
-        <ul className={this.state.themeName}>
-          <li><NavLink exact activeClassName='active' to="/">Хронист</NavLink></li>
-          <li><a href='https://demo.chronist.ru/'>Карта</a></li>
-          <li style={this.state.style}><NavLink activeClassName='active' to="/blog">Блог</NavLink></li>
-          <li style={this.state.style}><a href="https://vk.com/chronist"> VK </a></li>
-          <li style={this.state.style}><NavLink activeClassName='active' to="/faq">FAQ</NavLink></li>
-          <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
-        </ul>
-      </div></div>
+      <div id="Navigation" className='row'>
+        <div className="container-fluid">
+          <ul className={this.state.themeName}>
+            <li><NavLink exact activeClassName='active' to="/">Хронист</NavLink></li>
+            <li><a href='https://demo.chronist.ru/'>Карта</a></li>
+            <li style={this.state.style}><NavLink activeClassName='active' to="/blog">Блог</NavLink></li>
+            <li style={this.state.style}><a href="https://vk.com/chronist"> VK </a></li>
+            <li style={this.state.style}><NavLink activeClassName='active' to="/faq">FAQ</NavLink></li>
+            <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
+          </ul>
+        </div>
+      </div>
     );
   }
 }

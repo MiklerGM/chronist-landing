@@ -22,28 +22,14 @@ import Legal from './components/Legal/Legal';
 
 // import preview from './images/richpreview.png';
 
+const Wrapper = () => (
+  <div className='wrap'></div>
+);
+
 const AppRouter = () => (
   <div>
-    <Helmet
-      htmlAttributes={{ 'lang': 'ru', 'amp': undefined }} // amp takes no value
-      title='Хронист'
-      titleTemplate='Хронист - %s'
-      defaultTitle='Хронист'
-      // base={{ 'target': '_blank', 'href': 'http://chronist.ru/' }}
-      meta={[
-        { name: 'description', content: 'Интерактивная история на карте мира' },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Хронист' },
-        { property: 'og:description', content: 'Интерактивная история на карте мира' },
-        { property: 'og:url', content: 'https://chronist.ru/' },
-        { property: 'og:image', content: 'https://chronist.ru/richpreview.png' },
-        { property: 'og:image:url', content: 'https://chronist.ru/richpreview.png' },
-        { property: 'og:image:secure_url', content: 'https://chronist.ru/richpreview.png' }
-      ]}
-    />
+    <Wrapper />
     <Navigation />
-    <Route path="/" />
-    <div className='wrapper'>
       <Switch>
         <Route exact path='/' render={() => <Home />} />
         <Route path='/blog' component={Blog} />
@@ -56,8 +42,7 @@ const AppRouter = () => (
         <Route path='/survey' component={Modal} />
         <Route render={NotFound} />
       </Switch>
-    </div>
-    <Footer />
+      <Footer />
   </div>
 );
 

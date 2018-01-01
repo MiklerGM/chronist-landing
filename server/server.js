@@ -1,6 +1,7 @@
 import { createServer } from 'http';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
+import { hydrate } from "react-dom";
 import Helmet from 'react-helmet';
 import { StaticRouter } from 'react-router';
 import http from 'http';
