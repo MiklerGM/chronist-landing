@@ -27,11 +27,13 @@ app.use(express.static('dist'));
 app.use((req, res) => {
   const context = {};
 
-  const html = ReactDOMServer.renderToString(
+  const html = ReactDOMServer.renderToNodeStream(
     <StaticRouter location={req.url} context={context}>
       <AppRoutes />
     </StaticRouter>
   );
+
+  // console.log(html);
 
 
   if (context.url) {
