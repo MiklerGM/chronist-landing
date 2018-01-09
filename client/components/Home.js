@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactGA from 'react-ga';
+
 
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
@@ -67,6 +69,7 @@ class Home extends React.Component {
 
   componentDidMount = async () => {
     await this.LoadFeatures();
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   render() {
