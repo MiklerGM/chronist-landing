@@ -37,7 +37,7 @@ class ContactUs extends React.Component {
 
   render() {
     return (
-      <div id='contact' className='container'><div className='bg-what'>
+      <div id='contact' className='page--segment'><div className='page--content'>
         <h1 id='pageTitle' className='text-center'> Связь с нами </h1>
         <h4 className='text-left article'>
         Нам приятно видеть, что вы всё ещё не покинули нас и проявляете интерес к нашему продукту.
@@ -45,7 +45,6 @@ class ContactUs extends React.Component {
         проблемы с сервисом или просто так. Мы всегда рады сообщениям.
         Так же можно написать нам на электронную
         почту <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a>.
-
         </h4>
         <div className='container'><form
           className='form-inline'

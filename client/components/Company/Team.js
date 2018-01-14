@@ -19,8 +19,11 @@ const Person = ({ person }) => (
 class Team extends React.Component {
   render() {
     return (
-      <div id='team' className='page--content'>
-        {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}
+      <div id='team' className='page--segment'>
+        <div className='page--content'>
+          <h2 className='invert'> Наша команда </h2>
+          {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}
+        </div>
       </div>
     );
   }

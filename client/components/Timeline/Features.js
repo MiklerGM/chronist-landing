@@ -77,29 +77,30 @@ class Features extends React.Component {
 
   render() {
     return (
-      <div className='page--content'>
-        <h2> Функционал </h2>
-        <div className='feature__container'>
-          <ModalOverlay
-            overlay={this.state.overlay}
-            closeOverlay={() => this.setState({overlay: false})}
-            id={this.state.id}
-            next={this.next}
-            prev={this.prev}
-            direction={this.state.direction}
-          />
-
-            <Preview
+      <div className='page--segment'>
+        <div className='page--content'>
+          <h2> Функционал </h2>
+          <div className='feature__container'>
+            <ModalOverlay
+              overlay={this.state.overlay}
+              closeOverlay={() => this.setState({overlay: false})}
               id={this.state.id}
-              openOverlay={() => this.setState({ overlay: true })}
+              next={this.next}
+              prev={this.prev}
+              direction={this.state.direction}
             />
-          <div className='feature__wrapper'>
-            {featureList.map((feature, id)  => <Feature
-              data={feature}
-              key={id}
-              id={id}
-              change={this.changeId}
-            /> )}
+              <Preview
+                id={this.state.id}
+                openOverlay={() => this.setState({ overlay: true })}
+              />
+            <div className='feature__wrapper'>
+              {featureList.map((feature, id)  => <Feature
+                data={feature}
+                key={id}
+                id={id}
+                change={this.changeId}
+              /> )}
+            </div>
           </div>
         </div>
       </div>

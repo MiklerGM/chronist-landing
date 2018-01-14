@@ -14,6 +14,7 @@ const ft12 = require('./data/feature-expedition.svg');
 const pic0 = require('./data/greymapsimple.png');
 const pic1 = require('./data/worldmapsimple.png');
 const pic2 = require('./data/inventionmapsimple.png');
+const pic3 = require('./data/export2.png');
 const pic6 = require('./data/warmapsimple.png');
 const pic7 = require('./data/populationmapsimple.png');
 const pic8 = require('./data/religionmapsimple.png');
@@ -59,7 +60,7 @@ const featureList = [
     date: 'Сентябрь 2017',
     desc: 'Возможность экспортировать выбранную хронологию за период',
     img: ft8,
-    pic: pic0,
+    pic: pic3,
     inactive: 0,
     offset: 0
   },

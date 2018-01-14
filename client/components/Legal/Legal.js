@@ -14,7 +14,7 @@ const Legal = () => (
     <div
       className='ArticleContent'
       dangerouslySetInnerHTML={{ __html: mdText.__content }}
-    />;
+    />
   </div></div>
 );
 

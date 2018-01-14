@@ -77,10 +77,14 @@ const processArticleGallery = (url, id) => {
 };
 
 export const ArticleGallery = () => (
-  <div id="ArticleGallery" className='row'><div className='ArticleGallery-back'><div className='container'>
-    <h2> Последние записи </h2>
-    {urls.slice(-3).reverse().map(processArticleGallery)}
-  </div></div><hr /></div>
+  <div className='page--segment bg-gray'>
+    <div className='page--content'>
+      <div className='container'>
+        <h2> Последние записи </h2>
+        {urls.slice(-3).reverse().map(processArticleGallery)}
+      </div>
+    </div>
+  </div>
 );
 
 
@@ -122,7 +126,7 @@ class ArticlePage extends React.Component {
             <span className='separator'> - </span>
             <span className='dim'> {getFormattedDate(req(`./${this.props.data}.md`).date)} </span>
           </div>
-          <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />;
+          <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />
         </div>
         </div>
     );

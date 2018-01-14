@@ -10,7 +10,7 @@ const Privacy = () => (
     <div
       className='ArticleContent'
       dangerouslySetInnerHTML={{ __html: mdText.__content }}
-    />;
+    />
   </div></div>
 );
 

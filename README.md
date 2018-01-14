@@ -328,3 +328,9 @@ https://hackernoon.com/straightforward-code-splitting-with-react-and-webpack-4b9
 https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca2ae6e
 
 
+
+
+Картиночки:
+ - Исследование данных
+ - Экспорт данных
+ - Личные сценарии
