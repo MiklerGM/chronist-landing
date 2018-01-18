@@ -1,27 +1,32 @@
-const ft1 = require('../../images/feature-borders.svg');
-const ft2 = require('../../images/feature-war.svg');
-const ft3 = require('../../images/feature-invention.svg');
-const ft4 = require('../../images/feature-research.svg');
-const ft5 = require('../../images/feature-demography.svg');
-const ft6 = require('../../images/feature-language.svg');
-const ft7 = require('../../images/feature-settings.svg');
-const ft8 = require('../../images/feature-export.svg');
-const ft9 = require('../../images/feature-religion.svg');
-const ft10 = require('../../images/feature-nations.svg');
-const ft11 = require('../../images/feature-disaster.svg');
+const ft1 = require('./data/feature-borders.svg');
+const ft2 = require('./data/feature-war.svg');
+const ft3 = require('./data/feature-invention.svg');
+const ft4 = require('./data/feature-research.svg');
+const ft5 = require('./data/feature-demography.svg');
+const ft6 = require('./data/feature-language.svg');
+const ft7 = require('./data/feature-settings.svg');
+const ft8 = require('./data/feature-export.svg');
+const ft9 = require('./data/feature-religion.svg');
+const ft10 = require('./data/feature-nations.svg');
+const ft11 = require('./data/feature-disaster.svg');
 const ft12 = require('./data/feature-expedition.svg');
 
-const pic0 = require('./data/greymapsimple.png');
-const pic1 = require('./data/worldmapsimple.png');
-const pic2 = require('./data/inventionmapsimple.png');
-const pic3 = require('./data/export2.png');
-const pic6 = require('./data/warmapsimple.png');
-const pic7 = require('./data/populationmapsimple.png');
-const pic8 = require('./data/religionmapsimple.png');
-const pic9 = require('./data/languagemapsimple.png');
-const pic10 = require('./data/racemapsimple.png');
-const pic11 = require('./data/accidentmapsimple.png');
-const pic12 = require('./data/expeditionmapsimple.png');
+const pic0 = require('./data/preview-greymapsimple.png');
+const pic1 = require('./data/preview-worldmapsimple.png');
+const pic2 = require('./data/preview-inventionmapsimple.png');
+const pic3 = require('./data/preview-exportmap.png');
+const pic4 = require('./data/preview-researchmap.png');
+const pic5 = require('./data/preview-storytellingmap.png');
+// const pic3 = require('./data/export2.png');
+const pic6 = require('./data/preview-warmapsimple.png');
+const pic7 = require('./data/preview-populationmapsimple.png');
+const pic8 = require('./data/preview-religionmapsimple.png');
+const pic9 = require('./data/preview-languagemapsimple.png');
+const pic10 = require('./data/preview-racemapsimple.png');
+const pic11 = require('./data/preview-accidentmapsimple.png');
+const pic12 = require('./data/preview-expeditionmapsimple.png');
+
+
 
 const featureList = [
   {
@@ -50,7 +55,7 @@ const featureList = [
     date: 'Март 2017',
     desc: 'Поиск корреляций и причинно-следственных связей между историческими событиями',
     img: ft4,
-    pic: pic0,
+    pic: pic4,
     inactive: 0,
     offset: 0
   },
@@ -70,7 +75,7 @@ const featureList = [
     date: 'Сентябрь 2017',
     desc: 'Добавление данных и создание собственных наборов отображаемых событий',
     img: ft7,
-    pic: pic0,
+    pic: pic5,
     inactive: 0,
     offset: 0
   },

@@ -6,7 +6,7 @@ import ModalOverlay from './Overlay';
 
 if (process.env.WEBPACK) require('./Features.less');
 
-const pic0 = require('./data/greymapsimple.png');
+const pic0 = require('./data/preview-greymapsimple.png');
 
 class Feature extends React.Component {
   render() {
