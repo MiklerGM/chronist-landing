@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
+import {FormattedMessage} from 'react-intl';
 
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
@@ -16,11 +17,10 @@ class Title extends React.Component {
         <div className='text-center'>
           <img src={TitleImage} />
           <h4>
-             Мы хотим понимать как устроен мир. Находить причинно-следственные связи
-             между событиями. Иметь возможность заглянуть в историю на своих условия,
-             без толстых пыльных учебников и хрупких карт за стёклами музеев. Мы
-             объединили исторические карты с последовательностью событий и добавили
-             немного интерактивности.
+              <FormattedMessage
+                id='home.title'
+                defaultMessage={`Default message`}
+              />
           </h4>
         </div>
       </div>

@@ -5,10 +5,8 @@ import {
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-if (process.env.WEBPACK) require('bootstrap/less/bootstrap.less'); // eslint-disable-line global-require
-
-import Home from './components/Home'
-;import Blog from './components/Blog/Blog';
+import Home from './components/Home';
+import Blog from './components/Blog/Blog';
 import NotFound from './components/ErrorPages/404';
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
@@ -20,11 +18,13 @@ import Modal from './components/Survey/Modal';
 import Newsletter from './components/Newsletter';
 import Legal from './components/Legal/Legal';
 
+if (process.env.WEBPACK) require('bootstrap/less/bootstrap.less'); // eslint-disable-line global-require
+
 const Wrapper = () => (
-  <div className='wrap'></div>
+  <div className='wrap' />
 );
 
-const AppRouter = () => (
+const AppRouter = ({ onChangeLanguage, locale }) => (
   <div>
     <Helmet
       htmlAttributes={{ 'lang': 'ru', 'amp': undefined }} // amp takes no value
@@ -59,7 +59,7 @@ const AppRouter = () => (
         <Route render={NotFound} />
       </Switch>
     </div>
-    <Footer />
+    <Footer onChangeLanguage={onChangeLanguage} locale={locale} />
   </div>
 );
 

@@ -6,7 +6,7 @@ import ModalOverlay from './Overlay';
 
 if (process.env.WEBPACK) require('./Features.less');
 
-const pic0 = require('./data/preview-greymapsimple.png');
+// const pic0 = require('./data/preview-greymapsimple.png');
 
 class Feature extends React.Component {
   render() {
@@ -66,12 +66,12 @@ class Features extends React.Component {
   }
 
   next = () => {
-    let nextSlide = this.state.id + 1 < featureList.length ?  this.state.id + 1 : 0;
+    const nextSlide = this.state.id + 1 < featureList.length ?  this.state.id + 1 : 0;
     this.setState({ id: nextSlide, direction: 'right'});
   }
 
   prev = () => {
-    let prevSlide = this.state.id - 1 < 0 ? featureList.length -1 : this.state.id - 1;
+    const prevSlide = this.state.id - 1 < 0 ? featureList.length -1 : this.state.id - 1;
     this.setState({ id: prevSlide, direction: 'left'});
   }
 
