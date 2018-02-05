@@ -1,4 +1,5 @@
- import React from 'react';
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import axios from 'axios';
 
 const SocialButton = () => (
@@ -40,7 +41,9 @@ export default class Subscribe extends React.Component {
       <div className='page--segment text-center bg-gray'>
         <div className='page--content'>
           <p>
-            Чтобы быть в курсе наших обновлений - подпишитесь на рассылку или участвуйте в наших сообществах в соцсетях.
+            <FormattedMessage
+              id='home.subscribe.message'
+            />
           </p>
           <form
             className='form-inline'
@@ -55,14 +58,18 @@ export default class Subscribe extends React.Component {
                   // className='form-control'
                   // className='red'
                   size='20'
-                  placeholder='Ваш E-mail'
+                  placeholder='E-mail'
                   required
                   onChange={(e) => {
                     this.setState({ ...this.state, email: e.target.value });
                   }}
                 />
                 <div className='input-group-btn'>
-                  <button type='submit' className='red'>Подписаться</button>
+                  <button type='submit' className='red'>
+                  <FormattedMessage
+                    id='home.subscribe.button'
+                  />
+                  </button>
                 </div>
               </div>
             </div>

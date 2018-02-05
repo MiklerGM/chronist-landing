@@ -35,7 +35,7 @@ class LocaleWidget extends React.Component {
   }
 }
 
-LocaleWidget.PropTypes = {
+LocaleWidget.propTypes = {
   locale: PropTypes.string.isRequired,
   onChangeLanguage: PropTypes.func.isRequired
 };

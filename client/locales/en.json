@@ -1,2 +1,17 @@
 {
-  "home.title": "English locale test message"
+  "home.title": "How was the modern world created? What are the causes and effects between  historical events? We want to have a glance at the history without dusty boring books and ancient maps stored in museums. That’s why we combined historical maps with a timeline and added a bit of interactive elements.",
+  "home.description": "Chronist is a self-learning tool for history and geography. We use open source data and make no claim as to the authenticity of the info, however we strongly strive for reliability. Apart from the world map we develop interactive courses and infographics. ",
+  "home.description.button": "World Map",
+  "home.lastarticles": "Last posts",
+  "home.subscribe.message": "Subscribe to our email newsletters and follow us in social networks to recieve updates on the latest news.",
+  "home.subscribe.button": "Subscribe",
+  "team.title": "Our Team",
+  "footer.privacy": "Privacy",
+  "footer.tos": "Terms of Service",
+  "footer.contact": "Contact Us",
+  "blog.title": "Blog",
+  "nav.main": "Chronist",
+  "nav.map": "Map",
+  "nav.blog": "Blog",
+  "feature.title": "Features"
+}

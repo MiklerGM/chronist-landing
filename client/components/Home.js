@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
@@ -19,7 +19,6 @@ class Title extends React.Component {
           <h4>
               <FormattedMessage
                 id='home.title'
-                defaultMessage={`Default message`}
               />
           </h4>
         </div>
@@ -32,11 +31,15 @@ const JumpToMap = () => (
   <div className='page--segment'>
     <div className='page--content'>
       <p>
-        "Хронист" - сервис для самостоятельного изучения исторической географии.
-        Мы используем данные открытых источников и не претендуем на абсолютную историческую точность, но очень стремимся к ней.
-        Помимо карты мира как основного проекта мы занимаемся интерактивными курсами и визуализациями.
+        <FormattedMessage
+          id='home.description'
+        />
       </p>
-      <a className='' href='https://demo.chronist.ru/'><button className='main'>Карта мира</button></a>
+      <a className='' href='https://demo.chronist.ru/'><button className='main'>
+        <FormattedMessage
+          id='home.description.button'
+        />
+      </button></a>
     </div>
   </div>
 );
@@ -74,13 +77,13 @@ class Home extends React.Component {
         */}
         <ArticleGallery />
         {Features ? (
-          <Features />
+          <Features locale={this.props.locale} />
           ) : (
             <div />
         )}
         <Subscribe />
         <AppDescription />
-        <Team />
+        <Team locale={this.props.locale}/>
       </div>
     );
   }

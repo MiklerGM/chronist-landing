@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Route, Switch } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 import Moment from 'moment';
 import 'moment/locale/ru';
 import NotFound from '../NotFound';
@@ -57,7 +58,11 @@ const BlogWrapper = () => (
       ]}
     />
 
-    <h1 id='pageTitle'> Блог </h1>
+    <h1 id='pageTitle'>
+      <FormattedMessage
+        id='blog.title'
+      />
+    </h1>
     <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
       {urls.reverse().map(processArticle)}
     </div></div></div>
@@ -80,7 +85,11 @@ export const ArticleGallery = () => (
   <div className='page--segment bg-gray'>
     <div className='page--content'>
       <div className='container'>
-        <h2> Последние записи </h2>
+        <h2>
+          <FormattedMessage
+            id='home.lastarticles'
+          />
+        </h2>
         {urls.slice(-3).reverse().map(processArticleGallery)}
       </div>
     </div>

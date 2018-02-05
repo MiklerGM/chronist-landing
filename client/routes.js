@@ -47,7 +47,7 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
     <Navigation />
     <div className='wrapper'>
       <Switch>
-        <Route exact path='/' render={() => <Home />} />
+        <Route exact path='/' render={() => <Home locale={locale} />} />
         <Route path='/blog' component={Blog} />
         <Route path='/contact' component={ContactUs} />
         <Route path='/about' component={About} />

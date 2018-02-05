@@ -1,7 +1,9 @@
 import React from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { FormattedMessage } from 'react-intl';
 
-import featureList from './TimelineData';
+import featureListRU from './TimelineDataRU';
+import featureListEN from './TimelineDataEN';
 import ModalOverlay from './Overlay';
 
 if (process.env.WEBPACK) require('./Features.less');
@@ -25,7 +27,7 @@ class Feature extends React.Component {
   }
 }
 
-const Preview = ({ id, openOverlay }) => (
+const Preview = ({ id, openOverlay, featureList }) => (
   <div className='feature__preview'>
     <ReactCSSTransitionGroup
       className="feature__map"
@@ -66,20 +68,32 @@ class Features extends React.Component {
   }
 
   next = () => {
-    const nextSlide = this.state.id + 1 < featureList.length ?  this.state.id + 1 : 0;
+    const nextSlide = this.state.id + 1 < featureListEN.length ?  this.state.id + 1 : 0;
     this.setState({ id: nextSlide, direction: 'right'});
   }
 
   prev = () => {
-    const prevSlide = this.state.id - 1 < 0 ? featureList.length -1 : this.state.id - 1;
+    const prevSlide = this.state.id - 1 < 0 ? featureListEN.length -1 : this.state.id - 1;
     this.setState({ id: prevSlide, direction: 'left'});
   }
 
   render() {
+    let featureList = {};
+    if (this.props.locale === 'ru') {
+      featureList = featureListRU;
+    } else {
+      featureList = featureListEN;
+    }
+    // let featureList = featureListEN;
+
     return (
       <div className='page--segment'>
         <div className='page--content'>
-          <h2> Функционал </h2>
+          <h2>
+            <FormattedMessage
+              id='feature.title'
+            />
+          </h2>
           <div className='feature__container'>
             <ModalOverlay
               overlay={this.state.overlay}
@@ -92,6 +106,7 @@ class Features extends React.Component {
               <Preview
                 id={this.state.id}
                 openOverlay={() => this.setState({ overlay: true })}
+                featureList={featureList}
               />
             <div className='feature__wrapper'>
               {featureList.map((feature, id)  => <Feature

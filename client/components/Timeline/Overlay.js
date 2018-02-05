@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; // ES6
-import featureList from './TimelineData';
+import featureList from './TimelineDataEN';
 
 class Slide extends React.Component {
   constructor(props) {

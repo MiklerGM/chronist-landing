@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import LocaleWidget from './LocaleWidget';
 
@@ -11,10 +12,29 @@ const Clear = () => (
 
 const FooterDiv = ({ onChangeLanguage, locale }) => (
   <footer id="footer"><div className='page--content'>
-    <p><a href='https://chronist.ru/about' className='social'><span className='icon-copyright' /> Команда Хронист </a></p>
-    <p><Link to='/privacy'> Политика конфиденциальности</Link></p>
-    <p><Link to='/legal'> Правила пользования сервисом </Link></p>
-    <p className='social'><Link to="/contact">Свяжитесь с нами</Link></p>
+    {/*
+    <p><a className='social'><span className='icon-copyright' />
+      Команда Хронист
+    </a></p>
+  */}
+    <p><Link to='/privacy'>
+      <FormattedMessage
+        id='footer.privacy'
+        defaultMessage={`Default message`}
+      />
+    </Link></p>
+    <p><Link to='/legal'>
+      <FormattedMessage
+        id='footer.tos'
+        defaultMessage={`Default message`}
+      />
+    </Link></p>
+    <p className='social'><Link to="/contact">
+      <FormattedMessage
+        id='footer.contact'
+        defaultMessage={`Default message`}
+      />
+    </Link></p>
     <LocaleWidget onChangeLanguage={onChangeLanguage} locale={locale} />
   </div></footer>
 );

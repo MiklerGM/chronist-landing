@@ -2,6 +2,7 @@ import React from 'react';
 import {
   NavLink,
 } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 if (process.env.WEBPACK) require('./nav-router.less');
 
@@ -34,9 +35,21 @@ class Navigation extends React.Component {
       <div id="Navigation" className='row'>
         <div className="container-fluid">
           <ul className={this.state.themeName}>
-            <li><NavLink exact activeClassName='active' to="/">Хронист</NavLink></li>
-            <li><a href='https://demo.chronist.ru/'>Карта</a></li>
-            <li style={this.state.style}><NavLink activeClassName='active' to="/blog">Блог</NavLink></li>
+            <li><NavLink exact activeClassName='active' to="/">
+              <FormattedMessage
+                id='nav.main'
+              />
+            </NavLink></li>
+            <li><a href='https://demo.chronist.ru/'>
+              <FormattedMessage
+                id='nav.map'
+              />
+            </a></li>
+            <li style={this.state.style}><NavLink activeClassName='active' to="/blog">
+              <FormattedMessage
+                id='nav.blog'
+              />
+            </NavLink></li>
             <li style={this.state.style}><a href="https://vk.com/chronist"> VK </a></li>
             <li style={this.state.style}><NavLink activeClassName='active' to="/faq">FAQ</NavLink></li>
             <li className="icon"><button onClick={this.toggle}><i className='fa icon-menu' /></button></li>
