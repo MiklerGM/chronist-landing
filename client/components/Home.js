@@ -4,9 +4,9 @@ import { FormattedMessage } from 'react-intl';
 
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
-import { ArticleGallery } from './Blog/Blog';
+// import { ArticleGallery } from './Blog/Blog';
 import Team from './Company/Team';
-import Features from './Timeline/Features';
+// import Features from './Timeline/Features';
 
 const TitleImage = require('../images/title-white.png');
 
@@ -48,22 +48,30 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lazy: null,
+      lazyFeatures: null,
+      lazyArticles: null
     };
   }
 
   async LoadFeatures() {
     const { default : Features } = await import(/* webpackChunkName: "features" */ './Timeline/Features');
-    this.setState({ lazy: Features });
+    this.setState({ lazyFeatures: Features });
+  }
+
+  async LoadArticles() {
+    const { ArticleGallery } = await import(/* webpackChunkName: "features" */ './Blog/Blog');
+    this.setState({ lazyArticles: ArticleGallery });
   }
 
   componentDidMount = async () => {
     await this.LoadFeatures();
+    await this.LoadArticles();
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   render() {
-    const Features = this.state.lazy;
+    const Features = this.state.lazyFeatures;
+    const ArticleGallery = this.state.lazyArticles;
 
     return (
       <div className="app" >
@@ -74,8 +82,13 @@ class Home extends React.Component {
         <Tracking />
         <Timeline />
         <Features />
-        */}
         <ArticleGallery />
+        */}
+        {ArticleGallery ? (
+          <ArticleGallery locale={this.props.locale} />
+          ) : (
+            <div />
+        )}
         {Features ? (
           <Features locale={this.props.locale} />
           ) : (

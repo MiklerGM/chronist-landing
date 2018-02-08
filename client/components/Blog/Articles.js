@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Route, Switch, withRouter } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import Moment from 'moment';
 import 'moment/locale/ru';
 import NotFound from '../NotFound';
 import { Helmet } from 'react-helmet';
-import Tracking from '../Tracking';
 
 // import '../md/test.jpg';
 
@@ -14,18 +13,10 @@ import Tracking from '../Tracking';
 if (process.env.WEBPACK) require('./blog.less'); // eslint-disable-line global-require
 
 const urls = [];
-const req = require.context('./postsRU', false, /\.md$/);
+const req = require.context('../../md', false, /\.md$/);
 req.keys().forEach((fileName, id) => {
   urls[id] = fileName.replace('./', '').replace('.md', '');
 });
-
-
-// const urlsEN = [];
-// const reqEN = require.context('./postsEN', false, /\.md$/);
-// req.keys().forEach((fileName, id) => {
-//   urlsEN[id] = fileName.replace('./', '').replace('.md', '');
-// });
-
 
 const getHumanDate = (date) => {
   Moment.locale('ru');
@@ -37,7 +28,6 @@ const getHumanDate = (date) => {
 
 const getFormattedDate = (date) => {
   Moment.locale('ru');
-  // const formattedDT = Moment(date).calendar();
   const formattedDT = Moment(date).format('LL');
   return formattedDT;
 };
@@ -56,26 +46,10 @@ const processArticle = (url, id) => (
   </div>
 );
 
-const BlogWrapper = () => (
-  <div>
-    <Helmet
-      title='Блог'
-      meta={[
-        { name: 'description', content: 'Хронист Блог' },
-        { property: 'og:type', content: 'article_' },
-        { property: 'og:title', content: 'Блог' }
-      ]}
-    />
-
-    <h1 id='pageTitle'>
-      <FormattedMessage
-        id='blog.title'
-      />
-    </h1>
-    <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
-      {urls.reverse().map(processArticle)}
-    </div></div></div>
-  </div>
+export const ArticleList = () => (
+  <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
+    {urls.reverse().map(processArticle)}
+  </div></div></div>
 );
 
 
@@ -90,15 +64,7 @@ const processArticleGallery = (url, id) => {
   )
 };
 
-export const ArticleGallery = ({ locale }) => {
-  // let urls = [];
-  // if (locale === 'ru') {
-  //   urls = urlsRU;
-  // } else {
-  //   urls = urlsEN;
-  // }
-
-  return (
+export const ArticleGallery = () => (
   <div className='page--segment bg-gray'>
     <div className='page--content'>
       <div className='container'>
@@ -111,8 +77,7 @@ export const ArticleGallery = ({ locale }) => {
       </div>
     </div>
   </div>
-  )
-};
+);
 
 
 const Blog = () => (
@@ -126,7 +91,6 @@ const Blog = () => (
       />
     )}
     <Route render={NotFound} />
-    <Tracking />
   </Switch>
 );
 
@@ -135,7 +99,6 @@ const Blog = () => (
 // );
 
 class ArticlePage extends React.Component {
-
   render() {
     return (
         <div className='bg-what'><div className='container'>
@@ -164,35 +127,4 @@ ArticlePage.PropTypes = {
   data: PropTypes.string.isRequired,
 };
 
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.less';
-// import 'slick-carousel/slick/slick-theme.less';
-// class ArticleSlider extends React.Component {
-//   render() {
-//     const settings = {
-//       arrows: true,
-//       infinite: true,
-//       // dots: true,
-//       autoplay: false,
-//       slidesToShow: 3,
-//       slidesToScroll: 3
-//     };
-
-//     return (
-//       <div id='ArticleSlider' className='row'><div className='bg-what'>
-//         <div className='container'>
-//           <Slider {...settings}>
-//             <div> 1 </div>
-//             <div> 2 </div>
-//             <div> 3 </div>
-//             <div> 4 </div>
-//             <div> 5 </div>
-//             <div> 6 </div>
-//           </Slider>
-//         </div>
-//       </div></div>
-//     );
-//   }
-// }
-
-export default withRouter(Blog);
+export default Blog;

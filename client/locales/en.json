@@ -13,5 +13,6 @@
   "nav.main": "Chronist",
   "nav.map": "Map",
   "nav.blog": "Blog",
-  "feature.title": "Features"
+  "feature.title": "Features",
+  "faq.title": "Frequently asked questions"
 }

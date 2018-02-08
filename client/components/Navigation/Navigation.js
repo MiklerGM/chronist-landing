@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  NavLink,
+  NavLink, withRouter
 } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
@@ -60,4 +60,4 @@ class Navigation extends React.Component {
   }
 }
 
-export default Navigation;
+export default withRouter(Navigation);

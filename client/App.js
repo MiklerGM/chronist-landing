@@ -63,17 +63,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router history={browserHistory}>
-        <YMInitializer accounts={YmId} options={{ defer: true }} >
-          <IntlProvider
-            locale={config.locale}
-            key={config.locale}
-            messages={config.messages}
-          >
+      <YMInitializer accounts={YmId} options={{ defer: true }} >
+        <IntlProvider
+          locale={config.locale}
+          key={config.locale}
+          messages={config.messages}
+        >
+          <Router history={browserHistory}>
             <AppRouter onChangeLanguage={this.onChangeLanguage} locale={this.state.locale} />
-          </IntlProvider>
-        </YMInitializer>
-      </Router>
+          </Router>
+        </IntlProvider>
+      </YMInitializer>
     );
   }
 }
