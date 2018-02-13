@@ -10,9 +10,12 @@
   "footer.tos": "Terms of Service",
   "footer.contact": "Contact Us",
   "blog.title": "Blog",
+  "blog.readmore": "Read more",
   "nav.main": "Chronist",
   "nav.map": "Map",
   "nav.blog": "Blog",
   "feature.title": "Features",
-  "faq.title": "Frequently asked questions"
+  "faq.title": "Frequently asked questions",
+  "contact.title": "Contact us",
+  "contact.message": "Talk to us: </br> <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a>."
 }

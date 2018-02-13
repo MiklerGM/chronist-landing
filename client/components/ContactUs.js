@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 
 // const ContactUs = () => (
 //   <div className='container'>
@@ -38,13 +39,15 @@ class ContactUs extends React.Component {
   render() {
     return (
       <div id='contact' className='page--segment'><div className='page--content'>
-        <h1 id='pageTitle' className='text-center'> Связь с нами </h1>
+        <h1 id='pageTitle' className='text-center'>
+          <FormattedMessage
+            id='contact.title'
+          />
+        </h1>
         <h4 className='text-left article'>
-        Нам приятно видеть, что вы всё ещё не покинули нас и проявляете интерес к нашему продукту.
-        Вы можете написать нам если у вас возникли вопросы по работе сайта,
-        проблемы с сервисом или просто так. Мы всегда рады сообщениям.
-        Так же можно написать нам на электронную
-        почту <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a>.
+          <FormattedHTMLMessage
+            id='contact.message'
+          />
         </h4>
         <div className='container'><form
           className='form-inline'

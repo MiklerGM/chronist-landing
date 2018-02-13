@@ -13,50 +13,62 @@ import Tracking from '../Tracking';
 // import '../styles/blog.less';
 if (process.env.WEBPACK) require('./blog.less'); // eslint-disable-line global-require
 
+// const urls = [];
+// const req = require.context('./postsRU', false, /\.md$/);
+// req.keys().forEach((fileName, id) => {
+//   urls[id] = fileName.replace('./', '').replace('.md', '');
+// });
+
+const reqRU = require.context('./postsRU', false, /\.md$/);
+const reqEN = require.context('./postsEN', false, /\.md$/);
+
 const urls = [];
-const req = require.context('./postsRU', false, /\.md$/);
-req.keys().forEach((fileName, id) => {
+reqRU.keys().forEach((fileName, id) => {
   urls[id] = fileName.replace('./', '').replace('.md', '');
 });
 
-
-// const urlsEN = [];
-// const reqEN = require.context('./postsEN', false, /\.md$/);
-// req.keys().forEach((fileName, id) => {
-//   urlsEN[id] = fileName.replace('./', '').replace('.md', '');
-// });
-
-
-const getHumanDate = (date) => {
-  Moment.locale('ru');
+const getHumanDate = (date, locale) => {
+  Moment.locale(locale);
   // const formattedDT = Moment(date).calendar();
   const humanDT = Moment(date).endOf('day').fromNow();
   return humanDT;
 };
 
 
-const getFormattedDate = (date) => {
-  Moment.locale('ru');
+const getFormattedDate = (date, locale) => {
+  Moment.locale(locale);
   // const formattedDT = Moment(date).calendar();
   const formattedDT = Moment(date).format('LL');
   return formattedDT;
 };
 
-const processArticle = (url, id) => (
-  <div key={`article_${id}`} className='container ArticlePreview'>
-    <h2> {req(`./${url}.md`).title} </h2>
-    <div className='dim'>
-      <span className='dim'> {req(`./${url}.md`).author} </span>
-      <span className='separator'> - </span>
-      <span className='dim'> {getFormattedDate(req(`./${url}.md`).date)} </span>
+const processArticle = (url, id, locale) => {
+  let req = {};
+  if (locale === 'ru') {
+    req = reqRU;
+  } else {
+    req = reqEN;
+  }
+  return (
+    <div key={`article_${id}`} className='container ArticlePreview'>
+      <h2> {req(`./${url}.md`).title} </h2>
+      <div className='dim'>
+        <span className='dim'> {req(`./${url}.md`).author} </span>
+        <span className='separator'> - </span>
+        <span className='dim'> {getFormattedDate(req(`./${url}.md`).date, locale)} </span>
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
+      <Link to={`/blog/${url}`}><button className='pull-right'>
+        <FormattedMessage
+          id='blog.readmore'
+        />
+      </button> </Link>
+      <hr />
     </div>
-    <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
-    <Link to={`/blog/${url}`}><button className='pull-right'> Читать дальше</button> </Link>
-    <hr />
-  </div>
-);
+  );
+}
 
-const BlogWrapper = () => (
+const BlogWrapper = ({ locale }) => (
   <div>
     <Helmet
       title='Блог'
@@ -66,24 +78,29 @@ const BlogWrapper = () => (
         { property: 'og:title', content: 'Блог' }
       ]}
     />
-
     <h1 id='pageTitle'>
       <FormattedMessage
         id='blog.title'
       />
     </h1>
     <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
-      {urls.reverse().map(processArticle)}
+      {urls.reverse().map((url, id) => processArticle(url, id, locale))}
     </div></div></div>
   </div>
 );
 
 
-const processArticleGallery = (url, id) => {
+const processArticleGallery = (url, id, locale) => {
+  let req = {};
+  if (locale === 'ru') {
+    req = reqRU;
+  } else {
+    req = reqEN;
+  }
   return (
     <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
       <h4> {req(`./${url}.md`).title} </h4>
-      <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date)} </span>
+      <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date, locale)} </span>
       <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
       <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
     </div>
@@ -91,13 +108,6 @@ const processArticleGallery = (url, id) => {
 };
 
 export const ArticleGallery = ({ locale }) => {
-  // let urls = [];
-  // if (locale === 'ru') {
-  //   urls = urlsRU;
-  // } else {
-  //   urls = urlsEN;
-  // }
-
   return (
   <div className='page--segment bg-gray'>
     <div className='page--content'>
@@ -107,7 +117,7 @@ export const ArticleGallery = ({ locale }) => {
             id='home.lastarticles'
           />
         </h2>
-        {urls.slice(-3).reverse().map(processArticleGallery)}
+        {urls.slice(-3).reverse().map((url, id) => processArticleGallery(url, id, locale))}
       </div>
     </div>
   </div>
@@ -115,18 +125,17 @@ export const ArticleGallery = ({ locale }) => {
 };
 
 
-const Blog = () => (
+const Blog = ({ locale }) => (
   <Switch>
-    <Route exact path='/blog' component={BlogWrapper} />
+    <Route exact path='/blog' render={() => <BlogWrapper locale={locale} />} />
     {urls.map(url =>
       <Route
         key={`/blog/${url}`}
         path={`/blog/${url}`}
-        render={() => <ArticlePage data={url} />}
+        render={() => <ArticlePage data={url} locale={locale} />}
       />
     )}
     <Route render={NotFound} />
-    <Tracking />
   </Switch>
 );
 
@@ -134,16 +143,19 @@ const Blog = () => (
 //   <div> Dummy </div>
 // );
 
-class ArticlePage extends React.Component {
+const ArticlePage = ({ locale }) => {
+  let req = {};
+  if (this.props.locale === 'ru') {
+    req = reqRU;
+  } else {
+    req = reqEN;
+  }
 
-  render() {
     return (
         <div className='bg-what'><div className='container'>
           <Helmet
               meta={[
                 { property: 'og:type', content: 'article' },
-                { property: 'og:title', content: `${req(`./${this.props.data}.md`).title}` },
-                { property: 'og:description', content: `${req(`./${this.props.data}.md`).tldr}` }
               ]}
             />
 
@@ -151,13 +163,12 @@ class ArticlePage extends React.Component {
           <div className='dim'>
             <span className='dim'> {req(`./${this.props.data}.md`).author} </span>
             <span className='separator'> - </span>
-            <span className='dim'> {getFormattedDate(req(`./${this.props.data}.md`).date)} </span>
+            <span className='dim'> {getFormattedDate(req(`./${this.props.data}.md`, locale).date)} </span>
           </div>
           <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />
         </div>
         </div>
     );
-  }
 }
 
 ArticlePage.PropTypes = {

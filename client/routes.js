@@ -58,7 +58,7 @@ class AppRouter extends React.Component {
             <Route exact path='/' render={() => <Home locale={this.props.locale} />} />
             <Route path='/faq' render={() => <Faq locale={this.props.locale} />} />
             <Route exact path='/survey' component={Modal} />
-            <Route path='/blog' component={Blog} />
+            <Route path='/blog' render={() => <Blog locale={this.props.locale} />} />
             <Route path='/newsletter' component={Newsletter} />
             <Route path='/contact' component={ContactUs} />
             <Route path='/legal' component={Legal} />
