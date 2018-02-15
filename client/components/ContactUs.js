@@ -13,6 +13,7 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
 //   </div>
 // );
 
+
 class ContactUs extends React.Component {
   constructor(props) {
     super(props);
@@ -122,9 +123,15 @@ class ContactUs extends React.Component {
 
         <div>
           <div className='center'>
-            <p>Нажимая на кнопку, вы даете согласие на обработку своих персональных данных <br />
-
-            <Link activeclassname='active' to="/privacy">Политика конфедициальности</Link>
+            <p>
+              <FormattedMessage
+                id='contact.privacy'
+              />
+              <Link activeclassname='active' to="/privacy">
+                <FormattedMessage
+                  id='contact.privacy.link'
+                />
+              </Link>
             </p>
           </div>
         </div>

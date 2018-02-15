@@ -17,19 +17,19 @@ const Footer = ({ onChangeLanguage, locale }) => (
       Команда Хронист
     </a></p>
   */}
-    <p><Link to='privacy'>
+    <p><Link to='/privacy'>
       <FormattedMessage
         id='footer.privacy'
         defaultMessage={`Default message`}
       />
     </Link></p>
-    <p><Link to='legal'>
+    <p><Link to='/legal'>
       <FormattedMessage
         id='footer.tos'
         defaultMessage={`Default message`}
       />
     </Link></p>
-    <p className='social'><Link to="contact">
+    <p className='social'><Link to="/contact">
       <FormattedMessage
         id='footer.contact'
         defaultMessage={`Default message`}

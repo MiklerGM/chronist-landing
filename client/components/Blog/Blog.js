@@ -102,7 +102,11 @@ const processArticleGallery = (url, id, locale) => {
       <h4> {req(`./${url}.md`).title} </h4>
       <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date, locale)} </span>
       <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
-      <Link to={`/blog/${url}`}><button> Читать дальше</button></Link>
+      <Link to={`/blog/${url}`}><button>
+        <FormattedMessage
+          id='blog.readmore'
+        />
+      </button></Link>
     </div>
   )
 };
@@ -143,9 +147,9 @@ const Blog = ({ locale }) => (
 //   <div> Dummy </div>
 // );
 
-const ArticlePage = ({ locale }) => {
+const ArticlePage = ({ data, locale }) => {
   let req = {};
-  if (this.props.locale === 'ru') {
+  if (locale === 'ru') {
     req = reqRU;
   } else {
     req = reqEN;
@@ -159,19 +163,19 @@ const ArticlePage = ({ locale }) => {
               ]}
             />
 
-          <h2> {req(`./${this.props.data}.md`).title }</h2>
+          <h2> {req(`./${data}.md`).title }</h2>
           <div className='dim'>
-            <span className='dim'> {req(`./${this.props.data}.md`).author} </span>
+            <span className='dim'> {req(`./${data}.md`).author} </span>
             <span className='separator'> - </span>
-            <span className='dim'> {getFormattedDate(req(`./${this.props.data}.md`, locale).date)} </span>
+            <span className='dim'> {getFormattedDate(req(`./${data}.md`, locale).date)} </span>
           </div>
-          <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${this.props.data}.md`).__content }} />
+          <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${data}.md`).__content }} />
         </div>
         </div>
     );
 }
 
-ArticlePage.PropTypes = {
+ArticlePage.propTypes = {
   data: PropTypes.string.isRequired,
 };
 

@@ -334,3 +334,15 @@ https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca
  - Исследование данных
  - Экспорт данных
  - Личные сценарии
+
+
+newchronist.ai
+Заголовок
+
+
+шрифты в шапке тоньше для маков
+
+"О нас пишут" - Press
+
+Contact us. Got any problems, ideas or just want to find out what's happening? We’d love to hear from you. Here’s how you can reach us. E-mail to idea@chronist.ru or fill the form.
+By pressing the button you agree to our confidentiality policy.

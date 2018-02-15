@@ -17,5 +17,11 @@
   "feature.title": "Features",
   "faq.title": "Frequently asked questions",
   "contact.title": "Contact us",
-  "contact.message": "Talk to us: </br> <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a>."
+  "contact.message": "Contact us. Got any problems, ideas or just want to find out what's happening? We’d love to hear from you. Here’s how you can reach us. E-mail to <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a> or fill the form.",
+  "contact.privacy": "By pressing the button you agree to our ",
+  "contact.privacy.link": "confidentiality policy",
+  "home.subscribe.vk": "VK",
+  "press.title": "Press",
+  "press.less": "Show less",
+  "press.more": "Show more"
 }

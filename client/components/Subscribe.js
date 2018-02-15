@@ -6,7 +6,10 @@ const SocialButton = () => (
   <div className='form-group'>
     <a href='https://vk.com/chronist' alt='Вконтакте'>
       <button type='button' className='vk'>
-        <i className='icon-vkontakte' aria-hidden='true' /> Вконтакте
+        <i className='icon-vkontakte' aria-hidden='true' />
+        <FormattedMessage
+          id='home.subscribe.vk'
+        />
       </button>
     </a>
   </div>

@@ -8,24 +8,30 @@ import AppDescription from './AppDescription/AppDescription';
 import Team from './Company/Team';
 // import Features from './Timeline/Features';
 
-const TitleImage = require('../images/title-white.png');
+// const TitleImage = require('../images/title-white.png');
+const TitleImageRu = require('../images/logo-grey-ru.svg');
+const TitleImageEn = require('../images/logo-grey-en.svg');
 
-class Title extends React.Component {
-  render() {
-    return (
-      <div id="title">
-        <div className='text-center'>
-          <img src={TitleImage} />
-          <h4>
-              <FormattedMessage
-                id='home.title'
-              />
-          </h4>
-        </div>
+const Title = ({ locale }) => {
+  let TitleImage = {};
+  if (locale === 'ru') {
+    TitleImage = TitleImageRu;
+  } else {
+    TitleImage = TitleImageEn;
+  };
+  return (
+    <div id="title">
+      <div className='text-center'>
+        <img src={TitleImage} />
+        <h4>
+            <FormattedMessage
+              id='home.title'
+            />
+        </h4>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 const JumpToMap = () => (
   <div className='page--segment'>
@@ -75,8 +81,8 @@ class Home extends React.Component {
 
     return (
       <div className="app" >
-        <Title />
-        <JumpToMap />
+        <Title locale={this.props.locale} />
+        <JumpToMap  />
         {/*
         <What />
         <Tracking />
