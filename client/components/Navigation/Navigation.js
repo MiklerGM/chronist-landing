@@ -3,6 +3,7 @@ import {
   NavLink, withRouter
 } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import LocaleWidget from '../Footer/LocaleWidget';
 
 if (process.env.WEBPACK) require('./nav-router.less');
 
@@ -45,6 +46,13 @@ class Navigation extends React.Component {
                 id='nav.map'
               />
             </a></li>
+            <li style={this.state.style}>
+              <LocaleWidget
+                onChangeLanguage={this.props.onChangeLanguage}
+                locale={this.props.locale}
+                min={true}
+              />
+            </li>
             <li style={this.state.style}><NavLink activeClassName='active' to="/blog">
               <FormattedMessage
                 id='nav.blog'

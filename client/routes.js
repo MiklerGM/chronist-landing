@@ -48,7 +48,7 @@ class AppRouter extends React.Component {
             { property: 'og:image:secure_url', content: 'https://chronist.ru/richpreview.png' }
           ]}
         />
-        <Navigation />
+        <Navigation onChangeLanguage={this.props.onChangeLanguage} locale={this.props.locale} />
         <Wrapper />
         <div className='wrapper'>
           <Switch>
