@@ -24,9 +24,9 @@ const Title = ({ locale }) => {
       <div className='text-center'>
         <img src={TitleImage} />
         <h4>
-            <FormattedMessage
-              id='home.title'
-            />
+          <FormattedMessage
+            id='home.title'
+          />
         </h4>
       </div>
     </div>

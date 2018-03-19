@@ -16,14 +16,14 @@ const data = [
   {
     id: 1,
     name: 'Alisa',
-    position: 'CEO, Product',
+    position: 'Product Owner',
     img: ph2,
     link: 'idea@chronist.ru'
   },
   {
     id: 2,
     name: 'Michael',
-    position: 'CTO, Software Engineering',
+    position: 'Software Engineering',
     img: ph3,
     link: 'code@chronist.ru'
   },
