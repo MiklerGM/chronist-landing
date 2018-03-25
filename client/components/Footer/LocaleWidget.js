@@ -41,7 +41,7 @@ class LocaleWidget extends React.Component {
       return (
         <a
           onClick={() => this.toggleLocale()}
-          className='decorless'
+          // className='decorless'
         >
           {this.props.locale === 'en' ? 'RU' : 'EN'}
         </a>

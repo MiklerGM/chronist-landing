@@ -32,7 +32,7 @@ ul.topnav {
   margin: 0;
   list-style-type: none;
   overflow: hidden;
-  // dbackground: none;
+  // dbckground: none;
   padding: 20px;
 
   & button {
@@ -79,6 +79,8 @@ ul.topnav {
 }
 
 @media screen and (max-width: 600px) {
+
+
   ul.topnav li {
     &:not(:first-child) { display: none; }
 
@@ -90,6 +92,63 @@ ul.topnav {
       right: 0;
       padding-top: 20px;
       padding-right: 55px;
+    }
+  }
+}
+
+nav {
+  background-color: #002D3B;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  list-style-type: none;
+  overflow: hidden;
+  // dbackground: none;
+  padding: 20px;
+  // background-size: cover;
+  & a:focus { background-color: none !important; }
+
+  & a {
+    display: inline-block;
+    color: #9d9d9d;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+    &:hover { background-color: none !important; }
+    &.active {
+      color: #9d9d9d !important;
+    }
+  }
+
+  & button {
+    cursor: pointer;
+    background: none;
+    color: #9d9d9d;
+    text-align: center;
+    width: 63px;
+    height: 92px;
+    padding: 20px;
+    border: none;
+
+    &:hover { background-color: none !important; }
+
+    &:focus {
+      background-color: none;
+      border: none;
+      // color:red;
+      -moz-box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      outline: 0;
+    }
+
+    &:active {
+      color: black;
+      background: #eee;
+      text-decoration: underline;
     }
   }
 }
@@ -119,4 +178,40 @@ ul.topnav {
       }
     }
   }
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .nav--list:first-child {
+//   display: inline;
+// }
+.nav--list {
+  list-style-type: none;
+  display: block;
+}
+
+.nav--list.hidden li:not(:first-child) {
+  display: none;
+}
+
+
+@media screen and (min-width: 600px) {
+  .icon {
+    display: none;
+  }
+
+  .nav--list.hidden li:not(:first-child),
+  .nav--list.hidden li:first-child,
+  .nav--list li {
+    display: inline;
+  }
+  .nav--list li:nth-of-type(1n+3) {
+    float: right;
+  }
+
+  .nav--list {width: 100%;}
 }
