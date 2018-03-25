@@ -6,18 +6,8 @@ import Moment from 'moment';
 import 'moment/locale/ru';
 import NotFound from '../NotFound';
 import { Helmet } from 'react-helmet';
-import Tracking from '../Tracking';
 
-// import '../md/test.jpg';
-
-// import '../styles/blog.less';
 if (process.env.WEBPACK) require('./blog.less'); // eslint-disable-line global-require
-
-// const urls = [];
-// const req = require.context('./postsRU', false, /\.md$/);
-// req.keys().forEach((fileName, id) => {
-//   urls[id] = fileName.replace('./', '').replace('.md', '');
-// });
 
 const reqRU = require.context('./postsRU', false, /\.md$/);
 const reqEN = require.context('./postsEN', false, /\.md$/);
@@ -50,7 +40,7 @@ const processArticle = (url, id, locale) => {
     req = reqEN;
   }
   return (
-    <div key={`article_${id}`} className='container ArticlePreview'>
+    <div key={`article_${id}`} className='container'>
       <h2> {req(`./${url}.md`).title} </h2>
       <div className='dim'>
         <span className='dim'> {req(`./${url}.md`).author} </span>
@@ -58,7 +48,7 @@ const processArticle = (url, id, locale) => {
         <span className='dim'> {getFormattedDate(req(`./${url}.md`).date, locale)} </span>
       </div>
       <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
-      <Link to={`/blog/${url}`}><button className='pull-right'>
+      <Link to={`/blog/${url}`}><button className='pull-right readmore'>
         <FormattedMessage
           id='blog.readmore'
         />
@@ -66,10 +56,10 @@ const processArticle = (url, id, locale) => {
       <hr />
     </div>
   );
-}
+};
 
 const BlogWrapper = ({ locale }) => (
-  <div>
+  <div className='page--segment'>
     <Helmet
       title='Блог'
       meta={[
@@ -83,9 +73,11 @@ const BlogWrapper = ({ locale }) => (
         id='blog.title'
       />
     </h1>
-    <div id="ArticleGallery" className='row'><div className='bg-what'><div className='container text-center center'>
-      {urls.reverse().map((url, id) => processArticle(url, id, locale))}
-    </div></div></div>
+    <div><div className='page--content'>
+      <div className='article--item'>
+        {urls.reverse().map((url, id) => processArticle(url, id, locale))}
+      </div>
+    </div></div>
   </div>
 );
 
@@ -98,34 +90,36 @@ const processArticleGallery = (url, id, locale) => {
     req = reqEN;
   }
   return (
-    <div key={`article_${id}`} className='col-md-4 col-sm-4 ArticlePreview'>
+    <div key={`article_${id}`} className='xlist--item'>
       <h4> {req(`./${url}.md`).title} </h4>
       <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date, locale)} </span>
       <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
-      <Link to={`/blog/${url}`}><button>
+      <Link to={`/blog/${url}`}><button className='readmore'>
         <FormattedMessage
           id='blog.readmore'
         />
       </button></Link>
     </div>
-  )
+  );
 };
 
 export const ArticleGallery = ({ locale }) => {
   return (
-  <div className='page--segment bg-gray'>
-    <div className='page--content'>
-      <div className='container'>
-        <h2>
-          <FormattedMessage
-            id='home.lastarticles'
-          />
-        </h2>
-        {urls.slice(-3).reverse().map((url, id) => processArticleGallery(url, id, locale))}
+    <div className='page--segment bg-gray'>
+      <div className='page--content'>
+        <div className='container'>
+          <h2>
+            <FormattedMessage
+              id='home.lastarticles'
+            />
+          </h2>
+          <div className='xlist'>
+            {urls.slice(-3).reverse().map((url, id) => processArticleGallery(url, id, locale))}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  )
+  );
 };
 
 
@@ -143,9 +137,6 @@ const Blog = ({ locale }) => (
   </Switch>
 );
 
-// const Blog = () => (
-//   <div> Dummy </div>
-// );
 
 const ArticlePage = ({ data, locale }) => {
   let req = {};
@@ -155,59 +146,26 @@ const ArticlePage = ({ data, locale }) => {
     req = reqEN;
   }
 
-    return (
-        <div className='bg-what'><div className='container'>
-          <Helmet
-              meta={[
-                { property: 'og:type', content: 'article' },
-              ]}
-            />
-
-          <h2> {req(`./${data}.md`).title }</h2>
-          <div className='dim'>
-            <span className='dim'> {req(`./${data}.md`).author} </span>
-            <span className='separator'> - </span>
-            <span className='dim'> {getFormattedDate(req(`./${data}.md`, locale).date)} </span>
-          </div>
-          <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${data}.md`).__content }} />
-        </div>
-        </div>
-    );
-}
+  return (
+    <div className='bg-what'><div className='container'>
+      <Helmet
+        meta={[
+          { property: 'og:type', content: 'article' },
+        ]}
+      />
+      <h2> {req(`./${data}.md`).title }</h2>
+      <div className='dim'>
+        <span className='dim'> {req(`./${data}.md`).author} </span>
+        <span className='separator'> - </span>
+        <span className='dim'> {getFormattedDate(req(`./${data}.md`, locale).date)} </span>
+      </div>
+      <div className='ArticleContent' dangerouslySetInnerHTML={{ __html: req(`./${data}.md`).__content }} />
+    </div></div>
+  );
+};
 
 ArticlePage.propTypes = {
   data: PropTypes.string.isRequired,
 };
-
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.less';
-// import 'slick-carousel/slick/slick-theme.less';
-// class ArticleSlider extends React.Component {
-//   render() {
-//     const settings = {
-//       arrows: true,
-//       infinite: true,
-//       // dots: true,
-//       autoplay: false,
-//       slidesToShow: 3,
-//       slidesToScroll: 3
-//     };
-
-//     return (
-//       <div id='ArticleSlider' className='row'><div className='bg-what'>
-//         <div className='container'>
-//           <Slider {...settings}>
-//             <div> 1 </div>
-//             <div> 2 </div>
-//             <div> 3 </div>
-//             <div> 4 </div>
-//             <div> 5 </div>
-//             <div> 6 </div>
-//           </Slider>
-//         </div>
-//       </div></div>
-//     );
-//   }
-// }
 
 export default withRouter(Blog);

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  browserHistory,
   StaticRouter
 } from 'react-router-dom';
 // import createBrowserHistory from 'history/createBrowserHistory';

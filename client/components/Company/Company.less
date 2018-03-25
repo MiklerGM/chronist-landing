@@ -1,7 +1,15 @@
 @import "../../colors.less";
 
+.person--list {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  text-align: center;
+}
+
 .person--data {
-  width: 33%;
+  min-width: 33%;
+  flex-grow: 1;
   display: inline-block;
   text-align: center;
   // width: 250px;
@@ -37,8 +45,8 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
-    width: 50%;
+  @media screen and (max-width: 800px) {
+    width: 48%;
     // float: left;
     display: inline;
     height: auto;

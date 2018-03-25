@@ -104,6 +104,13 @@ hr {
   width: 100%;
 }
 
+a {
+  transition: opacity .2s ease-in-out;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .container {
   padding: 10px 20px;
   max-width: 1040px;
@@ -175,11 +182,11 @@ hr {
   padding-top: 40px;
   padding-bottom: 120px;
   & img {
-    min-width: 50%;
-    max-width: 65%;
+    // min-width: 65%;
+    min-width: 65%;
     margin-bottom: 10px;
-    @media screen and (max-width: 600px) {max-width: 85%;}
-    @media screen and (min-width: 1000px) {max-width: 700px;}
+    @media screen and (max-width: 600px) {min-width: 85%;}
+    @media screen and (min-width: 1000px) {min-width: 700px;}
   }
   h4 {
     margin: 0 auto;
@@ -199,14 +206,29 @@ hr {
   margin-top: 40px;
   padding-bottom: 80px;
   z-index: 40;
-  // background: url("./images/back-light.jpg");
+}
 
+.social--button {
+  display: inline;
+  @media screen and (max-width: 700px) {
+    display: block;
+    margin-top: 20px;
+  }
 }
 
 .btn {
   margin: 15px;
 }
 
+.form-group {
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.input-group {
+  display: inline;
+  border-collapse: separate;
+}
 // .input-group {
 //   float: none;
 //   max-width: 300px;
@@ -388,11 +410,48 @@ button {
 }
 
 button.read-more {
+  overflow: visible;
   color: @base03;
   border: none;
   background: none;
   text-align: left;
   word-spacing: normal;
+}
+
+.readmore {
+  color: @base03;
+  overflow: visible;
+  border: none;
+  background: none;
+  text-align: left;
+  word-spacing: normal;
+  padding: 0;
+
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none !important;
+    color: @base02;
+    text-decoration: underline;
+  }
+
+  &:after {
+    color: inherit;
+    content: '\f105';
+    display: inline-block;
+    font-family: 'fontello';
+    font-style: normal;
+    font-weight: inherit;
+    padding-left: 6px;
+    transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    transition-property: transform, -webkit-transform;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+  }
+
+  &:hover:after {
+    transform: translateX(10px);
+  }
 }
 
 #contact {
@@ -592,6 +651,7 @@ button.vk {
 }
 
 button.red {
+  margin-left: 0;
   background-color: #d9534f;
   color: #fff;
 }
@@ -603,6 +663,7 @@ button.main {
 
 
 button.decorless {
+  cursor: pointer;
   min-width: auto;
   width: auto;
   decoration: none;
@@ -615,4 +676,24 @@ button.decorless {
   padding: 0 5px;
   font-size: auto;
   color: inherit;
+}
+
+.decorless {
+  cursor: pointer;
+  min-width: auto;
+  width: auto;
+  decoration: none;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  height: auto;
+  line-height: auto;
+  margin: auto;
+  padding: 0 5px;
+  font-size: auto;
+  color: inherit;
+}
+
+#team h2 {
+  color: #fafafa;
 }

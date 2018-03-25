@@ -29,7 +29,7 @@ class AppDescription extends React.Component {
     return (
       <div className='page--segment'>
         <div className='page--content'>
-          <div className="ArticlePreview">
+          <div className="article--item">
             <h2>
               <FormattedMessage
                 id='press.title'

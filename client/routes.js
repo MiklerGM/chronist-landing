@@ -14,11 +14,10 @@ import ContactUs from './components/ContactUs';
 import Faq from './components/Faq/Faq';
 import Privacy from './components/Privacy/Privacy';
 import Modal from './components/Survey/Modal';
-import Newsletter from './components/Newsletter';
 import Legal from './components/Legal/Legal';
 // import About from './components/About';
+// NEWSLETTER?
 
-if (process.env.WEBPACK) require('bootstrap/less/bootstrap.less'); // eslint-disable-line global-require
 
 const Wrapper = () => (
   <div className='wrap' />
@@ -27,7 +26,7 @@ const Wrapper = () => (
 const AppRouter = ({ onChangeLanguage, locale }) => (
   <div>
     <Helmet
-      htmlAttributes={{ 'lang': locale, 'amp': undefined }} // amp takes no value
+      htmlAttributes={{ lang: locale, amp: undefined, dir: 'ltr' }}
       title='Хронист'
       titleTemplate='Хронист - %s'
       defaultTitle='Хронист'
@@ -51,7 +50,6 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
         <Route path='/faq' render={() => <Faq locale={locale} />} />
         <Route exact path='/survey' component={Modal} />
         <Route path='/blog' render={() => <Blog locale={locale} />} />
-        <Route path='/newsletter' component={Newsletter} />
         <Route path='/contact' component={ContactUs} />
         <Route path='/legal' component={Legal} />
         <Route path='/privacy' component={Privacy} />

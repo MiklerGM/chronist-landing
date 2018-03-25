@@ -5,7 +5,7 @@ import mdText from './Legal.md';
 // import './Faq.less';
 
 const Legal = () => (
-  <div id='faq' className='container'><div className='bg-what'>
+  <div id='faq' className='page--segment'><div className='page--content'>
     <h1 id='pageTitle' className='text-center'>
       Соглашение об использовании материалов и сервисов интернет-сайта
       <br />

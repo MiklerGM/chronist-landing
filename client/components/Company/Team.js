@@ -1,17 +1,19 @@
 import React from 'react';
-if (process.env.WEBPACK) require('./Company.less');
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
+
 import dataRU from './data/TeamDataRU';
 import dataEN from './data/TeamDataEN';
 
+if (process.env.WEBPACK) require('./Company.less');
+
 const Person = ({ person }) => (
   <div className='person--data'>
-    <img src={person.img} />
+    <img src={person.img} alt='person image' />
     <p>
       <strong> {person.name} </strong>
-    <br />
-    {person.position}
-    <br />
+      <br />
+      {person.position}
+      <br />
       <a href={`mailto://${person.link}`}>{person.link}</a>
     </p>
     <br />
@@ -21,7 +23,7 @@ const Person = ({ person }) => (
 class Team extends React.Component {
   render() {
     let data = {};
-    if( this.props.locale === 'ru') {
+    if ( this.props.locale === 'ru') {
       data = dataRU;
     } else {
       data = dataEN;
@@ -33,10 +35,11 @@ class Team extends React.Component {
           <h2 className='invert'>
             <FormattedMessage
               id='team.title'
-              defaultMessage={`Default message`}
             />
           </h2>
-          {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}
+          <div className='person--list'>
+            {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}
+          </div>
         </div>
       </div>
     );

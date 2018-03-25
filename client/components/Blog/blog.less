@@ -19,8 +19,6 @@
   margin-bottom: 40px;
 }
 
-
-
 #ArticleGallery {
   background-color: #F9FBFF;
   & h2 {
@@ -29,71 +27,56 @@
   }
 }
 
-.ArticlePreview {
-  text-align: left;
-  margin-bottom: 2em;
-  // background-color: #f9f9f9;
+.xlist {
+  /*display: flex;*/
+  display: block;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  /*flex-direction: row;*/
+}
 
+.xlist--item {
+  width: 100%;
+  margin-bottom: 3.9rem;
+  text-align: left;
   & h4 {
     height: 3em;
     text-align: center;
   }
-
   & p {
-    // max-height: 17em;
-    // overflow-y: hidden;
     line-height: 1.6em;
     text-align: left;
-    // text-indent: 1em;
     &::first-line {
       // text-indent: 40px;
-      // color: red;
       // padding-left: 0.4em;
       text-indent: 1em;
     }
   }
-
-  & .ArticleDate {
+    & .ArticleDate {
     color: @base03;
-    // text-align: right;
     font-size: 14;
     letter-spacing: 0.5px;
-  }
-
-  & button {
-    color: @base03;
-    border: none;
-    background: none;
     text-align: left;
-    word-spacing: normal;
-
-    &:focus,
-    &:hover,
-    &:active {
-      outline: none !important;
-      color: @base02;
-      text-decoration: underline;
-    }
-
-    &:after {
-      color: inherit;
-      content: '\f105';
-      display: inline-block;
-      font-family: 'fontello';
-      font-style: normal;
-      font-weight: inherit;
-      padding-left: 6px;
-      transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
-      transition-property: transform, -webkit-transform;
-      transition-duration: 0.15s, 0.15s;
-      transition-timing-function: ease-in-out, ease-in-out;
-    }
-
-    &:hover:after {
-      transform: translateX(10px);
-    }
+  }
+  & button {
+    text-align: right;
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .xlist {
+    display: flex;
+  }
+
+  .xlist--item {
+    width: 32%;
+    margin-bottom: 0;
+  }
+}
+
+
+// }
 
 .dim {
   color: @base06;
@@ -147,5 +130,10 @@
 //   }
 // }
 
-
+.article--item {
+  text-align: right;
+  & p {
+    text-align: left;
+  }
+}
 

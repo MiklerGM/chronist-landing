@@ -1,11 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  browserHistory,
-  StaticRouter
 } from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
-import createMemoryHistory from 'history/createMemoryHistory';
 
 import { YMInitializer } from 'react-yandex-metrika';
 import ReactGA from 'react-ga';
@@ -28,20 +24,22 @@ if (process.env.WEBPACK) {
 
 // define values for analytics services
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
-// const GaId = 'UA-111740941-1';
-// ReactGA.initialize({ trackingId: GaId });
+const GaId = 'UA-111740941-1';
+ReactGA.initialize({ trackingId: GaId });
 
+
+// REACT-INTL INITIAL LOCALIZATION DETECTION
 // const language = (navigator.languages && navigator.languages[0]) ||
 //   navigator.language || navigator.userLanguage;
 // const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 
 
-let languageWithoutRegionCode = 'ru';
-/* Define translations */
-const config = {
-  locale: 'ru',
-  messages: localeDataRU
-};
+// let languageWithoutRegionCode = 'ru';
+//  // Define translations
+// const config = {
+//   locale: 'ru',
+//   messages: localeDataRU
+// };
 
 // const config = {
 //   locale: 'ru',
@@ -84,46 +82,6 @@ class App extends React.Component {
           </Router>
         </IntlProvider>
       </YMInitializer>
-    );
-  }
-}
-
-// const App = () => (
-//   <div>
-//     <h1> Dummy App </h1>
-//     <h3> Hurr Durr </h3>
-//   </div>
-// );
-
-export class AppStatic extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      locale: 'ru',
-      messages: localeDataRU
-    };
-  }
-
-  onChangeLanguage = (lang) => {
-    switch (lang) {
-      case 'ru': this.setState({ messages: localeDataRU }); break;
-      case 'en': this.setState({ messages: localeDataEN }); break;
-      default: this.setState({ messages: localeDataRU }); break;
-    }
-    this.setState({ locale: lang });
-  }
-
-  render() {
-    return (
-        <IntlProvider
-          locale={this.state.locale}
-          key={this.state.locale}
-          messages={this.state.messages}
-        >
-          <StaticRouter location={this.props.location} context={this.props.context}>
-            <AppRouter onChangeLanguage={this.onChangeLanguage} locale={this.state.locale} />
-          </StaticRouter>
-        </IntlProvider>
     );
   }
 }

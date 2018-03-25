@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import axios from 'axios';
 
 const SocialButton = () => (
-  <div className='form-group'>
+  <div className='social--button'>
     <a href='https://vk.com/chronist' alt='Вконтакте'>
       <button type='button' className='vk'>
         <i className='icon-vkontakte' aria-hidden='true' />
@@ -54,12 +54,10 @@ export default class Subscribe extends React.Component {
             onSubmit={(e) => this.onSubmit(e)}
           >
             <div className='form-group '>
-              <div className='input-group col-centered'>
+              <div className='input-group'>
                 <input
                   type='email'
                   value={this.state.email}
-                  // className='form-control'
-                  // className='red'
                   size='20'
                   placeholder='E-mail'
                   required
@@ -67,16 +65,14 @@ export default class Subscribe extends React.Component {
                     this.setState({ ...this.state, email: e.target.value });
                   }}
                 />
-                <div className='input-group-btn'>
-                  <button type='submit' className='red'>
+                <button type='submit' className='red'>
                   <FormattedMessage
                     id='home.subscribe.button'
                   />
-                  </button>
-                </div>
+                </button>
+                <SocialButton />
               </div>
             </div>
-            <SocialButton />
           </form>
           <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Вы успешно подписались' : 'Произошла ошибка'}</span>
         </div>
