@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import { hydrate, render } from "react-dom"
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+process.env.DEVEVELOPMENT ? render(<App />, document.getElementById('app')) :
+hydrate(<App />, document.getElementById('app'));

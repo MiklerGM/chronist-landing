@@ -80,8 +80,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        WEBPACK: true
-      }
+        WEBPACK: true,
+        DEVEVELOPMENT: true
+      },
     }),
     new HtmlWebpackPlugin({ template: './index.html' }),
     // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),

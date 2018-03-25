@@ -9,6 +9,7 @@ import express from 'express';
 import compression from 'compression';
 import fs from 'fs';
 import AppRoutes from '../client/routes';
+import AppStatic from '../client/AppStatic';
 
 const index = fs.readFileSync('dist/client.html', 'utf8');
 const PORT = process.env.PORT || 3030;
@@ -27,28 +28,25 @@ app.use(express.static('dist'));
 app.use((req, res) => {
   const context = {};
 
-  const html = ReactDOMServer.renderToNodeStream(
-    <StaticRouter location={req.url} context={context}>
-      <AppRoutes />
-    </StaticRouter>
+  const body = ReactDOMServer.renderToString(
+    <AppStatic location={req.url} context={context} />
   );
 
-  // console.log(html);
+  const head = Helmet.rewind();
 
+  const html = index
+      .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
+      .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${head.meta}`);
 
   if (context.url) {
     res.writeHead(301, { Location: context.url });
     res.end();
   } else {
     res.set('Content-Type', 'text/html');
-    res.write(index
-      .replace(/<div id="app"><\/div>/, `<div id="app">${html}</div>`)
-      .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${Helmet.rewind().meta}`)
-    );
+    res.write(html);
     res.end();
   }
 });
 
 // Listen incoming HTTP requests
-server.listen(PORT);
-console.log(`\nApplication available at http://localhost:${PORT}\n`);
+server.listen(PORT, () => console.log(`Application available at http://localohost:${PORT}`));

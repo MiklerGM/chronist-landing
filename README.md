@@ -346,3 +346,7 @@ newchronist.ai
 
 Contact us. Got any problems, ideas or just want to find out what's happening? We’d love to hear from you. Here’s how you can reach us. E-mail to idea@chronist.ru or fill the form.
 By pressing the button you agree to our confidentiality policy.
+
+
+##React intl
+https://medium.com/@markuretsky/react-router-multilingual-362eaa33ae20
