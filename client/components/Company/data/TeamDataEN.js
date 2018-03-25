@@ -8,7 +8,7 @@ const ph5 = require('./photo5.jpg');
 const data = [
   {
     id: 0,
-    name: 'Danil',
+    name: 'Daniil',
     position: 'Data Engineering',
     img: ph1,
     link: 'data@chronist.ru'
