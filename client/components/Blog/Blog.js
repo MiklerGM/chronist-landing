@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Route, Switch, withRouter } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import Moment from 'moment';
 import 'moment/locale/ru';
 import NotFound from '../NotFound';
-import { Helmet } from 'react-helmet';
 
 if (process.env.WEBPACK) require('./blog.less'); // eslint-disable-line global-require
 
@@ -13,21 +13,19 @@ const reqRU = require.context('./postsRU', false, /\.md$/);
 const reqEN = require.context('./postsEN', false, /\.md$/);
 
 const urls = [];
-reqRU.keys().forEach((fileName, id) => {
+reqRU.keys().reverse().forEach((fileName, id) => {
   urls[id] = fileName.replace('./', '').replace('.md', '');
 });
+const lastUrls = urls.slice(0, 3);
 
 const getHumanDate = (date, locale) => {
   Moment.locale(locale);
-  // const formattedDT = Moment(date).calendar();
   const humanDT = Moment(date).endOf('day').fromNow();
   return humanDT;
 };
 
-
 const getFormattedDate = (date, locale) => {
   Moment.locale(locale);
-  // const formattedDT = Moment(date).calendar();
   const formattedDT = Moment(date).format('LL');
   return formattedDT;
 };
@@ -75,7 +73,7 @@ const BlogWrapper = ({ locale }) => (
     </h1>
     <div><div className='page--content'>
       <div className='article--item'>
-        {urls.reverse().map((url, id) => processArticle(url, id, locale))}
+        {urls.map((url, id) => processArticle(url, id, locale))}
       </div>
     </div></div>
   </div>
@@ -103,25 +101,22 @@ const processArticleGallery = (url, id, locale) => {
   );
 };
 
-export const ArticleGallery = ({ locale }) => {
-  return (
-    <div className='page--segment bg-gray'>
-      <div className='page--content'>
-        <div className='container'>
-          <h2>
-            <FormattedMessage
-              id='home.lastarticles'
-            />
-          </h2>
-          <div className='xlist'>
-            {urls.slice(-3).reverse().map((url, id) => processArticleGallery(url, id, locale))}
-          </div>
+export const ArticleGallery = ({ locale }) => (
+  <div className='page--segment bg-gray'>
+    <div className='page--content'>
+      <div className='container'>
+        <h2>
+          <FormattedMessage
+            id='home.lastarticles'
+          />
+        </h2>
+        <div className='xlist'>
+          {lastUrls.map((url, id) => processArticleGallery(url, id, locale))}
         </div>
       </div>
     </div>
-  );
-};
-
+  </div>
+);
 
 const Blog = ({ locale }) => (
   <Switch>
@@ -137,7 +132,6 @@ const Blog = ({ locale }) => (
   </Switch>
 );
 
-
 const ArticlePage = ({ data, locale }) => {
   let req = {};
   if (locale === 'ru') {
@@ -147,7 +141,7 @@ const ArticlePage = ({ data, locale }) => {
   }
 
   return (
-    <div className='bg-what'><div className='container'>
+    <div className='page--segment'><div className='page--content'>
       <Helmet
         meta={[
           { property: 'og:type', content: 'article' },
@@ -166,6 +160,19 @@ const ArticlePage = ({ data, locale }) => {
 
 ArticlePage.propTypes = {
   data: PropTypes.string.isRequired,
+  locale: PropTypes.string.isRequired
+};
+
+Blog.propTypes = {
+  locale: PropTypes.string.isRequired
+};
+
+ArticleGallery.propTypes = {
+  locale: PropTypes.string.isRequired
+};
+
+BlogWrapper.propTypes = {
+  locale: PropTypes.string.isRequired
 };
 
 export default withRouter(Blog);

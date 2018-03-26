@@ -1,14 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 import { FormattedMessage } from 'react-intl';
 
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
-// import { ArticleGallery } from './Blog/Blog';
 import Team from './Company/Team';
-// import Features from './Timeline/Features';
 
-// const TitleImage = require('../images/title-white.png');
 const TitleImageRu = require('../images/logo-grey-ru.svg');
 const TitleImageEn = require('../images/logo-grey-en.svg');
 
@@ -18,11 +16,11 @@ const Title = ({ locale }) => {
     TitleImage = TitleImageRu;
   } else {
     TitleImage = TitleImageEn;
-  };
+  }
   return (
     <div id="title">
       <div className='text-center'>
-        <img src={TitleImage} />
+        <img src={TitleImage} alt='Chronist logo' />
         <h4>
           <FormattedMessage
             id='home.title'
@@ -59,20 +57,20 @@ class Home extends React.Component {
     };
   }
 
-  async LoadFeatures() {
-    const { default : Features } = await import(/* webpackChunkName: "features" */ './Timeline/Features');
+  componentDidMount = async () => {
+    await this.loadFeatures();
+    await this.loadArticles();
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
+
+  async loadFeatures() {
+    const { default: Features } = await import(/* webpackChunkName: "features" */ './Timeline/Features');
     this.setState({ lazyFeatures: Features });
   }
 
-  async LoadArticles() {
+  async loadArticles() {
     const { ArticleGallery } = await import(/* webpackChunkName: "features" */ './Blog/Blog');
     this.setState({ lazyArticles: ArticleGallery });
-  }
-
-  componentDidMount = async () => {
-    await this.LoadFeatures();
-    await this.LoadArticles();
-    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   render() {
@@ -82,14 +80,7 @@ class Home extends React.Component {
     return (
       <div className="app" >
         <Title locale={this.props.locale} />
-        <JumpToMap  />
-        {/*
-        <What />
-        <Tracking />
-        <Timeline />
-        <Features />
-        <ArticleGallery />
-        */}
+        <JumpToMap />
         {ArticleGallery ? (
           <ArticleGallery locale={this.props.locale} />
           ) : (
@@ -102,10 +93,18 @@ class Home extends React.Component {
         )}
         <Subscribe />
         <AppDescription />
-        <Team locale={this.props.locale}/>
+        <Team locale={this.props.locale} />
       </div>
     );
   }
 }
+
+Home.propTypes = {
+  locale: PropTypes.string.isRequired
+};
+
+Title.propTypes = {
+  locale: PropTypes.string.isRequired
+};
 
 export default Home;

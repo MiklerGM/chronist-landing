@@ -1,103 +1,7 @@
 @import "../../colors.less";
 
-/* Navbar BEGIN */
-#Navigation {
-  // background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/back-progressive.jpg");
-  // background-color: rgba(1,55,66, 1);
-  // background-color: transparent;
-  background-color: #002D3B;
-  // position: absolute;
-w
-  // top: 0;
-  // background-color: transparent;
-  background-repeat: no-repeat;
-;  // // parallax thing
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  // min-height: 100vh;
-  // background-color: transparent;
-  // // background-repeat: no-repeat;
-  // background-size: auto;
-  // parallax thing
-  // background-attachment: fixed;
-  // background-position: center;
-  // background-size: cover;
-  & a:focus { background-color: none !important; }
-}
-
-ul.topnav {
-  // position: absolute;
-  // top: 0;
-  margin: 0;
-  list-style-type: none;
-  overflow: hidden;
-  // dbckground: none;
-  padding: 20px;
-
-  & button {
-    background: none;
-    color: #9d9d9d;
-    text-align: center;
-    padding: 20px;
-    border: none;
-
-    &:hover { background-color: none !important; }
-
-    &:focus {
-      background-color: none;
-      border: none;
-      // color:red;
-      -moz-box-shadow: none !important;
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-      outline: 0;
-    }
-
-    &:active {
-      color: black;
-      background: #eee;
-      text-decoration: underline;
-    }
-  }
-
-  & li {
-    float: left;
-    // width: 60%;
-    & a {
-      display: inline-block;
-      color: #9d9d9d;
-      text-align: center;
-      padding: 20px;
-      text-decoration: none;
-      transition: 0.3s;
-      &:hover { background-color: none !important; }
-    }
-
-    &.icon { display: none; }
-  }
-}
-
-@media screen and (max-width: 600px) {
-
-
-  ul.topnav li {
-    &:not(:first-child) { display: none; }
-
-    &.icon {
-      float: right;
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding-top: 20px;
-      padding-right: 55px;
-    }
-  }
-}
-
 nav {
-  background-color: #002D3B;
+  background-color: #002d3b;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -105,9 +9,12 @@ nav {
   margin: 0;
   list-style-type: none;
   overflow: hidden;
-  // dbackground: none;
   padding: 20px;
-  // background-size: cover;
+
+  & ul {
+    padding: 0;
+  }
+
   & a:focus { background-color: none !important; }
 
   & a {
@@ -119,6 +26,7 @@ nav {
     text-decoration: none;
     transition: 0.3s;
     &:hover { background-color: none !important; }
+
     &.active {
       color: #9d9d9d !important;
     }
@@ -129,8 +37,10 @@ nav {
     background: none;
     color: #9d9d9d;
     text-align: center;
+    margin: 0;
     width: 63px;
-    height: 92px;
+    min-width: 0;
+    height: 93px;
     padding: 20px;
     border: none;
 
@@ -154,42 +64,12 @@ nav {
   }
 }
 
-@media screen and (max-width: 600px) {
-  ul.topnav.responsive {
-    position: relative;
-
-    & li {
-      float: none;
-      display: inline;
-
-      &.icon {
-        float: right;
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding-top: 20px;
-        padding-right: 40px;
-      }
-
-      & a {
-        display: block;
-        width: 60%;
-        text-align: left;
-      }
-    }
-  }
-}
-
 
 nav {
   display: flex;
   justify-content: space-between;
 }
 
-// .nav--list:first-child {
-//   display: inline;
-// }
 .nav--list {
   list-style-type: none;
   display: block;
@@ -199,20 +79,21 @@ nav {
   display: none;
 }
 
-
 @media screen and (min-width: 600px) {
   .icon {
     display: none;
   }
 
   .nav--list.hidden li:not(:first-child),
-  .nav--list.hidden li:first-child,
-  .nav--list li {
+    .nav--list.hidden li:first-child,
+    .nav--list li {
     display: inline;
   }
   .nav--list li:nth-of-type(1n+3) {
     float: right;
   }
 
-  .nav--list {width: 100%;}
+  .nav--list {
+    width: 100%;
+  }
 }

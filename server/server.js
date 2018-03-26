@@ -8,7 +8,6 @@ import http from 'http';
 import express from 'express';
 import compression from 'compression';
 import fs from 'fs';
-import AppRoutes from '../client/routes';
 import AppStatic from '../client/AppStatic';
 
 const index = fs.readFileSync('dist/client.html', 'utf8');
@@ -34,9 +33,11 @@ app.use((req, res) => {
 
   const head = Helmet.rewind();
 
+  // console.log('helmet head', head.meta.toString());
+
   const html = index
       .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
-      .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${head.meta}`);
+      .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${head.meta.toString()}${head.title.toString()}`);
 
   if (context.url) {
     res.writeHead(301, { Location: context.url });
