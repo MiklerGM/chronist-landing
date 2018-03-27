@@ -16,6 +16,7 @@ class Feature extends React.Component {
       <div
         onClick={() => this.props.change(this.props.data.id)}
         onMouseOver={() => this.props.change(this.props.data.id)}
+        className='feature__img'
       >
         <img
           src={this.props.data.img}
@@ -109,7 +110,7 @@ class Features extends React.Component {
                 featureList={featureList}
               />
             <div className='feature__wrapper'>
-              {featureList.map((feature, id)  => <Feature
+              {featureList.map((feature, id) => <Feature
                 data={feature}
                 key={id}
                 id={id}

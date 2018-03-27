@@ -1,40 +1,52 @@
-.img-responsive {
-  width: 33%;
-  display: inline-block;
-  float: left;
-  max-width: 120px;
-  max-height: 120px;
-}
 
 .feature__container {
-  // max-width: 1040px;
-  // margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  // grid-template-rows
-}
 
-.feature__wrapper {
-  text-align: center;
-  grid-column: span 6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   @media screen and (max-width: 990px) {
-    grid-column: span 12;
+    flex-direction: column;
   }
 }
 
+.feature__wrapper {
+  width: 48%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .feature__img {
+    width: 24%;
+    text-align: center;
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      padding: 0;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 990px) {
+    width: 98%;
+  }
+
+}
+
 .feature__map {
-  position: relative;
-  height: 400px;
-  // height: auto;
-  // overflow: hidden;
-  max-width: 700px;
-  max-height: 400px;
-  left:0;
-  right:0;
-  margin-left:auto;
-  margin-right:auto;
+  width: 100%;
+  object-fit: contain;
+  // position: relative;
+  // height: 400px;
+  // // height: auto;
+  // // overflow: hidden;
+  // max-width: 700px;
+  // max-height: 400px;
+  // left:0;
+  // right:0;
+  // margin-left:auto;
+  // margin-right:auto;
   & > img  {
     position: absolute;
+    object-fit: contain;
   }
   // & > div {
   //   position: absolute;
@@ -42,29 +54,33 @@
 }
 
 .feature__preview {
+  width: 48%;
   position: relative;
-  grid-column: span 6;
-  // padding-top: ;
-  min-height: 480px;
+  // grid-column: span 6;
+  // min-height: 480px;
+
   @media screen and (max-width: 990px) {
+    width: 98%;
     padding-top: 20px;
     text-align: center;
-    grid-column: span 12;
-    height: 450px;
+    // grid-column: span 12;
+    // height: 450px;
   }
 
   & img {
     // position: relative;
     top: 25px;
     // left: 25px;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 40px;
     width: 450px;
     max-height: 400px;
-    @media screen and (max-width: 990px) {width: 98%;}
+    @media screen and (max-width: 990px) {
+      width: 98%;
+    }
   }
 
   & .feature__over {
@@ -78,7 +94,8 @@
   }
 
   & .feature--description {
-    padding-top: 10px;
+    padding-top: 68%;
+    padding-bottom: 20px;
     // clear: both;
     // position: relative;
 

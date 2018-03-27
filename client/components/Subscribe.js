@@ -56,7 +56,7 @@ export default class Subscribe extends React.Component {
             <div className='form-group '>
               <div className='input-group'>
                 <input
-                  type='email'
+                  type='text'
                   value={this.state.email}
                   size='20'
                   placeholder='E-mail'
