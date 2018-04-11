@@ -21,26 +21,30 @@ LANDING PAGE
 ##Landing
 -----------
 
+  - [ ] hreflang. React-Router-Intl integration with non-broken SSR
   - [ ] Migrate form front-matter-markdown to react-markdown + react-markdown-loader {transformImageUri}
-  - [ ] internalization (c)
   - [ ] Newsletter Unsubscribing
-  - [ ] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
   - [ ] Accessibility improvments. #10, подсказки на ссылочках, alt аттрибут
   - [ ] кнопку переход на блог (когда будет больше статей)?, из текста блога назад,Breadcrumb ?
   - [ ] +shadows эффект поднятия для гифок например
-  - [ ] BEM convention
-  - [ ] Why maps
-  - [ ] Forms
-    - [ ] props validation in components, Custom Validation and onInvalid listeners
-    - [ ] сделать ограничение по форме инпута {B}
-    - [ ] сделать вопросы обязательные {B}
-  - [ ] Посмотреть, что с айдишника произходит в таймлайне по возможности выпилить getId{Z}
+  - [ ] https://developer.mozilla.org/en-US/docs/Web/Manifest . manifest.webmanifest
+  - [ ] automaitc sitemaps.
+  - [ ] caching. cache-contorl
+  - [?] Why maps
 
-  - [] описание для экспедиций
 
 ##Done
 -----------
 
+  - [x] Forms
+    - [x] props validation in components, Custom Validation and onInvalid listeners
+    - [x] сделать ограничение по форме инпута {B}
+    - [x] сделать вопросы обязательные {B}
+  - [x] Посмотреть, что с айдишника произходит в таймлайне по возможности выпилить getId{Z}
+  - [x] описание для экспедиций
+  - [x] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
+  - [x] BEM convention
+  - [x] internalization (c)
 - [x] fix timeline pseudostuff for non-js browsers
 - [x] Silicon Valley Term of Service stuff
 - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
@@ -350,3 +354,24 @@ By pressing the button you agree to our confidentiality policy.
 
 ##React intl
 https://medium.com/@markuretsky/react-router-multilingual-362eaa33ae20
+
+
+https://medium.com/@markuretsky/react-router-multilingual-362eaa33ae20
+https://github.com/yahoo/react-intl/issues/243
+https://github.com/yahoo/react-intl/issues/1027
+
+
+
+
+I’m also wrapping it with a redux connect so the “locale” param gets injected to it before we use something like:
+
+const mapStateToProps = (state) => {
+ const locale = state.settings.language.id.toLowerCase().split(/[_-]+/)[0];
+ return {
+ locale,
+ };
+};
+
+export default connect(mapStateToProps)(createLocalizedRoutes);
+
+and as for {createLocalizedRoutes} yeah it should be {createLocallizedRoutes()} will fix that, thanks.

@@ -17,7 +17,6 @@ import localeDataEN from './locales/en.json';
 addLocaleData([...en, ...ru]);
 
 if (process.env.WEBPACK) {
-  // require('./styles/nav-router.less'); // eslint-disable-line global-require
   require('./fontello.less'); // eslint-disable-line global-require
   require('./App.less'); // eslint-disable-line global-require
 }
@@ -26,30 +25,6 @@ if (process.env.WEBPACK) {
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 const GaId = 'UA-111740941-1';
 ReactGA.initialize({ trackingId: GaId });
-
-
-// REACT-INTL INITIAL LOCALIZATION DETECTION
-// const language = (navigator.languages && navigator.languages[0]) ||
-//   navigator.language || navigator.userLanguage;
-// const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
-
-
-// let languageWithoutRegionCode = 'ru';
-//  // Define translations
-// const config = {
-//   locale: 'ru',
-//   messages: localeDataRU
-// };
-
-// const config = {
-//   locale: 'ru',
-// };
-
-// switch (languageWithoutRegionCode) {
-//   case 'ru': config.messages = localeDataRU; break;
-//   case 'en': config.messages = localeDataEN; break;
-//   default: config.locale = 'en'; config.messages = localeDataEN; break;
-// }
 
 class App extends React.Component {
   constructor(props) {

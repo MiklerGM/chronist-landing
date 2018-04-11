@@ -18,7 +18,6 @@ import Legal from './components/Legal/Legal';
 // import About from './components/About';
 // NEWSLETTER?
 
-
 const Wrapper = () => (
   <div className='wrap' />
 );
@@ -30,7 +29,6 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
       title='Хронист'
       titleTemplate='Хронист - %s'
       defaultTitle='Хронист'
-      // base={{ 'target': '_blank', 'href': 'http://chronist.ru/' }}
       meta={[
         { name: 'description', content: 'Интерактивная история на карте мира' },
         { property: 'og:type', content: 'website' },
@@ -59,6 +57,5 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
     <Footer onChangeLanguage={onChangeLanguage} locale={locale} />
   </div>
 );
-
 
 export default AppRouter;
