@@ -20,7 +20,7 @@ const Title = ({ locale }) => {
   return (
     <div id="title">
       <div className='text-center'>
-        <img src={TitleImage} alt='Chronist logo' />
+        <img src={TitleImage} draggable="false" alt='Chronist logo' />
         <h4>
           <FormattedMessage
             id='home.title'

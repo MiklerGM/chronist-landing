@@ -140,6 +140,7 @@ a {
 
 
 #title {
+
   margin: 0 auto;
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("./images/back-progressive.jpg");
   // // parallax thing
@@ -152,7 +153,12 @@ a {
   padding-bottom: 120px;
   & img {
     min-width: 65%;
+    user-select: none;
     margin-bottom: 10px;
+    &::selection {
+      background-color: transparent;
+      color: #000;
+    }
     @media screen and (max-width: 600px) {min-width: 85%;}
     @media screen and (min-width: 1000px) {min-width: 700px;}
   }
