@@ -1,3 +1,4 @@
+import path from 'path';
 import { createServer } from 'http';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -22,6 +23,11 @@ const server = new http.Server(app);
 app.use(compression());
 // Serve static files
 app.use(express.static('dist'));
+
+
+app.get('/richpreview.png', (req, res) => {
+  res.sendFile(path.join(__dirname, 'richpreview.png'));
+});
 
 // Serve everything else through react-router
 app.use((req, res) => {
