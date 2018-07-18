@@ -3,12 +3,8 @@
 footer {
   width: 100%;
   background-color: @base01;
-
-  // position: absolute;
-  // bottom: 0;
   position: relative;
   color: #C9CCD3;
-  // margin-top: 20px;
 
   & p {
     color: @base07;
@@ -21,8 +17,9 @@ footer {
     }
   }
 
-  & a, button {
+  & a {
     color: @base04;
+    box-shadow: inset 0 -0.5px @base07;
   }
 
   & a:hover, button:hover {
@@ -30,13 +27,13 @@ footer {
     text-decoration: none;
   }
 
-  & .left-part {
-    text-align: left;
-  }
+  // & .left-part {
+  //   text-align: left;
+  // }
 
-  & .right-part {
-    text-align: right;
-  }
+  // & .right-part {
+  //   text-align: right;
+  // }
 
   & .fa {
     font-size: 14px;

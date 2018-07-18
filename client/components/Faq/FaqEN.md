@@ -30,16 +30,16 @@ description: Внимание 4 пробела или два таба для о�
 
 7. I have a question!
 
-If you have any ideas, suggestions, reviews or found a mistake - please do not hesitate to contact us via e-mail idea@chronist.ru or our group in VK social network.
+  If you have any ideas, suggestions, reviews or found a mistake - please do not hesitate to contact us via e-mail [idea@chronist.ru](mailto:idea@chronist.ru) or our group in [VK social network](https://vk.com/chronist).
 
 8. I want to add historical course, what shall I do?
 
-  We haven’t released the control panel that enables inputing own info yet, however we are ready to participate in adding your course and creating extra functionality. Feel free to contact us via e-mail idea@chronist.ru
+  We haven’t released the control panel that enables inputing own info yet, however we are ready to participate in adding your course and creating extra functionality. Feel free to contact us via e-mail [idea@chronist.ru](mailto:idea@chronist.ru)
 
 9. I need interactive infographics for my own project, can you do it?
 
-  Yes, we can. Write us e-mail and we will make something nice for you.
+  Yes, we can. Write us [e-mail](mailto:idea@chronist.ru) and we will make something nice for you.
 
 10. How can I stay updated about your project?
 
-  We have a blog and a subscription form. You can always leave us your e-mail, we will try to keep sending letters regularly.
+  We have a [blog](https://chronist.ru/blog) and a subscription form. You can always leave us your e-mail, we will try to keep sending letters regularly.

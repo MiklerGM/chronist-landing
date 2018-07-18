@@ -46,11 +46,11 @@ const processArticle = (url, id, locale) => {
         <span className='dim'> {getFormattedDate(req(`./${url}.md`).date, locale)} </span>
       </div>
       <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 400)) }} />
-      <Link to={`/blog/${url}`}><button className='pull-right readmore'>
+      <Link to={`/blog/${url}`} className='pull-right readmore'>
         <FormattedMessage
           id='blog.readmore'
         />
-      </button> </Link>
+      </Link>
       <hr />
     </div>
   );
@@ -92,11 +92,11 @@ const processArticleGallery = (url, id, locale) => {
       <h4> {req(`./${url}.md`).title} </h4>
       <span className='ArticleDate'> {getHumanDate(req(`./${url}.md`).date, locale)} </span>
       <div dangerouslySetInnerHTML={{ __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 260)) }} />
-      <Link to={`/blog/${url}`}><button className='readmore'>
+      <Link to={`/blog/${url}`} className='readmore'>
         <FormattedMessage
           id='blog.readmore'
         />
-      </button></Link>
+      </Link>
     </div>
   );
 };

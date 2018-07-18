@@ -37,7 +37,7 @@ class AppDescription extends React.Component {
             </h2>
             <p> Модестов Сергей <br /> кандидат педагогических наук </p>
             { ArticleBegin } { ArticleEnd }
-          <button className='read-more' onClick={e => this.toggle(e)} className="more pull-right"> {toggler} </button>
+          <button onClick={e => this.toggle(e)} className="pull-right readmore decorless"> {toggler} </button>
           </div>
         </div>
       </div>

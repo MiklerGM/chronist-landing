@@ -22,19 +22,19 @@ class LocaleWidget extends React.Component {
     if (!this.props.min) {
       return (
         <p>
-          <a
+          <button
             onClick={() => this.changeToEn()}
-            className='decorless'
-            style={(this.props.locale === 'en') ? { color: '#ffffff' } : null}
+            className='decorless locale--toggle'
+            style={(this.props.locale === 'en') ? { color: '#ffffff'} : null}
           >
             English
-          </a> | <a
+          </button> | <button
             onClick={() => this.changeToRu()}
-            className='decorless'
+            className='decorless locale--toggle'
             style={(this.props.locale === 'ru') ? { color: '#ffffff' } : null}
           >
             Русский
-          </a>
+          </button>
         </p>
       );
     } else {

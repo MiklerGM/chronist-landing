@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import Subscribe from './Subscribe';
 import AppDescription from './AppDescription/AppDescription';
 import Team from './Company/Team';
+import { withRouter } from 'react-router-dom';
 
 const TitleImageRu = require('../images/logo-grey-ru.svg');
 const TitleImageEn = require('../images/logo-grey-en.svg');
@@ -39,7 +40,7 @@ const JumpToMap = () => (
           id='home.description'
         />
       </p>
-      <a className='' href='https://demo.chronist.ru/'><button className='main'>
+      <a className='decorless' href='https://demo.chronist.ru/'><button>
         <FormattedMessage
           id='home.description.button'
         />

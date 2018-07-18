@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const SocialButton = () => (
   <div className='social--button'>
-    <a href='https://vk.com/chronist' alt='Вконтакте'>
+    <a className='decorless' href='https://vk.com/chronist' alt='Вконтакте'>
       <button type='button' className='vk'>
         <i className='icon-vkontakte' aria-hidden='true' />
         <FormattedMessage
@@ -43,38 +43,34 @@ export default class Subscribe extends React.Component {
     return (
       <div className='page--segment text-center bg-gray'>
         <div className='page--content'>
+
           <p>
             <FormattedMessage
               id='home.subscribe.message'
             />
           </p>
-          <form
-            className='form-inline'
-            action='email.php'
-            onSubmit={(e) => this.onSubmit(e)}
-          >
-            <div className='form-group '>
-              <div className='input-group'>
-                <input
-                  type='text'
-                  value={this.state.email}
-                  size='20'
-                  placeholder='E-mail'
-                  required
-                  onChange={(e) => {
-                    this.setState({ ...this.state, email: e.target.value });
-                  }}
+          <div className='join-us'>
+            <div className='subscribe' action='email.php' onSubmit={(e) => this.onSubmit(e)}>
+              <input
+                type='text'
+                value={this.state.email}
+                size='30'
+                placeholder='E-mail'
+                required
+                onChange={(e) => {
+                  this.setState({ ...this.state, email: e.target.value });
+                }}
+              />
+              <button type='submit' className='red'>
+                <FormattedMessage
+                  id='home.subscribe.button'
                 />
-                <button type='submit' className='red'>
-                  <FormattedMessage
-                    id='home.subscribe.button'
-                  />
-                </button>
-                <SocialButton />
-              </div>
+              </button>
+              <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Вы успешно подписались' : 'Произошла ошибка'}</span>
             </div>
-          </form>
-          <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Вы успешно подписались' : 'Произошла ошибка'}</span>
+            <SocialButton />
+          </div>
+
         </div>
       </div>
     );
