@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
-  // context: path.join(__dirname, 'client'),
   entry: [
     path.resolve(__dirname, 'client'),
   ],
@@ -14,15 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
-  // resolve: {
-  //   modules: [
-  //     path.join(__dirname, 'client'),
-  //     'node_modules'
-  //   ]
-  // },
-  performance: {
-    hints: "warning",
-    maxAssetSize: 200000,
+  resolve: {
+    modules: [
+      path.join(__dirname, 'client'),
+      'node_modules'
+    ]
   },
   devServer: {
     historyApiFallback: true,
@@ -59,18 +54,10 @@ module.exports = {
         use: 'html-loader'
       },
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-      }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      }, {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'url-loader?limit=100000&name=[name].[ext]'
+      },
+      {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       },

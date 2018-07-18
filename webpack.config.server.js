@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        loader: 'url-loader?name=[name].[ext]'
+        loader: 'url-loader?limit=100000&name=[name].[ext]'
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,

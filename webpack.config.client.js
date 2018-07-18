@@ -91,18 +91,8 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        loader: 'url-loader?name=[name].[ext]'
+        loader: 'url-loader?limit=100000&name=[name].[ext]'
       },
-      // {
-      //   test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      //   loader: 'url-loader?name=[name].[ext]'
-      // }, {
-      //   test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      //   loader: 'url-loader?name=[name].[ext]'
-      // }, {
-      //   test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      //   loader: 'file-loader?name=[name].[ext]'
-      // },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'

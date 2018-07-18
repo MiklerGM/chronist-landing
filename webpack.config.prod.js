@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'production',
   devtool: 'eval',
+  bail: true,
   entry: [
     path.resolve(__dirname, 'client'),
   ],
@@ -15,12 +16,33 @@ module.exports = {
     publicPath: '/'
   },
   performance: {
-    hints: "warning",
+    hints: 'warning',
     maxAssetSize: 200000,
   },
   optimization: {
     noEmitOnErrors: true,
-    nodeEnv: 'production'
+    nodeEnv: 'production',
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
   },
   stats: {
     assets: false,
@@ -75,18 +97,10 @@ module.exports = {
         use: 'html-loader'
       },
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-      }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      }, {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'url-loader?limit=100000&name=[name].[ext]'
+      },
+      {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       },
