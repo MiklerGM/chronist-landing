@@ -1,10 +1,11 @@
-const { resolve } = require('path');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, 'client'),
+  mode: 'development',
+  devtool: 'cheap-module-eval-source-map',
+  // context: path.join(__dirname, 'client'),
   entry: [
     path.resolve(__dirname, 'client'),
   ],
@@ -19,15 +20,27 @@ module.exports = {
   //     'node_modules'
   //   ]
   // },
-  devtool: 'inline-source-map',
+  performance: {
+    hints: "warning",
+    maxAssetSize: 200000,
+  },
+  devServer: {
+    historyApiFallback: true,
+    inline: false,
+    hot: true,
+    compress: true,
+    https: false,
+  },
+  target: 'web',
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         enforce: 'pre',
-        use: 'babel-loader',
-        // include: path.resolve(__dirname, 'client')
+        use: {
+          loader: 'babel-loader'
+        },
       },
       {
         test: /\.less$/,
@@ -71,20 +84,15 @@ module.exports = {
       },
     ]
   },
-  devServer: {
-    historyApiFallback: true,
-    inline: true,
-  },
   plugins:
   [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         WEBPACK: true,
-        DEVEVELOPMENT: true
       },
     }),
-    new HtmlWebpackPlugin({ template: './index.html' }),
+    new HtmlWebpackPlugin({ template: './client/index.html' }),
     // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
     // new webpack.optimize.ModuleConcatenationPlugin()
   ]

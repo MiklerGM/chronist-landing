@@ -1,11 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, 'client'),
+  mode: 'production',
+  devtool: 'eval',
   entry: {
     client: path.resolve(__dirname, 'client'),
     vendor: ['react', 'react-dom'],
@@ -14,6 +15,21 @@ module.exports = {
     filename: '[name].bundle-[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
+  },
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 200000,
+  },
+  optimization: {
+    noEmitOnErrors: true,
+    nodeEnv: 'production'
+  },
+  stats: {
+    assets: true,
+    colors: true,
+    errors: true,
+    errorDetails: true,
+    hash: false
   },
   resolve: {
     modules: [
@@ -24,45 +40,24 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-        WEBPACK: true
-      }
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
         WEBPACK: true
       }
     }),
     new FaviconsWebpackPlugin({
-      logo: './images/favicon.png',
+      logo: './client/images/favicon.png',
       prefix: 'icons-[hash]/',
       emitStats: true,
       persisentCache: true,
       background: '#000',
       inject: true
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: { warnings: false }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity,
-      filename: 'vendor.bundle-[hash].js'
-    }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'style.bundle-[hash].css',
-      allChunks: true
     }),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './client/index.html',
       inject: 'body',
       filename: 'client.html'
-    }),
-
-    new webpack.DefinePlugin({
-      'process.env': {
-        WEBPACK: true
-      }
     }),
   ],
   module: {
@@ -75,11 +70,12 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract([
-          { loader: 'css-loader' },
-          { loader: 'postcss-loader' },
-          { loader: 'less-loader' }
-        ])
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'less-loader'
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -94,18 +90,20 @@ module.exports = {
         use: 'html-loader'
       },
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-      }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      }, {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'url-loader?name=[name].[ext]'
+      },
+      // {
+      //   test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'url-loader?name=[name].[ext]'
+      // }, {
+      //   test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'url-loader?name=[name].[ext]'
+      // }, {
+      //   test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+      //   loader: 'file-loader?name=[name].[ext]'
+      // },
+      {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       },

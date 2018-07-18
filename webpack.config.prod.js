@@ -1,46 +1,46 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, 'client'),
-  entry: {
-    client: path.resolve(__dirname, 'client'),
-    vendor: ['react', 'react-dom'],
-  },
+  mode: 'production',
+  devtool: 'eval',
+  entry: [
+    path.resolve(__dirname, 'client'),
+  ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
-  resolve: {
-    modules: [
-      path.join(__dirname, 'client'),
-      'node_modules'
-    ]
+  performance: {
+    hints: "warning",
+    maxAssetSize: 200000,
+  },
+  optimization: {
+    noEmitOnErrors: true,
+    nodeEnv: 'production'
+  },
+  stats: {
+    assets: false,
+    colors: true,
+    errors: true,
+    errorDetails: true,
+    hash: true
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production'),
         WEBPACK: true
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
-    new ExtractTextPlugin('style.bundle.css'),
-    new webpack.DefinePlugin({
-      'process.env': {
-        WEBPACK: true
-      }
+    new MiniCssExtractPlugin({
+      filename: 'style.bundle-[hash].css',
+      allChunks: true
     }),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './client/index.html',
       inject: 'body',
       filename: 'index.html'
     }),
@@ -55,11 +55,12 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ExtractTextPlugin.extract([
-          { loader: 'css-loader' },
-          { loader: 'postcss-loader' },
-          { loader: 'less-loader' }
-        ])
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'less-loader'
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,

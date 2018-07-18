@@ -2,18 +2,33 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+  mode: 'production',
+  devtool: 'eval',
   name: 'server',
   target: 'node',
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 200000,
+  },
+  optimization: {
+    noEmitOnErrors: true,
+    nodeEnv: 'production'
+  },
   externals: [nodeExternals()],
   entry: ['./server/server.js'],
   output: {
-    path: path.join(__dirname, 'dist/'),
+    path: path.join(__dirname, 'dist'),
     filename: 'server.js',
     publicPath: '/',
-    libraryTarget: 'commonjs2'
+  },
+  resolve: {
+    modules: [
+      path.join(__dirname, 'server'),
+      'node_modules'
+    ]
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -28,18 +43,10 @@ module.exports = {
         use: ['url-loader?limit=4096&name=[name].[ext]']
       },
       {
-        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-      }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader'
-      }, {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'url-loader?name=[name].[ext]'
+      },
+      {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       },
@@ -52,11 +59,5 @@ module.exports = {
         loader: 'markdown-with-front-matter-loader'
       },
     ]
-  },
-  resolve: {
-    modules: [
-      path.join(__dirname, 'server'),
-      'node_modules'
-    ]
-  },
+  }
 };
