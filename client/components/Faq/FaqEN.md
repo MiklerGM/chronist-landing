@@ -6,7 +6,7 @@ description: Внимание 4 пробела или два таба для о�
 
 1. Why did you choose this exact time period to be the first for visualisation?
 
-  We started with the time period that had reliable and easy to find datasets. Also the visual part for the Colonial period is a good choice for demonstration because of the amount of borders changes and events.
+  We started with the time period that had reliable and easy to find datasets. Also the visual part for the Colonial period is a good choice because of the amount of borders changes and a possibility to try different layers of events.
 
 2. Why is the project not completed yet?
 
