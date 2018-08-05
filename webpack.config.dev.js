@@ -25,6 +25,9 @@ module.exports = {
     hot: true,
     compress: true,
     https: false,
+    proxy: {
+      '/shared': 'http://api:3333/',
+    }
   },
   target: 'web',
   module: {

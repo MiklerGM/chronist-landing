@@ -25,20 +25,6 @@ export default class Subscribe extends React.Component {
     return this.state.success ? 'fa icon-check ' : 'fa icon-cancel';
   }
 
-  onSubmit() {
-    e.preventDefault();
-    const _this = this;
-    axios.post('/email.php', `email=${this.state.email}`)
-      .then(function (response) {
-        _this.setState({ ..._this.state, email: '', visibile: true, success: true });
-        console.log(response);
-      })
-      .catch(function (error) {
-        _this.setState({ ..._this.state, visibile: true, success: false });
-        console.log(error);
-      });
-  }
-
   render() {
     return (
       <div className='page--segment text-center bg-gray'>
@@ -50,22 +36,43 @@ export default class Subscribe extends React.Component {
             />
           </p>
           <div className='join-us'>
-            <div className='subscribe' action='email.php' onSubmit={(e) => this.onSubmit(e)}>
-              <input
-                type='text'
-                value={this.state.email}
-                size='30'
-                placeholder='E-mail'
-                required
-                onChange={(e) => {
-                  this.setState({ ...this.state, email: e.target.value });
+            <div className='subscribe'>
+              <form
+                action='/shared/subscribe'
+                method='POST'
+                className='form-inline'
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const _this = this;
+                  axios.post('/shared/subscribe', `email=${this.state.email}`)
+                    .then((response) => {
+                      const success = response.status === 200;
+                      const wipe = success ? { email: '' } : {};
+                      _this.setState({ ..._this.state, ...wipe, visibile: true, success });
+                    })
+                    .catch((error) => {
+                      _this.setState({ ..._this.state, visibile: true, success: false });
+                      console.log(error);
+                    });
+                  return false;
                 }}
-              />
-              <button type='submit' className='red'>
-                <FormattedMessage
-                  id='home.subscribe.button'
+              >
+                <input
+                  type='text'
+                  value={this.state.email}
+                  size='30'
+                  placeholder='E-mail'
+                  required
+                  onChange={(e) => {
+                    this.setState({ ...this.state, email: e.target.value });
+                  }}
                 />
-              </button>
+                <button type='submit' className='red'>
+                  <FormattedMessage
+                    id='home.subscribe.button'
+                  />
+                </button>
+              </form>
               <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Вы успешно подписались' : 'Произошла ошибка'}</span>
             </div>
             <SocialButton />
