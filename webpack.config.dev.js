@@ -19,10 +19,14 @@ module.exports = {
       'node_modules'
     ]
   },
+  optimization: {
+    nodeEnv: 'development'
+  },
   devServer: {
     historyApiFallback: true,
-    inline: false,
+    inline: true,
     hot: true,
+    hotOnly: true,
     compress: true,
     https: false,
   },
@@ -73,14 +77,12 @@ module.exports = {
   },
   plugins:
   [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         WEBPACK: true,
       },
     }),
     new HtmlWebpackPlugin({ template: './client/index.html' }),
-    // new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
-    // new webpack.optimize.ModuleConcatenationPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ]
 };
