@@ -20,7 +20,7 @@ class ContactUs extends React.Component {
     this.state = {
       visibile: false,
       success: false,
-      name: '',
+      title: '',
       email: '',
       text: ''
     };
@@ -52,20 +52,22 @@ class ContactUs extends React.Component {
         </h4>
         <div className='container'><form
           className='form-inline'
-          action='contact.php'
+          method='POST'
+          action='/shared/contact'
           onSubmit={(e) => {
             e.preventDefault();
             const _this = this;
-            axios.post('/contact.php', `${this.getSecret()}&email=${this.state.email}&name=${encodeURI(this.state.name)}&text=${encodeURI(this.state.text)}`)
+            axios.post('/shared/contact', `${this.getSecret()}&email=${this.state.email}&title=${encodeURI(this.state.title)}&text=${encodeURI(this.state.text)}`)
               .then((response) => {
                 const success = response.status === 200;
-                const wipe = success ? { email: '', name: '', text: '' } : {};
+                const wipe = success ? { email: '', title: '', text: '' } : {};
                 _this.setState({ ..._this.state, ...wipe, visibile: true, success });
               })
               .catch((error) => {
                 _this.setState({ ..._this.state, visibile: true, success: false });
                 console.log(error);
               });
+            return false;
           }}
         >
           <div>
@@ -73,12 +75,12 @@ class ContactUs extends React.Component {
               <input
                 className='short-input'
                 type='text'
-                value={this.state.name}
+                value={this.state.title}
                 // size='40'
-                placeholder='Имя'
+                placeholder='Тема'
                 maxLength='20'
                 onChange={(e) => {
-                  this.setState({ ...this.state, name: e.target.value });
+                  this.setState({ ...this.state, title: e.target.value });
                 }}
               />
             </div>

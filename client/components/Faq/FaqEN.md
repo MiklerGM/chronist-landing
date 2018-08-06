@@ -4,9 +4,9 @@ description: Внимание 4 пробела или два таба для о�
 ---
 
 
-1. Why did you choose American map to be the first for visualisation?
+1. Why did you choose this exact time period?
 
-  North America continent was chosen because it’s dataset is one of the most reliable and easy to find. Also the visual part for the Colonial period was a good choice for demonstration because of the amount of borders changes and events.
+  We started with the time period that has reliable and easy to find datasets. Also the visual part for the Colonial period is a good choice because of the amount of borders changes and a possibility to try different layers of events.
 
 2. Why is the project not completed yet?
 
