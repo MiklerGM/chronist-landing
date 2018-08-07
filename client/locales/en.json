@@ -29,9 +29,9 @@
   "press.title": "Press",
   "press.less": "Show less",
   "press.more": "Show more",
-  "input.email.invalid": "Email Address is not valid.",
-  "input.text.invalid": "Text is required.",
-  "input.textarea.invalid": "Message is required",
+  "input.email.invalid": "Email Address not valid.",
+  "input.text.invalid": "Text required.",
+  "input.textarea.invalid": "Message required",
   "form.success": "Your message has been succesfully sent",
   "form.failure": "Error occurred"
 }
