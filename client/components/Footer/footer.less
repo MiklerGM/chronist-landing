@@ -1,17 +1,18 @@
-@import "../../colors.less";
+@import "../../styles/colors.less";
 
 footer {
   width: 100%;
   background-color: @base01;
   position: relative;
-  color: #C9CCD3;
+  color: @base04;
 
   & p {
-    color: @base07;
+    color: @white;
     font-size: 14px;
     font-weight: 700;
     width: 20%;
     display: inline-block;
+
     @media screen and (max-width: 768px) {
       width: 100%;
     }
@@ -19,21 +20,14 @@ footer {
 
   & a {
     color: @base04;
-    box-shadow: inset 0 -0.5px @base07;
+    box-shadow: inset 0 -0.5px @white;
   }
 
-  & a:hover, button:hover {
+  & a:hover,
+  button:hover {
     color: @base0E;
     text-decoration: none;
   }
-
-  // & .left-part {
-  //   text-align: left;
-  // }
-
-  // & .right-part {
-  //   text-align: right;
-  // }
 
   & .fa {
     font-size: 14px;
@@ -45,95 +39,6 @@ footer {
   }
 }
 
-// @media screen and (max-width: 768px) {
-//   .left-part,
-//   .right-part {
-//     text-align: center !important;
-//   }
-// }
-
-
-// .bg-footer {
-//   // margin-top: 30px;
-//   padding-top: 20px;
-//   padding-bottom: 10px;
-//   margin-bottom: 0px;
-//   // background-color: rgb(51, 51, 51);
-//   background-color: @base01;
-// }
-
-.claer {
+.clear {
   clear: both;
 }
-// footer BEGIN OLD ONE
-// footer {
-//   width: 100%;
-//   position: absolute;
-//   bottom: 0;
-//   // margin-bottom: 0px;
-//   // display: inline-block;
-//   padding-top: 10px;
-//   padding-bottom: 1px;
-//   // margin-bottom: 0px;
-//   color: rgba(255, 255, 255, 0.9);
-//   // background-color: #2f2f2f;
-//   background-color: rgb(51, 51, 51);
-//   // background-position: 50% 25%;
-//   // background-size: contain;
-//   align-items: center;
-//   line-height: 16px;
-//   font-size: 16px;
-
-//   & div {
-//     display: inline;
-
-//     & p {
-//       list-style: none;
-//       display: inline-block;
-//       padding-left: 20px;
-
-//       &.inline {
-//         display: inline;
-//       }
-//     }
-//   }
-
-//   & ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-//     overflow: hidden;
-//     background-color: #333;
-//     float: right;
-//     display: inline-block;
-//   }
-
-//   & li {
-//     display: inline;
-//     list-style-type: none;
-//     padding-right: 20px;
-//   }
-
-//   & a {
-//     fill: #08c;
-//     text-decoration: none;
-//     color: inherit;
-
-//     &:hover {
-//       color: #fff;
-//       text-decoration: none;
-//     }
-
-//     &:active {
-//       text-decoration: underline;
-//     }
-//   }
-
-//   & .fa { color: #919191; }
-// }
-// .footer {
-//   &.col-md-3 {
-
-//     margin-bottom: 0;
-//   }
-// }

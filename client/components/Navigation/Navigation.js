@@ -38,7 +38,7 @@ class Navigation extends React.Component {
                 <NavLink exact activeClassName='active' to="/"><FormattedMessage id='nav.main' /></NavLink>
               </li>
               <li className='nav--item'>
-                <a href='https://demo.chronist.ru/'><FormattedMessage id='nav.map' /></a>
+                <a href='https://maps.chronist.ru/'><FormattedMessage id='nav.map' /></a>
               </li>
               <li className='nav--item'>
                 <LocaleWidget

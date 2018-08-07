@@ -29,6 +29,10 @@ app.get('/richpreview.png', (req, res) => {
   res.sendFile(path.join(__dirname, 'richpreview.png'));
 });
 
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname, 'favicon.ico'));
+});
+
 // Serve everything else through react-router
 app.use((req, res) => {
   const context = {};

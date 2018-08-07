@@ -69,10 +69,6 @@ module.exports = {
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       },
       {
-        test: /\.(mp4|m4v)$/,
-        loader: 'file-loader'
-      },
-      {
         test: /\.md$/,
         loader: 'markdown-with-front-matter-loader'
       },
@@ -85,7 +81,7 @@ module.exports = {
         WEBPACK: true,
       },
     }),
-    new HtmlWebpackPlugin({ template: './client/index.html' }),
+    new HtmlWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ]
 };

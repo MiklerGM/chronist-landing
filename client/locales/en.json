@@ -5,6 +5,8 @@
   "home.lastarticles": "Last posts",
   "home.subscribe.message": "Subscribe to our email newsletters and follow us in social networks to recieve updates on the latest news.",
   "home.subscribe.button": "Subscribe",
+  "home.subscribe.success": "You have been successfully subscribed",
+  "home.subscribe.fail": "Error occurred",
   "team.title": "Our Team",
   "footer.privacy": "Privacy",
   "footer.tos": "Terms of Service",
@@ -20,8 +22,16 @@
   "contact.message": "Contact us. Got any problems, ideas or just want to find out what's happening? We’d love to hear from you. Here’s how you can reach us. E-mail to <a href='mailto:idea@chronist.ru'> idea@chronist.ru </a> or fill the form.",
   "contact.privacy": "By pressing the button you agree to our ",
   "contact.privacy.link": "confidentiality policy",
+  "contact.placeholder.title": "Title",
+  "contact.placeholder.email": "Email",
+  "contact.placeholder.message": "Message",
   "home.subscribe.vk": "VK",
   "press.title": "Press",
   "press.less": "Show less",
-  "press.more": "Show more"
+  "press.more": "Show more",
+  "input.email.invalid": "Email Address is not valid.",
+  "input.text.invalid": "Text is required.",
+  "input.textarea.invalid": "Message is required",
+  "form.success": "Your message has been succesfully sent",
+  "form.failure": "Error occurred"
 }

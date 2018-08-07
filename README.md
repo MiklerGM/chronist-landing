@@ -1,3 +1,4 @@
+
 LANDING PAGE
 ========
 
@@ -223,33 +224,6 @@ Address and Phone Number  - don't. we don't provide physical business
 
 Microsoft says that more materials are planned, but for now is starting with just one: "Acrylic." This is a translucent, generated material that uses Gaussian blur combined with noise to create a sort of plastic-like effect. Microsoft intends for Acrylic to be used under, for example, navigational elements, in order to de-emphasize them. Acrylic would also be used under ephemeral content.
 
-### Colors
-===========
-    base color - 073242
-    base16-harmonic16-dark
-    base16-solarized
-    base16-materia
-
-ColorTesting
-<div>
-  <div className="block base00-background base07">00</div>
-  <div className="block base01-background base07">01</div>
-  <div className="block base02-background base07">02</div>
-  <div className="block base03-background base07">03</div>
-  <div className="block base04-background base00">04</div>
-  <div className="block base05-background base00">05</div>
-  <div className="block base06-background base00">06</div>
-  <div className="block base07-background base00">07</div>
-  <br />
-  <div className="block base08-background base07">08</div>
-  <div className="block base09-background base07">09</div>
-  <div className="block base0A-background base07">0A</div>
-  <div className="block base0B-background base07">0B</div>
-  <div className="block base0C-background base07">0C</div>
-  <div className="block base0D-background base07">0D</div>
-  <div className="block base0E-background base07">0E</div>
-  <div className="block base0F-background base07">0F</div>
-</div>
 
 ## Security
 ------------
@@ -291,13 +265,6 @@ https://github.com/quietshu/react-less-boilerplate/tree/master/app
 var icon = this.props.active ? require('./my-icon-active.png') : require('./my-icon-inactive.png');
 <Image source={icon} />
 
-#Dev Dependecies
-
-  babel-eslint
-  eslint-config-airbnb
-  eslint-plugin-jsx-a11y
-  markdown-with-front-matter-loader
-  github-markdown-css --save
 
 #GUI Guidlines
   If you have some experience designing an iOS App, you’ll be familiar with the minimum sizes for typography (24px+, optimal for reading: 32px), buttons (44px to 88px) and navigation bar (72px to 98px). It’s also in line with Android devices.
@@ -319,11 +286,8 @@ https://www.youtube.com/watch?v=ogAZ6JC0pJI&feature=youtu.be&list=PLTdS5E3zupkEi
 
 
 #Win
-
 [Datasketch](http://www.datasketch.es/march/?utm_source=ActiveCampaign&utm_medium=email&utm_content=BDN+%2371%3A+the+myth+of+superhuman+AI%2C+dataviz+by+Google%2C+a+startup+simulator%2C+and+some+new+Wait+but+Why&utm_campaign=Banana+Data+%2371)
 
-#Code
-```
 
 #Code Splitting
 
@@ -340,22 +304,9 @@ https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca
  - Личные сценарии
 
 
-newchronist.ai
-Заголовок
-
-
-шрифты в шапке тоньше для маков
-
-"О нас пишут" - Press
-
-Contact us. Got any problems, ideas or just want to find out what's happening? We’d love to hear from you. Here’s how you can reach us. E-mail to idea@chronist.ru or fill the form.
-By pressing the button you agree to our confidentiality policy.
-
 
 ##React intl
 https://medium.com/@markuretsky/react-router-multilingual-362eaa33ae20
-
-
 https://medium.com/@markuretsky/react-router-multilingual-362eaa33ae20
 https://github.com/yahoo/react-intl/issues/243
 https://github.com/yahoo/react-intl/issues/1027
@@ -365,13 +316,11 @@ https://github.com/yahoo/react-intl/issues/1027
 
 I’m also wrapping it with a redux connect so the “locale” param gets injected to it before we use something like:
 
+```
 const mapStateToProps = (state) => {
  const locale = state.settings.language.id.toLowerCase().split(/[_-]+/)[0];
  return {
  locale,
  };
 };
-
-export default connect(mapStateToProps)(createLocalizedRoutes);
-
-and as for {createLocalizedRoutes} yeah it should be {createLocallizedRoutes()} will fix that, thanks.
+```

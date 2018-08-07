@@ -19,8 +19,8 @@ import localeDataEN from './locales/en.json';
 addLocaleData([...en, ...ru]);
 
 if (process.env.WEBPACK) {
-  // require('./styles/nav-router.less'); // eslint-disable-line global-require
-  require('./fontello.less'); // eslint-disable-line global-require
+  require('./styles/fontello.less'); // eslint-disable-line global-require
+  require('./style.less'); // eslint-disable-line global-require
   require('./App.less'); // eslint-disable-line global-require
 }
 

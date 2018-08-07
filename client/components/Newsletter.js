@@ -33,7 +33,7 @@ class MailForm extends React.Component {
   }
 
   submitForm(e) {
-    e.preventDefault();
+    e.preventDefault();)
     // console.log('submitForm trigger');
     // const _this = this;
     // axios.post('/email.php', `email=${this.state.email}`)
@@ -53,7 +53,7 @@ class MailForm extends React.Component {
         <form
           className='form-inline'
           action='email.php'
-          onSubmit={(e) => {this.submitForm(e) }}
+          onSubmit={(e) => this.submitForm(e)}
         >
           <div className='form-group '>
             <div className='input-group col-centered'>

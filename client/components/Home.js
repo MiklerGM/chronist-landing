@@ -40,7 +40,7 @@ const JumpToMap = () => (
           id='home.description'
         />
       </p>
-      <a className='decorless' href='https://demo.chronist.ru/'><button>
+      <a className='decorless' href='https://maps.chronist.ru/'><button>
         <FormattedMessage
           id='home.description.button'
         />

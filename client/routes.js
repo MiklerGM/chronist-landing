@@ -18,8 +18,6 @@ import Legal from './components/Legal/Legal';
 // import About from './components/About';
 // NEWSLETTER?
 
-import './images/richpreview.png';
-
 const Wrapper = () => (
   <div className='wrap' />
 );

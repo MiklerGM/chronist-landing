@@ -14,13 +14,17 @@ import AppRouter from './routes';
 import localeDataRU from './locales/ru.json';
 import localeDataEN from './locales/en.json';
 
+import './images/richpreview.png';
+import './images/favicon.ico';
+
 addLocaleData([...en, ...ru]);
 
 if (process.env.WEBPACK) {
-  require('./fontello.less'); // eslint-disable-line global-require
+  require('./styles/fontello.less'); // eslint-disable-line global-require
   require('./style.less'); // eslint-disable-line global-require
   require('./App.less'); // eslint-disable-line global-require
 }
+
 
 // define values for analytics services
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];

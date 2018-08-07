@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -22,13 +21,13 @@ module.exports = {
   },
   optimization: {
     noEmitOnErrors: true,
-    nodeEnv: 'production'
+    nodeEnv: 'production',
   },
   stats: {
     assets: true,
     colors: true,
     errors: true,
-    errorDetails: true,
+    errorDetails: false,
     hash: false
   },
   resolve: {
@@ -42,14 +41,6 @@ module.exports = {
       'process.env': {
         WEBPACK: true
       }
-    }),
-    new FaviconsWebpackPlugin({
-      logo: './client/images/favicon.png',
-      prefix: 'icons-[hash]/',
-      emitStats: true,
-      persisentCache: true,
-      background: '#000',
-      inject: true
     }),
     new MiniCssExtractPlugin({
       filename: 'style.bundle-[hash].css',
@@ -96,10 +87,6 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-      },
-      {
-        test: /\.(mp4|m4v)$/,
-        loader: 'file-loader'
       },
       {
         test: /\.md$/,

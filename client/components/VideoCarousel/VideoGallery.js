@@ -56,7 +56,7 @@ class What extends React.Component {
                 простой и занимательной форме вывести
                 собственные причинно-следственные связи в мировой истории.
               </h4>
-              <a className='btn btn-demo' href='https://demo.chronist.ru/'> Перейти к Демо</a>
+              <a href='https://maps.chronist.ru/'> Перейти к Демо</a>
             </div>
 
           </div>

@@ -54,7 +54,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        WEBPACK: true
+        WEBPACK: true,
+        NODE_ENV: 'development'
       }
     }),
     new MiniCssExtractPlugin({
