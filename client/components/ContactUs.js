@@ -102,16 +102,16 @@ class ContactUs extends React.Component {
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', textAlign: 'left' }}>
                 <button type='submit'>Отправить</button>
-                <span
-                  key='result'
-                  style={this.state.visibile ? {} : { display: 'none' }}
-                  className={this.getGlyph()}
-                >
-                  {this.state.success
-                    ? <FormattedMessage id='form.success' />
-                    : <FormattedMessage id='form.failure' />
-                  }
-                </span>
+              </div>
+              <div
+                key='result'
+                style={this.state.visibile ? {} : { display: 'none' }}
+                className={this.getGlyph()}
+              >
+                {this.state.success
+                  ? <FormattedMessage id='form.success' />
+                  : <FormattedMessage id='form.failure' />
+                }
               </div>
             </form>
           </div>
