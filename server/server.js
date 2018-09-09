@@ -1,13 +1,8 @@
 import path from 'path';
-import { createServer } from 'http';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { hydrate } from "react-dom";
 import Helmet from 'react-helmet';
-import { StaticRouter } from 'react-router';
-import http from 'http';
 import express from 'express';
-import compression from 'compression';
 import fs from 'fs';
 import AppStatic from '../client/AppStatic';
 
@@ -16,11 +11,7 @@ const PORT = process.env.PORT || 3030;
 
 // Create HTTP server
 const app = new express();
-const server = new http.Server(app);
 
-
-// Use gzip compression;
-app.use(compression());
 // Serve static files
 app.use(express.static('dist'));
 
@@ -43,8 +34,6 @@ app.use((req, res) => {
 
   const head = Helmet.rewind();
 
-  // console.log('helmet head', head.meta.toString());
-
   const html = index
       .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
       .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${head.meta.toString()}${head.title.toString()}`);
@@ -60,4 +49,4 @@ app.use((req, res) => {
 });
 
 // Listen incoming HTTP requests
-server.listen(PORT, () => console.log(`Application available at http://localohost:${PORT}`));
+app.listen(PORT, () => console.log(`Application available at http://localohost:${PORT}`));
