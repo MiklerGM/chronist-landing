@@ -33,5 +33,7 @@
   "input.text.invalid": "Text required.",
   "input.textarea.invalid": "Message required",
   "form.success": "Your message has been succesfully sent",
-  "form.failure": "Error occurred"
+  "form.failure": "Error occurred",
+  "cookie.message": "We use cookies and metrics tracking by <a href='https://yandex.com/support/metrica/general/notification.html#notification'>Yandex</a> and <a href='https://policies.google.com/technologies/partner-sites?hl=en'>Google</a>",
+  "cookie.agree": "Agree"
 }

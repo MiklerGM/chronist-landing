@@ -33,5 +33,7 @@
   "input.text.invalid": "Необходимо ввести текст",
   "input.textarea.invalid": "Необходимо ввести сообщение",
   "form.success": "Ваше сообщение успешно отправлено",
-  "form.failure": "Произошла ошибка"
+  "form.failure": "Произошла ошибка",
+  "cookie.message": "Мы используем cookies и метрику <a href='https://yandex.ru/support/metrika/general/notification.html'>Яндекс</a> и <a href='https://policies.google.com/technologies/partner-sites?hl=ru'>Google</a>",
+  "cookie.agree": "Согласен"
 }

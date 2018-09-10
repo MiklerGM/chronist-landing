@@ -81,7 +81,11 @@ module.exports = {
         WEBPACK: true,
       },
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './client/index.html',
+      inject: 'body',
+      filename: 'index.html'
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ]
 };

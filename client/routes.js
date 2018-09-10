@@ -15,6 +15,7 @@ import Faq from './components/Faq/Faq';
 import Privacy from './components/Privacy/Privacy';
 import Modal from './components/Survey/Modal';
 import Legal from './components/Legal/Legal';
+import CookieManager from './components/CookieMan';
 // import About from './components/About';
 // NEWSLETTER?
 
@@ -55,6 +56,7 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
       </Switch>
     </div>
     <Footer onChangeLanguage={onChangeLanguage} locale={locale} />
+    <CookieManager />
   </div>
 );
 
