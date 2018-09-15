@@ -1,8 +1,6 @@
 import React from 'react';
 
 import mdText from '../articles/Legal.md';
-// if (process.env.WEBPACK) require('./Faq.less'); // eslint-disable-line global-require
-// import './Faq.less';
 
 const Legal = () => (
   <div id='faq' className='page--segment'><div className='page--content'>
@@ -17,9 +15,5 @@ const Legal = () => (
     />
   </div></div>
 );
-
-// const Faq = () => (
-//   <div> Faq </div>
-// );
 
 export default Legal;

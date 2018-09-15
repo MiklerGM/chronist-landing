@@ -1,16 +1,12 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import PropTypes from 'prop-types';
 
 import mdTextRU from '../articles/FaqRU.md';
 import mdTextEN from '../articles/FaqEN.md';
 
 const Faq = ({ locale }) => {
-  let mdText = {};
-  if (locale === 'ru') {
-    mdText = mdTextRU;
-  } else {
-    mdText = mdTextEN;
-  }
+  const mdText = (locale === 'ru') ? mdTextRU : mdTextEN;
   return (
     <div id='faq' className='page--segment'><div className='page--content'>
       <h1 id='pageTitle' className='text-center'>
@@ -24,6 +20,10 @@ const Faq = ({ locale }) => {
       />
     </div></div>
   );
+};
+
+Faq.propTypes = {
+  locale: PropTypes.string.isRequired
 };
 
 export default Faq;

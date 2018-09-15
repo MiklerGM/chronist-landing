@@ -1,4 +1,6 @@
 @import "./styles/colors.less";
+@import './styles/checkbox.less';
+@import './styles/fontello.less';
 
 a {
   transition: opacity 0.2s ease-in-out;
@@ -158,47 +160,7 @@ a.active {
   min-height: 80vh;
 }
 
-.page {
-  padding: 0;
-  margin: 0 auto;
-  text-align: center;
-}
 
-.page--title {
-  padding: 32px;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.page--segment {
-  background-color: #fff;
-  width: 100%;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.page--content {
-  padding: 40px 32px;
-  max-width: 1040px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: block;
-  clear: both;
-  text-align: center;
-
-  @media screen and (max-width: 600px) {
-    padding: 30px 10px;
-  }
-
-  // @media screen and (max-width: 600px) {
-  //   flex-direction: column;
-  // }
-
-  &--narrow {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-}
 
 .bg-gray {
   background-color: @light-grey;

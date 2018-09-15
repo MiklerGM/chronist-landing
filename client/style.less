@@ -1,38 +1,39 @@
 @import './styles/colors.less';
-@import './styles/checkbox.less';
+// @import './styles/baloons.less';
+// @import './styles/checkbox.less';
+// @import './styles/LineIcon.less';
+// @import './styles/fontello.less';
+// @import './styles/number.less';
+// @import './styles/radio.less';
+// @import './styles/select.less';
+// @import './styles/slider.less';
+// @import './styles/tooltip.less';
 
 @font-face {
   font-family: 'Lora-Regular';
   src: url(./assets/Lora-Regular.ttf);
 }
-
 @font-face {
-  font-family: 'OpenSans-SemiBold';
-  src: url(./assets/OpenSans-SemiBold.ttf);
+  font-family: 'OpenSans-LightItalic';
+  src: url(./assets/OpenSans-LightItalic.ttf);
+}
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: url(./assets/OpenSans-Italic.ttf);
+}
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url(./assets/OpenSans-Light.ttf);
 }
 
 @font-face {
   font-family: 'OpenSans-Regular';
   src: url(./assets/OpenSans-Regular.ttf);
-  font-weight: 400;
 }
 
 @font-face {
-  font-family: 'OpenSans-Italic';
-  src: url(./assets/OpenSans-Italic.ttf);
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'OpenSans-Light';
-  src: url(./assets/OpenSans-Light.ttf);
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'OpenSans-LightItalic';
-  src: url(./assets/OpenSans-LightItalic.ttf);
-  font-weight: 400;
+  font-family: 'OpenSans-SemiBold';
+  src: url(./assets/OpenSans-SemiBold.ttf);
 }
 
 html,
@@ -41,11 +42,12 @@ body {
   padding: 0;
   height: 100%;
   color: @text;
-  font-family: 'OpenSans-Light', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
-  font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt";
@@ -183,11 +185,15 @@ a.decorless {
 }
 
 .bold {
-  font-family: OpenSans-SemiBold;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
 }
 
 .italic {
-  font-family: OpenSans-LightItalic;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: italic;
 }
 
 button {
@@ -198,8 +204,8 @@ button {
   color: @white;
   border: 1px solid @border;
   height: 36px;
-  min-width: 120px;
-  max-width: 120px;
+  // min-width: 120px;
+  // max-width: 120px;
   padding: 3px 15px;
   text-align: center;
   white-space: nowrap;
@@ -264,26 +270,31 @@ button.decorless {
 
 button.close-window {
   cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 0;
+  position: relative;
+  // right: 0;
+  // top: 0;
   min-width: auto;
-  width: 40px;
-  height: 40px;
+  // width: 40px;
+  // height: 40px;
+  font-size: 24px;
+  margin: 7px 0;
   background: none;
   padding: auto;
-  margin: 0;
+  // margin: 0;
   border: none;
   box-sizing: border-box;
+  color: @white;
   line-height: auto;
-  color: inherit;
-  transition: opacity 0.2s ease-in-out;
-
+  // color: inherit;
+  transition: text-shadow 200ms ease-in-out, transform 200ms ease-in-out;
   &:hover {
+    transform: translate(0, -1px);
     outline: none !important;
-    opacity: 0.7;
+    // opacity: 0.7;
+    box-shadow: none;
     border: none !important;
-    color: @main-blue;
+    color: @light-grey;
+    text-shadow: 4px 4px 12px #000000;
   }
 }
 
@@ -320,32 +331,36 @@ textarea {
   }
 }
 
-input[type='text'],
-input[type='password'],
-input[type='email'] {
-  height: 25px;
-}
-
 input,
 select,
 textarea {
-  font-family: 'OpenSans-Light';
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: normal;
 }
 
 ::-webkit-input-placeholder {
-  font-family: 'OpenSans-Light';
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: normal;
 }
 
 ::-moz-placeholder {
-  font-family: 'OpenSans-Light';
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: normal;
 }
 
 :-ms-input-placeholder {
-  font-family: 'OpenSans-Light';
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: normal;
 }
 
 :-moz-placeholder {
-  font-family: 'OpenSans-Light';
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: normal;
 }
 
 select {
@@ -441,4 +456,46 @@ label {
 
 .input--cell {
   display: grid;
+}
+
+.page {
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page--title {
+  padding: 32px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.page--segment {
+  background-color: #fff;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.page--content {
+  padding: 40px 32px;
+  max-width: 1040px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: block;
+  clear: both;
+  text-align: center;
+
+  @media screen and (max-width: 600px) {
+    padding: 30px 10px;
+  }
+
+  // @media screen and (max-width: 600px) {
+  //   flex-direction: column;
+  // }
+
+  &--narrow {
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }
