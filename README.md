@@ -22,16 +22,12 @@ LANDING PAGE
 ##Landing
 -----------
 
-  - [o] Migrate form front-matter-markdown to react-markdown + react-markdown-loader like gatsby {transformImageUri} - imposible. need graphql backend stuff.
   - [ ] Newsletter Unsubscribing
   - [ ] Accessibility improvments. #10, подсказки на ссылочках, alt аттрибут
   - [ ] кнопку переход на блог (когда будет больше статей)?, из текста блога назад,Breadcrumb ?
-  - [ ] +shadows эффект поднятия для гифок например
   - [ ] https://developer.mozilla.org/en-US/docs/Web/Manifest . manifest.webmanifest
   - [ ] automaitc sitemaps.
   - [ ] caching. cache-contorl
-  - [?] Why maps
-
 
 ##Done
 -----------
@@ -110,6 +106,13 @@ LANDING PAGE
   - [x] удалить все английские надписи
   - [x] по вертикально выравнить заглавия в таймлайне
   - [x] чистка и оптимизации css штук
+
+##Failed
+-------
+
+  - [o] Migrate form front-matter-markdown to react-markdown + react-markdown-loader like gatsby {transformImageUri} - imposible. need graphql backend stuff.
+  - [o] +shadows эффект поднятия для гифок например. гифок нет больше
+
 
 ##GUI Guidlines
 ---------------
@@ -235,9 +238,7 @@ https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca
  - Экспорт данных
  - Личные сценарии
 
-
-
-// NEWSLETTER?
-
 ##Performance
-https://github.com/you-dont-need/You-Dont-Need-Momentjs
+[](https://github.com/you-dont-need/You-Dont-Need-Momentjs)
+
+[Don't load md as js object](https://medium.com/@shawnstern/importing-multiple-markdown-files-into-a-react-component-with-webpack-7548559fce6f)
