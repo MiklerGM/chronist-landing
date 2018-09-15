@@ -37,7 +37,8 @@
     "react-devtools": "^3.2.3",
     "rimraf": "^2.6.1",
     "stylelint": "^7.10.1",
-    "stylelint-config-standard": "^16.0.0"
+    "stylelint-config-standard": "^16.0.0",
+    "webpack-bundle-analyzer": "^3.0.2"
   },
   "dependencies": {
     "axios": "^0.15.3",

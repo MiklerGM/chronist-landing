@@ -22,8 +22,7 @@ LANDING PAGE
 ##Landing
 -----------
 
-  - [ ] hreflang. React-Router-Intl integration with non-broken SSR
-  - [ ] Migrate form front-matter-markdown to react-markdown + react-markdown-loader {transformImageUri}
+  - [o] Migrate form front-matter-markdown to react-markdown + react-markdown-loader like gatsby {transformImageUri} - imposible. need graphql backend stuff.
   - [ ] Newsletter Unsubscribing
   - [ ] Accessibility improvments. #10, подсказки на ссылочках, alt аттрибут
   - [ ] кнопку переход на блог (когда будет больше статей)?, из текста блога назад,Breadcrumb ?
@@ -36,81 +35,81 @@ LANDING PAGE
 
 ##Done
 -----------
-
+  - [x] hreflang. React-Router-Intl integration with non-broken SSR
   - [x] Forms
-    - [x] props validation in components, Custom Validation and onInvalid listeners
-    - [x] сделать ограничение по форме инпута {B}
-    - [x] сделать вопросы обязательные {B}
+  - [x] props validation in components, Custom Validation and onInvalid listeners
+  - [x] сделать ограничение по форме инпута {B}
+  - [x] сделать вопросы обязательные {B}
   - [x] Посмотреть, что с айдишника произходит в таймлайне по возможности выпилить getId{Z}
   - [x] описание для экспедиций
   - [x] After MPA done, adjust YM for tricky statistic {C} accurate per page metrika #11
   - [x] BEM convention
   - [x] internalization (c)
-- [x] fix timeline pseudostuff for non-js browsers
-- [x] Silicon Valley Term of Service stuff
-- [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
-- [x] .readmore mutual class
-- [x] helmet wild metadata
-- [x] допил после релиза сайта (кредиткc) {B}
-- [x] Base-16 Theme? Use in less variables
-- [x] sad and ugly. do something
-- [x] SSR
-- [x] migrate to htmlwebpackplugin and hashes for chunks
-- [x] progressive jpeg
-- [x] Add PostCSS and Autoprefix for starters
-- [x] название раздела
-- [x] timeline pseudoelements-bug
-- [x] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
-- [x] изменить порядок статей
-- [x] craft ArticlePage
-- [x] reduce lapsha {C}
-- [x] WebpackContextRequire
-- [x] можно при наведении на тамбнейл делать ховер поверх гифки с надписью следующей
-- [x] loop
-- [x] выделение кнопок остаточное убрать
-- [x] перенести задачи из гитлаба и наоборот {B}
-- [x] Remove horizontal scrollbar
-- [x] допил после релиза сайта (гифки)
-- [x] запилить чтоб контент по сайту индексировался, а не был голая htmlка. вебпакчик {A}
-- [x] запилить кнопки перехода
-- [x] убрать яндекс метрику для дева
-- [x] Исправить вьюпорт
-- [x] Сделать евенты он ховер и прочее чтоб смотрелось ок  в ведре
-- [x] исправить корячующуюся картинку сергея
-- [x] сделать роутер
-- [x] сделать нормальные контайнеры в которые влезают всё. Т.е. сделать ужее.
-- [x] уменьшить шрифты вместе с сужением.
-- [x] Make all pics in svg.co
-- [x] fix ym
-- [x] fix console.log(ym)
-- [x] ?_ym_debug=0
-- [x] use font-awesome or glyphicon.not some here, some there.
-- [x] fonts
-- [x] dark overlay over title
-- [x] text
-- [x] other shadows
-- [x] cleaning
-- [x]	Верхняя панель со ссылками (статьи, блог, таймлайн фич, скрины/видео, "войти" со ссылкой на демку, группы в соцсетях) и лого.
-- [x]	Header картинкой
-- [x]	Вступительный текст
-- [x]	Форма обратной связи
-- [x]	Таймлайн фич (картинка-описание-дата внедрения). Внедрённые фичи цветные, не внедрённые - серые. Counter количества данных
-- [x]	Footer (position: fixed, полупрозрачный, с кнопкой "войти")
-- [x]	PS правый вариант картинки, скорее всего
-- [x] оверлеем прозрачную навигацию
-- [x] кадрирование сделай не по руки а по плечи
-- [x] кнопка на картинке в хедере одна, "войти"
-- [x] под картинкой текст про "Существующие инструменты не позволяют..."
-- [x] поле для ввода мыла Уже, оставить кнопку только вконтача и перенести её рядом с мылом
-- [x] статью Сережи сделать первые пять-шесть строк с возможностью развернуть по клику
-- [x] Добавь все блоки и поправь там даты
-- [x] количество данных перенести внутрь, типа "политические границы - описание - дата вывода на бой - Учтено данных 955,5"
-- [x] хедер замени на то, что у тебя в почте лежит. сам выбери какой
-- [x] даты релиза верни в боксы, у тебя из-за дат весь таймлайн порван, выглядит плохо
-- [x] каунтер количества данных из нерелизнутых фич убери, можно на его месте поставить дату
-- [x] удалить все английские надписи
-- [x] по вертикально выравнить заглавия в таймлайне
-- [x] чистка и оптимизации css штук
+  - [x] fix timeline pseudostuff for non-js browsers
+  - [x] Silicon Valley Term of Service stuff
+  - [x] Навешать :active :focus классы на кнопки и ссылки, чтоб они не были мёртвыми
+  - [x] .readmore mutual class
+  - [x] helmet wild metadata
+  - [x] допил после релиза сайта (кредиткc) {B}
+  - [x] Base-16 Theme? Use in less variables
+  - [x] sad and ugly. do something
+  - [x] SSR
+  - [x] migrate to htmlwebpackplugin and hashes for chunks
+  - [x] progressive jpeg
+  - [x] Add PostCSS and Autoprefix for starters
+  - [x] название раздела
+  - [x] timeline pseudoelements-bug
+  - [x] logPageView прикрутить к react0router v4. onUpdate метод теперь не работает.
+  - [x] изменить порядок статей
+  - [x] craft ArticlePage
+  - [x] reduce lapsha {C}
+  - [x] WebpackContextRequire
+  - [x] можно при наведении на тамбнейл делать ховер поверх гифки с надписью следующей
+  - [x] loop
+  - [x] выделение кнопок остаточное убрать
+  - [x] перенести задачи из гитлаба и наоборот {B}
+  - [x] Remove horizontal scrollbar
+  - [x] допил после релиза сайта (гифки)
+  - [x] запилить чтоб контент по сайту индексировался, а не был голая htmlка. вебпакчик {A}
+  - [x] запилить кнопки перехода
+  - [x] убрать яндекс метрику для дева
+  - [x] Исправить вьюпорт
+  - [x] Сделать евенты он ховер и прочее чтоб смотрелось ок  в ведре
+  - [x] исправить корячующуюся картинку сергея
+  - [x] сделать роутер
+  - [x] сделать нормальные контайнеры в которые влезают всё. Т.е. сделать ужее.
+  - [x] уменьшить шрифты вместе с сужением.
+  - [x] Make all pics in svg.co
+  - [x] fix ym
+  - [x] fix console.log(ym)
+  - [x] ?_ym_debug=0
+  - [x] use font-awesome or glyphicon.not some here, some there.
+  - [x] fonts
+  - [x] dark overlay over title
+  - [x] text
+  - [x] other shadows
+  - [x] cleaning
+  - [x]	Верхняя панель со ссылками (статьи, блог, таймлайн фич, скрины/видео, "войти" со ссылкой на демку, группы в соцсетях) и лого.
+  - [x]	Header картинкой
+  - [x]	Вступительный текст
+  - [x]	Форма обратной связи
+  - [x]	Таймлайн фич (картинка-описание-дата внедрения). Внедрённые фичи цветные, не внедрённые - серые. Counter количества данных
+  - [x]	Footer (position: fixed, полупрозрачный, с кнопкой "войти")
+  - [x]	PS правый вариант картинки, скорее всего
+  - [x] оверлеем прозрачную навигацию
+  - [x] кадрирование сделай не по руки а по плечи
+  - [x] кнопка на картинке в хедере одна, "войти"
+  - [x] под картинкой текст про "Существующие инструменты не позволяют..."
+  - [x] поле для ввода мыла Уже, оставить кнопку только вконтача и перенести её рядом с мылом
+  - [x] статью Сережи сделать первые пять-шесть строк с возможностью развернуть по клику
+  - [x] Добавь все блоки и поправь там даты
+  - [x] количество данных перенести внутрь, типа "политические границы - описание - дата вывода на бой - Учтено данных 955,5"
+  - [x] хедер замени на то, что у тебя в почте лежит. сам выбери какой
+  - [x] даты релиза верни в боксы, у тебя из-за дат весь таймлайн порван, выглядит плохо
+  - [x] каунтер количества данных из нерелизнутых фич убери, можно на его месте поставить дату
+  - [x] удалить все английские надписи
+  - [x] по вертикально выравнить заглавия в таймлайне
+  - [x] чистка и оптимизации css штук
 
 ##GUI Guidlines
 ---------------
@@ -128,46 +127,6 @@ If you need to show the number of items that will be affected by the action of t
 [Some conference video about design tricks](https://www.youtube.com/watch?v=ogAZ6JC0pJI&feature=youtu.be&list=PLTdS5E3zupkEiDgztHOUw4kOSM8Qdzo7H)
 
 [Accessability colors video](https://www.youtube.com/watch?v=LBmLspdAtxM&feature=youtu.be)
-
-##Landing Examples
-------------------
-
-[Tomaotoes Pomodor Timer](http://www.dollaropath.com/tomatoes/ios/)
-
-[Marked Markdown Editor](http://marked2app.com/)
-
-[Alfred launcher app](https://www.alfredapp.com/)
-
-[Launcharbar launcher app](https://www.obdev.at/products/launchbar/index.html)
-
-[Omnifocus productivity app](https://www.omnigroup.com/omnifocus)
-
-[Reeder rss ](http://reederapp.com/mac/)
-
-[Gnome project](https://www.gnome.org/)
-
-[Zathura pdf](https://pwmt.org/projects/zathura/)
-
-[Elemetary OS](https://elementary.io/)
-
-[Feedly cloud rss](https://feedly.com/)
-
-[Basecamp](https://basecamp.com/)
-
-[Twitter Statistic](http://twittercounter.com/)
-
-[Typora Markdown App](https://typora.io/)
-
-[DataMaps](https://datamaps.co/)
-
-[GNU Emacs](https://www.gnu.org/software/emacs/index.html)
-
-[Discover Creative Work](https://www.behance.net/)
-
-## Good Articles
------------------
-
-[What to use to react styling?](http://andrewhfarmer.com/how-to-style-react/)
 
 
 ##Make a Blog
@@ -196,33 +155,6 @@ https://github.com/pk1m/Stackoverflow-helpme
 -----------------------
 
 [Counting Web Session with JS. Swizek blog](https://swizec.com/blog/counting-web-sessions-javascript/swizec/7598?__s=dugx4qg21suydr72vgrv)
-
-##Contact Form
-----------------
-
-[DataMaps contact](https://datamaps.co/contact) - contact pages with input form
-
-##Localization
------------------
- <Nav currentLanguage={language} switchLanguage={this.switchLanguage} />
-
-
-##Footer
------------
-
-About Us Link
-Contact Us Link
-ToS
-Privacy Policy - what we do with your email
-Address and Phone Number  - don't. we don't provide physical business
-
-
-## Design
-----------------
-
-[Creating a Blurred Background Using Only CSS](https://paper-leaf.com/blog/2016/01/creating-blurred-background-using-only-css/)
-
-Microsoft says that more materials are planned, but for now is starting with just one: "Acrylic." This is a translucent, generated material that uses Gaussian blur combined with noise to create a sort of plastic-like effect. Microsoft intends for Acrylic to be used under, for example, navigational elements, in order to de-emphasize them. Acrylic would also be used under ephemeral content.
 
 
 ## Security
@@ -305,22 +237,7 @@ https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca
 
 
 
-##React intl
-https://medium.com/@markuretsky/react-router-multilingual-362eaa33ae20
-https://medium.com/@markuretsky/react-router-multilingual-362eaa33ae20
-https://github.com/yahoo/react-intl/issues/243
-https://github.com/yahoo/react-intl/issues/1027
+// NEWSLETTER?
 
-
-
-
-I’m also wrapping it with a redux connect so the “locale” param gets injected to it before we use something like:
-
-```
-const mapStateToProps = (state) => {
- const locale = state.settings.language.id.toLowerCase().split(/[_-]+/)[0];
- return {
- locale,
- };
-};
-```
+##Performance
+https://github.com/you-dont-need/You-Dont-Need-Momentjs

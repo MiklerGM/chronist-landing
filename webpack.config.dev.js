@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'development',
@@ -19,8 +20,33 @@ module.exports = {
       'node_modules'
     ]
   },
+  // optimization: {
+  //   nodeEnv: 'development'
+  // },
   optimization: {
-    nodeEnv: 'development'
+    noEmitOnErrors: true,
+    nodeEnv: 'development',
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
   },
   devServer: {
     historyApiFallback: true,
@@ -85,6 +111,10 @@ module.exports = {
       template: './client/index.html',
       inject: 'body',
       filename: 'index.html'
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerPort: '3001',
+      openAnalyzer: false,
     }),
     new webpack.HotModuleReplacementPlugin(),
   ]

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LocaleWidget from '../Footer/LocaleWidget';
 
-if (process.env.WEBPACK) require('./nav-router.less');
+if (process.env.WEBPACK) require('./Navigation.less');
 
 class Navigation extends React.Component {
   constructor(props) {

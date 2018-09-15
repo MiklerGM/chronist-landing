@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-if (process.env.WEBPACK) require('./appdesc.less'); // eslint-disable-line global-require
+if (process.env.WEBPACK) require('./AppDescription.less'); // eslint-disable-line global-require
 
 class AppDescription extends React.Component {
   constructor(props) {

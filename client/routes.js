@@ -5,19 +5,25 @@ import {
 } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import Home from './components/Home';
-import Blog from './components/Blog/Blog';
-import NotFound from './components/ErrorPages/404';
-import Footer from './components/Footer/Footer';
-import Navigation from './components/Navigation/Navigation';
-import ContactUs from './components/ContactUs';
-import Faq from './components/Faq/Faq';
-import Privacy from './components/Privacy/Privacy';
-import Modal from './components/Survey/Modal';
-import Legal from './components/Legal/Legal';
-import CookieManager from './components/CookieMan';
+// pages
+import Home from './pages/Home';
+// import Blog from './pages/Blog/Blog';
+import ContactUs from './pages/ContactUs';
+import Privacy from './pages/Privacy';
+import Legal from './pages/Legal';
+import Faq from './pages/Faq';
+import NotFound from './pages/ErrorPages/404';
 // import About from './components/About';
-// NEWSLETTER?
+import Blog from './pages/Blog';
+import ArticlePage from './pages/ArticlePage';
+
+// components
+import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Footer/Footer';
+import CookieManager from './components/CookieMan';
+import Modal from './components/Survey/Modal';
+
+import { urls } from './articles/blogData';
 
 const Wrapper = () => (
   <div className='wrap' />
@@ -48,7 +54,17 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
         <Route exact path='/' render={() => <Home locale={locale} />} />
         <Route path='/faq' render={() => <Faq locale={locale} />} />
         <Route exact path='/survey' component={Modal} />
-        <Route path='/blog' render={() => <Blog locale={locale} />} />
+        {/*
+          <Route path='/blog' render={() => <Blog locale={locale} />} />
+        */}
+        <Route exact path='/blog' render={() => <Blog locale={locale} />} />
+        {urls.map(url =>
+          <Route
+            key={`/blog/${url}`}
+            path={`/blog/${url}`}
+            render={() => <ArticlePage data={url} locale={locale} />}
+          />
+        )}
         <Route path='/contact' component={ContactUs} />
         <Route path='/legal' component={Legal} />
         <Route path='/privacy' component={Privacy} />
