@@ -25,27 +25,22 @@ module.exports = {
   // },
   optimization: {
     noEmitOnErrors: true,
-    nodeEnv: 'development',
+    nodeEnv: 'production',
     splitChunks: {
       chunks: 'async',
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 5,
+      maxAsyncRequests: 3,
       maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
       name: true,
+      automaticNameDelimiter: '.',
       cacheGroups: {
-        vendors: {
+        node_vendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true
+          chunks: 'initial',
+          maxSize: 1000000,
+          minSize: 300000,
+          priority: 1
         }
-      }
+      },
     }
   },
   devServer: {

@@ -7,15 +7,14 @@ import { Helmet } from 'react-helmet';
 
 // pages
 import Home from './pages/Home';
-// import Blog from './pages/Blog/Blog';
 import ContactUs from './pages/ContactUs';
 import Privacy from './pages/Privacy';
 import Legal from './pages/Legal';
 import Faq from './pages/Faq';
 import NotFound from './pages/ErrorPages/404';
-// import About from './components/About';
 import Blog from './pages/Blog';
 import ArticlePage from './pages/ArticlePage';
+// import About from './components/About';
 
 // components
 import Navigation from './components/Navigation/Navigation';
