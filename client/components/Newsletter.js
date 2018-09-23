@@ -34,16 +34,13 @@ class MailForm extends React.Component {
 
   submitForm(e) {
     e.preventDefault();)
-    // console.log('submitForm trigger');
     // const _this = this;
     // axios.post('/email.php', `email=${this.state.email}`)
     //   .then(function (response) {
     //     _this.setState({ ..._this.state, email: '', visibile: true, success: true });
-    //     console.log(response);
     //   })
     //   .catch(function (error) {
     //     _this.setState({ ..._this.state, visibile: true, success: false });
-    //     console.log(error);
     //   });
   }
 

@@ -17,7 +17,7 @@ const SocialButton = () => (
   </div>
 );
 
-export default class Subscribe extends React.Component {
+class Subscribe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -99,3 +99,5 @@ export default class Subscribe extends React.Component {
     );
   }
 }
+
+export default Subscribe;

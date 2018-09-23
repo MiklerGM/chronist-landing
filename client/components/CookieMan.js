@@ -14,7 +14,6 @@ class CookieManager extends React.Component {
   }
 
   handleClick() {
-    console.log('click workds');
     localStorage.setItem('token', true);
     this.setState({ haveSession: true });
   }

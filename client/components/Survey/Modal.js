@@ -75,7 +75,6 @@ class Modal extends React.Component {
   // }
 
   handleChange = (e, sid, qid, oid, type) => {
-    // console.log('Hello from handle change', this.state.answers);
     const question = this.state.answers[sid][qid].map((cur, id) => {
       if (id === oid) { // Change current value
         return type === 'checked' && e === false
@@ -99,14 +98,12 @@ class Modal extends React.Component {
         ...this.state.answers[sid].slice(qid + 1)
       ]
     };
-    // console.log('Bye from handle change', newAnswers);
 
     this.setState({ answers: newAnswers });
   }
 
   handleFormSubmit = (e, sid) => {
     e.preventDefault();
-    console.log(`You have selected ${this.state.answers} `);
     // this.props.askBackend('SURVEYS_ANSWER', { surveyId: sid, surveyData: this.state.answers[sid] });
   }
 

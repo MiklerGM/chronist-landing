@@ -52,7 +52,6 @@ class ContactUs extends React.Component {
     this.setState({ data: { ...this.state.data, ...value } });
   }
 
-
   render() {
     return (
       <div id='contact' className='page--segment'>

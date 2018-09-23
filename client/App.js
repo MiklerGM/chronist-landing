@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { YMInitializer } from 'react-yandex-metrika';
 import ReactGA from 'react-ga';
@@ -24,11 +22,21 @@ if (process.env.WEBPACK) {
   require('./App.less'); // eslint-disable-line global-require
 }
 
-
 // define values for analytics services
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
-const GaId = 'UA-111740941-1';
-ReactGA.initialize({ trackingId: GaId });
+const YM_CONFIG = {
+  defer: true,
+  clickmap: false,
+  trackLinks: true,
+  // accurateTrackBounce: true,
+  // webvisor: true,
+  trackHash: true
+};
+const GA_CONFIG = {
+  debug: true,
+  titleCase: false
+};
+ReactGA.initialize('UA-111740941-1', GA_CONFIG);
 
 class App extends React.Component {
   constructor(props) {
@@ -39,7 +47,7 @@ class App extends React.Component {
     };
   }
 
-  onChangeLanguage = (lang) => {
+  onChangeLanguage(lang) {
     switch (lang) {
       case 'ru': this.setState({ messages: localeDataRU }); break;
       case 'en': this.setState({ messages: localeDataEN }); break;
@@ -50,14 +58,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <YMInitializer accounts={YmId} options={{ defer: true }} >
+      <YMInitializer accounts={YmId} options={YM_CONFIG}>
         <IntlProvider
           locale={this.state.locale}
           key={this.state.locale}
           messages={this.state.messages}
         >
           <Router>
-            <AppRouter onChangeLanguage={this.onChangeLanguage} locale={this.state.locale} />
+            <AppRouter
+              onChangeLanguage={v => this.onChangeLanguage(v)}
+              locale={this.state.locale}
+            />
           </Router>
         </IntlProvider>
       </YMInitializer>

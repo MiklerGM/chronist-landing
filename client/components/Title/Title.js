@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-// import './Title.less';
 if (process.env.WEBPACK) {
   require('./Title.less');
 }
@@ -28,6 +28,10 @@ const Title = ({ locale }) => {
       </div>
     </div>
   );
+};
+
+Title.propTypes = {
+  locale: PropTypes.string.isRequired
 };
 
 export default Title;

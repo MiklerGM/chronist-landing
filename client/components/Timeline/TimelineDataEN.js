@@ -26,8 +26,6 @@ const pic10 = require('./data/preview-racemapsimple.png');
 const pic11 = require('./data/preview-accidentmapsimple.png');
 const pic12 = require('./data/preview-expeditionmapsimple.png');
 
-
-
 const featureList = [
   {
     id: 0,

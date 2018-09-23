@@ -2,11 +2,10 @@ import React from 'react';
 import { hydrate, render } from 'react-dom';
 import App from './App';
 
-
 function renderApp(component) {
   const Application = component;
   if (process.env.NODE_ENV === 'development') {
-    render(<Application />, document.body.appendChild(document.createElement('div')));
+    render(<Application />, document.getElementById('app'));
   } else {
     hydrate(<Application />, document.getElementById('app'));
   }

@@ -8,7 +8,6 @@ import Team from '../components/Company/Team';
 import Title from '../components/Title/Title';
 import JumpToMap from '../components/JumpToMap/JumpToMap';
 
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -39,19 +38,17 @@ class Home extends React.Component {
     const ArticleGallery = this.state.lazyArticles;
 
     return (
-      <div className="app" >
+      <div>
         <Title locale={this.props.locale} />
         <JumpToMap />
-        {ArticleGallery ? (
-          <ArticleGallery locale={this.props.locale} />
-          ) : (
-            <div />
-        )}
-        {Features ? (
-          <Features locale={this.props.locale} />
-          ) : (
-            <div />
-        )}
+        {ArticleGallery
+          ? <ArticleGallery locale={this.props.locale} />
+          : <div />
+        }
+        {Features
+          ? <Features locale={this.props.locale} />
+          : <div />
+        }
         <Subscribe />
         <AppDescription />
         <Team locale={this.props.locale} />
@@ -61,10 +58,6 @@ class Home extends React.Component {
 }
 
 Home.propTypes = {
-  locale: PropTypes.string.isRequired
-};
-
-Title.propTypes = {
   locale: PropTypes.string.isRequired
 };
 

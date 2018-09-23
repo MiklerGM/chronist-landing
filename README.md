@@ -22,8 +22,11 @@ LANDING PAGE
 ##Landing
 -----------
 
+  - [ ] alternative analytics [Fathom](https://github.com/usefathom/fathom)
+  - [ ] remove withrouter
+  - [ ] split-coding for  blog. (look at gatsby.(look readme. fetch md and parse on client in json))
+  - [ ] Выбор языка для crawler. Сделать индексацию для поисковых ботов на разных языках.
   - [ ] Newsletter Unsubscribing
-  - [ ] Accessibility improvments. #10, подсказки на ссылочках, alt аттрибут
   - [ ] кнопку переход на блог (когда будет больше статей)?, из текста блога назад,Breadcrumb ?
   - [ ] https://developer.mozilla.org/en-US/docs/Web/Manifest . manifest.webmanifest
   - [ ] automaitc sitemaps.
@@ -31,6 +34,7 @@ LANDING PAGE
 
 ##Done
 -----------
+  - [x] Accessibility improvments. #10, подсказки на ссылочках, alt аттрибут
   - [x] hreflang. React-Router-Intl integration with non-broken SSR
   - [x] Forms
   - [x] props validation in components, Custom Validation and onInvalid listeners
@@ -106,6 +110,9 @@ LANDING PAGE
   - [x] удалить все английские надписи
   - [x] по вертикально выравнить заглавия в таймлайне
   - [x] чистка и оптимизации css штук
+  - [x] Favicon plugin search and destroy
+  - [x] map
+  - [x] landing
 
 ##Failed
 -------
@@ -242,3 +249,30 @@ https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca
 [](https://github.com/you-dont-need/You-Dont-Need-Momentjs)
 
 [Don't load md as js object](https://medium.com/@shawnstern/importing-multiple-markdown-files-into-a-react-component-with-webpack-7548559fce6f)
+
+
+ "plugins": [
+    // Stage 2
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-function-sent",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-numeric-separator",
+    "@babel/plugin-proposal-throw-expressions",
+
+
+  ]
+}
+
+If you're using the same configuration across many separate projects,
+keep in mind that you can also create your own custom presets with
+whichever plugins and presets you're looking to use.
+
+module.exports = function() {
+  return {
+    plugins: [
+      require("@babel/plugin-syntax-dynamic-import"),
+      [require("@babel/plugin-proposal-decorators"), { "legacy": true }],
+      [require("@babel/plugin-proposal-class-properties"), { "loose": false }],
+    ],
+    presets: [
+      // ...

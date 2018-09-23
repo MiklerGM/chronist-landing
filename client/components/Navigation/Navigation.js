@@ -35,16 +35,20 @@ class Navigation extends React.Component {
           <nav>
             <ul className={this.state.nav}>
               <li className='nav--item'>
-                <NavLink exact activeClassName='active' to="/"><FormattedMessage id='nav.main' /></NavLink>
+                <NavLink exact activeClassName='active' to="/">
+                  <FormattedMessage id='nav.main' />
+                </NavLink>
               </li>
               <li className='nav--item'>
-                <a href='https://maps.chronist.ru/'><FormattedMessage id='nav.map' /></a>
+                <a href='https://maps.chronist.ru/'>
+                  <FormattedMessage id='nav.map' />
+                </a>
               </li>
               <li className='nav--item'>
                 <LocaleWidget
                   onChangeLanguage={this.props.onChangeLanguage}
-                  locale={this.props.locale}
                   min={true}
+                  locale={this.props.locale}
                 />
               </li>
               <li className='nav--item'>
@@ -61,7 +65,9 @@ class Navigation extends React.Component {
                 <NavLink activeClassName='active' to="/faq">FAQ</NavLink>
               </li>
             </ul>
-            <button className='icon' onClick={e => this.toggle(e)}> <i className='fa icon-menu' /></button>
+            <button className='icon' onClick={e => this.toggle(e)}>
+              <i className='fa icon-menu' />
+            </button>
           </nav>
         </div>
       </div>
@@ -73,6 +79,5 @@ Navigation.propTypes = {
   locale: PropTypes.string.isRequired,
   onChangeLanguage: PropTypes.func.isRequired
 };
-
 
 export default withRouter(Navigation);

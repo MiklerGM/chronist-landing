@@ -38,15 +38,6 @@ class ModalOverlay extends React.Component {
     super(props);
   }
 
-  // onSwipe(e) {
-  //   console.log(e);
-  //   if (e.deltaY > 0) {
-  //     this.handleNext();
-  //   } else if (e.deltaY < 0) {
-  //     this.handlePrevious();
-  //   }
-  // }
-
   render() {
     if (this.props.overlay === true) {
       return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ym } from 'react-yandex-metrika';
 
 class LocaleWidget extends React.Component {
   changeToEn() {
@@ -12,7 +13,7 @@ class LocaleWidget extends React.Component {
 
   toggleLocale() {
     if (this.props.locale === 'en') {
-      this.props.onChangeLanguage('ru')
+      this.props.onChangeLanguage('ru');
     } else {
       this.props.onChangeLanguage('en');
     }
