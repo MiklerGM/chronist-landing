@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 import LocaleWidget from './LocaleWidget';
 
-if (process.env.WEBPACK) require('./footer.less'); // eslint-disable-line global-require
+import './footer.less';
 
 const Footer = ({ onChangeLanguage, locale }) => (
   <footer id="footer"><div className='page--content'>

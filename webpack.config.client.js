@@ -37,11 +37,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        WEBPACK: true
-      }
-    }),
     new MiniCssExtractPlugin({
       filename: 'style.bundle-[hash].css',
     }),

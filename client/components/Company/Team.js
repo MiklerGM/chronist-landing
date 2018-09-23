@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import './Company.less';
+
 import dataRU from './data/TeamDataRU';
 import dataEN from './data/TeamDataEN';
-
-if (process.env.WEBPACK) require('./Company.less');
 
 const Person = ({ person }) => (
   <div className='person--data'>

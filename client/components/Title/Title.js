@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-if (process.env.WEBPACK) {
-  require('./Title.less');
-}
+import './Title.less';
 
 const TitleImageRu = require('./logo-grey-ru.svg');
 const TitleImageEn = require('./logo-grey-en.svg');

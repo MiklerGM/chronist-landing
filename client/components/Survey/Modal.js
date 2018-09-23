@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 
-if (process.env.WEBPACK) require('./Modal.less'); // eslint-disable-line global-require
+import './Modal.less';
 
 // import { askBackend } from '../reducers/actions';
 

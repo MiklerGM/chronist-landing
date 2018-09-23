@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import featureListRU from './TimelineDataRU';
 import featureListEN from './TimelineDataEN';
 
-if (process.env.WEBPACK) require('./Features.less');
+import './Features.less';
 
 class Feature extends React.Component {
   render() {

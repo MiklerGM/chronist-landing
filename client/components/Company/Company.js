@@ -1,6 +1,7 @@
 import React from 'react';
 import Team from './Team';
-if (process.env.WEBPACK) require('./Company.less');
+
+import './Company.less';
 
 const Company = () => (
   <div className='page'>

@@ -1,5 +1,6 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'production',
@@ -27,6 +28,11 @@ module.exports = {
       'node_modules'
     ]
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'style.bundle-[hash].css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -36,7 +42,12 @@ module.exports = {
       },
       {
         test: /\.less$/,
-        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'less-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'less-loader'
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,

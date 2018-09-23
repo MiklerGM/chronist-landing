@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-if (process.env.WEBPACK) require('./AppDescription.less'); // eslint-disable-line global-require
+import './AppDescription.less';
 
 class AppDescription extends React.Component {
   state = {
@@ -32,9 +32,16 @@ class AppDescription extends React.Component {
                 id='press.title'
               />
             </h2>
-            <p> Модестов Сергей <br /> кандидат педагогических наук </p>
-            { ArticleBegin } { ArticleEnd }
-            <button onClick={e => this.toggle(e)} className="pull-right readmore decorless"> {toggler} </button>
+            <p>
+              Модестов Сергей
+              <br />
+              кандидат педагогических наук
+            </p>
+            { ArticleBegin }
+            { ArticleEnd }
+            <button onClick={e => this.toggle(e)} className="pull-right readmore decorless">
+              { toggler }
+            </button>
           </div>
         </div>
       </div>

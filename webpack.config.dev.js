@@ -97,11 +97,6 @@ module.exports = {
   },
   plugins:
   [
-    new webpack.DefinePlugin({
-      'process.env': {
-        WEBPACK: true,
-      },
-    }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
       inject: 'body',
