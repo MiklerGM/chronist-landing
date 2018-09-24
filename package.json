@@ -78,7 +78,7 @@
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "webpack --config ./webpack.config.client.js",
     "build:server": "webpack --config ./webpack.config.server.js",
-    "serve": "node dist/server.js",
+    "server": "node dist/server.js",
     "test": "jest",
     "release": "rimraf dist && webpack --config ./webpack.config.prod.js",
     "clean": "rimraf dist node_modules"
