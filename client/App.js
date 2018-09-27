@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { YMInitializer } from 'react-yandex-metrika';
+import ym, { YMInitializer } from 'react-yandex-metrika';
 import ReactGA from 'react-ga';
 
 import { IntlProvider, addLocaleData } from 'react-intl';
@@ -20,18 +20,16 @@ import './images/favicon.ico';
 
 addLocaleData([...en, ...ru]);
 
-// define values for analytics services
-const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];
 const YM_CONFIG = {
-  defer: true,
-  clickmap: false,
+  defer: false,
+  clickmap: true,
   trackLinks: true,
   // accurateTrackBounce: true,
   // webvisor: true,
-  trackHash: true
+  trackHash: false
 };
 const GA_CONFIG = {
-  debug: true,
+  debug: false,
   titleCase: false
 };
 ReactGA.initialize('UA-111740941-1', GA_CONFIG);
@@ -47,8 +45,8 @@ class App extends React.Component {
 
   onChangeLanguage(lang) {
     switch (lang) {
-      case 'ru': this.setState({ messages: localeDataRU }); break;
-      case 'en': this.setState({ messages: localeDataEN }); break;
+      case 'ru': this.setState({ messages: localeDataRU }); ym('reachGoal', 'localeChangeRu'); break;
+      case 'en': this.setState({ messages: localeDataEN }); ym('reachGoal', 'localeChangeEn'); break;
       default: this.setState({ messages: localeDataRU }); break;
     }
     this.setState({ locale: lang });
@@ -56,7 +54,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <YMInitializer accounts={YmId} options={YM_CONFIG}>
+      <YMInitializer accounts={[42857239]} options={YM_CONFIG}>
         <IntlProvider
           locale={this.state.locale}
           key={this.state.locale}

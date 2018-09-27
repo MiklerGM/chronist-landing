@@ -45,7 +45,7 @@ const Blog = ({ locale }) => (
       title='Блог'
       meta={[
         { name: 'description', content: 'Хронист Блог' },
-        { property: 'og:type', content: 'article_' },
+        { property: 'og:type', content: 'article' },
         { property: 'og:title', content: 'Блог' }
       ]}
     />

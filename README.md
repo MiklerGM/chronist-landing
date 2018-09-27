@@ -251,28 +251,9 @@ https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca
 [Don't load md as js object](https://medium.com/@shawnstern/importing-multiple-markdown-files-into-a-react-component-with-webpack-7548559fce6f)
 
 
- "plugins": [
-    // Stage 2
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    "@babel/plugin-proposal-function-sent",
-    "@babel/plugin-proposal-export-namespace-from",
-    "@babel/plugin-proposal-numeric-separator",
-    "@babel/plugin-proposal-throw-expressions",
-
-
-  ]
-}
-
-If you're using the same configuration across many separate projects,
-keep in mind that you can also create your own custom presets with
-whichever plugins and presets you're looking to use.
-
-module.exports = function() {
-  return {
-    plugins: [
-      require("@babel/plugin-syntax-dynamic-import"),
-      [require("@babel/plugin-proposal-decorators"), { "legacy": true }],
-      [require("@babel/plugin-proposal-class-properties"), { "loose": false }],
-    ],
-    presets: [
-      // ...
+## Metriks
+goals:
+  localeChangeRu
+  localeChangeEn
+  cookieAgree
+  jumpToMap

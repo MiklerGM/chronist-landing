@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ym } from 'react-yandex-metrika';
+import ym from 'react-yandex-metrika';
 
 class LocaleWidget extends React.Component {
   changeToEn() {

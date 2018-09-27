@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import ym from 'react-yandex-metrika';
 
 class CookieManager extends React.Component {
   state = {
@@ -16,6 +17,7 @@ class CookieManager extends React.Component {
   handleClick() {
     localStorage.setItem('token', true);
     this.setState({ haveSession: true });
+    ym('reachGoal', 'cookieAgree');
   }
 
   render() {

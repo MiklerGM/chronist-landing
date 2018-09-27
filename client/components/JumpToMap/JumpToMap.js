@@ -1,19 +1,28 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import ym from 'react-yandex-metrika';
 
-const JumpToMap = () => (
-  <div className='page--segment'>
-    <div className='page--content'>
-      <p>
-        <FormattedMessage id='home.description' />
-      </p>
-      <a className='decorless' href='https://maps.chronist.ru/'>
-        <button>
-          <FormattedMessage id='home.description.button' />
-        </button>
-      </a>
-    </div>
-  </div>
-);
+class JumpToMap extends React.Component {
+  handleClick(e) {
+    ym('reachGoal', 'jumpToMap');
+  }
+
+  render() {
+    return (
+      <div className='page--segment'>
+        <div className='page--content'>
+          <p>
+            <FormattedMessage id='home.description' />
+          </p>
+          <a className='decorless' href='https://maps.chronist.ru/' onClick={e => this.handleClick(e)}>
+            <button>
+              <FormattedMessage id='home.description.button' />
+            </button>
+          </a>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default JumpToMap;
