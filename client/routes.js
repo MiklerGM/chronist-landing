@@ -61,7 +61,7 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
           <Route
             key={`/blog/${url}`}
             path={`/blog/${url}`}
-            render={() => <ArticlePage data={url} locale={locale} />}
+            render={() => <ArticlePage url={url} locale={locale} />}
           />
         )}
         <Route path='/contact' component={ContactUs} />

@@ -2,38 +2,57 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-
+import marked from 'marked';
+import { loadFront } from 'yaml-front-matter';
 import { distanceInWords } from 'date-fns';
 import ruLoc from 'date-fns/locale/ru';
 import enLoc from 'date-fns/locale/en';
 
-import { lastUrls, reqRU, reqEN } from '../../articles/blogData';
+import { lastUrls, sourceEN, sourceRU } from '../../articles/blogData';
 
-const getHumanDate = (date, locale) => {
-  const lang = (locale === 'ru') ? ruLoc : enLoc;
-  const word = (locale === 'ru') ? 'назад' : 'ago';
-  return `${distanceInWords(new Date(), date, { locale: lang })} ${word}`;
-};
+class ArticlePreviewColumn extends React.Component {
+  state = {
+    post: ''
+  }
 
-const processArticleGallery = (url, id, locale) => {
-  const req = (locale === 'ru') ? reqRU : reqEN;
-  return (
-    <div key={`article_${id}`} className='xlist--item'>
-      <h4> {req(`./${url}.md`).title} </h4>
-      <span className='ArticleDate'>
-        {getHumanDate(req(`./${url}.md`).date, locale)}
-      </span>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: req(`./${url}.md`).__content.slice(0, req(`./${url}.md`).__content.indexOf(' ', 260))
-        }}
-      />
-      <Link to={`/blog/${url}`} className='readmore'>
-        <FormattedMessage id='blog.readmore' />
-      </Link>
-    </div>
-  );
-};
+  componentDidMount() {
+    const source = (this.props.locale === 'ru') ? sourceRU : sourceEN;
+    fetch(source[this.props.url])
+      .then(res => res.text())
+      .then(post => this.setState(state => ({ ...state, post })))
+      .catch(err => console.error(err));
+  }
+
+  getHumanDate(date) {
+    const lang = (this.props.locale === 'ru') ? ruLoc : enLoc;
+    const word = (this.props.locale === 'ru') ? 'назад' : 'ago';
+    return `${distanceInWords(new Date(), date, { locale: lang })} ${word}`;
+  }
+
+  getText = (content) => {
+    const rawMarkup = marked(content, { sanitize: true });
+    const shortMarkup = rawMarkup.slice(0, rawMarkup.indexOf(' ', 260));
+    return { __html: shortMarkup };
+  }
+
+  render() {
+    const post = loadFront(this.state.post);
+    return (
+      <div className='xlist--item'>
+        <h4>
+          {post.title}
+        </h4>
+        <span className='ArticleDate'>
+          {this.getHumanDate(post.date)}
+        </span>
+        <div dangerouslySetInnerHTML={this.getText(post.__content)} />
+        <Link to={`/blog/${this.props.url}`} className='readmore'>
+          <FormattedMessage id='blog.readmore' />
+        </Link>
+      </div>
+    );
+  }
+}
 
 const ArticleGallery = ({ locale }) => (
   <div className='page--segment bg-gray'>
@@ -43,12 +62,17 @@ const ArticleGallery = ({ locale }) => (
           <FormattedMessage id='home.lastarticles' />
         </h2>
         <div className='xlist'>
-          {lastUrls.map((url, id) => processArticleGallery(url, id, locale))}
+          {lastUrls.map(url => <ArticlePreviewColumn key={url} url={url} locale={locale} />)}
         </div>
       </div>
     </div>
   </div>
 );
+
+ArticlePreviewColumn.propTypes = {
+  locale: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};
 
 ArticleGallery.propTypes = {
   locale: PropTypes.string.isRequired

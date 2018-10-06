@@ -72,6 +72,10 @@ module.exports = {
         use: ['file-loader?name=[name].[ext]']
       },
       {
+        test: /\.md$/,
+        use: ['file-loader?name=[hash].[ext]'],
+      },
+      {
         test: /\.html$/,
         use: 'html-loader'
       },
@@ -82,11 +86,7 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-      },
-      {
-        test: /\.md$/,
-        loader: 'markdown-with-front-matter-loader'
-      },
+      }
     ]
   },
 };

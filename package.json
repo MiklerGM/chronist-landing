@@ -11,6 +11,9 @@
   },
   "license": "copyright",
   "devDependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.1",
@@ -18,11 +21,13 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
+    "jest-enzyme": "^6.1.2",
     "react-devtools": "^3.4.0",
     "stylelint": "^9.5.0",
     "webpack-bundle-analyzer": "^3.0.2"
   },
   "dependencies": {
+    "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.0",
@@ -35,9 +40,9 @@
     "@babel/runtime": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "axios": "^0.18.0",
-    "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
-    "babel-loader": "^8.0.2",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.0-beta.6",
     "clean": "^4.0.2",
     "css-loader": "^1.0.0",
     "date-fns": "^1.29.0",
@@ -48,7 +53,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
-    "markdown-with-front-matter-loader": "^0.1.0",
+    "marked": "^0.5.1",
     "mini-css-extract-plugin": "^0.4.3",
     "npm": "^6.4.1",
     "path": "^0.12.7",
@@ -65,6 +70,7 @@
     "react-intl": "^2.6.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.5.2",
     "react-yandex-metrika": "^2.4.2",
     "rimraf": "^2.6.2",
     "run": "^1.4.0",
@@ -74,7 +80,8 @@
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "yaml-front-matter": "^4.0.0"
   },
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.dev.js",
@@ -82,7 +89,7 @@
     "build:client": "webpack --config ./webpack.config.client.js",
     "build:server": "webpack --config ./webpack.config.server.js",
     "server": "node dist/server.js",
-    "test": "jest",
+    "test": "jest --config ./jest.config.js",
     "release": "rimraf dist && webpack --config ./webpack.config.prod.js",
     "clean": "rimraf dist node_modules"
   }
