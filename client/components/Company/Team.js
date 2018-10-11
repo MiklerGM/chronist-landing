@@ -8,9 +8,11 @@ import dataEN from './data/TeamDataEN';
 
 const Person = ({ person }) => (
   <div className='person--data'>
-    <img src={person.img} alt='person image' />
+    <img src={person.img} alt={person.name} />
     <p>
-      <strong> {person.name} </strong>
+      <strong>
+        {person.name}
+      </strong>
       <br />
       {person.position}
       <br />
@@ -23,7 +25,7 @@ const Person = ({ person }) => (
 class Team extends React.Component {
   render() {
     let data = {};
-    if ( this.props.locale === 'ru') {
+    if (this.props.locale === 'ru') {
       data = dataRU;
     } else {
       data = dataEN;

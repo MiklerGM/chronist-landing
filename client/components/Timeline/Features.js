@@ -12,9 +12,9 @@ class Feature extends React.Component {
   render() {
     return (
       <div
+        className='feature__img'
         onClick={() => this.props.change(this.props.data.id)}
         onMouseOver={() => this.props.change(this.props.data.id)}
-        className='feature__img'
       >
         <img
           src={this.props.data.img}
@@ -58,7 +58,7 @@ class Features extends React.Component {
     super(props);
     this.state = {
       id: 0,
-      direction: 'left'
+      // direction: 'left'
     };
   }
 
@@ -71,23 +71,20 @@ class Features extends React.Component {
   }
 
   next() {
-    const nextSlide = this.state.id + 1 < featureListEN.length ? this.state.id + 1 : 0;
-    this.setState({ id: nextSlide, direction: 'right' });
+    this.setState(state => ({
+      id: (state.id + 1 < featureListEN.length) ? state.id + 1 : 0
+    }));
   }
 
   prev() {
-    const prevSlide = this.state.id - 1 < 0 ? featureListEN.length -1 : this.state.id - 1;
-    this.setState({ id: prevSlide, direction: 'left' });
+    this.setState(state => ({
+      id: (this.state.id - 1 < 0) ? featureListEN.length - 1 : this.state.id - 1
+      // direction:  'left'
+    }));
   }
 
   render() {
-    let featureList = {};
-    if (this.props.locale === 'ru') {
-      featureList = featureListRU;
-    } else {
-      featureList = featureListEN;
-    }
-
+    const featureList = (this.props.locale === 'ru') ? featureListRU : featureListEN;
     return (
       <div className='page--segment'>
         <div className='page--content'>
@@ -102,12 +99,14 @@ class Features extends React.Component {
               featureList={featureList}
             />
             <div className='feature__wrapper'>
-              {featureList.map((feature, id) => <Feature
-                data={feature}
-                key={feature}
-                id={id}
-                change={v => this.changeId(v)}
-              />)}
+              {featureList.map((feature, id) => (
+                <Feature
+                  data={feature}
+                  key={feature.name}
+                  id={id}
+                  change={v => this.changeId(v)}
+                />))
+              }
             </div>
           </div>
         </div>
@@ -122,7 +121,7 @@ Features.propTypes = {
 
 Preview.propTypes = {
   id: PropTypes.number.isRequired,
-  featureList: PropTypes.object.isRequired
+  featureList: PropTypes.array.isRequired
 };
 
 Feature.propTypes = {

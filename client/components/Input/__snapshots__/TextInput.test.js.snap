@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput Snapshot 1`] = `
+<div
+  className="input--cell"
+>
+  <input
+    className=""
+    maxLength="80"
+    onChange={[Function]}
+    onInvalid={[Function]}
+    placeholder="Электронная почта"
+    required={true}
+    type="text"
+    value=""
+  />
+  <span
+    className="invalid-message__hidden"
+    style={
+      Object {
+        "gridRow": "2 / 3",
+      }
+    }
+  >
+    <span>
+      Необходимо ввести текст
+    </span>
+  </span>
+</div>
+`;

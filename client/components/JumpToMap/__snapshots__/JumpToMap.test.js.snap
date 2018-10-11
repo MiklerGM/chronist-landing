@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`JumpToMap Snapshot 1`] = `
+<div
+  className="page--segment"
+>
+  <div
+    className="page--content"
+  >
+    <p>
+      <span>
+        Хронист - сервис для самостоятельного изучения исторической географии. Мы используем данные открытых источников и не претендуем на абсолютную историческую точность, но очень стремимся к ней. Помимо карты мира как основного проекта мы занимаемся интерактивными курсами и визуализациями.
+      </span>
+    </p>
+    <a
+      className="decorless"
+      href="https://maps.chronist.ru/"
+      onClick={[Function]}
+    >
+      <button>
+        <span>
+          Карта мира
+        </span>
+      </button>
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MailInput Snapshot 1`] = `
+<div
+  className="input--cell"
+>
+  <input
+    className=""
+    onChange={[Function]}
+    onInvalid={[Function]}
+    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-z]{2,4}$"
+    placeholder="Электронная почта"
+    required={true}
+    size="25"
+    style={
+      Object {
+        "gridRow": "1 / 2",
+      }
+    }
+    type="email"
+    value=""
+  />
+  <span
+    className="invalid-message__hidden"
+    style={
+      Object {
+        "gridRow": "2 / 3",
+      }
+    }
+  >
+    <span>
+      Неверный формат адреса электронной почты
+    </span>
+  </span>
+</div>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CookieMan Snapshot 1`] = `
+<div
+  className="cookie-message"
+>
+  <div
+    className="page--content"
+  >
+    <p>
+      <span
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Мы используем cookies и метрику <a href='https://yandex.ru/support/metrika/general/notification.html'>Яндекс</a> и <a href='https://policies.google.com/technologies/partner-sites?hl=ru'>Google</a>",
+          }
+        }
+      />
+    </p>
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#fafafa",
+          "color": "black",
+        }
+      }
+    >
+      <span>
+        Согласен
+      </span>
+    </button>
+  </div>
+</div>
+`;

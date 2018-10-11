@@ -8,12 +8,7 @@ const TitleImageRu = require('./logo-grey-ru.svg');
 const TitleImageEn = require('./logo-grey-en.svg');
 
 const Title = ({ locale }) => {
-  let TitleImage = {};
-  if (locale === 'ru') {
-    TitleImage = TitleImageRu;
-  } else {
-    TitleImage = TitleImageEn;
-  }
+  const TitleImage = (locale === 'ru') ? TitleImageRu : TitleImageEn;
   return (
     <div id="title">
       <div className='text-center'>

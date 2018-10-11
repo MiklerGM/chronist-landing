@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  NavLink, withRouter
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import LocaleWidget from '../Footer/LocaleWidget';
@@ -80,4 +78,4 @@ Navigation.propTypes = {
   onChangeLanguage: PropTypes.func.isRequired
 };
 
-export default withRouter(Navigation);
+export default Navigation;

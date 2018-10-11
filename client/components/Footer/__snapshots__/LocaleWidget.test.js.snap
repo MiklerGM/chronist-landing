@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<p>
+  <button
+    className="decorless locale--toggle"
+    onClick={[Function]}
+    style={null}
+  >
+    English
+  </button>
+  |
+  <button
+    className="decorless locale--toggle"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#ffffff",
+      }
+    }
+  >
+    Русский
+  </button>
+</p>
+`;

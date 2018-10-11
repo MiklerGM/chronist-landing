@@ -65,7 +65,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: ['url-loader?limit=4096&name=[name].[ext]']
+        use: ['url-loader&name=[name].[ext]']
       },
       {
         test: /\.ico$/,
@@ -81,11 +81,11 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        loader: 'url-loader?limit=100000&name=[name].[ext]'
+        loader: 'url-loader&name=[name].[ext]'
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+        loader: 'url-loader&mimetype=image/svg+xml'
       }
     ]
   },

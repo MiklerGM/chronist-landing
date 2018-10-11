@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Company Snapshot 1`] = `
+<div
+  className="page"
+>
+  <h1
+    className="page--title"
+  >
+    Команда
+  </h1>
+  <div
+    className="page--segment"
+    id="team"
+  >
+    <div
+      className="page--content"
+    >
+      <h2
+        className="invert"
+      >
+        <span>
+          Наша команда
+        </span>
+      </h2>
+      <div
+        className="person--list"
+      >
+        <div
+          className="person--data"
+        >
+          <img
+            alt="Daniil"
+            src="test-file-stub"
+          />
+          <p>
+            <strong>
+              Daniil
+            </strong>
+            <br />
+            Data Engineering
+            <br />
+            <a
+              href="mailto://data@chronist.ru"
+            >
+              data@chronist.ru
+            </a>
+          </p>
+          <br />
+        </div>
+        <div
+          className="person--data"
+        >
+          <img
+            alt="Alisa"
+            src="test-file-stub"
+          />
+          <p>
+            <strong>
+              Alisa
+            </strong>
+            <br />
+            Product Owner
+            <br />
+            <a
+              href="mailto://idea@chronist.ru"
+            >
+              idea@chronist.ru
+            </a>
+          </p>
+          <br />
+        </div>
+        <div
+          className="person--data"
+        >
+          <img
+            alt="Michael"
+            src="test-file-stub"
+          />
+          <p>
+            <strong>
+              Michael
+            </strong>
+            <br />
+            Software Engineering
+            <br />
+            <a
+              href="mailto://code@chronist.ru"
+            >
+              code@chronist.ru
+            </a>
+          </p>
+          <br />
+        </div>
+        <div
+          className="person--data"
+        >
+          <img
+            alt="Valeria"
+            src="test-file-stub"
+          />
+          <p>
+            <strong>
+              Valeria
+            </strong>
+            <br />
+            Visual Design
+            <br />
+            <a
+              href="mailto://"
+            >
+              
+            </a>
+          </p>
+          <br />
+        </div>
+        <div
+          className="person--data"
+        >
+          <img
+            alt="Dmitry"
+            src="test-file-stub"
+          />
+          <p>
+            <strong>
+              Dmitry
+            </strong>
+            <br />
+            Frontend Engineering
+            <br />
+            <a
+              href="mailto://"
+            >
+              
+            </a>
+          </p>
+          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

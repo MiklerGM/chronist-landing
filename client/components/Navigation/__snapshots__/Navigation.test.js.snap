@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Snapshot 1`] = `
+<div
+  className="row"
+  id="Navigation"
+>
+  <div
+    className="container-fluid"
+  >
+    <nav>
+      <ul
+        className="nav--list hidden"
+      >
+        <li
+          className="nav--item"
+        >
+          <a
+            aria-current="page"
+            className="active"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <span>
+              Хронист
+            </span>
+          </a>
+        </li>
+        <li
+          className="nav--item"
+        >
+          <a
+            href="https://maps.chronist.ru/"
+          >
+            <span>
+              Карта
+            </span>
+          </a>
+        </li>
+        <li
+          className="nav--item"
+        >
+          <a
+            onClick={[Function]}
+          >
+            EN
+          </a>
+        </li>
+        <li
+          className="nav--item"
+        >
+          <a
+            aria-current={null}
+            href="/blog"
+            onClick={[Function]}
+          >
+            <span>
+              Блог
+            </span>
+          </a>
+        </li>
+        <li
+          className="nav--item"
+        >
+          <a
+            href="https://vk.com/chronist"
+          >
+             VK 
+          </a>
+        </li>
+        <li
+          className="nav--item"
+        >
+          <a
+            aria-current={null}
+            href="/faq"
+            onClick={[Function]}
+          >
+            FAQ
+          </a>
+        </li>
+      </ul>
+      <button
+        className="icon"
+        onClick={[Function]}
+      >
+        <i
+          className="fa icon-menu"
+        />
+      </button>
+    </nav>
+  </div>
+</div>
+`;

@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subscribe Snapshot 1`] = `
+<div
+  className="page--segment text-center bg-gray"
+>
+  <div
+    className="page--content"
+  >
+    <p>
+      <span>
+        Чтобы быть в курсе наших обновлений - подпишитесь на рассылку или участвуйте в наших сообществах в соцсетях.
+      </span>
+    </p>
+    <div
+      className="join-us"
+    >
+      <div>
+        <form
+          action="/shared/subscribe"
+          className="subscribe input-group"
+          method="POST"
+          onSubmit={[Function]}
+        >
+          <div
+            className="input--cell"
+          >
+            <input
+              className=""
+              onChange={[Function]}
+              onInvalid={[Function]}
+              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-z]{2,4}$"
+              placeholder="Электронная почта"
+              required={true}
+              size="25"
+              style={
+                Object {
+                  "gridRow": "1 / 2",
+                }
+              }
+              type="email"
+              value=""
+            />
+            <span
+              className="invalid-message__hidden"
+              style={
+                Object {
+                  "gridRow": "2 / 3",
+                }
+              }
+            >
+              <span>
+                Неверный формат адреса электронной почты
+              </span>
+            </span>
+          </div>
+          <button
+            className="red"
+            type="submit"
+          >
+            <span>
+              Подписаться
+            </span>
+          </button>
+        </form>
+      </div>
+      <div
+        className="social--button"
+      >
+        <a
+          alt="Вконтакте"
+          className="decorless"
+          href="https://vk.com/chronist"
+        >
+          <button
+            className="vk"
+            type="button"
+          >
+            <i
+              aria-hidden="true"
+              className="icon-vkontakte"
+            />
+            <span>
+              ВКонтакте
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+    <div
+      className="fa icon-cancel"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+       
+      <span>
+        Произошла ошибка
+      </span>
+    </div>
+  </div>
+</div>
+`;

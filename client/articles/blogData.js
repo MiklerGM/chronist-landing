@@ -24,4 +24,6 @@ reqEN.keys().reverse().forEach((fileName, id) => {
   newUrls[id] = fileName;
 });
 
-export { urls, lastUrls, sourceEN, sourceRU };
+export {
+  urls, lastUrls, sourceEN, sourceRU
+};

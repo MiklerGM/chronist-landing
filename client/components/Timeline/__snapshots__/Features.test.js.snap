@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Features Snapshot 1`] = `
+<div
+  className="page--segment"
+>
+  <div
+    className="page--content"
+  >
+    <h2>
+      <span>
+        Функционал
+      </span>
+    </h2>
+    <div
+      className="feature__container"
+    >
+      <div
+        className="feature__preview"
+      >
+        <div
+          className="feature__map"
+        >
+          <img
+            alt="Политические границы"
+            className="feature__over"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature--description"
+        >
+          <p>
+            <strong>
+              Политические границы
+            </strong>
+          </p>
+          <p>
+            Изменения политических границ от античности до наших дней
+          </p>
+        </div>
+      </div>
+      <div
+        className="feature__wrapper"
+      >
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Политические границы"
+            className="img-responsive img-feature "
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Изобретения"
+            className="img-responsive img-feature "
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Исследование данных"
+            className="img-responsive img-feature "
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Экспорт данных"
+            className="img-responsive img-feature "
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Личные сценарии"
+            className="img-responsive img-feature "
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Войны"
+            className="img-responsive img-feature inactive"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Население"
+            className="img-responsive img-feature inactive"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Религии"
+            className="img-responsive img-feature inactive"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Языки"
+            className="img-responsive img-feature inactive"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Нации"
+            className="img-responsive img-feature inactive"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Катастрофы"
+            className="img-responsive img-feature inactive"
+            src="test-file-stub"
+          />
+        </div>
+        <div
+          className="feature__img"
+          onClick={[Function]}
+          onMouseOver={[Function]}
+        >
+          <img
+            alt="Экспедиции"
+            className="img-responsive img-feature inactive"
+            src="test-file-stub"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

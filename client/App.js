@@ -9,6 +9,7 @@ import ru from 'react-intl/locale-data/ru';
 import en from 'react-intl/locale-data/en';
 
 import AppRouter from './routes';
+import IntlWrapper from './IntlWrapper';
 import localeDataRU from './locales/ru.json';
 import localeDataEN from './locales/en.json';
 
@@ -55,7 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <YMInitializer accounts={[42857239]} options={YM_CONFIG}>
-        <IntlProvider
+        <IntlWrapper
           locale={this.state.locale}
           key={this.state.locale}
           messages={this.state.messages}
@@ -66,7 +67,7 @@ class App extends React.Component {
               locale={this.state.locale}
             />
           </Router>
-        </IntlProvider>
+        </IntlWrapper>
       </YMInitializer>
     );
   }

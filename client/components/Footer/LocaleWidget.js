@@ -26,10 +26,12 @@ class LocaleWidget extends React.Component {
           <button
             onClick={() => this.changeToEn()}
             className='decorless locale--toggle'
-            style={(this.props.locale === 'en') ? { color: '#ffffff'} : null}
+            style={(this.props.locale === 'en') ? { color: '#ffffff' } : null}
           >
             English
-          </button> | <button
+          </button>
+          { '|' }
+          <button
             onClick={() => this.changeToRu()}
             className='decorless locale--toggle'
             style={(this.props.locale === 'ru') ? { color: '#ffffff' } : null}
@@ -38,16 +40,15 @@ class LocaleWidget extends React.Component {
           </button>
         </p>
       );
-    } else {
-      return (
-        <a
-          onClick={() => this.toggleLocale()}
-          // className='decorless'
-        >
-          {this.props.locale === 'en' ? 'RU' : 'EN'}
-        </a>
-      );
     }
+    return (
+      <a
+        onClick={() => this.toggleLocale()}
+        // className='decorless'
+      >
+        {this.props.locale === 'en' ? 'RU' : 'EN'}
+      </a>
+    );
   }
 }
 

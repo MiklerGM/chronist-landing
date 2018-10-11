@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextareaInput Snapshot 1`] = `
+<div
+  className="input--cell"
+>
+  <textarea
+    className=""
+    maxLength="2000"
+    onChange={[Function]}
+    onInvalid={[Function]}
+    placeholder="Электронная почта"
+    required={true}
+    rows="8"
+    type="text"
+    value=""
+  />
+  <span
+    className="invalid-message__hidden"
+    style={
+      Object {
+        "gridRow": "2 / 3",
+      }
+    }
+  >
+    <span>
+      Необходимо ввести сообщение
+    </span>
+  </span>
+</div>
+`;

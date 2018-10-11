@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Snapshot 1`] = `
+<footer
+  id="footer"
+>
+  <div
+    className="page--content"
+  >
+    <p>
+      <a
+        href="/privacy"
+        onClick={[Function]}
+      >
+        <span>
+          Политика конфиденциальности
+        </span>
+      </a>
+    </p>
+    <p>
+      <a
+        href="/legal"
+        onClick={[Function]}
+      >
+        <span>
+           Правила пользования сервисом
+        </span>
+      </a>
+    </p>
+    <p
+      className="social"
+    >
+      <a
+        href="/contact"
+        onClick={[Function]}
+      >
+        <span>
+          Свяжитесь с нами
+        </span>
+      </a>
+    </p>
+    <p>
+      <button
+        className="decorless locale--toggle"
+        onClick={[Function]}
+        style={
+          Object {
+            "color": "#ffffff",
+          }
+        }
+      >
+        English
+      </button>
+      |
+      <button
+        className="decorless locale--toggle"
+        onClick={[Function]}
+        style={null}
+      >
+        Русский
+      </button>
+    </p>
+  </div>
+</footer>
+`;
