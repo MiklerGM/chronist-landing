@@ -1,15 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
   devtool: 'eval',
-  entry: {
-    client: path.resolve(__dirname, 'client'),
-    vendor: ['react', 'react-dom'],
-  },
+  entry: './client/index.js',
   output: {
     filename: '[name].bundle-[hash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -22,6 +18,22 @@ module.exports = {
   optimization: {
     noEmitOnErrors: true,
     nodeEnv: 'production',
+    splitChunks: {
+      chunks: 'async',
+      maxAsyncRequests: 3,
+      maxInitialRequests: 3,
+      name: true,
+      automaticNameDelimiter: '.',
+      cacheGroups: {
+        node_vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'initial',
+          maxSize: 1000000,
+          minSize: 300000,
+          priority: 1
+        }
+      },
+    }
   },
   stats: {
     assets: true,
@@ -65,7 +77,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif)$/,
-        use: ['url-loader&name=[name].[ext]']
+        use: 'url-loader'
       },
       {
         test: /\.ico$/,
@@ -81,11 +93,11 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|ttf|eot)$/,
-        loader: 'url-loader&name=[name].[ext]'
+        use: 'url-loader'
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader&mimetype=image/svg+xml'
+        use: 'url-loader'
       }
     ]
   },

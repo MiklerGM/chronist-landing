@@ -62,13 +62,9 @@ module.exports = {
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
       },
       {
-        test: /\.(mp4|m4v)$/,
-        loader: 'file-loader'
-      },
-      {
         test: /\.md$/,
         use: ['file-loader?name=[hash].[ext]'],
-      }
+      },
     ]
   }
 };
