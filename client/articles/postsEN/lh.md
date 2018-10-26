@@ -1,0 +1,13 @@
+---
+	
+title: Linguistic map
+	
+date: 2018-10-26
+	
+author: Alice
+	
+contact: idea@chronist.ru
+	
+---
+	
+As a result of joined forces with the new type of language school that promotes self-learning Language Heroes we created a small side project a month ago. Visit https://lh.chron.ist to extend your knowledge of languages.a
