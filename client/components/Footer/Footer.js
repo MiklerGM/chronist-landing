@@ -24,6 +24,11 @@ const Footer = ({ onChangeLanguage, locale }) => (
           <FormattedMessage id='footer.contact' />
         </Link>
       </p>
+      <p className='social'>
+        <Link to="/license">
+          <FormattedMessage id='footer.license' />
+        </Link>
+      </p>
       <LocaleWidget onChangeLanguage={onChangeLanguage} locale={locale} />
     </div>
   </footer>

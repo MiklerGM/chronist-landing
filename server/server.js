@@ -35,8 +35,8 @@ app.use((req, res) => {
   const head = Helmet.rewind();
 
   const html = index
-      .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
-      .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${head.meta.toString()}${head.title.toString()}`);
+    .replace(/<div id="app"><\/div>/, `<div id="app">${body}</div>`)
+    .replace(/<title>Хронист<\/title>/, `<title>Хронист</title>${head.meta.toString()}${head.title.toString()}`);
 
   if (context.url) {
     res.writeHead(301, { Location: context.url });

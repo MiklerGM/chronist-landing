@@ -14,13 +14,13 @@ import Faq from './pages/Faq';
 import NotFound from './pages/ErrorPages/404';
 import Blog from './pages/Blog';
 import ArticlePage from './pages/ArticlePage';
+import License from './pages/License';
 // import About from './components/About';
 
 // components
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import CookieManager from './components/CookieMan';
-import Modal from './components/Survey/Modal';
 
 import { urls } from './articles/blogData';
 
@@ -52,21 +52,21 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
       <Switch>
         <Route exact path='/' render={() => <Home locale={locale} />} />
         <Route path='/faq' render={() => <Faq locale={locale} />} />
-        <Route exact path='/survey' component={Modal} />
         {/*
           <Route path='/blog' render={() => <Blog locale={locale} />} />
         */}
         <Route exact path='/blog' render={() => <Blog locale={locale} />} />
-        {urls.map(url =>
+        {urls.map(url => (
           <Route
             key={`/blog/${url}`}
             path={`/blog/${url}`}
             render={() => <ArticlePage url={url} locale={locale} />}
-          />
-        )}
+          />))
+        }
         <Route path='/contact' component={ContactUs} />
         <Route path='/legal' component={Legal} />
         <Route path='/privacy' component={Privacy} />
+        <Route path='/license' component={License} />
         <Route render={NotFound} />
       </Switch>
     </div>
