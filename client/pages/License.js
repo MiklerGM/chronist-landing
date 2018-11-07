@@ -32,9 +32,9 @@ class License extends Component {
               id='license.title'
             />
           </h1>
-          <p className='ArticleContent'>
+          <div className='ArticleContent'>
             <FormattedHTMLMessage id='license.text' />
-          </p>
+          </div>
           <div
             className='ArticleContent'
             dangerouslySetInnerHTML={this.getText()}
