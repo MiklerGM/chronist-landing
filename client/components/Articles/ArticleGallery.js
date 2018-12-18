@@ -62,7 +62,9 @@ const ArticleGallery = ({ locale }) => (
           <FormattedMessage id='home.lastarticles' />
         </h2>
         <div className='xlist'>
-          {lastUrls.map(url => <ArticlePreviewColumn key={url} url={url} locale={locale} />)}
+          {lastUrls.reverse().map(url => (
+            <ArticlePreviewColumn key={url} url={url} locale={locale} />
+          ))}
         </div>
       </div>
     </div>

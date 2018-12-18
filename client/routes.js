@@ -48,7 +48,7 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
     />
     <Navigation onChangeLanguage={onChangeLanguage} locale={locale} />
     <Wrapper />
-    <div className='wrapper'>
+    <main>
       <Switch>
         <Route exact path='/' render={() => <Home locale={locale} />} />
         <Route path='/faq' render={() => <Faq locale={locale} />} />
@@ -69,7 +69,7 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
         <Route path='/license' component={License} />
         <Route render={NotFound} />
       </Switch>
-    </div>
+    </main>
     <Footer onChangeLanguage={onChangeLanguage} locale={locale} />
     <CookieManager />
   </div>

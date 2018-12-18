@@ -7,59 +7,49 @@ import LocaleWidget from '../Footer/LocaleWidget';
 import './Navigation.less';
 
 class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      nav: 'nav--list',
-    };
+  state = {
+    isOpen: false,
   }
 
   toggle(e) {
     e.preventDefault();
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState(state => ({ isOpen: !state.isOpen }));
   }
 
   render() {
-    if (!this.state.isOpen) {
-      this.state.nav = 'nav--list hidden';
-    } else {
-      this.state.nav = 'nav--list';
-    }
-
     return (
       <div id="Navigation" className='row'>
         <div className="container-fluid">
           <nav>
-            <ul className={this.state.nav}>
-              <li className='nav--item'>
+            <ul className={this.state.isOpen ? 'hidden' : ''}>
+              <li>
                 <NavLink exact activeClassName='active' to="/">
                   <FormattedMessage id='nav.main' />
                 </NavLink>
               </li>
-              <li className='nav--item'>
+              <li>
                 <a href='https://maps.chronist.ru/'>
                   <FormattedMessage id='nav.map' />
                 </a>
               </li>
-              <li className='nav--item'>
+              <li>
                 <LocaleWidget
                   onChangeLanguage={this.props.onChangeLanguage}
                   min={true}
                   locale={this.props.locale}
                 />
               </li>
-              <li className='nav--item'>
+              <li>
                 <NavLink activeClassName='active' to="/blog">
                   <FormattedMessage
                     id='nav.blog'
                   />
                 </NavLink>
               </li>
-              <li className='nav--item'>
+              <li>
                 <a href="https://vk.com/chronist"> VK </a>
               </li>
-              <li className='nav--item'>
+              <li>
                 <NavLink activeClassName='active' to="/faq">FAQ</NavLink>
               </li>
             </ul>
