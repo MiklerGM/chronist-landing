@@ -7,7 +7,8 @@ module.exports = {
   devtool: 'eval',
   entry: './client/index.js',
   output: {
-    filename: '[name].bundle-[hash].js',
+    filename: '[name].[hash:6].js',
+    chunkFilename: '[name].[hash:6].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
@@ -25,7 +26,7 @@ module.exports = {
       name: true,
       automaticNameDelimiter: '.',
       cacheGroups: {
-        node_vendors: {
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
           chunks: 'initial',
           maxSize: 1000000,

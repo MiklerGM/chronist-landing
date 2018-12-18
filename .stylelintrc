@@ -30,6 +30,6 @@
     "selector-type-no-unknown": true,
     "string-no-newline": true,
     "unit-no-unknown": true,
-    "unit-whitelist": ["rem", "%", "ms", "fr", "vh"]
+    "unit-whitelist": ["rem", "%", "px", "ms", "fr", "vh"]
   }
 }

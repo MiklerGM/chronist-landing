@@ -1,4 +1,3 @@
-
 LANDING PAGE
 ========
 
@@ -23,17 +22,21 @@ LANDING PAGE
 -----------
 
   - [ ] alternative analytics [Fathom](https://github.com/usefathom/fathom)
-  - [ ] remove withrouter
-  - [ ] split-coding for  blog. (look at gatsby.(look readme. fetch md and parse on client in json))
   - [ ] Выбор языка для crawler. Сделать индексацию для поисковых ботов на разных языках.
   - [ ] Newsletter Unsubscribing
-  - [ ] кнопку переход на блог (когда будет больше статей)?, из текста блога назад,Breadcrumb ?
   - [ ] https://developer.mozilla.org/en-US/docs/Web/Manifest . manifest.webmanifest
   - [ ] automaitc sitemaps.
   - [ ] caching. cache-contorl
 
 ##Done
 -----------
+  - [x] поменять порядок в блоге в Article Preview
+  - [x] переехать на rem в css
+  - [x] footer baseline for width 840 is fucked
+  - [x] sanitize markup
+  - [x] split-coding for  blog. (look at gatsby.(look readme. fetch md and parse on client in json))
+  - [x] less load for ssr3
+  - [x] remove withrouter
   - [x] Accessibility improvments. #10, подсказки на ссылочках, alt аттрибут
   - [x] hreflang. React-Router-Intl integration with non-broken SSR
   - [x] Forms
@@ -89,13 +92,13 @@ LANDING PAGE
   - [x] text
   - [x] other shadows
   - [x] cleaning
-  - [x]	Верхняя панель со ссылками (статьи, блог, таймлайн фич, скрины/видео, "войти" со ссылкой на демку, группы в соцсетях) и лого.
-  - [x]	Header картинкой
-  - [x]	Вступительный текст
-  - [x]	Форма обратной связи
-  - [x]	Таймлайн фич (картинка-описание-дата внедрения). Внедрённые фичи цветные, не внедрённые - серые. Counter количества данных
-  - [x]	Footer (position: fixed, полупрозрачный, с кнопкой "войти")
-  - [x]	PS правый вариант картинки, скорее всего
+  - [x] Верхняя панель со ссылками (статьи, блог, таймлайн фич, скрины/видео, "войти" со ссылкой на демку, группы в соцсетях) и лого.
+  - [x] Header картинкой
+  - [x] Вступительный текст
+  - [x] Форма обратной связи
+  - [x] Таймлайн фич (картинка-описание-дата внедрения). Внедрённые фичи цветные, не внедрённые - серые. Counter количества данных
+  - [x] Footer (position: fixed, полупрозрачный, с кнопкой "войти")
+  - [x] PS правый вариант картинки, скорее всего
   - [x] оверлеем прозрачную навигацию
   - [x] кадрирование сделай не по руки а по плечи
   - [x] кнопка на картинке в хедере одна, "войти"
@@ -117,169 +120,15 @@ LANDING PAGE
 ##Failed
 -------
 
+  - [o] кнопку переход на блог (когда будет больше статей)?, из текста блога назад,Breadcrumb #DONTFIX: there is one step from everywhere.
   - [o] Migrate form front-matter-markdown to react-markdown + react-markdown-loader like gatsby {transformImageUri} - imposible. need graphql backend stuff.
   - [o] +shadows эффект поднятия для гифок например. гифок нет больше
 
-
-##GUI Guidlines
----------------
-If you have some experience designing an iOS App, you’ll be familiar with the minimum sizes for typography (24px+, optimal for reading: 32px), buttons (44px to 88px) and navigation bar (72px to 98px). It’s also in line with Android devices.
-
-Don’t combine an icon and text within one button.
-Choose a button text that is short and meaningful.
-Use imperative verbs for all actions; for example: Save, Cancel, Edit.
-Keep in mind that the text can be up to 300% longer in other languages.
-We don’t recommend using tooltips since they are only visible on desktop devices. However, you can use tooltips for icon buttons.
-For icon buttons, make sure the default accessibility text for the icon is correct for your use case. If not, define app-specific accessibility text.
-If an action button is temporarily inactive, use the disabled status.
-If you need to show the number of items that will be affected by the action of the button, you can add the number in brackets. For example, Edit (3).
-
-[Some conference video about design tricks](https://www.youtube.com/watch?v=ogAZ6JC0pJI&feature=youtu.be&list=PLTdS5E3zupkEiDgztHOUw4kOSM8Qdzo7H)
-
-[Accessability colors video](https://www.youtube.com/watch?v=LBmLspdAtxM&feature=youtu.be)
-
-
-##Make a Blog
---------------
-[Shitty and unrelated examples](https://react.rocks/tag/Blog)
-
-[Make a blog for create-react-app in 10 lines of code](https://www.prerender.cloud/blog/2016/10/20/create-react-app-blog)
-
-[Building A Minimal Blogging Platform with React.js](https://rhodey.org/blog/minimal-blog-platform-react)
-
-[helmet + router + seo](https://github.com/ReactTraining/react-router/issues/790)
-
-[Beginner’s Guide to React Router](https://medium.com/@dabit3/beginner-s-guide-to-react-router-53094349669)
-
-[A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
-
-https://tylermcginnis.com/build-your-own-react-router-v4
-
-https://medium.freecodecamp.com/where-do-i-belong-a-guide-to-saving-react-component-data-in-state-store-static-and-this-c49b335e2a00
-
-https://github.com/xtophs/docker-bash-on-windows
-
-https://github.com/pk1m/Stackoverflow-helpme
-
-##Additional Features
------------------------
-
-[Counting Web Session with JS. Swizek blog](https://swizec.com/blog/counting-web-sessions-javascript/swizec/7598?__s=dugx4qg21suydr72vgrv)
-
-
-## Security
-------------
-
-[dangerouslysetinnerhtml](https://stackoverflow.com/questions/44593485/example-of-bad-react-dangerouslysetinnerhtml)
-
-[Security Checklist](https://simplesecurity.sensedeep.com/web-developer-security-checklist-f2e4f43c9c56)
-
-## Server-side rendering
----------------------------
-
-https://github.com/dimaip/server-side-rendering
-https://medium.com/@apostolos/server-side-rendering-code-splitting-and-hot-reloading-with-react-router-v4-87239cfc172c
-
-[Good Router SRR ](http://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/)
-
-https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89
-
-[universal-react-demo](https://github.com/5tefan/universal-react-demo)
-
-
-## Utilize
-----------
-https://en.bem.info/methodology/
-https://en.bem.info/methodology/quick-start/
-
-[Logos](http://foundedinholland.com/)
-
-https://github.com/quietshu/react-less-boilerplate/tree/master/app
-
-[styled-components v2: A smaller, faster drop-in upgrade with even more features](https://medium.com/styled-components/announcing-v2-f01ef3766ac2)
-
-[examples with css, markdown ssr](https://github.com/webpack/react-starter/blob/307594cc8df815ad7d2adcd6a3b5c78a32388084/app/containers/ReadmePage.jsx)
-
-
-##Tricks
-----------
-// GOOD
-var icon = this.props.active ? require('./my-icon-active.png') : require('./my-icon-inactive.png');
-<Image source={icon} />
-
-
-#GUI Guidlines
-  If you have some experience designing an iOS App, you’ll be familiar with the minimum sizes for typography (24px+, optimal for reading: 32px), buttons (44px to 88px) and navigation bar (72px to 98px). It’s also in line with Android devices.
-
-
-  Guidelines
-Don’t combine an icon and text within one button.
-Choose a button text that is short and meaningful.
-Use imperative verbs for all actions; for example: Save, Cancel, Edit.
-Keep in mind that the text can be up to 300% longer in other languages.
-We don’t recommend using tooltips since they are only visible on desktop devices. However, you can use tooltips for icon buttons.
-For icon buttons, make sure the default accessibility text for the icon is correct for your use case. If not, define app-specific accessibility text.
-If an action button is temporarily inactive, use the disabled status.
-If you need to show the number of items that will be affected by the action of the button, you can add the number in brackets. For example, Edit (3).
-
-https://www.youtube.com/watch?v=ogAZ6JC0pJI&feature=youtu.be&list=PLTdS5E3zupkEiDgztHOUw4kOSM8Qdzo7H
-
-
-
-
-#Win
-[Datasketch](http://www.datasketch.es/march/?utm_source=ActiveCampaign&utm_medium=email&utm_content=BDN+%2371%3A+the+myth+of+superhuman+AI%2C+dataviz+by+Google%2C+a+startup+simulator%2C+and+some+new+Wait+but+Why&utm_campaign=Banana+Data+%2371)
-
-
-#Code Splitting
-
-https://github.com/didierfranc/react-code-splitting
-https://hackernoon.com/straightforward-code-splitting-with-react-and-webpack-4b94c28f6c3f
-https://hackernoon.com/impress-your-friends-with-code-splitting-in-react-9f9a3ca2ae6e
-
-
-
-
-Картиночки:
- - Исследование данных
- - Экспорт данных
- - Личные сценарии
-
-##Performance
-[](https://github.com/you-dont-need/You-Dont-Need-Momentjs)
-
-[Don't load md as js object](https://medium.com/@shawnstern/importing-multiple-markdown-files-into-a-react-component-with-webpack-7548559fce6f)
-
-
 ## Metriks
+-----------
+
 goals:
   localeChangeRu
   localeChangeEn
   cookieAgree
   jumpToMap
-
-
-##Test
-unit
-snapshot
-smoke
-integration ?
-TypeCheking
-
-
-What to Test?
-
-###It must render:
-At the very least, make sure the component renders without error. This verifies there are no JSX syntax errors, that all variables are defined, etc. This could be as simple as verifying that the rendered output is not null.
-
-###Test the output:
-One step above "it renders" is "it renders the correct thing." Given a set of props, what output is expected? Does Person render its name and age, or does it render a name and "TODO: age coming in v2.1"?
-
-###Test the states:
-Every conditional should be accounted for. If the classNames are conditional (e.g. enabled/disabled, success/warning/error, etc.), make sure to test that the className-deciding logic is working well. Likewise for conditionally-rendered children: if the Logout button is only visible when the user is logged in, for instance, make sure to test for that.
-
-###Test the events:
-If the component can be interacted with, e.g. an input or button with an onClick or onChange or onAnything, test that the events work as expected and call the specified functions with the correct arguments, including binding this, if it matters.
-
-###Test the edge cases:
-Anything that operates on an array could have boundary cases — an empty array, an array with 1 element, a paginated list that should truncate at 25 items, and so on. Try out every edge case you can think of, and make sure they all work correctly.

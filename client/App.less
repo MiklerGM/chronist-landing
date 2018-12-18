@@ -1,5 +1,13 @@
 @import "./styles/colors.less";
 
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("./images/back-progressive.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
 a {
   transition: opacity 200ms ease-in-out;
   &:hover {
@@ -156,6 +164,7 @@ a.active {
 
 main {
   min-height: 80vh;
+  background-color: white;
 }
 
 .bg-gray {
@@ -206,7 +215,6 @@ button.main {
     flex-direction: column;
   }
   & input { height: 36px; }
-
   .subscribe {
     display: flex;
     flex-direction: row;

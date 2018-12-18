@@ -18,7 +18,7 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <div id="Navigation" className='row'>
+      <div>
         <div className="container-fluid">
           <nav>
             <ul className={this.state.isOpen ? 'hidden' : ''}>

@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   mode: 'development',
@@ -10,7 +10,8 @@ module.exports = {
     path.resolve(__dirname, 'client'),
   ],
   output: {
-    filename: '[name].js',
+    filename: '[name].[hash:6].js',
+    chunkFilename: '[name].[hash:6].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
@@ -20,39 +21,36 @@ module.exports = {
       'node_modules'
     ]
   },
-  // optimization: {
-  //   nodeEnv: 'development'
-  // },
   optimization: {
-    noEmitOnErrors: true,
-    nodeEnv: 'production',
-    splitChunks: {
-      chunks: 'async',
-      maxAsyncRequests: 3,
-      maxInitialRequests: 3,
-      name: true,
-      automaticNameDelimiter: '.',
-      cacheGroups: {
-        node_vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          chunks: 'initial',
-          maxSize: 1000000,
-          minSize: 300000,
-          priority: 1
-        }
-      },
-    }
+    nodeEnv: 'development'
   },
+  // optimization: {
+  //   noEmitOnErrors: true,
+  //   nodeEnv: 'production',
+  //   splitChunks: {
+  //     chunks: 'async',
+  //     maxAsyncRequests: 3,
+  //     maxInitialRequests: 3,
+  //     name: true,
+  //     automaticNameDelimiter: '.',
+  //     cacheGroups: {
+  //       vendors: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         chunks: 'initial',
+  //         maxSize: 1000000,
+  //         minSize: 300000,
+  //         priority: 1
+  //       }
+  //     },
+  //   }
+  // },
   devServer: {
     historyApiFallback: true,
     inline: true,
     hot: true,
     hotOnly: true,
     compress: true,
-    https: false,
-    proxy: {
-      '/shared': 'http://api:3333/',
-    }
+    https: false
   },
   target: 'web',
   module: {
@@ -102,10 +100,10 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
-    // new BundleAnalyzerPlugin({
-    //   analyzerPort: '3001',
-    //   openAnalyzer: false,
-    // }),
+    new BundleAnalyzerPlugin({
+      analyzerPort: '3001',
+      openAnalyzer: false,
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ]
 };

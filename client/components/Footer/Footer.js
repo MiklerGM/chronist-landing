@@ -7,7 +7,7 @@ import LocaleWidget from './LocaleWidget';
 import './footer.less';
 
 const Footer = ({ onChangeLanguage, locale }) => (
-  <footer id="footer">
+  <footer className='layer-4'>
     <div className='page--content'>
       <p>
         <Link to='/privacy'>
