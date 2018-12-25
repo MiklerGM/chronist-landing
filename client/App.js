@@ -55,7 +55,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <YMInitializer accounts={[42857239]} options={YM_CONFIG}>
+      <YMInitializer accounts={[42857239]} options={YM_CONFIG} version='2'>
         <IntlWrapper
           locale={this.state.locale}
           key={this.state.locale}
