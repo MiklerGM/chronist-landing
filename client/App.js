@@ -22,12 +22,10 @@ import './images/favicon.ico';
 addLocaleData([...en, ...ru]);
 
 const YM_CONFIG = {
-  defer: false,
   clickmap: true,
   trackLinks: true,
-  // accurateTrackBounce: true,
-  // webvisor: true,
-  trackHash: false
+  accurateTrackBounce: true,
+  webvisor: true
 };
 const GA_CONFIG = {
   debug: false,
