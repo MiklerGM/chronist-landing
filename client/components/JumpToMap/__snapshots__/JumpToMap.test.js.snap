@@ -14,7 +14,7 @@ exports[`JumpToMap Snapshot 1`] = `
     </p>
     <a
       className="decorless"
-      href="https://maps.chronist.ru/"
+      href="https://chronmaps.com/"
       onClick={[Function]}
     >
       <button>

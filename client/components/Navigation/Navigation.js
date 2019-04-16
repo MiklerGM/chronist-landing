@@ -28,7 +28,7 @@ class Navigation extends React.Component {
                 </NavLink>
               </li>
               <li>
-                <a href='https://maps.chronist.ru/'>
+                <a href='https://chronmaps.com/'>
                   <FormattedMessage id='nav.map' />
                 </a>
               </li>

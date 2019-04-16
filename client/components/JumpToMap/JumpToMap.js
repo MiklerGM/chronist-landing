@@ -14,7 +14,7 @@ class JumpToMap extends React.Component {
           <p>
             <FormattedMessage id='home.description' />
           </p>
-          <a className='decorless' href='https://maps.chronist.ru/' onClick={() => this.handleClick()}>
+          <a className='decorless' href='https://chronmaps.com/' onClick={() => this.handleClick()}>
             <button>
               <FormattedMessage id='home.description.button' />
             </button>
