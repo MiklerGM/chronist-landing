@@ -56,13 +56,13 @@ const AppRouter = ({ onChangeLanguage, locale }) => (
           <Route path='/blog' render={() => <Blog locale={locale} />} />
         */}
         <Route exact path='/blog' render={() => <Blog locale={locale} />} />
-        {urls.map(url => (
+        {urls.map((url) => (
           <Route
             key={`/blog/${url}`}
             path={`/blog/${url}`}
             render={() => <ArticlePage url={url} locale={locale} />}
-          />))
-        }
+          />
+        ))}
         <Route path='/contact' component={ContactUs} />
         <Route path='/legal' component={Legal} />
         <Route path='/privacy' component={Privacy} />

@@ -43,12 +43,10 @@ class Home extends React.Component {
         <JumpToMap />
         {ArticleGallery
           ? <ArticleGallery locale={this.props.locale} />
-          : <div />
-        }
+          : <div />}
         {Features
           ? <Features locale={this.props.locale} />
-          : <div />
-        }
+          : <div />}
         <Subscribe />
         <AppDescription />
         <Team locale={this.props.locale} />

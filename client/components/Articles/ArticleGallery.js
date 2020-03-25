@@ -16,9 +16,9 @@ class ArticlePreviewColumn extends React.Component {
   componentDidMount() {
     const source = (this.props.locale === 'ru') ? sourceRU : sourceEN;
     fetch(source[this.props.url])
-      .then(res => res.text())
-      .then(post => this.setState(state => ({ ...state, post })))
-      .catch(err => console.error(err));
+      .then((res) => res.text())
+      .then((post) => this.setState((state) => ({ ...state, post })))
+      .catch((err) => console.error(err));
   }
 
   getHumanDate(date) {
@@ -61,7 +61,7 @@ const ArticleGallery = ({ locale }) => (
           <span><FormattedMessage id='home.lastarticles' /></span>
         </h2>
         <div className='xlist'>
-          {lastUrls.map(url => (
+          {lastUrls.map((url) => (
             <ArticlePreviewColumn key={url} url={url} locale={locale} />
           ))}
         </div>

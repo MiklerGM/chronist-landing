@@ -86,6 +86,8 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack.config.dev.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "webpack --config ./webpack.config.client.js",
     "build:server": "webpack --config ./webpack.config.server.js",

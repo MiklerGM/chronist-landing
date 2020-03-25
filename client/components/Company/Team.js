@@ -38,7 +38,7 @@ class Team extends React.Component {
             <span><FormattedMessage id='team.title' /></span>
           </h2>
           <div className='person--list'>
-            {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}
+            {data.map((person) => <Person person={person} key={`personkey_${person.id}`} />)}
           </div>
         </div>
       </div>

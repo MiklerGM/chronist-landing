@@ -145,7 +145,11 @@ const Feature = ({ feature, gkey }) => (
       <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
       <div key={`${gkey}_capt`} className="caption-fix caption text-center ">
         <h5 key={`${gkey}_name`}>{feature.name}</h5>
-        <h6 key={`${gkey}_date`} className="text-muted"> {feature.date} </h6>
+        <h6 key={`${gkey}_date`} className="text-muted">
+          {' '}
+          {feature.date}
+          {' '}
+        </h6>
         <p key={`${gkey}_desc`}>{feature.desc}</p>
       </div>
     </div>
@@ -154,18 +158,17 @@ const Feature = ({ feature, gkey }) => (
 
 const FeatureRow = ({ row, gkey }) => (
   <div key={gkey} className="row row-centered">
-    {row.map(feature => <Feature feature={feature} key={`f_${ids.feature}`} gkey={getId('feature')} />)}
+    {row.map((feature) => <Feature feature={feature} key={`f_${ids.feature}`} gkey={getId('feature')} />)}
   </div>
 );
 
-const processRow = (row) => {
-  return <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />;
-};
+const processRow = (row) => <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />;
 
 class Timeline extends React.Component {
   componentDidMount() {
     ids = { row: 0, feature: 0 };
   }
+
   render() {
     return (
       <div id="timeline" className="row">

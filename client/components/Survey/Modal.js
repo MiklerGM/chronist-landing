@@ -14,7 +14,9 @@ const optionPropTypes = {
   cb: PropTypes.func.isRequired
 };
 
-const Radio = ({ ids, value, data, cb }) => (
+const Radio = ({
+  ids, value, data, cb
+}) => (
   <div className='radio'>
     <label htmlFor={ids.join('r')}>
       <input
@@ -32,20 +34,28 @@ const Radio = ({ ids, value, data, cb }) => (
 );
 Radio.propTypes = optionPropTypes;
 
-const RadioText = ({ ids, value, data, cb }) => (
+const RadioText = ({
+  ids, value, data, cb
+}) => (
   <div>
     <Radio ids={ids} value={value} data={data} cb={cb} />
-    {data.checked === true ?
-      <input type='text' onChange={e => cb(e.target.value, ...ids, 'text')} value={data.text} />
+    {data.checked === true
+      ? <input type='text' onChange={(e) => cb(e.target.value, ...ids, 'text')} value={data.text} />
       : null}
   </div>
 );
 RadioText.propTypes = optionPropTypes;
 
-const TextOption = ({ ids, value, data, cb }) => (
+const TextOption = ({
+  ids, value, data, cb
+}) => (
   <div>
-    <p> {value} </p>
-    <input type='text' onChange={e => cb(e.target.value, ...ids, 'text')} value={data.text} />
+    <p>
+      {' '}
+      {value}
+      {' '}
+    </p>
+    <input type='text' onChange={(e) => cb(e.target.value, ...ids, 'text')} value={data.text} />
   </div>
 );
 TextOption.propTypes = optionPropTypes;
@@ -130,17 +140,21 @@ class Modal extends React.Component {
 
   processQuestion = (data, qid, sid) => (
     <div key={`${sid}_${qid}`}>
-      <p> {data.question} </p>
+      <p>
+        {' '}
+        {data.question}
+        {' '}
+      </p>
       {data.options.map((cur, id) => this.processOptions(cur, id, qid, sid))}
       {data.noSeparator !== true && <hr />}
     </div>
   );
 
-  printForm = sid => (
-    <form key={`${sid}_form`} onSubmit={e => this.handleFormSubmit(e, sid)}>
+  printForm = (sid) => (
+    <form key={`${sid}_form`} onSubmit={(e) => this.handleFormSubmit(e, sid)}>
       {this.props.surveys[sid].survey.map(
-        (cur, curId) => this.processQuestion(cur, curId, sid))
-      }
+        (cur, curId) => this.processQuestion(cur, curId, sid)
+      )}
       <button className="btn btn-default text-right" type="submit"> Отправить </button>
     </form>
   )
@@ -153,9 +167,10 @@ class Modal extends React.Component {
             <h4 className="modal-title pul5l-left">Опрос</h4>
           </div>
           <div className='modal-body'>
-            <p>Нам важно, чтобы вы оценили свой опыт от использования сервиса.
-               Пожалуйста, после тестирования заполните небольшую анкету,
-               которая сделает продукт лучше.
+            <p>
+              Нам важно, чтобы вы оценили свой опыт от использования сервиса.
+              Пожалуйста, после тестирования заполните небольшую анкету,
+              которая сделает продукт лучше.
             </p>
             <hr />
             {/* Object.keys(this.props.surveys).map((sid) => {

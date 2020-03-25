@@ -26,7 +26,9 @@ class ContactUs extends React.Component {
       .then((response) => {
         const success = response.status === 200;
         const wipe = success ? { email: '', title: '', text: '' } : {};
-        _this.setState({ ..._this.state, ...wipe, visibile: true, success });
+        _this.setState({
+          ..._this.state, ...wipe, visibile: true, success
+        });
       })
       .catch((error) => {
         _this.setState({ ..._this.state, visibile: true, success: false });
@@ -82,25 +84,25 @@ class ContactUs extends React.Component {
             <form
               method='POST'
               action='/shared/contact'
-              onSubmit={e => this.onSubmit(e)}
+              onSubmit={(e) => this.onSubmit(e)}
             >
               <TextInput
                 value={this.state.data.title}
                 placeholder='contact.placeholder.title'
                 name='title'
-                cb={e => this.handleInput(e)}
+                cb={(e) => this.handleInput(e)}
               />
               <MailInput
                 value={this.state.data.email}
                 name='email'
                 placeholder='contact.placeholder.email'
-                cb={e => this.handleInput(e)}
+                cb={(e) => this.handleInput(e)}
               />
               <TextareaInput
                 value={this.state.data.text}
                 name='text'
                 placeholder='contact.placeholder.message'
-                cb={e => this.handleInput(e)}
+                cb={(e) => this.handleInput(e)}
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', textAlign: 'left' }}>
                 <button type='submit'>Отправить</button>
@@ -112,8 +114,7 @@ class ContactUs extends React.Component {
               >
                 {this.state.success
                   ? <FormattedMessage id='form.success' />
-                  : <FormattedMessage id='form.failure' />
-                }
+                  : <FormattedMessage id='form.failure' />}
               </div>
             </form>
           </div>

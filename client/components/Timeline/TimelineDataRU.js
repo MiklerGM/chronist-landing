@@ -27,7 +27,6 @@ const pic11 = require('./data/preview-accidentmapsimple.png').default;
 const pic12 = require('./data/preview-expeditionmapsimple.png').default;
 
 
-
 const featureList = [
   {
     id: 0,

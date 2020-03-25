@@ -18,9 +18,9 @@ class BlogArticlePreview extends React.Component {
   componentDidMount() {
     const source = (this.props.locale === 'ru') ? sourceRU : sourceEN;
     fetch(source[this.props.url])
-      .then(res => res.text())
-      .then(post => this.setState(state => ({ ...state, post })))
-      .catch(err => console.error(err));
+      .then((res) => res.text())
+      .then((post) => this.setState((state) => ({ ...state, post })))
+      .catch((err) => console.error(err));
   }
 
   getFormattedDate(date) {
@@ -77,7 +77,7 @@ const Blog = ({ locale }) => (
     </h1>
     <div className='page--content'>
       <div className='article--item'>
-        {urls.map(url => <BlogArticlePreview key={`article_${url}`} url={url} locale={locale} />)}
+        {urls.map((url) => <BlogArticlePreview key={`article_${url}`} url={url} locale={locale} />)}
       </div>
     </div>
   </div>

@@ -20,7 +20,7 @@ class TextInput extends React.Component {
     return (
       <div className='input--cell'>
         <FormattedMessage id={this.props.placeholder}>
-          { placeholder =>
+          { (placeholder) => (
             <input
               type='text'
               value={this.props.value}
@@ -28,14 +28,14 @@ class TextInput extends React.Component {
               className={(this.state.valid) ? '' : 'invalid'}
               maxLength='80'
               // pattern='^[a-zA-Zа-яА-я0-9._%+-]'
-              onInvalid={e => this.handleInvalid(e)}
+              onInvalid={(e) => this.handleInvalid(e)}
               onChange={(e) => {
                 this.setState({ valid: true });
                 this.props.cb({ [this.props.name]: e.target.value });
               }}
               required
             />
-          }
+          )}
         </FormattedMessage>
         <span
           style={{ gridRow: '2 / 3' }}

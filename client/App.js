@@ -56,7 +56,7 @@ class App extends React.Component {
         >
           <Router>
             <AppRouter
-              onChangeLanguage={v => this.onChangeLanguage(v)}
+              onChangeLanguage={(v) => this.onChangeLanguage(v)}
               locale={this.state.locale}
             />
           </Router>

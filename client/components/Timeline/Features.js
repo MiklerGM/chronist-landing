@@ -71,13 +71,13 @@ class Features extends React.Component {
   }
 
   next() {
-    this.setState(state => ({
+    this.setState((state) => ({
       id: (state.id + 1 < featureListEN.length) ? state.id + 1 : 0
     }));
   }
 
   prev() {
-    this.setState(state => ({
+    this.setState((state) => ({
       id: (this.state.id - 1 < 0) ? featureListEN.length - 1 : this.state.id - 1
       // direction:  'left'
     }));
@@ -102,9 +102,9 @@ class Features extends React.Component {
                   data={feature}
                   key={feature.name}
                   id={id}
-                  change={v => this.changeId(v)}
-                />))
-              }
+                  change={(v) => this.changeId(v)}
+                />
+              ))}
             </div>
           </div>
         </div>

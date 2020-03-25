@@ -9,7 +9,7 @@ import Footer from './Footer';
 const TestComponent = () => (
   <IntlWrapper>
     <Router>
-      <Footer onChangeLanguage={e => console.log('dump func', e)} locale='en' />
+      <Footer onChangeLanguage={(e) => console.log('dump func', e)} locale='en' />
     </Router>
   </IntlWrapper>
 );

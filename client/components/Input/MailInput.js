@@ -20,7 +20,7 @@ class MailInput extends React.Component {
     return (
       <div className='input--cell'>
         <FormattedMessage id={this.props.placeholder}>
-          { placeholder => (
+          { (placeholder) => (
             <input
               style={{ gridRow: '1 / 2' }}
               type='email'
@@ -28,7 +28,7 @@ class MailInput extends React.Component {
               value={this.props.value}
               size='25'
               pattern='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$'
-              onInvalid={e => this.handleInvalid(e)}
+              onInvalid={(e) => this.handleInvalid(e)}
               placeholder={placeholder}
               required
               onChange={(e) => {

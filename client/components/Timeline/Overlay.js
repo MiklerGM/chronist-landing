@@ -11,9 +11,9 @@ class Slide extends React.Component {
   }
 
   // handleClick() {
-    // VideoControls
-    // this.setState({ isPaused: !this.state.isPaused });
-    // this.state.isPaused ? this.video.play() : this.video.pause();
+  // VideoControls
+  // this.setState({ isPaused: !this.state.isPaused });
+  // this.state.isPaused ? this.video.play() : this.video.pause();
   // }
 
   render() {
@@ -24,7 +24,12 @@ class Slide extends React.Component {
           src={featureList[this.props.slide].pic}
         />
         <div className='item--description'>
-          <p><strong>{featureList[this.props.slide].name} </strong></p>
+          <p>
+            <strong>
+              {featureList[this.props.slide].name}
+              {' '}
+            </strong>
+          </p>
           <p>{featureList[this.props.slide].desc}</p>
         </div>
       </div>
@@ -78,9 +83,8 @@ class ModalOverlay extends React.Component {
           </div>
         </div>
       );
-    } else {
-      return null;
     }
+    return null;
   }
 }
 

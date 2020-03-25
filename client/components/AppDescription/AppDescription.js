@@ -11,7 +11,7 @@ class AppDescription extends React.Component {
   toggle(e) {
     e.preventDefault();
     // this.setState({ show: !this.state.show });
-    this.setState(state => ({ show: !state.show }));
+    this.setState((state) => ({ show: !state.show }));
   }
 
   render() {
@@ -38,7 +38,7 @@ class AppDescription extends React.Component {
             </p>
             { ArticleBegin }
             { ArticleEnd }
-            <button onClick={e => this.toggle(e)} className="pull-right readmore decorless">
+            <button onClick={(e) => this.toggle(e)} className="pull-right readmore decorless">
               <span>{ toggler }</span>
             </button>
           </div>

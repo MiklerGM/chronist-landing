@@ -34,7 +34,9 @@ class Subscribe extends React.Component {
       .then((response) => {
         const success = response.status === 200;
         const wipe = success ? { email: '' } : {};
-        _this.setState({ ..._this.state, ...wipe, visibile: true, success });
+        _this.setState({
+          ..._this.state, ...wipe, visibile: true, success
+        });
       })
       .catch((error) => {
         _this.setState({ ..._this.state, visibile: true, success: false });
@@ -68,13 +70,13 @@ class Subscribe extends React.Component {
                 action='/shared/subscribe'
                 method='POST'
                 className='subscribe input-group'
-                onSubmit={e => this.onSubmit(e)}
+                onSubmit={(e) => this.onSubmit(e)}
               >
                 <MailInput
                   value={this.state.data.email}
                   name='email'
                   placeholder='contact.placeholder.email'
-                  cb={e => this.handleInput(e)}
+                  cb={(e) => this.handleInput(e)}
                 />
                 <button type='submit' className='red'>
                   <span><FormattedMessage id='home.subscribe.button' /></span>

@@ -42,7 +42,7 @@ class AppStatic extends React.Component {
 
   render() {
     return (
-      <YMInitializer accounts={YmId} options={{ defer: true }} >
+      <YMInitializer accounts={YmId} options={{ defer: true }}>
         <IntlProvider
           locale={this.state.locale}
           key={this.state.locale}

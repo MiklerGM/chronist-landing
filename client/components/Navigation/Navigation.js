@@ -13,7 +13,7 @@ class Navigation extends React.Component {
 
   toggle(e) {
     e.preventDefault();
-    this.setState(state => ({ isOpen: !state.isOpen }));
+    this.setState((state) => ({ isOpen: !state.isOpen }));
   }
 
   render() {
@@ -35,7 +35,7 @@ class Navigation extends React.Component {
               <li>
                 <LocaleWidget
                   onChangeLanguage={this.props.onChangeLanguage}
-                  min={true}
+                  min
                   locale={this.props.locale}
                 />
               </li>
@@ -51,7 +51,7 @@ class Navigation extends React.Component {
                 <NavLink activeClassName='active' to="/faq">FAQ</NavLink>
               </li>
             </ul>
-            <button className='icon' onClick={e => this.toggle(e)}>
+            <button className='icon' onClick={(e) => this.toggle(e)}>
               <i className='fa icon-menu' />
             </button>
           </nav>
