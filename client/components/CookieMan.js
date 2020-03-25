@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import ym from 'react-yandex-metrika';
 
 class CookieManager extends React.Component {
@@ -28,7 +28,21 @@ class CookieManager extends React.Component {
       <div className='cookie-message'>
         <div className='page--content'>
           <p>
-            <FormattedHTMLMessage id='cookie.message' />
+            <FormattedMessage
+              id='cookie.message'
+              values={{
+                ya: (...chunks) => (
+                  <a href="https://yandex.ru/support/metrika/general/notification.html">
+                    {chunks}
+                  </a>
+                ),
+                goo: (...chunks) => (
+                  <a href="https://policies.google.com/technologies/partner-sites">
+                    {chunks}
+                  </a>
+                ),
+              }}
+            />
           </p>
           <button style={{ backgroundColor: '#fafafa', color: 'black' }} onClick={() => this.handleClick()}>
             <FormattedMessage id='cookie.agree' />

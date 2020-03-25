@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import { TextInput, TextareaInput, MailInput } from '../components/Input';
 
@@ -62,8 +62,11 @@ class ContactUs extends React.Component {
             />
           </h1>
           <h4 className='text-left article'>
-            <FormattedHTMLMessage
+            <FormattedMessage
               id='contact.message'
+              values={{
+                m: (...chunks) => (<a href={`mailto:${chunks}`}>{chunks}</a>),
+              }}
             />
           </h4>
           <div

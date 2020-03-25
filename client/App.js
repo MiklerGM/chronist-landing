@@ -4,10 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import ym, { YMInitializer } from 'react-yandex-metrika';
 import ReactGA from 'react-ga';
 
-import { IntlProvider, addLocaleData } from 'react-intl';
-import ru from 'react-intl/locale-data/ru';
-import en from 'react-intl/locale-data/en';
-
 import AppRouter from './routes';
 import IntlWrapper from './IntlWrapper';
 import localeDataRU from './locales/ru.json';
@@ -19,7 +15,6 @@ import './App.less';
 import './images/richpreview.png';
 import './images/favicon.ico';
 
-addLocaleData([...en, ...ru]);
 
 const YM_CONFIG = {
   clickmap: true,

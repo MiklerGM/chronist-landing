@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import marked from 'marked';
 import { loadFront } from 'yaml-front-matter';
-import { distanceInWords } from 'date-fns';
-import ruLoc from 'date-fns/locale/ru';
-import enLoc from 'date-fns/locale/en';
-
+import formatDistance from 'date-fns/formatDistance';
+import { enGB, ru } from 'date-fns/locale';
 import { lastUrls, sourceEN, sourceRU } from '../../articles/blogData';
 
 class ArticlePreviewColumn extends React.Component {
@@ -24,9 +22,10 @@ class ArticlePreviewColumn extends React.Component {
   }
 
   getHumanDate(date) {
-    const lang = (this.props.locale === 'ru') ? ruLoc : enLoc;
+    if (date === undefined) return '';
+    const lang = (this.props.locale === 'ru') ? ru : enGB;
     const word = (this.props.locale === 'ru') ? 'назад' : 'ago';
-    return `${distanceInWords(new Date(), date, { locale: lang })} ${word}`;
+    return `${formatDistance(new Date(), date, { locale: lang })} ${word}`;
   }
 
   getText = (content) => {

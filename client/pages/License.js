@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { loadFront } from 'yaml-front-matter';
 import marked from 'marked';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import source from '../articles/InfoSources.md';
 
@@ -33,7 +33,13 @@ class License extends Component {
             />
           </h1>
           <div className='ArticleContent'>
-            <FormattedHTMLMessage id='license.text' />
+            <FormattedMessage
+              id='license.text'
+              values={{
+                a: (...chunks) => (<a href={`${chunks}`}>{chunks}</a>),
+                p: (...chunks) => (<p>{chunks}</p>),
+              }}
+            />
           </div>
           <div
             className='ArticleContent'
