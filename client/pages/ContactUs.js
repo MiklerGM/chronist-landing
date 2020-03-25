@@ -6,32 +6,36 @@ import { FormattedMessage } from 'react-intl';
 import { TextInput, TextareaInput, MailInput } from '../components/Input';
 
 class ContactUs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visibile: false,
-      success: false,
-      data: {
-        title: '',
-        email: '',
-        text: '',
-      }
-    };
-  }
+  state = {
+    visible: false,
+    success: false,
+    data: {
+      title: '',
+      email: '',
+      text: '',
+    }
+  };
 
   onSubmit(e) {
     e.preventDefault();
     const _this = this;
-    axios.post('/shared/contact', `${this.getSecret()}&email=${this.state.data.email}&title=${encodeURI(this.state.data.title)}&text=${encodeURI(this.state.data.text)}`)
+    const params = [
+      this.getSecret(),
+      `email=${this.state.data.email}`,
+      `title=${encodeURI(this.state.data.title)}`,
+      `text=${encodeURI(this.state.data.text)}`
+    ].join('&');
+
+    axios.post('/shared/contact', params)
       .then((response) => {
         const success = response.status === 200;
         const wipe = success ? { email: '', title: '', text: '' } : {};
         _this.setState({
-          ..._this.state, ...wipe, visibile: true, success
+          ..._this.state, ...wipe, visible: true, success
         });
       })
       .catch((error) => {
-        _this.setState({ ..._this.state, visibile: true, success: false });
+        _this.setState({ ..._this.state, visible: true, success: false });
         console.log(error);
       });
     return false;
@@ -51,7 +55,7 @@ class ContactUs extends React.Component {
   }
 
   handleInput(value) {
-    this.setState({ data: { ...this.state.data, ...value } });
+    this.setState((state) => ({ data: { ...state.data, ...value } }));
   }
 
   render() {
@@ -109,7 +113,7 @@ class ContactUs extends React.Component {
               </div>
               <div
                 key='result'
-                style={this.state.visibile ? {} : { display: 'none' }}
+                style={this.state.visible ? {} : { display: 'none' }}
                 className={this.getGlyph()}
               >
                 {this.state.success

@@ -9,13 +9,10 @@ import Title from '../components/Title/Title';
 import JumpToMap from '../components/JumpToMap/JumpToMap';
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lazyFeatures: null,
-      lazyArticles: null
-    };
-  }
+  state = {
+    lazyFeatures: null,
+    lazyArticles: null
+  };
 
   componentDidMount = async () => {
     await this.loadFeatures();

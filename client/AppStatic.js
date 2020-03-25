@@ -8,7 +8,7 @@ import {
 import { YMInitializer } from 'react-yandex-metrika';
 import ReactGA from 'react-ga';
 
-import { IntlProvider, addLocaleData } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 
 import AppRouter from './routes';
 import localeDataRU from './locales/ru.json';
@@ -23,13 +23,10 @@ const GaId = 'UA-111740941-1';
 ReactGA.initialize({ trackingId: GaId });
 
 class AppStatic extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      locale: 'ru',
-      messages: localeDataRU
-    };
-  }
+  state = {
+    locale: 'ru',
+    messages: localeDataRU
+  };
 
   onChangeLanguage = (lang) => {
     switch (lang) {

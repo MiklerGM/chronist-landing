@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 class TextareaInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      valid: true
-    };
-  }
+  state = {
+    valid: true
+  };
 
   handleInvalid(e) {
     e.preventDefault();

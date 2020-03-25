@@ -10,7 +10,7 @@ const index = fs.readFileSync('dist/client.html', 'utf8');
 const PORT = process.env.PORT || 3030;
 
 // Create HTTP server
-const app = new express();
+const app = express();
 
 // Serve static files
 app.use(express.static('dist'));

@@ -100,20 +100,21 @@ class Modal extends React.Component {
       }
       return cur;
     });
-    const newAnswers = {
-      ...this.state.answers,
+    const newAnswers = (state) => ({
+      ...state.answers,
       [sid]: [
-        ...this.state.answers[sid].slice(0, qid),
+        ...state.answers[sid].slice(0, qid),
         question,
-        ...this.state.answers[sid].slice(qid + 1)
+        ...state.answers[sid].slice(qid + 1)
       ]
-    };
+    });
 
-    this.setState({ answers: newAnswers });
+    this.setState((prev) => ({ answers: newAnswers(prev) }));
   }
 
   handleFormSubmit = (e, sid) => {
     e.preventDefault();
+    console.log(sid);
     // this.props.askBackend('SURVEYS_ANSWER', { surveyId: sid, surveyData: this.state.answers[sid] });
   }
 

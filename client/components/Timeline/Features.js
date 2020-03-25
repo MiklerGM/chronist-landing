@@ -54,13 +54,10 @@ const Preview = ({ id, featureList }) => (
 );
 
 class Features extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: 0,
-      // direction: 'left'
-    };
-  }
+  state = {
+    id: 0,
+    // direction: 'left'
+  };
 
   changeId(id) {
     this.setState({ id });
@@ -78,7 +75,7 @@ class Features extends React.Component {
 
   prev() {
     this.setState((state) => ({
-      id: (this.state.id - 1 < 0) ? featureListEN.length - 1 : this.state.id - 1
+      id: (state.id - 1 < 0) ? featureListEN.length - 1 : state.id - 1
       // direction:  'left'
     }));
   }

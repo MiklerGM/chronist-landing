@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import ym from 'react-yandex-metrika';
 
 class JumpToMap extends React.Component {
-  handleClick() {
+  handleClick = () => {
     ym('reachGoal', 'jumpToMap');
   }
 
@@ -14,7 +14,7 @@ class JumpToMap extends React.Component {
           <p>
             <span><FormattedMessage id='home.description' /></span>
           </p>
-          <a className='decorless' href='https://chronmaps.com/' onClick={() => this.handleClick()}>
+          <a className='decorless' href='https://chronmaps.com/' onClick={this.handleClick}>
             <button>
               <span><FormattedMessage id='home.description.button' /></span>
             </button>

@@ -29,13 +29,10 @@ const GA_CONFIG = {
 ReactGA.initialize('UA-111740941-1', GA_CONFIG);
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      locale: 'ru',
-      messages: localeDataRU
-    };
-  }
+  state = {
+    locale: 'ru',
+    messages: localeDataRU
+  };
 
   onChangeLanguage(lang) {
     switch (lang) {

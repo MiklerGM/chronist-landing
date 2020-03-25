@@ -1,30 +1,4 @@
-const ft1 = require('./data/feature-borders.svg').default;
-const ft2 = require('./data/feature-war.svg').default;
-const ft3 = require('./data/feature-invention.svg').default;
-const ft4 = require('./data/feature-research.svg').default;
-const ft5 = require('./data/feature-demography.svg').default;
-const ft6 = require('./data/feature-language.svg').default;
-const ft7 = require('./data/feature-settings.svg').default;
-const ft8 = require('./data/feature-export.svg').default;
-const ft9 = require('./data/feature-religion.svg').default;
-const ft10 = require('./data/feature-nations.svg').default;
-const ft11 = require('./data/feature-disaster.svg').default;
-const ft12 = require('./data/feature-expedition.svg').default;
-
-const pic0 = require('./data/preview-greymapsimple.png').default;
-const pic1 = require('./data/preview-worldmapsimple.png').default;
-const pic2 = require('./data/preview-inventionmapsimple.png').default;
-const pic3 = require('./data/preview-exportmap.png').default;
-const pic4 = require('./data/preview-researchmap.png').default;
-const pic5 = require('./data/preview-storytellingmap.png').default;
-// const pic3 = require('./data/export2.png').default;
-const pic6 = require('./data/preview-warmapsimple.png').default;
-const pic7 = require('./data/preview-populationmapsimple.png').default;
-const pic8 = require('./data/preview-religionmapsimple.png').default;
-const pic9 = require('./data/preview-languagemapsimple.png').default;
-const pic10 = require('./data/preview-racemapsimple.png').default;
-const pic11 = require('./data/preview-accidentmapsimple.png').default;
-const pic12 = require('./data/preview-expeditionmapsimple.png').default;
+import pics from './TimelinePictures';
 
 const featureList = [
   {
@@ -32,8 +6,8 @@ const featureList = [
     name: 'Political borders',
     date: 'March 2017',
     desc: 'Explore borders change from antique till modern world',
-    img: ft1,
-    pic: pic1,
+    img: pics.ft1,
+    pic: pics.pic1,
     inactive: 0,
     offset: 0
   },
@@ -42,8 +16,8 @@ const featureList = [
     name: 'Inventions',
     date: 'March 2017',
     desc: 'Developments of modern society',
-    img: ft3,
-    pic: pic2,
+    img: pics.ft3,
+    pic: pics.pic2,
     inactive: 0,
     offset: 0
   },
@@ -52,8 +26,8 @@ const featureList = [
     name: 'Data explore',
     date: 'March 2017',
     desc: 'Interactive courses about specific places and dates',
-    img: ft4,
-    pic: pic4,
+    img: pics.ft4,
+    pic: pics.pic4,
     inactive: 0,
     offset: 0
   },
@@ -62,8 +36,8 @@ const featureList = [
     name: 'Export',
     date: 'September 2017',
     desc: 'Export specific data during chosen time',
-    img: ft8,
-    pic: pic3,
+    img: pics.ft8,
+    pic: pics.pic3,
     inactive: 0,
     offset: 0
   },
@@ -72,8 +46,8 @@ const featureList = [
     name: 'Script',
     date: 'September 2017',
     desc: 'Add data about local historical events',
-    img: ft7,
-    pic: pic5,
+    img: pics.ft7,
+    pic: pics.pic5,
     inactive: 0,
     offset: 0
   },
@@ -82,8 +56,8 @@ const featureList = [
     name: 'Wars',
     date: 'May 2018',
     desc: 'Conquest and battles',
-    img: ft2,
-    pic: pic6,
+    img: pics.ft2,
+    pic: pics.pic6,
     inactive: 1,
     offset: 0
   },
@@ -92,8 +66,8 @@ const featureList = [
     name: 'Demographics',
     date: 'May 2018',
     desc: 'People migrations and population',
-    img: ft5,
-    pic: pic7,
+    img: pics.ft5,
+    pic: pics.pic7,
     inactive: 1,
     offset: 0
   },
@@ -102,8 +76,8 @@ const featureList = [
     name: 'Religion',
     date: 'May 2018',
     desc: 'Growth and spread of religions',
-    img: ft9,
-    pic: pic8,
+    img: pics.ft9,
+    pic: pics.pic8,
     inactive: 1,
     offset: 0
   },
@@ -112,8 +86,8 @@ const featureList = [
     name: 'Languages',
     date: 'November 2018',
     desc: 'Language families and branches',
-    img: ft6,
-    pic: pic9,
+    img: pics.ft6,
+    pic: pics.pic9,
     inactive: 1,
     offset: 0
   },
@@ -122,8 +96,8 @@ const featureList = [
     name: 'Nations',
     date: 'November 2018',
     desc: 'Evolution of nations',
-    img: ft10,
-    pic: pic10,
+    img: pics.ft10,
+    pic: pics.pic10,
     inactive: 1,
     offset: 0
   },
@@ -132,8 +106,8 @@ const featureList = [
     name: 'Natural disasters',
     date: 'November 2018',
     desc: 'Diseases, disasters and catastrophes during world history',
-    img: ft11,
-    pic: pic11,
+    img: pics.ft11,
+    pic: pics.pic11,
     inactive: 1,
     offset: 0
   },
@@ -142,8 +116,8 @@ const featureList = [
     name: 'Expeditions',
     date: 'November 2018',
     desc: 'Explorations and geographical discoveries',
-    img: ft12,
-    pic: pic12,
+    img: pics.ft12,
+    pic: pics.pic12,
     inactive: 1,
     offset: 0
   },

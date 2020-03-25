@@ -16,16 +16,13 @@ const SocialButton = () => (
 );
 
 class Subscribe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visibile: false,
-      success: false,
-      data: {
-        email: '',
-      }
-    };
-  }
+  state = {
+    visible: false,
+    success: false,
+    data: {
+      email: '',
+    }
+  };
 
   onSubmit(e) {
     e.preventDefault();
@@ -35,11 +32,11 @@ class Subscribe extends React.Component {
         const success = response.status === 200;
         const wipe = success ? { email: '' } : {};
         _this.setState({
-          ..._this.state, ...wipe, visibile: true, success
+          ..._this.state, ...wipe, visible: true, success
         });
       })
       .catch((error) => {
-        _this.setState({ ..._this.state, visibile: true, success: false });
+        _this.setState({ ..._this.state, visible: true, success: false });
         console.log(error);
       });
     return false;
@@ -87,7 +84,7 @@ class Subscribe extends React.Component {
           </div>
           <div
             key='result'
-            style={this.state.visibile ? {} : { display: 'none' }}
+            style={this.state.visible ? {} : { display: 'none' }}
             className={this.getGlyph()}
           >
             {' '}
