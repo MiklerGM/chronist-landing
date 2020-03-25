@@ -6,8 +6,7 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 import { format } from 'date-fns';
 import { loadFront } from 'yaml-front-matter';
-import ruLoc from 'date-fns/locale/ru';
-import enLoc from 'date-fns/locale/en';
+import { enGB, ru } from 'date-fns/locale';
 
 import { urls, sourceEN, sourceRU } from '../articles/blogData';
 
@@ -19,13 +18,13 @@ class BlogArticlePreview extends React.Component {
   componentDidMount() {
     const source = (this.props.locale === 'ru') ? sourceRU : sourceEN;
     fetch(source[this.props.url])
-      .then(res => res.text())
-      .then(post => this.setState(state => ({ ...state, post })))
-      .catch(err => console.error(err));
+      .then((res) => res.text())
+      .then((post) => this.setState((state) => ({ ...state, post })))
+      .catch((err) => console.error(err));
   }
 
   getFormattedDate(date) {
-    const lang = (this.props.locale === 'ru') ? ruLoc : enLoc;
+    const lang = (this.props.locale === 'ru') ? ru : enGB;
     return format(date, 'D MMMM YYYY', { locale: lang });
   }
 
@@ -78,7 +77,7 @@ const Blog = ({ locale }) => (
     </h1>
     <div className='page--content'>
       <div className='article--item'>
-        {urls.map(url => <BlogArticlePreview key={`article_${url}`} url={url} locale={locale} />)}
+        {urls.map((url) => <BlogArticlePreview key={`article_${url}`} url={url} locale={locale} />)}
       </div>
     </div>
   </div>

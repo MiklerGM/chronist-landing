@@ -1,35 +1,41 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import { TextInput, TextareaInput, MailInput } from '../components/Input';
 
 class ContactUs extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visibile: false,
-      success: false,
-      data: {
-        title: '',
-        email: '',
-        text: '',
-      }
-    };
-  }
+  state = {
+    visible: false,
+    success: false,
+    data: {
+      title: '',
+      email: '',
+      text: '',
+    }
+  };
 
   onSubmit(e) {
     e.preventDefault();
     const _this = this;
-    axios.post('/shared/contact', `${this.getSecret()}&email=${this.state.data.email}&title=${encodeURI(this.state.data.title)}&text=${encodeURI(this.state.data.text)}`)
+    const params = [
+      this.getSecret(),
+      `email=${this.state.data.email}`,
+      `title=${encodeURI(this.state.data.title)}`,
+      `text=${encodeURI(this.state.data.text)}`
+    ].join('&');
+
+    axios.post('/shared/contact', params)
       .then((response) => {
         const success = response.status === 200;
         const wipe = success ? { email: '', title: '', text: '' } : {};
-        _this.setState({ ..._this.state, ...wipe, visibile: true, success });
+        _this.setState({
+          ..._this.state, ...wipe, visible: true, success
+        });
       })
       .catch((error) => {
-        _this.setState({ ..._this.state, visibile: true, success: false });
+        _this.setState({ ..._this.state, visible: true, success: false });
         console.log(error);
       });
     return false;
@@ -49,7 +55,7 @@ class ContactUs extends React.Component {
   }
 
   handleInput(value) {
-    this.setState({ data: { ...this.state.data, ...value } });
+    this.setState((state) => ({ data: { ...state.data, ...value } }));
   }
 
   render() {
@@ -62,8 +68,11 @@ class ContactUs extends React.Component {
             />
           </h1>
           <h4 className='text-left article'>
-            <FormattedHTMLMessage
+            <FormattedMessage
               id='contact.message'
+              values={{
+                m: (...chunks) => (<a href={`mailto:${chunks}`}>{chunks}</a>),
+              }}
             />
           </h4>
           <div
@@ -79,38 +88,37 @@ class ContactUs extends React.Component {
             <form
               method='POST'
               action='/shared/contact'
-              onSubmit={e => this.onSubmit(e)}
+              onSubmit={(e) => this.onSubmit(e)}
             >
               <TextInput
                 value={this.state.data.title}
                 placeholder='contact.placeholder.title'
                 name='title'
-                cb={e => this.handleInput(e)}
+                cb={(e) => this.handleInput(e)}
               />
               <MailInput
                 value={this.state.data.email}
                 name='email'
                 placeholder='contact.placeholder.email'
-                cb={e => this.handleInput(e)}
+                cb={(e) => this.handleInput(e)}
               />
               <TextareaInput
                 value={this.state.data.text}
                 name='text'
                 placeholder='contact.placeholder.message'
-                cb={e => this.handleInput(e)}
+                cb={(e) => this.handleInput(e)}
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', textAlign: 'left' }}>
                 <button type='submit'>Отправить</button>
               </div>
               <div
                 key='result'
-                style={this.state.visibile ? {} : { display: 'none' }}
+                style={this.state.visible ? {} : { display: 'none' }}
                 className={this.getGlyph()}
               >
                 {this.state.success
                   ? <FormattedMessage id='form.success' />
-                  : <FormattedMessage id='form.failure' />
-                }
+                  : <FormattedMessage id='form.failure' />}
               </div>
             </form>
           </div>

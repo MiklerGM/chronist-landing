@@ -10,7 +10,7 @@ const TestComponent = () => (
     <TextareaInput
       value=''
       name='email'
-      cb={e => console.log('dumb func', e)}
+      cb={(e) => console.log('dumb func', e)}
       placeholder='contact.placeholder.email'
     />
   </IntlWrapper>

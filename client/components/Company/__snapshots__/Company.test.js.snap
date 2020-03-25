@@ -31,7 +31,6 @@ exports[`Company Snapshot 1`] = `
         >
           <img
             alt="Daniil"
-            src="test-file-stub"
           />
           <p>
             <strong>
@@ -53,7 +52,6 @@ exports[`Company Snapshot 1`] = `
         >
           <img
             alt="Alisa"
-            src="test-file-stub"
           />
           <p>
             <strong>
@@ -75,7 +73,6 @@ exports[`Company Snapshot 1`] = `
         >
           <img
             alt="Michael"
-            src="test-file-stub"
           />
           <p>
             <strong>
@@ -97,7 +94,6 @@ exports[`Company Snapshot 1`] = `
         >
           <img
             alt="Valeria"
-            src="test-file-stub"
           />
           <p>
             <strong>
@@ -119,7 +115,6 @@ exports[`Company Snapshot 1`] = `
         >
           <img
             alt="Dmitry"
-            src="test-file-stub"
           />
           <p>
             <strong>

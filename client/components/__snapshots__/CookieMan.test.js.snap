@@ -8,13 +8,20 @@ exports[`CookieMan Snapshot 1`] = `
     className="page--content"
   >
     <p>
-      <span
-        dangerouslySetInnerHTML={
-          Object {
-            "__html": "Мы используем cookies и метрику <a href='https://yandex.ru/support/metrika/general/notification.html'>Яндекс</a> и <a href='https://policies.google.com/technologies/partner-sites?hl=ru'>Google</a>",
-          }
-        }
-      />
+      <span>
+        Мы используем cookies и метрику 
+        <a
+          href="https://yandex.ru/support/metrika/general/notification.html"
+        >
+          Яндекс
+        </a>
+         и 
+        <a
+          href="https://policies.google.com/technologies/partner-sites"
+        >
+          Google
+        </a>
+      </span>
     </p>
     <button
       onClick={[Function]}

@@ -1,20 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navigation Snapshot 1`] = `
-<div
-  className="row"
-  id="Navigation"
->
+<div>
   <div
     className="container-fluid"
   >
     <nav>
       <ul
-        className="nav--list hidden"
+        className=""
       >
-        <li
-          className="nav--item"
-        >
+        <li>
           <a
             aria-current="page"
             className="active"
@@ -27,9 +22,7 @@ exports[`Navigation Snapshot 1`] = `
             </span>
           </a>
         </li>
-        <li
-          className="nav--item"
-        >
+        <li>
           <a
             href="https://chronmaps.com/"
           >
@@ -38,18 +31,14 @@ exports[`Navigation Snapshot 1`] = `
             </span>
           </a>
         </li>
-        <li
-          className="nav--item"
-        >
+        <li>
           <a
             onClick={[Function]}
           >
             EN
           </a>
         </li>
-        <li
-          className="nav--item"
-        >
+        <li>
           <a
             aria-current={null}
             href="/blog"
@@ -60,18 +49,14 @@ exports[`Navigation Snapshot 1`] = `
             </span>
           </a>
         </li>
-        <li
-          className="nav--item"
-        >
+        <li>
           <a
             href="https://vk.com/chronist"
           >
              VK 
           </a>
         </li>
-        <li
-          className="nav--item"
-        >
+        <li>
           <a
             aria-current={null}
             href="/faq"

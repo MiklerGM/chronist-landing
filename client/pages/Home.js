@@ -9,13 +9,10 @@ import Title from '../components/Title/Title';
 import JumpToMap from '../components/JumpToMap/JumpToMap';
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lazyFeatures: null,
-      lazyArticles: null
-    };
-  }
+  state = {
+    lazyFeatures: null,
+    lazyArticles: null
+  };
 
   componentDidMount = async () => {
     await this.loadFeatures();
@@ -43,12 +40,10 @@ class Home extends React.Component {
         <JumpToMap />
         {ArticleGallery
           ? <ArticleGallery locale={this.props.locale} />
-          : <div />
-        }
+          : <div />}
         {Features
           ? <Features locale={this.props.locale} />
-          : <div />
-        }
+          : <div />}
         <Subscribe />
         <AppDescription />
         <Team locale={this.props.locale} />

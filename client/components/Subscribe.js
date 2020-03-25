@@ -9,25 +9,20 @@ const SocialButton = () => (
     <a className='decorless' href='https://vk.com/chronist' alt='Вконтакте'>
       <button type='button' className='vk'>
         <i className='icon-vkontakte' aria-hidden='true' />
-        <FormattedMessage
-          id='home.subscribe.vk'
-        />
+        <span><FormattedMessage id='home.subscribe.vk' /></span>
       </button>
     </a>
   </div>
 );
 
 class Subscribe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visibile: false,
-      success: false,
-      data: {
-        email: '',
-      }
-    };
-  }
+  state = {
+    visible: false,
+    success: false,
+    data: {
+      email: '',
+    }
+  };
 
   onSubmit(e) {
     e.preventDefault();
@@ -36,10 +31,12 @@ class Subscribe extends React.Component {
       .then((response) => {
         const success = response.status === 200;
         const wipe = success ? { email: '' } : {};
-        _this.setState({ ..._this.state, ...wipe, visibile: true, success });
+        _this.setState({
+          ..._this.state, ...wipe, visible: true, success
+        });
       })
       .catch((error) => {
-        _this.setState({ ..._this.state, visibile: true, success: false });
+        _this.setState({ ..._this.state, visible: true, success: false });
         console.log(error);
       });
     return false;
@@ -58,28 +55,28 @@ class Subscribe extends React.Component {
       <div className='page--segment text-center bg-gray'>
         <div className='page--content'>
           <p>
-            <FormattedMessage
-              id='home.subscribe.message'
-            />
+            <span>
+              <FormattedMessage
+                id='home.subscribe.message'
+              />
+            </span>
           </p>
           <div className='join-us'>
-            <div >
+            <div>
               <form
                 action='/shared/subscribe'
                 method='POST'
                 className='subscribe input-group'
-                onSubmit={e => this.onSubmit(e)}
+                onSubmit={(e) => this.onSubmit(e)}
               >
                 <MailInput
                   value={this.state.data.email}
                   name='email'
                   placeholder='contact.placeholder.email'
-                  cb={e => this.handleInput(e)}
+                  cb={(e) => this.handleInput(e)}
                 />
                 <button type='submit' className='red'>
-                  <FormattedMessage
-                    id='home.subscribe.button'
-                  />
+                  <span><FormattedMessage id='home.subscribe.button' /></span>
                 </button>
               </form>
             </div>
@@ -87,12 +84,15 @@ class Subscribe extends React.Component {
           </div>
           <div
             key='result'
-            style={this.state.visibile ? {} : { display: 'none' }}
+            style={this.state.visible ? {} : { display: 'none' }}
             className={this.getGlyph()}
           >
-            {' '}{this.state.success
-              ? <FormattedMessage id='home.subscribe.success' />
-              : <FormattedMessage id='home.subscribe.fail' />}
+            {' '}
+            <span>
+              {this.state.success
+                ? <FormattedMessage id='home.subscribe.success' />
+                : <FormattedMessage id='home.subscribe.fail' />}
+            </span>
           </div>
         </div>
       </div>

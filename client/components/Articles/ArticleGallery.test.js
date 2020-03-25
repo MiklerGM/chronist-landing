@@ -1,10 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import renderer from 'react-test-renderer';
-
-import IntlWrapper from '../../IntlWrapper';
-// import ArticleGallery from './ArticleGallery';
 
 const TestComponent = () => (
   <p>TODO</p>

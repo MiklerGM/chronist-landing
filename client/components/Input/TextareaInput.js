@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
 class TextareaInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      valid: true
-    };
-  }
+  state = {
+    valid: true
+  };
 
   handleInvalid(e) {
     e.preventDefault();
@@ -20,14 +17,14 @@ class TextareaInput extends React.Component {
     return (
       <div className='input--cell'>
         <FormattedMessage id={this.props.placeholder}>
-          { placeholder =>
+          { (placeholder) => (
             <textarea
               type='text'
               value={this.props.value}
               placeholder={placeholder}
               className={(this.state.valid) ? '' : 'invalid'}
               // pattern='^[a-zA-Z0-9._%+-]'
-              onInvalid={e => this.handleInvalid(e)}
+              onInvalid={(e) => this.handleInvalid(e)}
               rows='8'
               maxLength='2000'
               required
@@ -36,14 +33,14 @@ class TextareaInput extends React.Component {
                 this.props.cb({ [this.props.name]: e.target.value });
               }}
             />
-          }
+          )}
         </FormattedMessage>
         <span
           style={{ gridRow: '2 / 3' }}
           className={(this.state.valid)
             ? 'invalid-message__hidden' : 'invalid-message'}
         >
-          <FormattedMessage id='input.textarea.invalid' />
+          <span><FormattedMessage id='input.textarea.invalid' /></span>
         </span>
       </div>
     );

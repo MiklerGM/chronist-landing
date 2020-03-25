@@ -9,7 +9,7 @@ import Company from './Company';
 const TestComponent = () => (
   <IntlWrapper>
     <Router>
-      <Company onChangeLanguage={e => console.log('dump func', e)} locale='en' />
+      <Company onChangeLanguage={(e) => console.log('dump func', e)} locale='en' />
     </Router>
   </IntlWrapper>
 );

@@ -4,8 +4,7 @@ import marked from 'marked';
 import { Helmet } from 'react-helmet';
 import { format } from 'date-fns';
 import { loadFront } from 'yaml-front-matter';
-import ruLoc from 'date-fns/locale/ru';
-import enLoc from 'date-fns/locale/en';
+import { enGB, ru } from 'date-fns/locale';
 
 import { sourceEN, sourceRU } from '../articles/blogData';
 
@@ -17,14 +16,15 @@ class ArticlePage extends React.Component {
   componentDidMount() {
     const source = (this.props.locale === 'ru') ? sourceRU : sourceEN;
     fetch(source[this.props.url])
-      .then(res => res.text())
-      .then(post => this.setState(state => ({ ...state, post })))
-      .catch(err => console.error(err));
+      .then((res) => res.text())
+      .then((post) => this.setState((state) => ({ ...state, post })))
+      .catch((err) => console.error(err));
   }
 
   getFormattedDate(date) {
-    const lang = (this.props.locale === 'ru') ? ruLoc : enLoc;
-    return format(date, 'D MMMM YYYY', { locale: lang });
+    if (date === undefined) return '';
+    const lang = (this.props.locale === 'ru') ? ru : enGB;
+    return format(date, 'd MMMM yyyy', { locale: lang });
   }
 
   getText = (content) => {

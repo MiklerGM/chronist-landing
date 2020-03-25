@@ -1,6 +1,10 @@
 import React from 'react';
-import { Switch, Route, NavLink, Redirect } from 'react-router-dom';
-import NotFound from './NotFound';
+import {
+  Switch, Route, NavLink, Redirect
+} from 'react-router-dom';
+// import NotFound from './NotFound';
+
+const NotFound = () => null;
 
 const Page1 = () => (
   <div>
@@ -23,17 +27,14 @@ const Page2 = () => (
 );
 
 class MailForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { email: '', visibile: false, success: false };
-  }
+  state = { email: '', visibile: false, success: false };
 
   getGlyph() {
     return this.state.success ? 'fa icon-check ' : 'fa icon-cancel';
   }
 
-  submitForm(e) {
-    e.preventDefault();)
+  submitForm = (e) => {
+    e.preventDefault();
     // const _this = this;
     // axios.post('/email.php', `email=${this.state.email}`)
     //   .then(function (response) {
@@ -46,51 +47,58 @@ class MailForm extends React.Component {
 
   render() {
     return (
-      <div id='Subscribe' className='row'><div className='bg-2'>
-        <form
-          className='form-inline'
-          action='email.php'
-          onSubmit={(e) => this.submitForm(e)}
-        >
-          <div className='form-group '>
-            <div className='input-group col-centered'>
-              <input
-                type='email'
-                value={this.state.email}
-                className='form-control'
-                size='20'
-                placeholder='Ваш E-mail'
-                required
-                onChange={(e) => {
-                  this.setState({ ...this.state, email: e.target.value });
-                }}
-              />
-              <div className='input-group-btn'>
-                <button type='submit' className='btn btn-danger'>{this.props.destination}</button>
+      <div id='Subscribe' className='row'>
+        <div className='bg-2'>
+          <form
+            className='form-inline'
+            action='email.php'
+            onSubmit={this.submitForm}
+          >
+            <div className='form-group '>
+              <div className='input-group col-centered'>
+                <input
+                  type='email'
+                  value={this.state.email}
+                  className='form-control'
+                  size='20'
+                  placeholder='Ваш E-mail'
+                  required
+                  onChange={(e) => {
+                    this.setState({ email: e.target.value });
+                  }}
+                />
+                <div className='input-group-btn'>
+                  <button type='submit' className='btn btn-danger'>{this.props.destination}</button>
+                </div>
               </div>
             </div>
-          </div>
-        </form>
-        <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>{' '}{this.state.success ? 'Вы успешно подписались' : 'Произошла ошибка'}</span>
-      </div></div>
+          </form>
+          <span key='result' style={this.state.visibile ? {} : { display: 'none' }} className={this.getGlyph()}>
+            {' '}
+            {this.state.success ? 'Вы успешно подписались' : 'Произошла ошибка'}
+          </span>
+        </div>
+      </div>
     );
   }
 }
 
 const Newsletter = () => (
-  <div id='contact' className='container'><div className='bg-what'>
-    <h1 id='pageTitle' className='text-center'> Новостная рассылка </h1>
-    <div className='tabs'>
-      <NavLink to='/newsletter/subscribe' activeClassName="active"><h2> Подписаться </h2></NavLink>
-      <NavLink to='/newsletter/unsubscribe' activeClassName="active"><h2> Отписаться </h2></NavLink>
+  <div id='contact' className='container'>
+    <div className='bg-what'>
+      <h1 id='pageTitle' className='text-center'> Новостная рассылка </h1>
+      <div className='tabs'>
+        <NavLink to='/newsletter/subscribe' activeClassName="active"><h2> Подписаться </h2></NavLink>
+        <NavLink to='/newsletter/unsubscribe' activeClassName="active"><h2> Отписаться </h2></NavLink>
+      </div>
+      <Switch>
+        <Redirect exact from='/newsletter' to='/newsletter/subscribe' />
+        <Route path='/newsletter/subscribe' render={Page1} />
+        <Route path='/newsletter/unsubscribe' render={Page2} />
+        <Route render={NotFound} />
+      </Switch>
     </div>
-    <Switch>
-      <Redirect exact from='/newsletter' to='/newsletter/subscribe' />
-      <Route path='/newsletter/subscribe' render={Page1} />
-      <Route path='/newsletter/unsubscribe' render={Page2} />
-      <Route render={NotFound} />
-    </Switch>
-  </div></div>
+  </div>
 );
 
 export default Newsletter;

@@ -1,19 +1,7 @@
 import React from 'react';
 
+import pics from './TimelinePictures';
 import './timeline.less';
-
-const ft1 = require('../../images/feature-borders.svg');
-const ft2 = require('../../images/feature-war.svg');
-const ft3 = require('../../images/feature-invention.svg');
-const ft4 = require('../../images/feature-research.svg');
-const ft5 = require('../../images/feature-demography.svg');
-const ft6 = require('../../images/feature-language.svg');
-const ft7 = require('../../images/feature-settings.svg');
-const ft8 = require('../../images/feature-export.svg');
-const ft9 = require('../../images/feature-religion.svg');
-const ft10 = require('../../images/feature-nations.svg');
-const ft11 = require('../../images/feature-disaster.svg');
-const ft12 = require('../../images/feature-empty.svg');
 
 const featureList = [
   {
@@ -21,7 +9,7 @@ const featureList = [
     name: 'Политические границы',
     date: 'Март 2017',
     desc: 'Изменения политических границ от античности до наших дней',
-    img: ft1,
+    img: pics.ft1,
     inactive: 0,
     offset: 0
   },
@@ -30,7 +18,7 @@ const featureList = [
     name: 'Изобретения',
     date: 'Март 2017',
     desc: 'Хронология развития современного общества',
-    img: ft3,
+    img: pics.ft3,
     inactive: 0,
     offset: 0
   },
@@ -39,7 +27,7 @@ const featureList = [
     name: 'Исследование данных',
     date: 'Март 2017',
     desc: 'Поиск корреляций и причинно-следственных связей между историческими событиями',
-    img: ft4,
+    img: pics.ft4,
     inactive: 0,
     offset: 0
   },
@@ -48,7 +36,7 @@ const featureList = [
     name: 'Экспорт данных',
     date: 'Сентябрь 2017',
     desc: 'Возможность экспортировать выбранную хронологию за период',
-    img: ft8,
+    img: pics.ft8,
     inactive: 0,
     offset: 0
   },
@@ -57,7 +45,7 @@ const featureList = [
     name: 'Личные сценарии',
     date: 'Сентябрь 2017',
     desc: 'Добавление данных и создание собственных наборов отображаемых событий',
-    img: ft7,
+    img: pics.ft7,
     inactive: 0,
     offset: 0
   },
@@ -66,7 +54,7 @@ const featureList = [
     name: 'Географические открытия и войны',
     date: 'Май 2018',
     desc: 'Интерактивное отображение военных действий и исследовательских походов',
-    img: ft2,
+    img: pics.ft2,
     inactive: 1,
     offset: 0
   },
@@ -75,7 +63,7 @@ const featureList = [
     name: 'Население',
     date: 'Май 2018',
     desc: 'Демографические изменения',
-    img: ft5,
+    img: pics.ft5,
     inactive: 1,
     offset: 0
   },
@@ -84,7 +72,7 @@ const featureList = [
     name: 'Религии',
     date: 'Май 2018',
     desc: 'Распространение религиозных течений',
-    img: ft9,
+    img: pics.ft9,
     inactive: 1,
     offset: 0
   },
@@ -93,7 +81,7 @@ const featureList = [
     name: 'Языки',
     date: 'Ноябрь 2018',
     desc: 'Распространение и эволюция языковых групп',
-    img: ft6,
+    img: pics.ft6,
     inactive: 1,
     offset: 0
   },
@@ -102,7 +90,7 @@ const featureList = [
     name: 'Нации',
     date: 'Ноябрь 2018',
     desc: 'Происхождение и распределение расс по материкам',
-    img: ft10,
+    img: pics.ft10,
     inactive: 1,
     offset: 0
   },
@@ -111,7 +99,7 @@ const featureList = [
     name: 'Катастрофы',
     date: 'Ноябрь 2018',
     desc: 'Болезни, природные и техногенные катаклизмы на протяжении истории человечества',
-    img: ft11,
+    img: pics.ft11,
     inactive: 1,
     offset: 0
   },
@@ -120,7 +108,7 @@ const featureList = [
     name: '',
     date: '',
     desc: '',
-    img: ft12,
+    img: pics.ft12,
     inactive: 1,
     offset: 0
   },
@@ -135,17 +123,29 @@ const featureRows = [
 let ids = { row: 0, feature: 0 };
 const getId = (type) => {
   const id = ids[type];
-  ids[type] = ids[type] + 1;
+  ids[type] += 1;
   return `${type}_${id}`;
 };
 
 const Feature = ({ feature, gkey }) => (
-  <div key={feature.id} className={`col-md-3 col-sm-3 ${`feature_${feature.id}`} ${feature.offset ? 'col-md-offset-1' : ''}`}>
+  <div
+    key={feature.id}
+    className={`col-md-3 col-sm-3 ${`feature_${feature.id}`} ${feature.offset ? 'col-md-offset-1' : ''}`}
+  >
     <div key={`${gkey}_thumb`} className="thumbnail timeline-tmb">
-      <img key={`${gkey}_img`} src={feature.img} alt="ALT NAME" className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`} />
+      <img
+        key={`${gkey}_img`}
+        src={feature.img}
+        alt="ALT NAME"
+        className={`img-responsive img-feature ${feature.inactive ? 'inactive' : ''}`}
+      />
       <div key={`${gkey}_capt`} className="caption-fix caption text-center ">
         <h5 key={`${gkey}_name`}>{feature.name}</h5>
-        <h6 key={`${gkey}_date`} className="text-muted"> {feature.date} </h6>
+        <h6 key={`${gkey}_date`} className="text-muted">
+          {' '}
+          {feature.date}
+          {' '}
+        </h6>
         <p key={`${gkey}_desc`}>{feature.desc}</p>
       </div>
     </div>
@@ -154,18 +154,17 @@ const Feature = ({ feature, gkey }) => (
 
 const FeatureRow = ({ row, gkey }) => (
   <div key={gkey} className="row row-centered">
-    {row.map(feature => <Feature feature={feature} key={`f_${ids.feature}`} gkey={getId('feature')} />)}
+    {row.map((feature) => <Feature feature={feature} key={`f_${ids.feature}`} gkey={getId('feature')} />)}
   </div>
 );
 
-const processRow = (row) => {
-  return <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />;
-};
+const processRow = (row) => <FeatureRow row={row} key={`r_${ids.row}`} gkey={getId('row')} />;
 
 class Timeline extends React.Component {
   componentDidMount() {
     ids = { row: 0, feature: 0 };
   }
+
   render() {
     return (
       <div id="timeline" className="row">

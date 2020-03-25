@@ -54,13 +54,10 @@ const Preview = ({ id, featureList }) => (
 );
 
 class Features extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      id: 0,
-      // direction: 'left'
-    };
-  }
+  state = {
+    id: 0,
+    // direction: 'left'
+  };
 
   changeId(id) {
     this.setState({ id });
@@ -71,14 +68,14 @@ class Features extends React.Component {
   }
 
   next() {
-    this.setState(state => ({
+    this.setState((state) => ({
       id: (state.id + 1 < featureListEN.length) ? state.id + 1 : 0
     }));
   }
 
   prev() {
-    this.setState(state => ({
-      id: (this.state.id - 1 < 0) ? featureListEN.length - 1 : this.state.id - 1
+    this.setState((state) => ({
+      id: (state.id - 1 < 0) ? featureListEN.length - 1 : state.id - 1
       // direction:  'left'
     }));
   }
@@ -89,9 +86,7 @@ class Features extends React.Component {
       <div className='page--segment'>
         <div className='page--content'>
           <h2>
-            <FormattedMessage
-              id='feature.title'
-            />
+            <span><FormattedMessage id='feature.title' /></span>
           </h2>
           <div className='feature__container'>
             <Preview
@@ -104,9 +99,9 @@ class Features extends React.Component {
                   data={feature}
                   key={feature.name}
                   id={id}
-                  change={v => this.changeId(v)}
-                />))
-              }
+                  change={(v) => this.changeId(v)}
+                />
+              ))}
             </div>
           </div>
         </div>

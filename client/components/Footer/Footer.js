@@ -11,22 +11,22 @@ const Footer = ({ onChangeLanguage, locale }) => (
     <div className='page--content'>
       <p>
         <Link to='/privacy'>
-          <FormattedMessage id='footer.privacy' />
+          <span><FormattedMessage id='footer.privacy' /></span>
         </Link>
       </p>
       <p>
         <Link to='/legal'>
-          <FormattedMessage id='footer.tos' />
+          <span><FormattedMessage id='footer.tos' /></span>
         </Link>
       </p>
       <p className='social'>
         <Link to="/contact">
-          <FormattedMessage id='footer.contact' />
+          <span><FormattedMessage id='footer.contact' /></span>
         </Link>
       </p>
       <p className='social'>
         <Link to="/license">
-          <FormattedMessage id='footer.license' />
+          <span><FormattedMessage id='footer.license' /></span>
         </Link>
       </p>
       <LocaleWidget onChangeLanguage={onChangeLanguage} locale={locale} />

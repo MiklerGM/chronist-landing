@@ -10,9 +10,9 @@ class Legal extends React.Component {
 
   componentDidMount() {
     fetch(source)
-      .then(res => res.text())
-      .then(post => this.setState(state => ({ ...state, post })))
-      .catch(err => console.error(err));
+      .then((res) => res.text())
+      .then((post) => this.setState((state) => ({ ...state, post })))
+      .catch((err) => console.error(err));
   }
 
   getText() {

@@ -11,7 +11,7 @@ const TestComponent = () => (
     <Router>
       <Navigation
         locale='ru'
-        onChangeLanguage={e => console.log('dumb func', e)}
+        onChangeLanguage={(e) => console.log('dumb func', e)}
       />
     </Router>
   </IntlWrapper>

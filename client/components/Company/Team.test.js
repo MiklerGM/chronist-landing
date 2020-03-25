@@ -9,7 +9,7 @@ import Team from './Team';
 const TestComponent = () => (
   <IntlWrapper>
     <Router>
-      <Team onChangeLanguage={e => console.log('dump func', e)} locale='en' />
+      <Team onChangeLanguage={(e) => console.log('dump func', e)} locale='en' />
     </Router>
   </IntlWrapper>
 );

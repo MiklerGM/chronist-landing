@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IntlProvider, addLocaleData } from 'react-intl';
-
-import ru from 'react-intl/locale-data/ru';
-import en from 'react-intl/locale-data/en';
+import { IntlProvider } from 'react-intl';
 
 import localeDataRU from './locales/ru.json';
-import localeDataEN from './locales/en.json';
+// import localeDataEN from './locales/en.json';
 
 class IntlWrapper extends React.Component {
   render() {

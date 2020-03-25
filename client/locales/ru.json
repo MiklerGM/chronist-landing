@@ -20,7 +20,7 @@
   "feature.title": "Функционал",
   "faq.title": "Часто задаваемые вопросы",
   "contact.title": "Связь с нами",
-  "contact.message": "Нам приятно видеть, что вы всё ещё не покинули нас и проявляете интерес к нашему продукту. Вы можете написать нам если у вас возникли вопросы по работе сайта, проблемы с сервисом или просто так. Мы всегда рады сообщениям. Также можно написать нам на электронную почту <a href='mailto:idea@chronist.ru'>idea@chronist.ru</a>.",
+  "contact.message": "Нам приятно видеть, что вы всё ещё не покинули нас и проявляете интерес к нашему продукту. Вы можете написать нам если у вас возникли вопросы по работе сайта, проблемы с сервисом или просто так. Мы всегда рады сообщениям. Также можно написать нам на электронную почту <m>idea@chronist.ru</m>.",
   "contact.privacy": "Нажимая на кнопку, вы даете согласие на обработку своих персональных данных. ",
   "contact.privacy.link": "Политика конфиденциальности",
   "contact.placeholder.title": "Заголовок",
@@ -35,8 +35,8 @@
   "input.textarea.invalid": "Необходимо ввести сообщение",
   "form.success": "Ваше сообщение успешно отправлено",
   "form.failure": "Произошла ошибка",
-  "cookie.message": "Мы используем cookies и метрику <a href='https://yandex.ru/support/metrika/general/notification.html'>Яндекс</a> и <a href='https://policies.google.com/technologies/partner-sites?hl=ru'>Google</a>",
+  "cookie.message": "Мы используем cookies и метрику <ya>Яндекс</ya> и <goo>Google</goo>",
   "cookie.agree": "Согласен",
   "license.title": "Лицензия",
-  "license.text": "<p>Обращаем ваше внимание, что источники исторических карт распространяются под Creative Commons Attribution 4.0 Generic License (<a href='https://creativecommons.org/licenses/by/4.0/'>https://creativecommons.org/licenses/by/4.0/</a>). </p> <p>Карты предоставлены авторами, оригинальные версии находятся по ссылкам:</p>"
+  "license.text": "<p>Обращаем ваше внимание, что источники исторических карт распространяются под Creative Commons Attribution 4.0 Generic License (<a>https://creativecommons.org/licenses/by/4.0/</a>). </p> <p>Карты предоставлены авторами, оригинальные версии находятся по ссылкам:</p>"
 }
