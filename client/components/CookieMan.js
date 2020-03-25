@@ -28,24 +28,26 @@ class CookieManager extends React.Component {
       <div className='cookie-message'>
         <div className='page--content'>
           <p>
-            <FormattedMessage
-              id='cookie.message'
-              values={{
-                ya: (...chunks) => (
-                  <a href="https://yandex.ru/support/metrika/general/notification.html">
-                    {chunks}
-                  </a>
-                ),
-                goo: (...chunks) => (
-                  <a href="https://policies.google.com/technologies/partner-sites">
-                    {chunks}
-                  </a>
-                ),
-              }}
-            />
+            <span>
+              <FormattedMessage
+                id='cookie.message'
+                values={{
+                  ya: (...chunks) => (
+                    <a href="https://yandex.ru/support/metrika/general/notification.html">
+                      {chunks}
+                    </a>
+                  ),
+                  goo: (...chunks) => (
+                    <a href="https://policies.google.com/technologies/partner-sites">
+                      {chunks}
+                    </a>
+                  ),
+                }}
+              />
+            </span>
           </p>
           <button style={{ backgroundColor: '#fafafa', color: 'black' }} onClick={() => this.handleClick()}>
-            <FormattedMessage id='cookie.agree' />
+            <span><FormattedMessage id='cookie.agree' /></span>
           </button>
         </div>
       </div>

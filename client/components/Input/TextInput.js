@@ -42,7 +42,7 @@ class TextInput extends React.Component {
           className={(this.state.valid)
             ? 'invalid-message__hidden' : 'invalid-message'}
         >
-          <FormattedMessage id='input.text.invalid' />
+          <span><FormattedMessage id='input.text.invalid' /></span>
         </span>
       </div>
     );

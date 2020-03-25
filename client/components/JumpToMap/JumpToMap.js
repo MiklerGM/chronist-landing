@@ -12,11 +12,11 @@ class JumpToMap extends React.Component {
       <div className='page--segment'>
         <div className='page--content'>
           <p>
-            <FormattedMessage id='home.description' />
+            <span><FormattedMessage id='home.description' /></span>
           </p>
           <a className='decorless' href='https://chronmaps.com/' onClick={() => this.handleClick()}>
             <button>
-              <FormattedMessage id='home.description.button' />
+              <span><FormattedMessage id='home.description.button' /></span>
             </button>
           </a>
         </div>

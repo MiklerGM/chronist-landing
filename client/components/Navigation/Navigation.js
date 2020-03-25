@@ -24,12 +24,12 @@ class Navigation extends React.Component {
             <ul className={this.state.isOpen ? 'hidden' : ''}>
               <li>
                 <NavLink exact activeClassName='active' to="/">
-                  <FormattedMessage id='nav.main' />
+                  <span><FormattedMessage id='nav.main' /></span>
                 </NavLink>
               </li>
               <li>
                 <a href='https://chronmaps.com/'>
-                  <FormattedMessage id='nav.map' />
+                  <span><FormattedMessage id='nav.map' /></span>
                 </a>
               </li>
               <li>
@@ -41,9 +41,7 @@ class Navigation extends React.Component {
               </li>
               <li>
                 <NavLink activeClassName='active' to="/blog">
-                  <FormattedMessage
-                    id='nav.blog'
-                  />
+                  <span><FormattedMessage id='nav.blog' /></span>
                 </NavLink>
               </li>
               <li>

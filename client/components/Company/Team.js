@@ -35,9 +35,7 @@ class Team extends React.Component {
       <div id='team' className='page--segment'>
         <div className='page--content'>
           <h2 className='invert'>
-            <FormattedMessage
-              id='team.title'
-            />
+            <span><FormattedMessage id='team.title' /></span>
           </h2>
           <div className='person--list'>
             {data.map(person => <Person person={person} key={`personkey_${person.id}`} />)}

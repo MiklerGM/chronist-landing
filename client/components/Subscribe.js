@@ -9,9 +9,7 @@ const SocialButton = () => (
     <a className='decorless' href='https://vk.com/chronist' alt='Вконтакте'>
       <button type='button' className='vk'>
         <i className='icon-vkontakte' aria-hidden='true' />
-        <FormattedMessage
-          id='home.subscribe.vk'
-        />
+        <span><FormattedMessage id='home.subscribe.vk' /></span>
       </button>
     </a>
   </div>
@@ -58,12 +56,14 @@ class Subscribe extends React.Component {
       <div className='page--segment text-center bg-gray'>
         <div className='page--content'>
           <p>
-            <FormattedMessage
-              id='home.subscribe.message'
-            />
+            <span>
+              <FormattedMessage
+                id='home.subscribe.message'
+              />
+            </span>
           </p>
           <div className='join-us'>
-            <div >
+            <div>
               <form
                 action='/shared/subscribe'
                 method='POST'
@@ -77,9 +77,7 @@ class Subscribe extends React.Component {
                   cb={e => this.handleInput(e)}
                 />
                 <button type='submit' className='red'>
-                  <FormattedMessage
-                    id='home.subscribe.button'
-                  />
+                  <span><FormattedMessage id='home.subscribe.button' /></span>
                 </button>
               </form>
             </div>
@@ -90,9 +88,12 @@ class Subscribe extends React.Component {
             style={this.state.visibile ? {} : { display: 'none' }}
             className={this.getGlyph()}
           >
-            {' '}{this.state.success
-              ? <FormattedMessage id='home.subscribe.success' />
-              : <FormattedMessage id='home.subscribe.fail' />}
+            {' '}
+            <span>
+              {this.state.success
+                ? <FormattedMessage id='home.subscribe.success' />
+                : <FormattedMessage id='home.subscribe.fail' />}
+            </span>
           </div>
         </div>
       </div>

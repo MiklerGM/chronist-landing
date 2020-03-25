@@ -43,7 +43,7 @@ class TextareaInput extends React.Component {
           className={(this.state.valid)
             ? 'invalid-message__hidden' : 'invalid-message'}
         >
-          <FormattedMessage id='input.textarea.invalid' />
+          <span><FormattedMessage id='input.textarea.invalid' /></span>
         </span>
       </div>
     );

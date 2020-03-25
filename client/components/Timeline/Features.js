@@ -89,9 +89,7 @@ class Features extends React.Component {
       <div className='page--segment'>
         <div className='page--content'>
           <h2>
-            <FormattedMessage
-              id='feature.title'
-            />
+            <span><FormattedMessage id='feature.title' /></span>
           </h2>
           <div className='feature__container'>
             <Preview

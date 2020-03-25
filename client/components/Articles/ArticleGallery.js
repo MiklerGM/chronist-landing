@@ -46,7 +46,7 @@ class ArticlePreviewColumn extends React.Component {
         </span>
         <div dangerouslySetInnerHTML={this.getText(post.__content)} />
         <Link to={`/blog/${this.props.url}`} className='readmore'>
-          <FormattedMessage id='blog.readmore' />
+          <span><FormattedMessage id='blog.readmore' /></span>
         </Link>
       </div>
     );
@@ -58,7 +58,7 @@ const ArticleGallery = ({ locale }) => (
     <div className='page--content'>
       <div className='container'>
         <h2>
-          <FormattedMessage id='home.lastarticles' />
+          <span><FormattedMessage id='home.lastarticles' /></span>
         </h2>
         <div className='xlist'>
           {lastUrls.map(url => (

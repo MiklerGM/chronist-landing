@@ -9,8 +9,6 @@ import { YMInitializer } from 'react-yandex-metrika';
 import ReactGA from 'react-ga';
 
 import { IntlProvider, addLocaleData } from 'react-intl';
-import ru from 'react-intl/locale-data/ru';
-import en from 'react-intl/locale-data/en';
 
 import AppRouter from './routes';
 import localeDataRU from './locales/ru.json';
@@ -18,8 +16,6 @@ import localeDataEN from './locales/en.json';
 
 import './style.less';
 import './App.less';
-
-addLocaleData([...en, ...ru]);
 
 // define values for analytics services
 const YmId = (process.env.NODE_ENV === 'production') ? [42857239, 42866674] : [42866674];

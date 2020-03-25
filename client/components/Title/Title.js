@@ -14,9 +14,7 @@ const Title = ({ locale }) => {
       <div className='text-center'>
         <img src={TitleImage} draggable="false" alt='Chronist logo' />
         <h4>
-          <FormattedMessage
-            id='home.title'
-          />
+          <span><FormattedMessage id='home.title' /></span>
         </h4>
       </div>
     </div>

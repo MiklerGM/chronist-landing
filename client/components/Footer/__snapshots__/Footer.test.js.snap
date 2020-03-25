@@ -2,7 +2,7 @@
 
 exports[`Footer Snapshot 1`] = `
 <footer
-  id="footer"
+  className="layer-4"
 >
   <div
     className="page--content"
@@ -39,23 +39,29 @@ exports[`Footer Snapshot 1`] = `
         </span>
       </a>
     </p>
+    <p
+      className="social"
+    >
+      <a
+        href="/license"
+        onClick={[Function]}
+      >
+        <span>
+          Лицензия
+        </span>
+      </a>
+    </p>
     <p>
       <button
-        className="decorless locale--toggle"
+        className="locale--toggle active"
         onClick={[Function]}
-        style={
-          Object {
-            "color": "#ffffff",
-          }
-        }
       >
         English
       </button>
-      |
+       | 
       <button
-        className="decorless locale--toggle"
+        className="locale--toggle "
         onClick={[Function]}
-        style={null}
       >
         Русский
       </button>

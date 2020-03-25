@@ -29,9 +29,7 @@ class AppDescription extends React.Component {
         <div className='page--content'>
           <div className="article--item">
             <h2>
-              <FormattedMessage
-                id='press.title'
-              />
+              <span><FormattedMessage id='press.title' /></span>
             </h2>
             <p>
               Модестов Сергей
@@ -41,7 +39,7 @@ class AppDescription extends React.Component {
             { ArticleBegin }
             { ArticleEnd }
             <button onClick={e => this.toggle(e)} className="pull-right readmore decorless">
-              { toggler }
+              <span>{ toggler }</span>
             </button>
           </div>
         </div>
