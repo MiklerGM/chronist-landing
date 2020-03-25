@@ -4,8 +4,8 @@ import { FormattedMessage } from 'react-intl';
 
 import './Title.less';
 
-const TitleImageRu = require('./logo-grey-ru.svg');
-const TitleImageEn = require('./logo-grey-en.svg');
+const TitleImageRu = require('./logo-grey-ru.svg').default;
+const TitleImageEn = require('./logo-grey-en.svg').default;
 
 const Title = ({ locale }) => {
   const TitleImage = (locale === 'ru') ? TitleImageRu : TitleImageEn;

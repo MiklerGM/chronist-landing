@@ -2,18 +2,18 @@ import React from 'react';
 
 import './timeline.less';
 
-const ft1 = require('../../images/feature-borders.svg');
-const ft2 = require('../../images/feature-war.svg');
-const ft3 = require('../../images/feature-invention.svg');
-const ft4 = require('../../images/feature-research.svg');
-const ft5 = require('../../images/feature-demography.svg');
-const ft6 = require('../../images/feature-language.svg');
-const ft7 = require('../../images/feature-settings.svg');
-const ft8 = require('../../images/feature-export.svg');
-const ft9 = require('../../images/feature-religion.svg');
-const ft10 = require('../../images/feature-nations.svg');
-const ft11 = require('../../images/feature-disaster.svg');
-const ft12 = require('../../images/feature-empty.svg');
+const ft1 = require('../../images/feature-borders.svg').default;
+const ft2 = require('../../images/feature-war.svg').default;
+const ft3 = require('../../images/feature-invention.svg').default;
+const ft4 = require('../../images/feature-research.svg').default;
+const ft5 = require('../../images/feature-demography.svg').default;
+const ft6 = require('../../images/feature-language.svg').default;
+const ft7 = require('../../images/feature-settings.svg').default;
+const ft8 = require('../../images/feature-export.svg').default;
+const ft9 = require('../../images/feature-religion.svg').default;
+const ft10 = require('../../images/feature-nations.svg').default;
+const ft11 = require('../../images/feature-disaster.svg').default;
+const ft12 = require('../../images/feature-empty.svg').default;
 
 const featureList = [
   {

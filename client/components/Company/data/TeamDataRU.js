@@ -1,8 +1,8 @@
-const ph1 = require('./photo1.jpg');
-const ph2 = require('./photo2.jpg');
-const ph3 = require('./photo3.jpg');
-const ph4 = require('./photo4.jpg');
-const ph5 = require('./photo5.jpg');
+const ph1 = require('./photo1.jpg').default;
+const ph2 = require('./photo2.jpg').default;
+const ph3 = require('./photo3.jpg').default;
+const ph4 = require('./photo4.jpg').default;
+const ph5 = require('./photo5.jpg').default;
 
 
 const data = [

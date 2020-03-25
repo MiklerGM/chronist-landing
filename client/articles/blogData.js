@@ -6,11 +6,11 @@ const reqEN = require.context('./postsEN', false, /\.md$/);
 
 // const importAll = (r) => {
 const sourceRU = {};
-reqRU.keys().forEach(key => sourceRU[key.replace('./', '').replace('.md', '')] = reqRU(key));
+reqRU.keys().forEach(key => sourceRU[key.replace('./', '').replace('.md', '')] = reqRU(key).default);
 // };
 
 const sourceEN = {};
-reqEN.keys().forEach(key => sourceEN[key.replace('./', '').replace('.md', '')] = reqEN(key));
+reqEN.keys().forEach(key => sourceEN[key.replace('./', '').replace('.md', '')] = reqEN(key).default);
 
 
 const urls = [];
